@@ -1,0 +1,24 @@
+.section
+{
+    margin-left: 150px;
+    width: 84%;
+    height: 1320px;
+    background-color: red;
+    border:black 1px solid;
+}
+
+
+
+#divisoria{
+    height: 100px;
+    width: 1500px;
+    margin-bottom: 20px;
+    font-family: Helvetica;
+    font-size: 35px;
+    line-height: 4;
+    color: #000;
+    background-color: aqua;
+    font-weight: normal;
+    display: flex;
+    border:solid 1px black;
+}

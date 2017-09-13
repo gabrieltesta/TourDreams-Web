@@ -1,0 +1,164 @@
+body{
+    overflow-x: hidden;
+}
+
+#sectionCima{
+    width: 100%;
+    height: 1000px;
+    display: flex;
+}
+
+#sectionBaixo{
+    width: 100%;
+    height: 500px;
+    display: flex;
+
+}
+
+#contCima{
+    width: 84%;
+    margin-left: 8.5%;
+
+}
+
+#contBaixo{
+    width: 84%;
+    margin-left: 8.5%;
+}
+
+#divTitulos{
+    height: 60px;
+    width: 100%;
+
+}
+
+#divInformacoes{
+    width: 1612,8px;
+    height: 580px;
+
+
+}
+
+#divImgGrande{
+    height: 500px;
+    width: 1200px;
+
+}
+
+#divImgGrande img{
+    height: 100%;
+    width: 100%;
+}
+
+#divisao1{
+    height: 100%;
+    width: 1200px;
+
+    float: left;
+    overflow: hidden;
+
+}
+
+#carrossel{
+    height: 80px;
+    width: 200%;
+
+}
+
+#divisao2{
+    height: 100%;
+    width: 398px;
+    background-color: coral;
+    float: left;
+
+}
+
+.miniatura{
+    margin-top: 10px;
+    width: 100px;
+    height: 60px;
+    float: left;
+    margin-right: 10px;
+
+}
+
+.miniatura img{
+    width: 100%;
+    height: 100%;
+}
+
+#tblTitulo{
+    height: 100%;
+    width: 100%;
+    font-family: Gadugi;
+    line-height: 80px;
+    color: #000;
+}
+
+#tdnomeHotel{
+    text-align: left;
+    font-size: 25px;
+
+}
+
+#tdlocalHotel{
+
+
+}
+
+#tdEstrelas{
+    text-align: right;
+}
+
+#tdEstrelas img{
+    
+    height: 25px;
+    width: 25px;
+}
+
+#tdAvaliacao{
+    font-size: 25px;
+    text-align: right;
+    
+}
+
+hr{
+    margin-top: 20px;
+}
+
+#divComodidades{
+    height: 300px;
+    width: 100%;
+    background-color: bisque;
+}
+
+#divQuarto{
+    width: 100%;
+    height: 300px;
+    
+    margin-top: 10px;
+    box-shadow: 0px 0px 3px 0px #000;
+}
+
+.divInfoQuarto{
+    width: 1247px;
+    height: 100%;
+
+    float: left;
+    border-right: 1px solid #ccc;
+    
+}
+
+.divReservar{
+    width: 350px;
+    height: 100%;
+    float: left;
+}
+
+.imgQuarto{
+    width: 260px;
+    height: 260px;
+    margin-top: 20px;
+    margin-left: 20px;
+    background-color: aqua;
+}
