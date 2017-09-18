@@ -26,8 +26,20 @@
 
 #primeira{
     
-    width:30%;
-    height:30px;
+    width:20%;
+    float:left;
     
+}
+#segunda{
+    width:50%;
+        float:left;
+
+    
+}
+#terceira{
+    
+    width:30%;
+        float:left;
+
     
 }

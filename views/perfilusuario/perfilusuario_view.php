@@ -39,7 +39,7 @@
             <!---->
             <!--Histórico de transações-->
             <div id="historicoBox">
-                <table>
+                <table class="sortable">
                     <tr>
                         <th>Hotel</th>
                         <th>Data Início</th>

@@ -3,29 +3,16 @@
     <div id="divisoria"> <!-- Titulo da pagina -->
         
         <div id="primeira">
-        
+        <hr>
         </div>
         <div id="segunda">
             Parceiros
         </div>
          <div id="terceira">
-        
+        <hr>
         </div>
         
     
     </div>
-    
-    <div id="left"> <!-- Lado esquerdo do conteúdo (parceiros em destaque) -->
-    
-    
-    
-    </div>
-    
-    <div id="right"> <!-- Lado direito do conteúdo (busca de parceiros) -->
-   
-    
-    </div>
-
-
 
 </section>

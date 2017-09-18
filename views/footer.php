@@ -11,7 +11,7 @@
                     <li><a href="#">Nossos Parceiros</a></li>
                     <li><a href="#">Melhores destinos</a></li>
                     <li><a href="conhecaseudestino.php">Conheça seu destino</a></li>
-                    <li><a href="#">Promoções da semana</a></li>
+                    <li><a href="promocoes.php">Promoções da semana</a></li>
                     <li><a href="faleconosco.php">Fale Conosco</a></li>
                 </ul>
             </div>

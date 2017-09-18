@@ -69,6 +69,14 @@ a
     text-decoration: none;
 }
 /**/
+/* Sortable tables */
+table.sortable thead {
+    background-color:#eee;
+    color:#666666;
+    font-weight: bold;
+    cursor: default;
+}
+/**/
 /*Cabeçalho*/
 header
 {

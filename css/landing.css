@@ -76,7 +76,7 @@ input[type="image"]
     height: 42px;
     display: block;
     float: left;
-    background-color: #4682b4;
+    background-color: #031634;
     border: solid 2px rgba(176, 196, 222, 0.8);
     border-left: none;
 }
@@ -86,7 +86,7 @@ input[type="image"]
     display: inline-block;
     width: 60%;
     height: 50px;
-    background-color: #4682b4;
+    background-color: #031634;
     border: solid 2px rgba(176, 196, 222, 0.8);
     margin-top: 50px;
     line-height: 2;

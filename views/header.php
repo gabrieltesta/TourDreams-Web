@@ -167,7 +167,7 @@
 				<a href="parceiros.php"><li>NOSSOS PARCEIROS</li></a>
 				<a href="melhoresDestinos.php"><li>MELHORES DESTINOS</li></a>
 				<a href="conhecaseudestino.php"><li>CONHEÇA SEU DESTINO</li></a>
-				<a href="#"><li>PROMOÇÕES</li></a>
+				<a href="promocoes.php"><li>PROMOÇÕES</li></a>
 				<a href="faleconosco.php"><li>FALE CONOSCO</li></a>
 			</ul>
 		</div>
