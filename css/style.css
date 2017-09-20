@@ -57,6 +57,7 @@ body
     border: 0;
     font-family: Calibri;
     max-width: 1920px;
+    margin: 0 auto;
 }
 
 ul

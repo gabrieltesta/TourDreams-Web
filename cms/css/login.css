@@ -58,6 +58,13 @@ section
     color: #666;
 }
 
+#formbox div
+{
+    color: red;
+    font-size: 10pt;
+    font-family: Arial;
+}
+
 #formbox span
 {
     font-family: RalewayRegular;

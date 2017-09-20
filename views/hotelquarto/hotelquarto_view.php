@@ -66,6 +66,10 @@
         <hr>
         <div id="divComodidades">
             
+            <?php
+                $y = 0;
+                while($y<3){
+            ?>
             <div class="separador">
                 <?php
                     $i = 1;
@@ -73,7 +77,7 @@
                     while($i <= 4){
                 ?>
                     <div class="comodidade">
-                        
+                        <img draggable="false" alt="" src="imagens/hotelquarto/piscina.png"><h2>Piscina</h2>
                     </div>
                 <?php
                         $i++;
@@ -81,31 +85,26 @@
                     }
                 ?>
             </div>
+            <?php
+                    $y++;
+                }
+            ?>
             
-            
-                <div class="separador">
-                    <?php
-                        $i = 1;
-                        while($i <= 4){
-                    ?>
-                        <div class="comodidade">
-
-                        </div>
-                    <?php
-                            $i++;
-
-                        }
-                    ?>
-                </div>
         
         </div>
         <hr>
     </div>
+    </div>    
 </section>
 <!---->
 <!--Conteúdo inferior-->
 <section id="sectionBaixo">
     <div id="contBaixo">
+        <?php
+            $z = 0;
+            while($z < 5){
+        ?>
+        <!-- Sugestões de Quarto -->
         <div id="divQuarto">
             <div class="divInfoQuarto">
                 <div class="imgQuarto">
@@ -133,15 +132,38 @@
                 <div class="textoQuarto">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempor venenatis orci eget placerat. Nunc vel feugiat libero. Integer sit amet mi ut nulla finibus semper ut et enim. Pellentesque in ultricies risus, at elementum velit. Suspendisse sollicitudin, metus eget viverra sagittis, dolor arcu suscipit nunc, non cursus massa nisl vitae augue. Proin pellentesque sodales urna, at ullamcorper nulla finibus sed. Sed tincidunt dui sit amet lacinia venenatis. Etiam nulla felis, placerat sit amet pretium vitae, eleifend volutpat enim. Maecenas eu arcu interdum, efficitur risus id.
                 </div>
+                <div class="comodidadesQuarto">
+                    <h1>Inclusos neste quarto</h1>
+                    <?php
+                        $contador = 0;
+                        while($contador < 10){
+                    ?>
+                    <div class="comodidadeDoQuarto">
+                        <img alt="" src="imagens/hotelquarto/wifi.png"><h2>Wi-Fi</h2>
+                    </div>
+                    <?php
+                            $contador++;
+                        }
+                    ?>
+                </div>
             </div>
             
-            <div class="divReservar">
-            
+            <div class="divReservar"> <!-- botão para reservar -->
+                <div class="divPreco">
+                    <h3>Diárias de</h3>
+                    <h1>R$ 199,99</h1>
+                </div>
+                <div class="botaoReservar">
+                    <h1>RESERVAR</h1>
+                </div>
             </div>
             
             
         </div>
-
+        <?php
+                $z++;
+            }
+        ?>
     </div>
 </section>
 <!---->

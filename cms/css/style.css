@@ -54,10 +54,117 @@ body
     margin: 0;
     padding: 0;
     border: 0;
+    max-width: 1920px;
+    margin: 0 auto;
 }
 
 a
 {
     color:  inherit;
     text-decoration: none;
+}
+
+/*Header do CMS*/
+.header{
+  width: 100%;
+  height: 120px;
+ background-color:rgba(70,130,180,0.2);
+  background-image: url(../imagens/TourDreams.png);
+  background-repeat: No-repeat;
+  background-size: 290px 90px;
+  box-shadow: 5px 0px 10px #696969;
+  background-position: 185px 10px;
+  border-bottom: solid 1px #4682B4;
+  max-width: 1920px;
+}
+.titulo{
+  width: 800px;
+  height: 100%;
+  background-color: ;
+  margin-left: 680px;
+  font-size: 40px;
+  color: #4682B4	;
+  font-family: SourceSansRegular;
+  line-height: 100px;
+  float: left;
+}
+#usuarioBox
+{
+    width: 300px;
+    height: 100%;
+    float: right;
+    border-left: solid 1px #4682B4;
+}
+#usuarioBox table
+{
+    width: 90%;
+    padding: 16px;
+    text-align: center;
+    font-family: Arial;
+}
+#usuarioBox table span
+{
+    font-size: 20pt;
+    font-family: RalewayRegular;
+}
+#usuarioBox a
+{
+    font-size: 10pt;
+
+}
+
+nav
+{
+    width: 15%;
+    height: 100%;
+    background-color: #4682b4;
+    float: left;
+    overflow: hidden;
+}
+
+nav ul
+{
+    margin-left: -5%;
+    list-style: none;
+    margin: 0;
+    padding: 16px;
+}
+
+nav ul li
+{
+    width: 85%;
+    padding: 16px;
+}
+
+nav ul li:hover
+{
+    border: solid 1px #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-bottom: solid 4px #fff;
+    margin-top: -6px;
+}
+
+nav img
+{
+    width: 24px;
+    height: 24px;
+}
+
+nav span
+{
+    font-size: 12pt;
+    font-family: SourceSansBold;
+    color: #fff;
+    line-height: 0;
+    margin-left: 10px;
+}
+
+nav a
+{
+    display: block;
+}
+
+nav ul a:not(:first-child)
+{
+    margin-top: 5px;
 }

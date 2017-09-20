@@ -1,49 +1,29 @@
+
+
 #sectionp{
     width:100%;
-    height:1500px;
+    height:100%;
     background-color: white;
     
     
 }
-.filtrospromo{
-    margin-top: 130px;
-    width: 250px;
-    height: 50px;
-    background-color: blue;
-    margin-left: 30px;
-    float: left;
-   
-
-
-}
-#milhaspromo{
-    margin-top: 25px;
-    width: 180px;
-    height: 200px;
-    margin-left:800px;
-    float: left;
-    margin-bottom: 200px;
-    -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
-    background-color: white;
-    opacity: 1px;
+#backpromo
+{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
    
 }
-#nomeusuario{
-    font-size: 25px;
-    font-style: italic;
-    margin-left:70px;
- 
-    
+
+#backpromo img
+{
+    width: 100%;
+    height: 100%;
+    max-width: 1920px;
+    max-height: 1080px;
 }
-#qtdmilhas{
-    font-size: 20px;
-    font-style: italic;
-    margin-left:10px;
-    
-    
-}
+.
 #qtdmilhas1{
     font-size: 30px;
     font-style: italic;
@@ -72,6 +52,7 @@
     -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
     margin-bottom: 90px;
+    margin-top: 100px;
   
 }
 

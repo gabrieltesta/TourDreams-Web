@@ -1,0 +1,12 @@
+#sectionSuperior{
+    width: 100%;
+    height: 900px;
+    background-color: antiquewhite;
+    display: flex;
+}
+
+#contSuperior{
+    width: 84%;
+    margin-left: 8.5%;
+    background-color: azure;
+}

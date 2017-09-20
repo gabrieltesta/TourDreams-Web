@@ -1,28 +1,9 @@
+
+   
 <section id ="sectionp">
     
-    <div class="filtrospromo">
-        
-    </div>
-    <div class="filtrospromo">
-        
-    </div>
-    <div class="filtrospromo">
-        
-    </div>
-    <div id="milhaspromo">
-        <p id="nomeusuario"> João  </p>
-        <p id="qtdmilhas"> Sua quantidade de milhas são:   </p>
-        
-       <div id="espaco">
-        <img id="imagemmilhas" src="imagens/promocoes/estrela.png" > 
-        <p id ="qtdmilhas1">89</p> 
-
-        </div>     
+ 
    
-            
-
-      
-    </div>
     
     <?php
         $i = 0;
