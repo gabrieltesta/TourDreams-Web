@@ -4,17 +4,20 @@
   }
 .sectionnn{
 width: 100%;
-height: 700px;
+height: 900px;
 background-color: ;
 display: flex;
 
 }
 .conteudo{
   width: 1300px;
-  height: 100%;
-  background-color: #DCDCDC;
+  height: 350px;
+  border-bottom: solid 1px black;
+  background-color:  ;
   margin-left: auto;
   margin-right: auto;
+  float: left;
+
 }
 .fotoPessoa{
   width: 100%;
@@ -23,7 +26,7 @@ display: flex;
   margin-top: 20px;
 }
 .foto{
-  width: 400px;
+  width: 300px;
   height: 100%;
   background: ;
   float: left;
@@ -34,17 +37,32 @@ display: flex;
   background-color: ;
   float: left;
 }
-.fotinha{
-  width: 35%;
+.fotinhaMulher{
+  width: 45%;
   height: 85%;
   background-color: ;
   border-radius: 50%;
-  margin-left: 225px;
+  margin-left: 150px;
   background-image: url(../imagens/busca/mulher.jpg);
   background-size: 196px;
   background-repeat: no-repeat;
   background-position: -50px 0px;
   margin-top: 10px;
+
+
+}
+.fotinhaHomem{
+  width: 45%;
+  height: 85%;
+  background-color: ;
+  border-radius: 50%;
+  margin-left: 150px;
+  background-image: url(../imagens/busca/homem.jpg);
+  background-size: 196px;
+  background-repeat: no-repeat;
+  background-position: -50px 0px;
+  margin-top: 10px;
+
 
 }
 .nome{
@@ -61,7 +79,7 @@ display: flex;
 }
 .subtitulo{
   font-size: 18px;
-
+  color: #696969;
 
 }
 
@@ -73,14 +91,30 @@ display: flex;
 .alinhamento{
   width: 70%;
   height: 100%;
-  background-color: ;
-  margin-left: auto;
-
-  font-size: 18px;
+  background-color:;
+  margin-left: 300px;
+  font-family: Raleway;
+  font-size: 16 px;
   text-align: center;
+  line-height: 25px;
+  font-style: italic;
 }
 .estrelinhas{
-  width: 50%;
-  height: 20px;
-  background-color: aqua;
+  width: 20%;
+  height: 40px;
+  background-color: ;
+  margin-left: 950px;
+  margin-top: 0px;
+
+
+}
+.estrelinhas img{
+    width: 30px;
+    height: 25px;
+    margin-top: 10px;
+
+}
+.auxiliar{
+  width: 84%;
+  margin-left: auto;
 }

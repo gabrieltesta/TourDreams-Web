@@ -1,5 +1,121 @@
-#section{
-    width:500px;
-    height:400px;
-    backgroud-color:#000000;
+#sectionp{
+    width:100%;
+    height:1500px;
+    background-color: white;
+    
+    
+}
+.filtrospromo{
+    margin-top: 130px;
+    width: 250px;
+    height: 50px;
+    background-color: blue;
+    margin-left: 30px;
+    float: left;
+   
+
+
+}
+#milhaspromo{
+    margin-top: 25px;
+    width: 180px;
+    height: 200px;
+    margin-left:800px;
+    float: left;
+    margin-bottom: 200px;
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
+    background-color: white;
+    opacity: 1px;
+   
+}
+#nomeusuario{
+    font-size: 25px;
+    font-style: italic;
+    margin-left:70px;
+ 
+    
+}
+#qtdmilhas{
+    font-size: 20px;
+    font-style: italic;
+    margin-left:10px;
+    
+    
+}
+#qtdmilhas1{
+    font-size: 30px;
+    font-style: italic;
+    margin-left:65px;
+    
+    
+}
+#espaco{
+    width: 150px;
+    height: 100px;
+    
+}
+#imagemmilhas{
+    width: 30px;
+    height: 35px;
+    margin-left: 25px;
+    float: left;
+    
+}
+.box{
+    width: 400px;
+    height: 450px;
+    float: left;
+    margin-left: 65px;
+     -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
+    margin-bottom: 90px;
+  
+}
+
+
+.boximagem{
+    width: 350px;
+    height: 250px;
+    margin-top: 15px;
+    margin-left: 25px;
+}
+.boximagem img{
+    height: 100%;
+    width: 100%;
+}
+.conteudobox{
+    font-size: 25px;
+    line-height:10px;
+    font-style:italic;
+   text-align: center;
+    
+}
+.conteudobox2{
+    font-size: 20px;
+    line-height:10px;
+    font-style:normal;
+    margin-left:20px;
+    
+}
+.conteudomilhas{
+   font-size: 30px;
+    font-style: italic;
+    margin-left:20px;
+    margin-top: -1px;
+    float: left;
+}
+.botvermais{
+    width: 80px;
+    height: 30px;
+    background-color:whitesmoke;
+    border-radius: 5px;
+    margin-left: 150px;
+    
+}
+.botvermais li:hover{
+    transition: 1px;
+    background-color: blue;
 }

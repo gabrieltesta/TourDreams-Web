@@ -1,45 +1,137 @@
+@font-face {
+  font-family: Raleway;
+    src: url("../fonts/Raleway-Medium.ttf");
+  }
+
 .section
 {
     margin-left: 150px;
-    width: 84%;
+    width: 80%;
     height: 1320px;
-    background-color: red;
-    border:black 1px solid;
+    border:black 0px solid;
 }
 
 
 
 #divisoria{
-    height: 100px;
-    width: 1500px;
+    height: 30px;
+    width: 100%;
     margin-bottom: 20px;
-    font-family: Helvetica;
     font-size: 35px;
     line-height: 4;
     color: #000;
-    background-color: aqua;
     font-weight: normal;
     display: flex;
-    border:solid 1px black;
 }
 
 
 #primeira{
     
-    width:20%;
+    width:300%;
+    height:15px;
     float:left;
-    
+    color:black;
+    margin-left:20px;
 }
 #segunda{
-    width:50%;
-        float:left;
-
-    
+    width:20%;
+    height:15px;
+    float:left;
+    color:black;
+    font-size:15px;
+    margin-top:-10px;
+    margin-left:20px;
+    margin-right:20px;
 }
 #terceira{
     
-    width:30%;
+    width:300%;
+    height:15px;
         float:left;
+    color:black;
+}
 
+#direita{
     
+    width:50%;
+    height:1115px;
+    background-color:beige;
+    float:left;
+}
+
+#meio{
+    background-color:black;
+    width:1px;
+    height:1115px;
+    float:left;
+    margin-right:5px;
+    margin-left:5px;
+}
+
+#esquerda{
+    
+    width:49%;
+    height:1115px;
+    background-color:antiquewhite;
+    float:left;
+}
+
+#divisor{
+    width:80%;
+    height:60px;
+    margin-left:20px;
+    margin-top:50px;
+}
+
+#iconeesquerdo{
+    width:8%;
+    height:45px;
+    float:left;
+    background-image: url(../imagens/parceiros/estrela.png);
+    background-size:50px;
+    background-repeat: no-repeat;
+    background-position: -px 0px;
+    margin-top:5px;
+}
+
+#parceiroDestaque{
+    width:80%;
+    height:40px;
+    font-size:25px;
+    color:black;
+    float:left;
+    margin-top:20px;
+    margin-left:20px;
+}
+
+
+.dadosParceiro{
+    width:100%;
+    height:20%;
+    border:solid 0px black;
+    margin-top:70px;
+}
+
+.nomeParceiro{
+    
+    width:60%;
+    height:100%;
+    float:left;
+    text-align:justify;
+    line-height:100px;
+    font-size:35px;
+    margin-left:40px;
+}
+
+
+.fotoParceiro{
+  width: 30%;
+  height: 75%;
+  background-color: ;
+  border-radius: 50%;
+  background-image: url(../imagens/parceiros/HOTEL.jpg);
+  background-size:100%;
+  background-repeat: no-repeat;
+  background-position: -0px 0px;
+  float:left;
 }

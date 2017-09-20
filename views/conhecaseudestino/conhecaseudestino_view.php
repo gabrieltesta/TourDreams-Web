@@ -3,7 +3,7 @@
     <div  class="isolamentoPartedeCima">
       <div class="titulo">
 
-        <div class="tituloum">
+        <div class="tituloum wow fadeInUp" >
           Conheça seu Destino
         </div>
 
