@@ -11,9 +11,12 @@
   </head>
   <body>
     <?php
-        require_once('views/header.php');
-        require_once('views/menu.php'); 
-        require_once('views/administradorcliente/administradorcliente_view.php');                         //Conteúdo
-    ?>
+        require_once('views/header.php'); ?>
+        <section>
+            <?php
+            require_once('views/menu.php');
+            require_once('views/administradorcliente/administradorcliente_view.php');                         //Conteúdo
+            ?>
+        </section>
   </body>
 </html>

@@ -1,3 +1,8 @@
- <section>
-     <?php require_once('views/menu.php') ?>
- </section>
+<div id="conteudoInterno">
+    <div id="titulo">
+        <span>Bem-Vindo ao CMS</span>
+    </div>
+    <div id="descricao">
+        <p>Selecione um dos menus laterais para começar</p>
+    </div>
+</div>

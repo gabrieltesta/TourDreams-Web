@@ -6,8 +6,11 @@
     }
  ?>
 <header class="header">
+    <div id="imagemHeader">
+        <a href="homecms.php"><img src="../imagens/TourDreams.png" alt="Logo"></a>
+    </div>
   <div class="titulo">
-    CMS - Sistema de Gerenciamento TourDreams
+    CMS - Sistema de Gerenciamento de Conteúdo
   </div>
   <div id="usuarioBox">
       <table>

@@ -1,4 +1,4 @@
-<section class="conteudo ">
+<div class="conteudo">
 
   <div class="busca">
 
@@ -8,7 +8,6 @@
   <div class="tituloConteudo">
     Gerenciamento de Clientes
   </div>
-  <div class="barraDeRolagem" >
     <div class="clientesConteudo">
       <div class="fotoCliente">
         <div class="imagem">
@@ -151,6 +150,4 @@
       </div>
     </div>
 
-  </div>
-
-</section>
+</div>

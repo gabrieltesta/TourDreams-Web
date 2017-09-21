@@ -1,4 +1,12 @@
 <?php
+    session_start();
+    if(isset($_SESSION['login']))
+    {
+        if($_SESSION['login'] == 'true')
+        {
+            header('location:homecms.php');
+        }
+    }
     $msg = '';
     if(isset($_GET['erro']))
     {

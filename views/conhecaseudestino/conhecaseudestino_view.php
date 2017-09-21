@@ -1,4 +1,4 @@
-<section id="bagaca">
+<section id="section">
   <div class="principal">
     <div  class="isolamentoPartedeCima">
       <div class="titulo">
@@ -9,11 +9,8 @@
 
       </div>
       <div class="barradepesquisa">
-        <div class="bosta">
-
-        </div>
         <form method="post" action="router.php?controller=conhecaseudestino" name="">
-        <div class="bagulhochato">
+        <div class="alinharbarra">
           <table>
             <tr>
               <td>
@@ -30,16 +27,11 @@
     </div>
     <div class="pardebaixo">
       <div class="titulodois">
-        <div class="esquema">
-
-        </div>
-
+        <div class="linhaesquerda"></div>
         <div class="letras">
           Mais pesquisados
         </div>
-        <div class="esquemadois">
-
-        </div>
+        <div class="linhadireita"></div>
       </div>
       <div class="cont">
         <div class="maispesquisados">
@@ -48,63 +40,67 @@
           </div>
           <div class="direito">
             <div class="titulohotel">
-              Hotelzão Manero
+              Hotel Exemplo
             </div>
             <div class="contConheca">
-              <DIV class="estrelinhas">
+              <div class="estrelinhas">
                 <img src="imagens/busca/estrela.png">
                 <img src="imagens/busca/estrela.png">
                 <img src="imagens/busca/estrela.png">
                 <img src="imagens/busca/estrela.png">
               </div>
-              <div class="textinho">
-                Local: Rua duque de caxias <br>
-                Jandira - SP
-                <p>
-                  Comodidade top
-                </p>
-                <p>
-                  To enchendo linguinça
-                </p>
-              </div>
+              <table>
+                  <tr>
+                      <td>Rua Exemplo, 123</td>
+                  </tr>
+                  <tr>
+                      <td>Jandira - SP</td>
+                  </tr>
+                  <tr>
+                      <td>Wi-fi gratuito</td>
+                  </tr>
+                  <tr>
+                      <td>Piscina</td>
+                  </tr>
+              </table>
             </div>
-            <div class="finzinho">
-              <div class="botao2">
-                R$ 199,00
-              </div>
+            <div class="valor">
+              <span>R$ 109,99</span>
             </div>
           </div>
         </div>
-        <div class="maispesquisados1">
+        <div class="maispesquisados">
           <div class="imagem">
             <img class="img" src="imagens/Viagens/img2.jpeg">
           </div>
           <div class="direito">
             <div class="titulohotel">
-              Hotelzão Manero
+              Hotel Exemplo
             </div>
             <div class="contConheca">
-              <DIV class="estrelinhas">
+              <div class="estrelinhas">
                 <img src="imagens/busca/estrela.png">
                 <img src="imagens/busca/estrela.png">
                 <img src="imagens/busca/estrela.png">
                 <img src="imagens/busca/estrela.png">
               </div>
-              <div class="textinho">
-                Local: Rua duque de caxias <br>
-                Jandira - SP
-                <p>
-                  Comodidade top
-                </p>
-                <p>
-                  To enchendo linguinça
-                </p>
-              </div>
+              <table>
+                  <tr>
+                      <td>Rua Exemplo, 123</td>
+                  </tr>
+                  <tr>
+                      <td>Jandira - SP</td>
+                  </tr>
+                  <tr>
+                      <td>Wi-fi gratuito</td>
+                  </tr>
+                  <tr>
+                      <td>Piscina</td>
+                  </tr>
+              </table>
             </div>
-            <div class="finzinho">
-              <div class="botao2">
-                R$ 199,00
-              </div>
+            <div class="valor">
+              <span>R$ 109,99</span>
             </div>
           </div>
         </div>
