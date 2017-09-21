@@ -63,7 +63,14 @@ a
     color:  inherit;
     text-decoration: none;
 }
-
+/* Sortable tables */
+table.sortable thead {
+    
+    color:#666666;
+    font-weight: bold;
+    cursor: default;
+}
+/**/
 /*Header do CMS*/
 .header{
   width: 100%;

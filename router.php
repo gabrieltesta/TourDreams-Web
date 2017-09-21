@@ -18,9 +18,29 @@
                 header('location:perfilUsuario.php');
             }
             break;
-          case 'conhecaseudestino':
-              header("Location: conhecaseudestinobusca.php");
+         case 'conhecaseudestino':
+                header("Location: conhecaseudestinobusca.php");
             break;
+         case 'faleconosco':
+                require_once('controllers/faleconosco_controller.php');
+                require_once('models/faleconosco_class.php');
+                if(isset($_POST['btnEnviarFeedback']))
+                {
+                    $controller_faleconosco = new ControllerFaleConosco;
+                    $controller_faleconosco->Inserir();
+                }
+                break;
+
+          case 'parceiro':
+              require_once('controllers/parceiros_controller.php');
+              require_once('models/parceiro_class.php');
+              if(isset($_POST['btnRegistrarUsuario'])){
+              
+                  $controller_parceiro = new ControllerParceiro;
+                  $controller_parceiro -> Inserir();
+
+              }
+          break;
 
     }
 ?>

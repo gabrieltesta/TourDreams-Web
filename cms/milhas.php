@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>CMS - TourDreams</title>
         <link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="css/gerenciamentoparceiros.css">
+		<link rel="stylesheet" href="css/milhas.css">
         <link rel="stylesheet" href="../js/jqueryui/jquery-ui.css">
         <script src="../js/jquery-3.2.1.min.js" charset="utf-8"></script>
         <script src="../js/jqueryui/jquery-ui.min.js" charset="utf-8"></script>
@@ -20,7 +20,7 @@
         <section>
             <?php
                 require_once('views/menu.php');
-                require_once('views/gerenciamentoparceiros/gerenciamentoparceiros_view.php');
+                require_once('views/milhas/milhas_view.php');
              ?>
         </section>
     </body>

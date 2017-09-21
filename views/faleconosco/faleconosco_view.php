@@ -1,7 +1,19 @@
+<?php
+    $msg = '';
+    if(isset($_GET['ok']))
+    {
+        $msg = 'Formulário enviado com sucesso.';
+    }
+    if(isset($_GET['erro']))
+    {
+        $msg = 'Ocorreu um erro no envio do formulário. Tente novamente.';
+    }
+ ?>
 <!--Conteúdo dos botões superiores-->
 <section>
     <div class="conteudo bgconteudo">
         <div id="boxBotoes">
+            <span><?php echo ($msg); ?></span>
             <table>
                 <tr>
                     <td><img src="imagens/faleconosco/contato.png" alt="Contato" onclick="irContato()" onmousedown="return false"></td>
@@ -144,14 +156,14 @@
         <div class="conteudobox" id="formcat">
             <div id="formulario">
                 <h3><span id="voltarForm" onclick="irForm()">&#8592;</span><span>Formulário</span></h3>
-                <form action="#" method="POST">
+                <form action="router.php?controller=faleconosco" method="POST">
                     <table>
                         <tr>
                             <td><label for="slcCategoria">Categoria</label></td>
                         </tr>
                         <tr>
                             <td>
-                                <input name="slcCategoria" type="text" id="slcCategoria" disabled>
+                                <input name="slcCategoria" type="text" id="slcCategoria" readonly="true">
                             </td>
                         </tr>
                         <tr>

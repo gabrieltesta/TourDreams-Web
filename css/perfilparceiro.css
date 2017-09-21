@@ -1,12 +1,169 @@
-#sectionSuperior{
-    width: 100%;
-    height: 900px;
-    background-color: antiquewhite;
+
+
+#sectionEsquerda{
+    width: 60%;
+    height: 950px;
     display: flex;
+    float: left;
+    
 }
 
-#contSuperior{
+#contEsquerda{
     width: 84%;
-    margin-left: 8.5%;
-    background-color: azure;
+    height: 910px;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    margin-left: 16%;
+    
 }
+
+#sectionDireita{
+    width: 40%;
+    height: 950px;
+    display: flex;
+    float: left;
+}
+
+#contDireita{
+    width: 80%;
+    height: 910px;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+
+}
+
+#divSuperior{
+    width: 80%;
+    height: 150px;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+#divTabela{
+    width: 600px;
+    height: 570px;
+    margin-top: 10px;
+    margin: 0 auto;
+    margin-left: 197px;
+    position: absolute;
+    overflow: auto;
+    border: 1px solid #ccc;
+    font-family: SourceSansRegular;
+    font-size: 15px;
+}
+
+#divFotoParceiro{
+    width: 150px;
+    height: 150px;
+    float: left;
+    border-radius: 75px;
+}
+
+#divFotoParceiro:hover #trocarFoto{
+    display: block;
+}
+
+#divFotoParceiro img{
+    width: 100%;
+    height: 100%;
+    border-radius: 75px;
+    border: 1px solid #828080;
+}
+
+
+#nomeParceiro{
+    float: left;
+    height: 150px;
+    font-family: RalewayRegular;
+    font-size: 25px;
+    color: #000;
+    margin-top: 0px;
+    margin-left: 30px;
+    line-height: 150px;
+}
+
+#divTabela table{
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+#divTabela table th{
+    width: 25%;
+    font-size: 18px;
+}
+
+.logoHotel{
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+}
+
+.imgOpcao{
+    height: 25px;
+    width: 25px;
+    margin-right: 10px;
+}
+
+.imgOpcao:nth-child(2){
+    height: 27px;
+    width: 27px;
+    margin-right: 10px;
+}
+
+#trocarFoto{
+    height: 25px;
+    width: 150px;
+    margin-left: 1px;
+    border-radius:1px;
+    text-align: center;
+    font-family: RobotoMedium;
+    cursor: pointer;
+    font-size: 20px;
+    margin-top: 65px;
+    background-color: rgba(0,0,0,0.7);
+    color: #fff;
+    position: absolute;
+    display: none;
+    
+}
+
+#divTabela table tr:hover{
+    background-color: #e0e0e0;
+}
+
+#btnRegistrar{
+    width: 200px;
+    height: 70px;
+    margin-left: 400px;
+    background-color: #083b89;
+    margin-top: 600px;
+    cursor: pointer;
+}
+
+#btnRegistrar h1{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-family: RalewayRegular;
+    font-size: 25px;
+    line-height: 70px;
+    color: #fff;
+}
+
+#btnRegistrar:hover{
+    background-color: #062d68;
+}
+
+#hotelClicado{
+    width: 500px;
+    height: 600px;
+    background-color: brown;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+}
+
+
+
+

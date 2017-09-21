@@ -49,12 +49,23 @@ section .conteudo
     width: 60%;
     margin: 0 auto;
     color: #fff;
-    padding-top: 20px;
+    padding-top: 0px;
 }
 
 #boxBotoes table td
 {
     width: 33.3%;
+}
+
+#boxBotoes span
+{
+    color: red;
+    font-family: Arial;
+    font-size: 10pt;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    text-align: center;
 }
 
 #boxBotoes td img

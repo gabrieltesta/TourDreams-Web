@@ -1,57 +1,52 @@
 <div id="selectgp">
      <p id ="titulogp"> Gerenciamento de Parceiros</p>
 
-    <table class="table1">
+    <table class="table1 sortable">
         <tr>
-                <td class="td">
+                <td class="titulo2">
                         N de identificação
                 </td>
-                <td class="td">
+                <td class="titulo2">
                         CNPJ
                 </td>
-                <td class="td" >
+                <td class="titulo2" >
                         Nome Parceiro
                 </td>
-                <td class="td" >
+                <td class="titulo2" >
                         Login
                 </td>
         </tr>
 
-
-    </table>
-
-
     <?php
-         $i = 0;
 
-    while($i < 4){
+        require_once('controllers/parceiros_controller.php');
 
+        $controller_parceiro = new ControllerParceiro();
+        $rows = $controller_parceiro -> Listar();
+
+        $cont = 0;
+
+        while ($cont < count($rows)) {
 
     ?>
-
-
-    <table class ="table2">
         <tr>
             <td class="tdnumero">
-                   <p class="tdnumero">01</p>
+                <?php echo($rows[$cont]->idParceiro); ?>
             </td>
              <td class="tdnumero">
-                   <p class ="tagp">1001.1541354024</p>
+                <?php echo($rows[$cont]->cnpj); ?>
             </td>
              <td class="tdnumero">
-                   <p class ="tagp">João da Silva</p>
+                <?php echo($rows[$cont]->nome); ?>
             </td>
              <td class="tdnumero">
-                   <p class ="tagp" >joaozinho</p>
+                <?php echo($rows[$cont]->idLogin); ?>
             </td>
         </tr>
 
-
-
-    </table>
-
-
     <?php
-     $i++;}
+    $cont +=1;
+       }
     ?>
+    </table>
 </div>

@@ -1,7 +1,6 @@
 <?php
 class ControllerLogin
 {
-//Método Novo insere novo registro
     public function Autenticar()
     {
         /*  Verifica se o método foi acionado por uma requisição de formulário

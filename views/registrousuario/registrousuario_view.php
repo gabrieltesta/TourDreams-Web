@@ -1,3 +1,9 @@
+<?php
+
+  if(isset($_GET['ok']))
+
+
+ ?>
 <section>
     <!--Mensagem de efeito lateral-->
     <div id="registroMsgBox">
@@ -106,7 +112,7 @@
             </form>
             <!---->
             <!--Registro de parceiro-->
-            <form action="router.php?controller=registro" method="post">
+            <form action="router.php?controller=parceiro&modo=inserir" method="post">
                 <table id="tblRegistroParceiro1">
                     <tr>
                         <td><label for="txtLogin">Login*</label></td>
@@ -147,7 +153,7 @@
                         <td><label for="txtCelular">Telefone*</label></td>
                     </tr>
                     <tr>
-                        <td><input type="tel" name="txtCelular" required id="txtTelefone"></td>
+                        <td><input type="tel" name="txtTelefone" required id="txtTelefone"></td>
                     </tr>
                     <tr>
                         <td><div class="btnRegistroPassos" onclick="abrirRegistroParceiro3()"><span>QUASE LÁ!</span></div></td>
