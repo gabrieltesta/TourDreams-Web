@@ -138,8 +138,10 @@
 		<!---->
 		<!--Formulário de busca-->
 		<div id="headerBusca">
-			<form method="post" action="busca.php">
+			<form method="post" action="busca.php" autocomplete="off">
 				<input type="text" name="txtDestino" placeholder="Digite seu destino..." id="txtDestino" required>
+				<div id="buscaTR">
+				</div>
 				<input type="image" value="submit" src="imagens/pesquisar.png"  draggable="false" onmousedown="return false" style="user-drag: none">
 			</form>
 				<input type="image" onclick="abrirBusca()" src="imagens/pesquisaravancado.png"  draggable="false" onmousedown="return false" style="user-drag: none">

@@ -12,10 +12,10 @@
 <div id="conteudo">
     <div id="msg"><?php echo ($msg); ?></div>
     <div id="abas">
-        <button type="button" onclick="abrirGeral()">Geral</button>
-        <button type="button" onclick="abrirConta()">Conta</button>
-        <button type="button" onclick="abrirReservas()">Reservas</button>
-        <button type="button" onclick="abrirFeedback()">Feedback</button>
+        <button type="button" onclick="abrirGeral()" id="btngeral" style="background-color: #ccc;">Geral</button>
+        <button type="button" onclick="abrirConta()" id="btnconta">Conta</button>
+        <button type="button" onclick="abrirReservas()" id="btnreservas">Reservas</button>
+        <button type="button" onclick="abrirFeedback()" id="btnfeedback">Feedback</button>
     </div>
     <div id="tableBox">
         <table id="geral" class="sortable">

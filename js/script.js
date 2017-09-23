@@ -7,6 +7,7 @@ $("document").ready(function(){
     $("#perguntasbox").accordion();
     $("#filtros").accordion({heightStyle: "content" });
     carregarPickers();
+    busca();
 });
 
 //Função cria os datepickers do JqueryUI (página reserva.php)
@@ -435,4 +436,37 @@ function abrirRegistroParceiro3() {
     {
         alert('Preencha todos os campos!');// TODO: REMOVER ALERT E IMPLEMENTAR TEXTO
     }
+}
+
+function preencher(destino) {
+   $('#txtDestino').val(destino);
+   $('#buscaTR').hide();
+}
+
+function busca() {
+   $("#txtDestino").keyup(function() {
+       var destino = $('#txtDestino').val();
+
+       if (destino == "") {
+           $("#buscaTR").html("");
+       }
+       else
+       {
+           $.ajax({
+               type: "POST",
+               url: "models/busca_class.php",
+               data: {
+                   busca: destino
+               },
+
+               success: function(html) {
+                   $("#buscaTR").html(html).show();
+
+               }
+
+           });
+
+       }
+
+   });
 }

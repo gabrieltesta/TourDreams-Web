@@ -135,7 +135,7 @@ header
     float: left;
     margin-left: 2.5%;
     margin-top: 25px;
-
+    position: relative;
 }
 
 #headerBusca input[type="text"]
@@ -666,3 +666,42 @@ footer
     border: solid 1px #031634;
 }
 /**/
+
+#buscaTR
+{
+    position: absolute;
+    z-index: 5;
+    background-color: #fff;
+    margin-top: 45px;
+    width: 80.5%;
+    border: solid 2px #ccc;
+    border-top: none;
+    overflow: hidden;
+    display: none;
+}
+
+#buscaTR ul
+{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    width: 100%;
+}
+
+#buscaTR a
+{
+    padding-left: 10px;
+}
+
+#buscaTR ul li
+{
+    cursor: pointer;
+    height: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#buscaTR ul li:hover
+{
+    background-color: #eee;
+}

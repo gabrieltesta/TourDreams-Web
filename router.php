@@ -35,7 +35,7 @@
               require_once('controllers/parceiros_controller.php');
               require_once('models/parceiro_class.php');
               if(isset($_POST['btnRegistrarUsuario'])){
-              
+
                   $controller_parceiro = new ControllerParceiro;
                   $controller_parceiro -> Inserir();
 
