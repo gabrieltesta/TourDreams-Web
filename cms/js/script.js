@@ -45,3 +45,13 @@ function abrirFeedback() {
     $('#btnreservas').css("background-color", "#eee");
     $('#btnfeedback').css("background-color", "#ccc");
 }
+
+function fecharModalFaleConosco() {
+    $("#modalVisualizar").hide();
+    $("#shadowBg").hide();
+}
+
+function abrirModalFaleConosco() {
+    $("#modalVisualizar").show();
+    $("#shadowBg").show();
+}

@@ -52,9 +52,9 @@
             </table>
         </div>
         
-        <div id="btnRegistrar">
+        <a href="cadastrohotel.php"><div id="btnRegistrar">
             <h1>Registrar Hotel</h1>
-        </div>
+        </div></a>
     </div>
 </section>
 

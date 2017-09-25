@@ -10,7 +10,10 @@
              <td class ="td">
                 Valor de Descontos
             </td>
+            <td class ="td">
             
+                Opções
+            </td>
             
 
             
@@ -28,6 +31,10 @@
             </td>
               <td class="td2">
                 R$25,00
+            </td>
+            <td class="td2">
+                 <a href="#"><img src="imagens/edit.png"></a>
+               <a href="#"><img src="imagens/delete.png"></a>
             </td>
         </tr>
         

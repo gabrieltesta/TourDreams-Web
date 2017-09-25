@@ -23,6 +23,25 @@ class FaleConosco
             $conexao_db->conectar();
         }
 
+        public function SelectId($form)
+        {
+            $sql = 'SELECT * FROM vw_faleconosco WHERE idFormulario='.$form->idFormulario;
+            $select = mysql_query($sql);
+            if($rows=mysql_fetch_array($select))
+            {
+                $faleconosco = new FaleConosco();
+                $faleconosco->idFormulario = $rows['idFormulario'];
+                $faleconosco->nome = $rows['nome'];
+                $faleconosco->email = $rows['email'];
+                $faleconosco->mensagem = $rows['mensagem'];
+                $faleconosco->telefone = $rows['telefone'];
+                $faleconosco->categoria = $rows['categoria'];
+
+
+            }
+            return $faleconosco;
+        }
+
         //Método para inserir um novo registro.
         public function SelectGeral()
         {

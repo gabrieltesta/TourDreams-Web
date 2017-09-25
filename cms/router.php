@@ -33,9 +33,20 @@
                 case 'excluir':
                     $controller_faleconosco->Excluir();
                     break;
-                case 'visualizar':
-                    $controller_faleconosco->Visualizar();
-                    break;
             }
+          case 'parceiro':
+            require_once ('controllers/parceiros_controller.php');
+            require_once ('models/parceiro_class.php');
+            $controller_parceiro = new ControllerParceiro();
+            switch ($modo) {
+
+              case 'excluir':
+                    $controller_parceiro->Excluir();
+                break;
+                case 'editar':
+                    $controller_parceiro->Visualizar();
+                  break;
+            }
+            break;
     }
 ?>

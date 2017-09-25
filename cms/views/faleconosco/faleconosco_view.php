@@ -1,5 +1,9 @@
 <?php
     $msg = '';
+    $nome = '';
+    $email = '';
+    $telefone = '';
+    $mensagem = '';
     if(isset($_GET['ok']))
     {
         $msg = 'Registro excluído com sucesso.';
@@ -8,7 +12,70 @@
     {
         $msg = 'Ocorreu um erro na exclusão do registro. Tente novamente';
     }
+
+    if(isset($_GET['idFormulario']))
+    {
+        require_once('controllers/faleconosco_controller.php');
+        $controller_faleconosco = new ControllerFaleConosco();
+        $faleconosco = $controller_faleconosco->Visualizar();
+
+        $nome = $faleconosco->nome;
+        $email = $faleconosco->email;
+        $telefone = $faleconosco->telefone;
+        $mensagem = $faleconosco->mensagem;
+    }
  ?>
+<div id="shadowBg" onclick="fecharModalFaleConosco()">
+</div>
+<div id="modalVisualizar">
+    <div id="modalConteudo">
+        <table>
+            <tr>
+                <td>
+                    <label for="txtNome">Nome</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="txtNome" readonly value="<?php echo($nome); ?>">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="txtEmail">Email</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="email" name="txtEmail" readonly value="<?php echo($email); ?>">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="txtTelefone">Telefone</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="tel" name="txtTelefone" readonly value="<?php echo($telefone); ?>">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="txtMensagem">Mensagem</label>
+                </td>
+            </tr>
+            <tr>
+                <td><textarea name="txtMensagem" readonly><?php echo($mensagem); ?></textarea></td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" name="btnFecharModal" onclick="fecharModalFaleConosco()">FECHAR</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
 <div id="conteudo">
     <div id="msg"><?php echo ($msg); ?></div>
     <div id="abas">
@@ -45,7 +112,7 @@
                 <td><?php echo($rowsGeral[$cont]->telefone); ?></td>
                 <td><?php echo($rowsGeral[$cont]->mensagem); ?></td>
                 <td>
-                    <a href=<?php echo("router.php?controller=faleconosco&modo=visualizar&idFormulario=".$rowsGeral[$cont]->idFormulario); ?>><img src="imagens/find.png" alt="Editar"></a>
+                    <a href=<?php echo("faleconosco.php?idFormulario=".$rowsGeral[$cont]->idFormulario); ?>><img src="imagens/find.png" alt="Editar"></a>
                     <a href=<?php echo ("router.php?controller=faleconosco&modo=excluir&idFormulario=".$rowsGeral[$cont]->idFormulario); ?>><img src="imagens/delete.png" alt="Excluir"></a>
                 </td>
             </tr>
@@ -54,6 +121,7 @@
                 }
              ?>
         </table>
+
         <table id="conta" class="sortable">
             <tr>
                 <th>Nome</th>
@@ -81,7 +149,7 @@
                 <td><?php echo($rowsGeral[$cont]->telefone); ?></td>
                 <td><?php echo($rowsGeral[$cont]->mensagem); ?></td>
                 <td>
-                    <a href=<?php echo("router.php?controller=faleconosco&modo=visualizar&idFormulario=".$rowsGeral[$cont]->idFormulario); ?>><img src="imagens/find.png" alt="Editar"></a>
+                    <a href=<?php echo("faleconosco.php?idFormulario=".$rowsGeral[$cont]->idFormulario); ?>><img src="imagens/find.png" alt="Editar"></a>
                     <a href=<?php echo ("router.php?controller=faleconosco&modo=excluir&idFormulario=".$rowsGeral[$cont]->idFormulario); ?>><img src="imagens/delete.png" alt="Excluir"></a>
                 </td>
             </tr>
@@ -117,7 +185,7 @@
                 <td><?php echo($rowsGeral[$cont]->telefone); ?></td>
                 <td><?php echo($rowsGeral[$cont]->mensagem); ?></td>
                 <td>
-                    <a href=<?php echo("router.php?controller=faleconosco&modo=visualizar&idFormulario=".$rowsGeral[$cont]->idFormulario); ?>><img src="imagens/find.png" alt="Editar"></a>
+                    <a href=<?php echo("faleconosco.php?idFormulario=".$rowsGeral[$cont]->idFormulario); ?>><img src="imagens/find.png" alt="Editar"></a>
                     <a href=<?php echo ("router.php?controller=faleconosco&modo=excluir&idFormulario=".$rowsGeral[$cont]->idFormulario); ?>><img src="imagens/delete.png" alt="Excluir"></a>
                 </td>
             </tr>
@@ -153,7 +221,7 @@
                 <td><?php echo($rowsGeral[$cont]->telefone); ?></td>
                 <td><?php echo($rowsGeral[$cont]->mensagem); ?></td>
                 <td>
-                    <a href=<?php echo("router.php?controller=faleconosco&modo=visualizar&idFormulario=".$rowsGeral[$cont]->idFormulario); ?>><img src="imagens/find.png" alt="Editar"></a>
+                    <a href=<?php echo("faleconosco.php?idFormulario=".$rowsGeral[$cont]->idFormulario); ?>><img src="imagens/find.png" alt="Visualizar"></a>
                     <a href=<?php echo ("router.php?controller=faleconosco&modo=excluir&idFormulario=".$rowsGeral[$cont]->idFormulario); ?>><img src="imagens/delete.png" alt="Excluir"></a>
                 </td>
             </tr>
@@ -164,3 +232,13 @@
         </table>
     </div>
 </div>
+<?php
+    if(isset($_GET['idFormulario']))
+    {
+        ?>
+            <script type="text/javascript">
+                abrirModalFaleConosco();
+            </script>
+        <?php
+    }
+ ?>

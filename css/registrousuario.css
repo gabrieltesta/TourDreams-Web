@@ -256,3 +256,10 @@ section
     font-weight: bold;
 }
 /**/
+#msg
+{
+    color: red;
+    font-size: 10pt;
+    text-align: center;
+    width:100%:
+}

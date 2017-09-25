@@ -1,13 +1,15 @@
 <?php
 
-  class Parceiro{
+  class Usuario{
 
     public $login;
     public $senha;
     public $nome;
     public $email;
-    public $cnpj;
+    public $cpf;
+    public $rg;
     public $telefone;
+    public $tipoLocal;
 
     //Método construtor da classe
     public function __construct()
@@ -20,11 +22,10 @@
         $conexao_db->conectar();
     }
 
-    public function Insert($parceiro_class){
+    public function Insert($usuario){
 
       $sql = "INSERT INTO tbl_login(login, senha, idTipoLogin) VALUES(
-        '".$parceiro_class->login."','".$parceiro_class->senha."','2')";
-
+        '".$usuario->login."','".$usuario->senha."','1')";
 
           if(mysql_query($sql)){
             $sql = "SELECT LAST_INSERT_ID() AS idLogin";
@@ -32,25 +33,33 @@
                 if($rows = mysql_fetch_array($select)){
                   $idLogin = $rows['idLogin'];
                   $sql = "INSERT INTO tbl_telefone(telefone, idTipoTelefone) VALUES(
-                    '".$parceiro_class->telefone."','1')";
+                    '".$usuario->telefone."','2')";
                     if(mysql_query($sql)){
                       $sql = "SELECT LAST_INSERT_ID() AS idTelefone";
                       if($select = mysql_query($sql)){
                         if($rows = mysql_fetch_array($select)){
                           $idTelefone = $rows['idTelefone'];
-                          $sql = "INSERT INTO tbl_parceiro(cnpj, nomeParceiro, idImagem, idLogin, emailParceiro)
-                          VALUES('".$parceiro_class->cnpj."', '".$parceiro_class->nome."','1','".$idLogin."','".$parceiro_class->email."')";
+                          $sql = "INSERT INTO tbl_cliente(cpf, rg, nomeCliente, idImagem, idLogin, emailCliente, idTipoDeLocal, idTelefone)
+                          VALUES('".$usuario->cpf."', '".$usuario->rg."', '".$usuario->nome."','1','".$idLogin."','".$usuario->email."', '".$usuario->tipoLocal."', '".$idTelefone."')";
+                          echo($sql);
                           if(mysql_query($sql)){
                             return 'ok';
                           }else {
                             return 'erro';
-                          }
+                        }
                         }
                       }
                     }
                 }
               }
           }
+
     }
+
+
+
   }
+
+
+
  ?>

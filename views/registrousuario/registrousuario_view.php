@@ -1,6 +1,13 @@
 <?php
-
+  $msg = '';
   if(isset($_GET['ok']))
+  {
+      $msg="Registro efetuado com sucesso.";
+  }
+  if(isset($_GET['erro']))
+  {
+      $msg='Ocorreu um erro no registro. Tente novamente.';
+  }
 
 
  ?>
@@ -18,6 +25,7 @@
         <div id="registro">
             <!--Seleção de registro-->
             <div id="btnRegistroBox">
+                <div id="msg"><?php echo ($msg); ?></div>
                 <div class="btnRegistro" onclick="abrirRegistroUsuario()">
                     <span>QUERO RESERVAR</span>
                 </div>
@@ -27,7 +35,7 @@
             </div>
             <!---->
             <!--Registro de usuário-->
-            <form action="router.php?controller=registro" method="post">
+            <form action="router.php?controller=usuario" method="post">
             <table id="tblRegistroUsuario1">
                 <tr>
                     <td><label for="txtLogin">Login*</label></td>
@@ -94,13 +102,16 @@
                     <td>Qual o seu local preferido de viagem?*</td>
                 </tr>
                 <tr>
-                    <td><input type="radio" name="radLocal" value="campo" checked><label for="radLocal">Campo</label></td>
+                    <td><input type="radio" name="radLocal" value="3" checked><label for="radLocal">Campo</label></td>
                 </tr>
                 <tr>
-                    <td><input type="radio" name="radLocal" value="litoral"><label for="radLocal">Litoral</label></td>
+                    <td><input type="radio" name="radLocal" value="4"><label for="radLocal">Litoral</label></td>
                 </tr>
                 <tr>
-                    <td><input type="radio" name="radLocal" value="montanhas"><label for="radLocal">Montanhas</label></td>
+                    <td><input type="radio" name="radLocal" value="5"><label for="radLocal">Montanhas</label></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="radLocal" value="2"><label for="radLocal">Cidade</label></td>
                 </tr>
                 <tr>
                     <td><span>Ao registrar aceito aos <a href="#">termos e condições de uso</a>.</span></td>
@@ -170,7 +181,7 @@
                         <td><span>Ao registrar aceito aos <a href="#">termos e condições de uso</a>.</span></td>
                     </tr>
                     <tr>
-                        <td><input type="submit" name="btnRegistrarUsuario" value="REGISTRAR-SE" class="btnRegistroPassos"></td>
+                        <td><input type="submit" name="btnRegistrarParceiro" value="REGISTRAR-SE" class="btnRegistroPassos"></td>
                     </tr>
                 </table>
             </form>

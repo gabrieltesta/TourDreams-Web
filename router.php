@@ -34,13 +34,19 @@
           case 'parceiro':
               require_once('controllers/parceiros_controller.php');
               require_once('models/parceiro_class.php');
-              if(isset($_POST['btnRegistrarUsuario'])){
-
+              if(isset($_POST['btnRegistrarParceiro'])){
                   $controller_parceiro = new ControllerParceiro;
                   $controller_parceiro -> Inserir();
-
               }
-          break;
-
+              break;
+          case 'usuario':
+              require_once('controllers/usuarios_controller.php');
+              require_once('models/usuario_class.php');
+              if(isset($_POST['btnRegistrarUsuario']))
+              {
+                  $controller_usuario = new ControllerUsuario;
+                  $controller_usuario -> Inserir();
+              }
+              break;
     }
 ?>

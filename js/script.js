@@ -454,7 +454,7 @@ function busca() {
        {
            $.ajax({
                type: "POST",
-               url: "models/busca_class.php",
+               url: "api/busca_destino.php",
                data: {
                    busca: destino
                },

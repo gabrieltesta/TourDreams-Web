@@ -11,6 +11,12 @@
         <script src="js/wow.min.js"></script>
         <script src="js/script.js" charset="utf-8"></script>
         <link rel="icon" href="imagens/favicon.ico" />
+        <script type="text/javascript">
+            window.onload = function() {
+                    $("#modalVisualizar").show();
+                    $("#shadowBg").show();
+            };
+        </script>
     </head>
     <body>
         <?php

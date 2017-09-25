@@ -46,5 +46,14 @@ class ControllerFaleConosco
             header('location:faleconosco.php?ok');
         }
     }
+
+    public function Visualizar()
+    {
+        $idFormulario= $_GET['idFormulario'];
+        require_once('models/faleconosco_class.php');
+        $faleconosco = new FaleConosco();
+        $faleconosco->idFormulario=$idFormulario;
+        return $faleconosco->SelectId($faleconosco);
+    }
 }
  ?>

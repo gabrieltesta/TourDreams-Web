@@ -3,12 +3,12 @@ section
     height: 826px;
 }
 
-#selectgpp{
+#selectg{
     width: 100%;
     height:100%;
     overflow-y: auto;
 }
-#titulogpp{
+#titulog{
     text-align: center;
     font-size: 35px;
     font-style: normal;
@@ -17,7 +17,7 @@ section
 
 }
 
-.table11{
+.tablle{
     width: 1500px;
     height: 50px;
     margin-left:120px;
@@ -60,7 +60,7 @@ box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 
 
 
-.titulo22{
+.titulos{
       font-size: 25px;
     font-style: normals;
     text-align: center;
@@ -68,7 +68,7 @@ box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
    
 }
 
-.tdnumeros{
+.tdnumero2{
     width: 200px;
     height: 50px;
     font-size: 20px;
@@ -78,7 +78,7 @@ box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
     
 
 }
-.formulariozinho{
+/*.formulariozinho{
   width: 1500px;
   height: 50px;
   margin-left:120px;
@@ -88,3 +88,4 @@ box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
   margin-bottom: 90px;
   margin-top: 100px;
 }
+*/

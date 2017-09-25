@@ -1,27 +1,22 @@
-<div id="selectgpp">
-     <p id ="titulogpp"> Gerenciamento de Reservas</p>
+<div id="selectg">
+     <p id ="titulog"> Gerenciamento de Entrada de Conteudo</p>
 
-    <table class="table11 sortable">
+    <table class="tablle sortable">
         <tr>
-                <td class="titulo22">
-                    N da Reserva
+                <td class="titulos">
+                    Nome do Hotel
                 </td>
-                <td class="titulo22">
-                        Nome
+                <td class="titulos">
+                    Parceiro
                 </td>
-                <td class="titulo22" >
-                        CPF
+                <td class="titulos" >
+                    Local
                 </td>
-                <td class="titulo22" >
-                        Situação
+                <td class="titulos" >
+                    Milhas
                 </td>
-                <td class="titulo22" >
-                        Diária
-                </td>
-                <td class="titulo22" >
-                        Estadia
-                </td>
-                <td class="titulo22" >
+              
+                <td class="titulos" >
                        Opções
                 </td>
                 
@@ -33,77 +28,62 @@
             while($i < 10){
         ?>
         <tr>
-            <td class="tdnumeros">
-                01
+            <td class="tdnumero2">
+                RENNASCENCE
             </td>
-             <td class="tdnumeros">
-                Marizinha
+             <td class="tdnumero2">
+                Marizika
             </td>
-             <td class="tdnumeros">
-                484.332.598/81
+             <td class="tdnumero2">
+                São Paulo
             </td>
-             <td class="tdnumeros">
-               Pendente
+             <td class="tdnumero2">
+               5
             </td>
-            <td class="tdnumeros">
-               R$ 135,00
-            </td>
-            <td class="tdnumeros">
-               Pousada
-            </td>
-             <td class="tdnumeros">
+           
+             <td class="tdnumero2">
                <a href="#"><img src="imagens/edit.png"></a>
                <a href="#"><img src="imagens/delete.png"></a>
            </td>
         </tr> 
-        <tr>
-            <td class="tdnumeros">
-                02
+         <tr>
+            <td class="tdnumero2">
+                PALACE
             </td>
-             <td class="tdnumeros">
-                Laysa
+             <td class="tdnumero2">
+                Laysão
             </td>
-             <td class="tdnumeros">
-                685.588.335/51
+             <td class="tdnumero2">
+                São Paulo
             </td>
-             <td class="tdnumeros">
-               Reservado
+             <td class="tdnumero2">
+               4,5
             </td>
-            <td class="tdnumeros">
-               R$ 205,00
-            </td>
-            <td class="tdnumeros">
-               Hotel
-            </td>
-            <td class="tdnumeros">
+           
+             <td class="tdnumero2">
                <a href="#"><img src="imagens/edit.png"></a>
                <a href="#"><img src="imagens/delete.png"></a>
            </td>
         </tr> 
-        <tr>
-            <td class="tdnumeros">
-                03
+           <tr>
+            <td class="tdnumero2">
+                COPACABANA
             </td>
-             <td class="tdnumeros">
-                Barbara
+             <td class="tdnumero2">
+                Barbarete
             </td>
-             <td class="tdnumeros">
-               685.362.488/87
+             <td class="tdnumero2">
+                Rio de Janeiro
             </td>
-             <td class="tdnumeros">
-               Pendente
+             <td class="tdnumero2">
+               5
             </td>
-            <td class="tdnumeros">
-               R$ 450,00
-            </td>
-            <td class="tdnumeros">
-               Resort
-            </td>
-             <td class="tdnumeros">
+           
+             <td class="tdnumero2">
                <a href="#"><img src="imagens/edit.png"></a>
                <a href="#"><img src="imagens/delete.png"></a>
            </td>
-        </tr>
+        </tr> 
         <?php
                 $i++;
             }
@@ -111,36 +91,36 @@
     
     </table>
     
-     <table class="formulariozinho">
+     <!--<table class="formulariozinho">
         <tr>
-                <td class="titulo22">
+                <td class="titulos">
                     Transação
                 </td>
-                <td class="titulo22">
+                <td class="titulos">
                         Quantidade de Quartos
                 </td>
-                <td class="titulo22" >
+                <td class="titulos" >
                         Entrada
                 </td>
-                <td class="titulo22" >
+                <td class="titulos" >
                         Saída
                 </td>
-                <td class="titulo22" >
+                <td class="titulos" >
                         Desconto
                 </td>
-                <td class="titulo22" >
+                <td class="titulos" >
                         Valor Total
                 </td>
-                <td class="titulo22" >
+                <td class="titulos" >
                        Data da Transação
                 </td>
-                  <td class="titulo22" >
+                  <td class="titulos" >
                        Cartão
                 </td>
-                <td class="titulo22" >
+                <td class="titulos" >
                        Quarto
                 </td>
-                <td class="titulo22" >
+                <td class="titulos" >
                        Cliente
                 </td>
                 
@@ -154,34 +134,34 @@
          ?>
          
          <tr>
-                <td class="tdnumeros">
+                <td class="tdnumero2">
                    1234
                 </td>
-                <td class="tdnumeros">
+                <td class="tdnumero2">
                      2   
                 </td>
-                <td class="tdnumeros" >
+                <td class="tdnumero2" >
                      25/09/2017   
                 </td>
-                <td class="tdnumeros" >
+                <td class="tdnumero2" >
                        28/09/2017
                 </td>
-                <td class="tdnumeros" >
+                <td class="tdnumero2" >
                        20%
                 </td>
-                <td class="tdnumeros" >
+                <td class="tdnumero2" >
                         R$ 900,00
                 </td>
-                <td class="tdnumeros" >
+                <td class="tdnumero2" >
                        15/09/2017
                 </td>
-                <td class="tdnumeros" >
+                <td class="tdnumero2" >
                       00009683 
                 </td>
-                <td class="tdnumeros" >
+                <td class="tdnumero2" >
                         
                 </td>
-                <td class="tdnumeros" >
+                <td class="tdnumero2" >
                        000011250
                 </td>
              
@@ -189,34 +169,34 @@
         </tr>
          
          <tr>
-                <td class="tdnumeros">
+                <td class="tdnumero2">
                    1008
                 </td>
-                <td class="tdnumeros">
+                <td class="tdnumero2">
                      3  
                 </td>
-                <td class="tdnumeros" >
+                <td class="tdnumero2" >
                      20/08/2017   
                 </td>
-                <td class="tdnumeros" >
+                <td class="tdnumero2" >
                        27/08/2017
                 </td>
-                <td class="tdnumeros" >
+                <td class="tdnumero2" >
                        80%
                 </td>
-                <td class="tdnumeros" >
+                <td class="tdnumero2" >
                         R$ 1600,00
                 </td>
-                <td class="tdnumeros" >
+                <td class="tdnumero2" >
                        02/08/2017
                 </td>
-                <td class="tdnumeros" >
+                <td class="tdnumero2" >
                       00009421
                 </td>
-                <td class="tdnumeros" >
+                <td class="tdnumero2" >
                         
                 </td>
-                <td class="tdnumeros" >
+                <td class="tdnumero2" >
                        000011050
                 </td>
              
@@ -225,34 +205,34 @@
          
          
          <tr>
-                <td class="tdnumeros">
+                <td class="tdnumero2">
                    1630
                 </td>
-                <td class="tdnumeros">
+                <td class="tdnumero2">
                      1   
                 </td>
-                <td class="tdnumeros" >
+                <td class="tdnumero2" >
                      30/09/2017   
                 </td>
-                <td class="tdnumeros" >
+                <td class="tdnumero2" >
                        03/10/2017
                 </td>
-                <td class="tdnumeros" >
+                <td class="tdnumero2" >
                        15%
                 </td>
-                <td class="tdnumeros" >
+                <td class="tdnumero2" >
                         R$ 450,00
                 </td>
-                <td class="tdnumeros" >
+                <td class="tdnumero2" >
                        24/09/2017
                 </td>
-                <td class="tdnumeros" >
+                <td class="tdnumero2" >
                       00012350
                 </td>
-                <td class="tdnumeros" >
+                <td class="tdnumero2" >
                         
                 </td>
-                <td class="tdnumeros" >
+                <td class="tdnumero2" >
                        000015889
                 </td>
              
@@ -264,5 +244,5 @@
                $i++;
             }
          ?>
-    </table>
+    </table>-->
 </div>

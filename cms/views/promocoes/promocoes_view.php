@@ -23,7 +23,9 @@
             <td class="tdtitulo">
                 Região
             </td>
-            
+            <td class="tdtitulo">
+                Opções
+            </td>
         </tr>
         
         <?php
@@ -50,6 +52,10 @@
             </td>
              <td class="td_conteudo">
                 Carapicuíba                
+            </td>
+            <td class="td_conteudo">
+               <a href="#"><img src="imagens/edit.png"></a>
+               <a href="#"><img src="imagens/delete.png"></a>             
             </td>
             
         </tr>

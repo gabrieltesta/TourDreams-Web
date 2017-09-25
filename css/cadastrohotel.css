@@ -1,0 +1,85 @@
+#sectionConteudo{
+    width: 100%;
+    height: 600px;
+    display: flex;
+}
+
+#conteudo{
+    width: 84%;
+    margin-left: 8%;
+}
+
+#tituloPagina{
+    height: 100px;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    line-height: 100px;
+    font-family: RalewayRegular;
+    font-size: 30px;
+    color: #000;
+}
+
+#containerEsquerda{
+    width: 60%;
+    height: 500px;
+    float: left;
+    border-right: 1px solid #ccc;
+}
+
+#containerDireita{
+    width: 39.93%;
+    height: 500px;
+    float: left;
+}
+
+#tableEsquerda{
+    
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#tableEsquerda label{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-family: SourceSansRegular;
+    font-family: 15px;
+    color: #000;
+}
+
+
+
+#tableEsquerda input[type="text"]{
+    width: 100%;
+    height: 30px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    font-family: RalewayRegular;
+    font-size: 15px;
+}
+
+#tableEsquerda input[type="time"]{
+    width: 80px;
+    height: 25px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    font-family: RalewayRegular;
+    margin-bottom: 20px;
+    font-size: 15px;
+    text-align: center;
+}
+
+#tableEsquerda select{
+    width: 250px;
+    height: 30px;
+    border: 1px solid #ccc;
+    font-family: RalewayRegular;
+    font-size: 18px;
+    color: #000;
+    margin-bottom: 20px;
+}

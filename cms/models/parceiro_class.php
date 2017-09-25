@@ -37,7 +37,37 @@
        return $listParceiro;
     }
 
+    public function Delete($parceiro){
+      $sql = "DELETE FROM tbl_parceiro where idParceiro=".$parceiro->idParceiro.";";
+      if(mysql_query($sql)){
+        return 'ok';
+      }
+      else {
+        return 'erro';
 
+      }
+    }
+
+    public function SelectById($parceiro){
+      $sql = "SELECT * FROM tbl_parceiro WHERE idParceiro=".$parceiro->idParceiro;
+      $select = mysql_query($sql);
+
+      if($rs=mysql_fetch_array($select)){
+        $parceiro->nome=$rs['nome'];
+        $parceiro->cnpj=$rs['cnpj'];
+        $parceiro->email=$rs['email'];
+
+      }
+    }
+
+    public function Update($parceiro){
+
+      $sql = "UPDATE tbl_login set senha='".$parceiro->senha."'";
+      mysql_query($sql);
+      $sql = "UPDATE tbl_parceiro set cnpj='".$parceiro->cnpj."', nomeParceiro='".$parceiro->nome."', email='".$parceiro->email."' ";
+      mysql_query($sql);
+
+    }
 
   }
 

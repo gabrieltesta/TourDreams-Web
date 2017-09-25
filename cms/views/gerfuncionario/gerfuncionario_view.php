@@ -3,7 +3,7 @@
         Gerenciamento de Funcionários
     </div>
     <div class ="boxdetalhes">
-     <table  >
+     <table >
                  <tr>
             <td class="td_titulos">
                 Imagem
@@ -28,6 +28,9 @@
             <td class="td_titulos">
                 Nível
                 
+            </td>
+             <td class="td_titulos" >
+                       Opções
             </td>
 
         </tr>
@@ -55,6 +58,10 @@
                  </td>
                  <td class="tdcontas">
                      Reservas
+                 </td>
+                 <td class="tdcontas">
+                    <a href="#"><img src="imagens/edit.png"></a>
+                     <a href="#"><img src="imagens/delete.png"></a>
                  </td>
             </tr>
 
