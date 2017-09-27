@@ -14,7 +14,7 @@
 
     public function SelectParceiro(){
 
-      $sql = 'select  p.idParceiro  , p.cnpj, p.nomeParceiro, l.login
+      $sql = 'select  p.idParceiro  , p.cnpj, p.nomeParceiro, l.login, l.idLogin
         from tbl_parceiro as p
         inner join tbl_login as l
         on p.idLogin = l.idLogin';
@@ -30,7 +30,8 @@
         $listParceiro[$cont]->idParceiro = $rs['idParceiro'];
         $listParceiro[$cont]->cnpj = $rs['cnpj'];
         $listParceiro[$cont]->nome = $rs['nomeParceiro'];
-        $listParceiro[$cont]->idLogin = $rs['login'];
+        $listParceiro[$cont]->login = $rs['login'];
+        $listParceiro[$cont]->idLogin = $rs['idLogin'];
 
         $cont +=1;
       }
@@ -49,7 +50,10 @@
     }
 
     public function SelectById($parceiro){
-      $sql = "SELECT * FROM tbl_parceiro WHERE idParceiro=".$parceiro->idParceiro;
+      $sql = "select p.nomeParceiro, p.cnpj, p.emailParceiro, s.senha,p.idLogin
+              from tbl_parceiro as p
+              inner join tbl_login as s
+              on p.idLogin = s.idLogin WHERE idParceiro=".$parceiro->idParceiro;
       $select = mysql_query($sql);
 
       if($rs=mysql_fetch_array($select)){
@@ -59,18 +63,25 @@
         $listar->nome=$rs['nomeParceiro'];
         $listar->cnpj=$rs['cnpj'];
         $listar->email=$rs['emailParceiro'];
-
+        $listar->senha=$rs['senha'];
+        $listar->idLogin=$rs['idLogin'];
         return  $listar;
       }
+
 
     }
 
     public function Update($parceiro){
 
-      $sql = "UPDATE tbl_login set senha='".$parceiro->senha."'";
+      $sql = "UPDATE tbl_login set senha='".$parceiro->senha."' WHERE idLogin=".$parceiro->idLogin;
+      //echo ($sql);
       mysql_query($sql);
-      $sql = "UPDATE tbl_parceiro set cnpj='".$parceiro->cnpj."', nomeParceiro='".$parceiro->nome."', email='".$parceiro->email."' ";
+      $sql = "UPDATE tbl_parceiro set cnpj='".$parceiro->cnpj."', nomeParceiro='".$parceiro->nome."', emailParceiro='".$parceiro->email."'Where idParceiro= ".$parceiro->idParceiro;
+      //echo ($sql);
       mysql_query($sql);
+
+
+      header('location:gerenciamentoparceiros.php');
 
     }
 

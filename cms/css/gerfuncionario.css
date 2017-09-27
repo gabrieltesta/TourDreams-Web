@@ -10,28 +10,80 @@ section
     -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
     margin-bottom: 90px;
-   
+
     overflow: auto;
 }
 #titulo{
     text-align: center;
     font-size: 33px;
+    font-family: Ebrima;
     font-style: normal;
-    color:#4682B4;
+    color:#0e2568;
     margin-bottom: 100px;
-     margin-top: 30px;
-   
+    margin-top: 30px;
+
 }
 .boxdetalhes{
     width: 1550px;
+    overflow: auto;
     height: 400px;
     margin-left: 60px;
-  
-    
- 
+    border: 1px solid #ccc;
+    border-radius: 2px;
 }
 
+#buscaFuncionario{
+    height: 30px;
+    width: 500px;
+    background-color: green;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
 
+#buscaFuncionario input{
+    width: 90%;
+    height: 100%;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    float: left;
+    font-family: Gisha;
+    font-size: 18px;
+    color: #000;
+}
+
+#btnBusca{
+    width: 9.6%;
+    height: 113%;
+    background-color: blue;
+    float: left;
+}
+
+#btnCadastrar{
+    height: 70px;
+    width: 280px;
+    background-color: #031634;
+    border: 1px solid #ccc;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+#btnCadastrar:hover{
+    background-color: #062f70;
+}
+
+#btnCadastrar h1{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    line-height: 30px;
+    font-family: RalewayRegular;
+    font-size: 25px;
+
+}
 
 .td_titulos{
     width:335px;
@@ -40,59 +92,28 @@ section
     font-size: 30px;
     text-align: center;
      margin-left: 15px;
-    color: #4682B4;
-      
-    
-   
-    
+    color: #0e2568;
+
 }
-.img{
-    width: 170px;
-    height: 280px;
-   
-}
+
 
 .img img{
-    height: 100%;
-    width: 100%;
+    height: 80px;
+    width: 75px;
      border-radius: 15px;
-}
-    
-.Rolagem {
-border: none;
-padding: 5px;
-font: 24px/36px sans-serif;
-width: 100%;
-height: 100%;
-overflow: scroll;
+     margin-left: 60px;
+
 }
 
-
-.Rolagem::-webkit-scrollbar {
-width: 5px;
-height: 12px;
-background-color:#fff;
-}
-
-.Rolagem::-webkit-scrollbar-track {
-box-shadow: inset 0 0 10px #CDCDCD;
-border-radius: 10px;
-background-color:#fff;
-}
-
-.Rolagem::-webkit-scrollbar-thumb {
-border-radius: 10px;
-background-color:#fff;
-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
-}
 
 
 .tdcontas{
     width: 335px;
     height: 50px;
-    font-size: 25px;
+    font-size: 20px;
     text-align: center;
-     margin-left: 15px;
-    color: dimgray;
+    font-family: Levenim MT;
+    margin-left: 15px;
+    color: #000;
     margin-bottom:50px;
 }

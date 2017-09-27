@@ -6,13 +6,13 @@
 			<div id="conteudoBuscaEsquerda">
 				<table>
 					<tr>
-						<td><label for="txtDestinoAvancado">Destino</label></td>
+						<td><label>Destino</label></td>
 					</tr>
 					<tr>
 						<td><input type="text" name="txtDestinoAvancado" value="" id="txtDestinoAvancado" required></td>
 					</tr>
 					<tr>
-						<td><label for="slcTipoEstadia">Tipo de estadia</label></td>
+						<td><label>Tipo de estadia</label></td>
 					</tr>
 					<tr>
 						<td>
@@ -25,11 +25,11 @@
 						</td>
 					</tr>
 					<tr>
-						<td><label for="slcEstrela">Estrelas</label></td>
+						<td><label>Estrelas</label></td>
 					</tr>
 					<tr>
 						<td>
-							<select name="">
+							<select name="slcEstrela">
 								<option value="1">1 Estrela</option>
 								<option value="2">2 Estrelas</option>
 								<option value="3">3 Estrelas</option>
@@ -39,7 +39,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td><label for="slcParceiro">Parceiro</label></td>
+						<td><label>Parceiro</label></td>
 					</tr>
 					<tr>
 						<td>
@@ -49,7 +49,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td><label for="slcAvaliacao">Avaliação</label></td>
+						<td><label>Avaliação</label></td>
 					</tr>
 					<tr>
 						<td>
@@ -62,7 +62,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td><label for="slcPreco">Preço</label></td>
+						<td><label>Preço</label></td>
 					</tr>
 					<tr>
 						<td>
@@ -81,35 +81,35 @@
 				<div id="comodidadesBox">
 					<h3>Comodidades do Hotel</h3>
 					<ul>
-						<li><input type="checkbox" name="chkAcademia" value="1"><label for="chkAcademia">Academia</label></li>
-						<li><input type="checkbox" name="chkAnimais" value="1"><label for="chkAnimais">Animais permitidos</label></li>
-						<li><input type="checkbox" name="chkBar" value="1"><label for="chkBar">Bar</label></li>
-						<li><input type="checkbox" name="chkConcierge" value="1"><label for="chkConcierge">Concierge</label></li>
-						<li><input type="checkbox" name="chkConveniencia" value="1"><label for="chkConveniencia">Loja de conveniência</label></li>
-						<li><input type="checkbox" name="chkElevador" value="1"><label for="chkElevador">Elevador</label></li>
-						<li><input type="checkbox" name="chkEstacionamento" value="1"><label for="chkEstacionamento">Estacionamento</label></li>
-						<li><input type="checkbox" name="chkLavanderia" value="1"><label for="chkLavanderia">Lavanderia</label></li>
-						<li><input type="checkbox" name="chkPiscina" value="1"><label for="chkPiscina">Piscina</label></li>
-						<li><input type="checkbox" name="chkRestaurante" value="1"><label for="chkRestaurante">Restaurante</label></li>
-						<li><input type="checkbox" name="chkSpa" value="1"><label for="chkSpa">Spa</label></li>
-						<li><input type="checkbox" name="chkTransfer" value="1"><label for="chkTransfer">Transfer para aeroporto</label></li>
-						<li><input type="checkbox" name="chkWifi" value="1"><label for="chkWifi">Wi-fi gratuito</label></li>
+						<li><input type="checkbox" name="chkAcademia" value="1"><label>Academia</label></li>
+						<li><input type="checkbox" name="chkAnimais" value="1"><label>Animais permitidos</label></li>
+						<li><input type="checkbox" name="chkBar" value="1"><label>Bar</label></li>
+						<li><input type="checkbox" name="chkConcierge" value="1"><label>Concierge</label></li>
+						<li><input type="checkbox" name="chkConveniencia" value="1"><label>Loja de conveniência</label></li>
+						<li><input type="checkbox" name="chkElevador" value="1"><label>Elevador</label></li>
+						<li><input type="checkbox" name="chkEstacionamento" value="1"><label>Estacionamento</label></li>
+						<li><input type="checkbox" name="chkLavanderia" value="1"><label>Lavanderia</label></li>
+						<li><input type="checkbox" name="chkPiscina" value="1"><label>Piscina</label></li>
+						<li><input type="checkbox" name="chkRestaurante" value="1"><label>Restaurante</label></li>
+						<li><input type="checkbox" name="chkSpa" value="1"><label>Spa</label></li>
+						<li><input type="checkbox" name="chkTransfer" value="1"><label>Transfer para aeroporto</label></li>
+						<li><input type="checkbox" name="chkWifi" value="1"><label>Wi-fi gratuito</label></li>
 					</ul>
 					<h3>Comodidades do Quarto</h3>
 					<ul>
-						<li><input type="checkbox" name="chkAr" value="1"><label for="chkAr">Ar condicionado</label></li>
-						<li><input type="checkbox" name="chkBanheira" value="1"><label for="chkBanheira">Banheira</label></li>
-						<li><input type="checkbox" name="chkCofre" value="1"><label for="chkCofre">Cofre no quarto</label></li>
-						<li><input type="checkbox" name="chkCozinha" value="1"><label for="chkCozinha">Cozinha</label></li>
-						<li><input type="checkbox" name="chkGeladeira" value="1"><label for="chkGeladeira">Geladeira</label></li>
-						<li><input type="checkbox" name="chkInternet" value="1"><label for="chkInternet">Internet</label></li>
-						<li><input type="checkbox" name="chkMicroondas" value="1"><label for="chkMicroondas">Microondas</label></li>
-						<li><input type="checkbox" name="chkSecador" value="1"><label for="chkSecador">Secador</label></li>
-						<li><input type="checkbox" name="chkTelefone" value="1"><label for="chkTelefone">Telefone</label></li>
-						<li><input type="checkbox" name="chkCabo" value="1"><label for="chkCabo">TV a cabo</label></li>
-						<li><input type="checkbox" name="chkSatelite" value="1"><label for="chkSatelite">TV via satélite</label></li>
-						<li><input type="checkbox" name="chkVentilador" value="1"><label for="chkVentilador">Ventilador</label></li>
-						<li><input type="checkbox" name="chkWifi" value="1"><label for="chkWifi">Wi-fi gratuito</label></li>
+						<li><input type="checkbox" name="chkAr" value="1"><label>Ar condicionado</label></li>
+						<li><input type="checkbox" name="chkBanheira" value="1"><label>Banheira</label></li>
+						<li><input type="checkbox" name="chkCofre" value="1"><label>Cofre no quarto</label></li>
+						<li><input type="checkbox" name="chkCozinha" value="1"><label>Cozinha</label></li>
+						<li><input type="checkbox" name="chkGeladeira" value="1"><label>Geladeira</label></li>
+						<li><input type="checkbox" name="chkInternet" value="1"><label>Internet</label></li>
+						<li><input type="checkbox" name="chkMicroondas" value="1"><label>Microondas</label></li>
+						<li><input type="checkbox" name="chkSecador" value="1"><label>Secador</label></li>
+						<li><input type="checkbox" name="chkTelefone" value="1"><label>Telefone</label></li>
+						<li><input type="checkbox" name="chkCabo" value="1"><label>TV a cabo</label></li>
+						<li><input type="checkbox" name="chkSatelite" value="1"><label>TV via satélite</label></li>
+						<li><input type="checkbox" name="chkVentilador" value="1"><label>Ventilador</label></li>
+						<li><input type="checkbox" name="chkWifi" value="1"><label>Wi-fi gratuito</label></li>
 					</ul>
 				</div>
                 <script type="text/javascript">
@@ -118,10 +118,7 @@
                     $("#buscaAvancadaBackground").css('opacity', 1);
                 </script>
 			</div>
-
-			<a href="#">
 				<input type="submit" id="btnBuscaAvancada" value="PESQUISAR">
-			</a>
 		</div>
 	</form>
 </div>
@@ -142,9 +139,9 @@
 				<input type="text" name="txtDestino" placeholder="Digite seu destino..." id="txtDestino" required>
 				<div id="buscaTR">
 				</div>
-				<input type="image" value="submit" src="imagens/pesquisar.png"  draggable="false" onmousedown="return false" style="user-drag: none">
+				<input type="image" src="imagens/pesquisar.png"  draggable="false" onmousedown="return false" style="user-drag: none" alt="Pesquisar">
 			</form>
-				<input type="image" onclick="abrirBusca()" src="imagens/pesquisaravancado.png"  draggable="false" onmousedown="return false" style="user-drag: none">
+				<input type="image" onclick="abrirBusca()" src="imagens/pesquisaravancado.png"  draggable="false" onmousedown="return false" style="user-drag: none" alt="Busca avançada">
 		</div>
 		<!---->
 		<!--Botão de login-->
@@ -155,7 +152,7 @@
 		<!---->
 		<!--Botão de moeda-->
 		<div class="headerBtn" style="margin-right: 0; " onclick="headerMoeda()">
-			<img style="width:68px;height:68px;margin-top:7px;" src="imagens/coin.svg" alt="Moeda" draggable="false" onmousedown="return false" style="user-drag: none">
+			<img style="width:68px;height:68px;margin-top:7px;" src="imagens/coin.svg" alt="Moeda" draggable="false" onmousedown="return false">
 			Moeda
 		</div>
 		<!---->
@@ -164,13 +161,13 @@
 	<div id="headerCategorias">
 		<div id="headerCategoriasBox">
 			<ul id="categorias">
-				<a href="homepage.php"><li>HOME</li></a>
-				<a href="sobrenos.php"><li>SOBRE NÓS</li></a>
-				<a href="parceiros.php"><li>NOSSOS PARCEIROS</li></a>
-				<a href="melhoresDestinos.php"><li>MELHORES DESTINOS</li></a>
-				<a href="conhecaseudestino.php"><li>CONHEÇA SEU DESTINO</li></a>
-				<a href="promocoes.php"><li>PROMOÇÕES</li></a>
-				<a href="faleconosco.php"><li>FALE CONOSCO</li></a>
+				<li><a href="homepage.php">HOME</a></li>
+				<li><a href="sobrenos.php">SOBRE NÓS</a></li>
+				<li><a href="parceiros.php">NOSSOS PARCEIROS</a></li>
+				<li><a href="melhoresDestinos.php">MELHORES DESTINOS</a></li>
+				<li><a href="conhecaseudestino.php">CONHEÇA SEU DESTINO</a></li>
+				<li><a href="promocoes.php">PROMOÇÕES</a></li>
+				<li><a href="faleconosco.php">FALE CONOSCO</a></li>
 			</ul>
 		</div>
 	</div>
@@ -183,13 +180,13 @@
 			    	<td colspan="2"><h2>Acesse sua Conta</h2></td>
 				</tr>
 				<tr>
-					<td colspan="2"><label for="txtLogin">Login</label></td>
+					<td colspan="2"><label>Login</label></td>
 				</tr>
 				<tr>
 					<td colspan="2"><input type="text" name="txtLogin" placeholder="login@exemplo.com"></td>
 				</tr>
 				<tr>
-					<td colspan="2"><label for="txtSenha">Senha</label></td>
+					<td colspan="2"><label>Senha</label></td>
 				</tr>
 				<tr>
 					<td colspan="2"><input type="password" name="txtSenha" placeholder="******"></td>
@@ -207,8 +204,8 @@
 	<!--Menu de moeda-->
 	<div id="headerMoeda" style="display: none;">
 		<ul>
-			<a href="?moeda=real"><li>Real (R$)</li></a>
-			<a href="?moeda=dolar"><li>Dólar (US$)</li></a>
+			<li><a href="?moeda=real">Real (R$)</a></li>
+			<li><a href="?moeda=dolar">Dólar (US$)</a></li>
 		</ul>
 	</div>
 	<!---->

@@ -8,7 +8,7 @@ class ControllerUsuario
 
       require_once('models/usuario_class.php');
       $lstUsuario = new Usuario();
-      return $lstUsuario->SelectUsuario();
+      return $lstUsuario->SelectAll();
 
     }
     public function Excluir(){
@@ -29,7 +29,7 @@ class ControllerUsuario
     public function Visualizar(){
       $idUsuario = $_GET['idUsuario'];
       require_once('models/usuario_class.php');
-      
+
 
     }
 

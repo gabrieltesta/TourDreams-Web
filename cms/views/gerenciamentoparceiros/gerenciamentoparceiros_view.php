@@ -52,13 +52,14 @@
                 <?php echo($rows[$cont]->nome); ?>
             </td>
              <td class="tdnumero">
-                <?php echo($rows[$cont]->idLogin); ?>
+                <?php echo($rows[$cont]->login); ?>
+
             </td>
             <td class="tdnumero">
                <a href=<?php echo("router.php?controller=parceiro&modo=excluir&idParceiro=".$rows[$cont]->idParceiro);?>>
                  <img src="imagens/delete.png">
                </a>
-               <a href=<?php echo("router.php?controller=parceiro&modo=alterar&idParceiro=".$rows[$cont]->idParceiro );?>>
+               <a href=<?php echo("router.php?controller=parceiro&modo=alterar&idParceiro=".$rows[$cont]->idParceiro."&idLogin=".$rows[$cont]->idLogin );?>>
                  <img src="imagens/edit.png">
               </a>
            </td>
@@ -92,6 +93,7 @@
       $nome = null;
       $cnpj = null;
       $email = null;
+      $senha = null;
 
 
       if(isset($_GET['modo'])){
@@ -99,7 +101,8 @@
           $nome=$result->nome;
           $cnpj=$result->cnpj;
           $email =$result->email;
-          $action="editar&idParceiro=".$idParceiro;
+          $senha = $result->senha;
+          $action="editar&idParceiro=".$idParceiro."&idLogin=".$_GET['idLogin'];
         }
       }
 
@@ -110,16 +113,16 @@
 
       <tr>
           <td class="tdnumero">
-            <input class="inputFormulario" name="" value="<?php echo($cnpj)?>" placeholder="" >
+            <input class="inputFormulario" name="txtcnpj" value="<?php echo($cnpj)?>" placeholder="" >
           </td>
            <td class="tdnumero">
-             <input class="inputFormulario" name="" value="<?php echo($nome)?>" placeholder="" >
+             <input class="inputFormulario" name="txtnome" value="<?php echo($nome)?>" placeholder="" >
           </td>
            <td class="tdnumero">
-             <input class="inputFormulario" name="" value="<?php echo($email)?>" placeholder="" >
+             <input class="inputFormulario" name="txtemail" value="<?php echo($email)?>" placeholder="" >
           </td>
            <td class="tdnumero">
-             <input class="inputFormulario" name="" value="" placeholder="" >
+             <input class="inputFormulario" name="txtsenha" value="<?php echo($senha)?>" placeholder="" >
           </td>
           <td class="tdimagem">
             <input class="" type="file" name="" value="" placeholder="" >

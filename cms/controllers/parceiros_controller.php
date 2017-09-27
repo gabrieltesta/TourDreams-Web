@@ -28,6 +28,7 @@ class ControllerParceiro
 
     public function Visualizar(){
       $idParceiro = $_GET['idParceiro'];
+
       require_once('models/parceiro_class.php');
 
       $parceiro_class = new Parceiro();
@@ -36,7 +37,32 @@ class ControllerParceiro
 
       require_once("gerenciamentoparceiros.php");
 
+
+    }
+
+    public function AtualizarRegistrar(){
+
+      if($_SERVER['REQUEST_METHOD']=='POST'){
+        $nome=$_POST['txtnome'];
+        $cnpj=$_POST['txtcnpj'];
+        $email=$_POST['txtemail'];
+        $senha=$_POST['txtsenha'];
+
+        $idParceiro = $_GET['idParceiro'];
+        $idLogin = $_GET['idLogin'];
+
+        $parceiro_class = new Parceiro();
+
+        $parceiro_class->nome=$nome;
+        $parceiro_class->cnpj=$cnpj;
+        $parceiro_class->email=$email;
+        $parceiro_class->senha=$senha;
+
+        $parceiro_class->idParceiro=$idParceiro;
+        $parceiro_class->idLogin=$idLogin;
       
+        $parceiro_class->Update($parceiro_class);
+      }
     }
 
 }

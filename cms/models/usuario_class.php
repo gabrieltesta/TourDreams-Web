@@ -1,5 +1,5 @@
 <?php
-class FaleConosco
+class Usuario
     {
         /*  Criação dos atributos iguais aos campos na tabela tbl_cadastro no
         banco de dados.
@@ -43,7 +43,7 @@ class FaleConosco
         }
 
         //Método para inserir um novo registro.
-        public function SelectGeral()
+        public function SelectAll()
         {
             $sql = 'SELECT * FROM vw_usuario;';
             $select = mysql_query($sql);

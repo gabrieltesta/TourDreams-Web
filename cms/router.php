@@ -46,6 +46,9 @@
                 case 'alterar':
                     $controller_parceiro->Visualizar();
                 break;
+                case 'editar':
+                    $controller_parceiro->AtualizarRegistrar();
+                  break;
 
             }
             break;

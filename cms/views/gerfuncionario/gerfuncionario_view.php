@@ -2,32 +2,38 @@
     <div id="titulo">
         Gerenciamento de Funcionários
     </div>
+    <div id="buscaFuncionario">
+        <input placeholder="Buscar funcionário" type="text" name="bscFuncionario">
+        <div id="btnBusca">
+
+        </div>
+    </div>
     <div class ="boxdetalhes">
-     <table >
-                 <tr>
+     <table>
+        <tr>
             <td class="td_titulos">
                 Imagem
-                
+
             </td>
             <td class="td_titulos">
                 Nome
-                
+
             </td>
-        <td class="td_titulos">
+            <td class="td_titulos">
                 CPF
-                
+
             </td>
             <td class="td_titulos">
                 RG
-                
+
             </td>
             <td class="td_titulos">
                 Email
-                
+
             </td>
             <td class="td_titulos">
                 Nível
-                
+
             </td>
              <td class="td_titulos" >
                        Opções
@@ -36,9 +42,9 @@
         </tr>
         <?php
         $i = 0;
-        
+
     while($i < 9){
-        
+
     ?>
              <tr>
                  <td class="img">
@@ -54,7 +60,7 @@
                      59.658.3698-8
                  </td>
                  <td class="tdcontas">
-                     mariaduda@gmail.com    
+                     mariaduda@gmail.com
                  </td>
                  <td class="tdcontas">
                      Reservas
@@ -71,7 +77,10 @@
     ?>
         </table>
     </div>
-    
-   
-          
+
+    <div id="btnCadastrar">
+        <h1>Cadastrar Funcionário</h1>
+    </div>
+
+
 </div>
