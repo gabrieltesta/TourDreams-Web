@@ -53,11 +53,16 @@
       $select = mysql_query($sql);
 
       if($rs=mysql_fetch_array($select)){
-        $parceiro->nome=$rs['nome'];
-        $parceiro->cnpj=$rs['cnpj'];
-        $parceiro->email=$rs['email'];
 
+        $listar = new Parceiro();
+
+        $listar->nome=$rs['nomeParceiro'];
+        $listar->cnpj=$rs['cnpj'];
+        $listar->email=$rs['emailParceiro'];
+
+        return  $listar;
       }
+
     }
 
     public function Update($parceiro){

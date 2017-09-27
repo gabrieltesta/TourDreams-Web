@@ -29,7 +29,7 @@ class ControllerUsuario
     public function Visualizar(){
       $idUsuario = $_GET['idUsuario'];
       require_once('models/usuario_class.php');
-      $usuario
+      
 
     }
 

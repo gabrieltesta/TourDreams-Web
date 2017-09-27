@@ -61,10 +61,34 @@
                         </td>
                     </tr>
                     
+                    <tr>
+                        <td><label>Imagens do Hotel (Máx. 10)</label><img title="Adicionar imagem" alt="" src="imagens/cadastrohotel/plusgreen.svg"></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <input id="inputFile" type="file" name="fileFoto">
+                        </td>
+                    </tr>
+                    
                 </table>
             </div>
             <div id="containerDireita">
+                <table id="tableEsquerda">
+                    <tr>
+                        <td><label>Descrição do Hotel (Máx. 300 caracteres)</label></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <textarea maxlength="300" placeholder="Digite a descrição do hotel"></textarea>
+                        </td>
+                    </tr>
+                </table>
 
+                <div id="btnSalvar">
+                    <h1>Cadastrar</h1>
+                </div>
             </div>
             
         </form>    

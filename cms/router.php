@@ -43,9 +43,10 @@
               case 'excluir':
                     $controller_parceiro->Excluir();
                 break;
-                case 'editar':
+                case 'alterar':
                     $controller_parceiro->Visualizar();
-                  break;
+                break;
+
             }
             break;
     }

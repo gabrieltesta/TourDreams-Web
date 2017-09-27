@@ -24,8 +24,6 @@
 
       $sql = "INSERT INTO tbl_login(login, senha, idTipoLogin) VALUES(
         '".$parceiro_class->login."','".$parceiro_class->senha."','2')";
-
-
           if(mysql_query($sql)){
             $sql = "SELECT LAST_INSERT_ID() AS idLogin";
               if($select = mysql_query($sql)){

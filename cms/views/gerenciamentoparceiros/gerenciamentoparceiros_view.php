@@ -1,28 +1,13 @@
 <?php
 
-    $cnpj = null;
-    $nome =null;
-    $login = null;
-    $senha = null;
 
-    if (isset($_GET['idParceiro'])) {
-        require_once('controllers/parceiros_controller.php');
-        $controller_parceiro=new ControllerParceiro();
-        $parceiro = $controller_parceiro->Visualizar();
-
-        $cnpj = $parceiro ->cnpj;
-        $nome = $parceiro ->nome;
-        $login = $parceiro ->login;
-        $senha = $parceiro ->senha;
-
-    }
 
 
  ?>
 
 <div id="selectgp">
      <p id ="titulogp"> Gerenciamento de Parceiros</p>
-     <form class="" action="" method="post">
+
 
 
     <table class="table1 sortable">
@@ -73,7 +58,7 @@
                <a href=<?php echo("router.php?controller=parceiro&modo=excluir&idParceiro=".$rows[$cont]->idParceiro);?>>
                  <img src="imagens/delete.png">
                </a>
-               <a href=<?php echo("parceiros.php?idParceiro=".$rows[$cont]->idParceiro );?>>
+               <a href=<?php echo("router.php?controller=parceiro&modo=alterar&idParceiro=".$rows[$cont]->idParceiro );?>>
                  <img src="imagens/edit.png">
               </a>
            </td>
@@ -104,26 +89,34 @@
       </tr>
 
       <?php
+      $nome = null;
+      $cnpj = null;
+      $email = null;
 
-      require_once('controllers/parceiros_controller.php');
 
-      $controller_parceiro = new ControllerParceiro();
-      $rows = $controller_parceiro -> Listar();
+      if(isset($_GET['modo'])){
+        if ($_GET['modo']=='alterar') {
+          $nome=$result->nome;
+          $cnpj=$result->cnpj;
+          $email =$result->email;
+          $action="editar&idParceiro=".$idParceiro;
+        }
+      }
 
-      $cont = 0;
 
-      while ($cont < count($rows)) {
       ?>
+      <form class="" action="router.php?controller=parceiro&modo=<?php echo($action)?>" method="post">
+
 
       <tr>
           <td class="tdnumero">
-            <input class="inputFormulario" name="" value="" placeholder="" >
+            <input class="inputFormulario" name="" value="<?php echo($cnpj)?>" placeholder="" >
           </td>
            <td class="tdnumero">
-             <input class="inputFormulario" name="" value="" placeholder="" >
+             <input class="inputFormulario" name="" value="<?php echo($nome)?>" placeholder="" >
           </td>
            <td class="tdnumero">
-             <input class="inputFormulario" name="" value="" placeholder="" >
+             <input class="inputFormulario" name="" value="<?php echo($email)?>" placeholder="" >
           </td>
            <td class="tdnumero">
              <input class="inputFormulario" name="" value="" placeholder="" >
@@ -133,8 +126,8 @@
          </td>
       </tr>
       <?php
-      $cont +=1;
-          }
+
+
        ?>
       <tr>
         <td class="tdnumero">
@@ -150,7 +143,7 @@
 
         </td>
         <td>
-          <input type="submit" name="" value="" class="buttonAlterar">
+          <input type="submit" name="btnAlterar" value="" class="buttonAlterar">
         </td>
       </tr>
     </table>

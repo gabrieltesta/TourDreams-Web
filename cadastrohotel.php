@@ -11,6 +11,7 @@
         <script src="js/wow.min.js"></script>
         <script src="js/jqueryui/jquery-ui.min.js" charset="utf-8"></script>
         <script src="js/script.js" charset="utf-8"></script>
+        
         <script src="js/sorttable.js" charset="utf-8"></script>
         <link rel="icon" href="imagens/favicon.ico" />
     </head>
@@ -18,6 +19,9 @@
         <?php
             require_once('views/header.php');                                   //Cabeçalho
             require_once('views/cadastrohotel/cadastrohotel_view.php');         //Conteúdo
+        ?>  
+        <script src="js/cadastrohotel.js" charset="utf-8"></script>
+        <?php
             require_once('views/footer.php');                                   //Rodapé
         ?>
     </body>

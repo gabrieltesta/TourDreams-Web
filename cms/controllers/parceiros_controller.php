@@ -34,6 +34,8 @@ class ControllerParceiro
       $parceiro_class->idParceiro=$idParceiro;
       $result = $parceiro_class->SelectById($parceiro_class);
 
+      require_once("gerenciamentoparceiros.php");
+
       
     }
 
