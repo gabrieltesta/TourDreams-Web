@@ -52,5 +52,35 @@
 
             }
             break;
+
+            case 'promocoes':
+                require_once('controllers/promocoes_controller.php');
+                require_once('models/promocoes_class.php');
+
+                $controller_promocoes = new ControllerPromocoes();
+                switch ($modo) {
+                  case 'excluir':
+                    $controller_promocoes->Excluir();
+                    break;
+                    case 'alterar':
+                      $controller_promocoes->Visualizar();
+                      break;
+                      case 'editar':
+                        $controller_promocoes->AtualizarRegistrar();
+                        break;
+                }
+              break;
+
+             case 'funcionario':
+                require_once('controllers/funcionario_controller.php');
+                require_once('models/funcionario_class.php');
+
+                $controller_funcionario = new ControllerFuncionario();
+                switch($modo){
+                    case 'inserir':
+                    $controller_funcionario->InserirFuncionario();
+                    break;
+                }
+            break;
     }
 ?>

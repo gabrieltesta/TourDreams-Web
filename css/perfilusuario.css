@@ -183,3 +183,189 @@ section
     padding-left: 40px;
 }
 /**/
+#modalExcluir
+{
+    width: 400px;
+    height: 150px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.6);
+    background-color: #fff;
+    z-index: 99;
+    overflow: hidden;
+    margin-top: 100px;
+    display: none;
+}
+
+#modalExcluir table
+{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-collapse: collapse;
+}
+
+#modalExcluir td
+{
+    width: 50%;
+}
+
+#modalExcluir #cabecalhoModalExcluir
+{
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background-color: #4682B4;
+    color: #fff;
+    padding: 4px;
+    font-size: 14pt;
+}
+
+#modalExcluir table p
+{
+    padding: 0;
+    margin: 0;
+    padding: 10px;
+}
+
+#modalExcluir table input
+{
+    display: block;
+    width: 80%;
+    height: 40px;
+    margin: 0 auto;
+    margin-top: 30px;
+    background-color: #2b4aa0;
+    border: 0;
+    color: #fff;
+    font-family: RalewayRegular;
+    font-size: 16pt;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 4px;
+        border: solid 1px #2b4aa0;
+}
+
+#modalExcluir table input:hover
+{
+    background-color: #fff;
+    color: #2b4aa0;
+}
+
+#modalEditar
+{
+    width: 1000px;
+    height: 400px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.6);
+    background-color: #fff;
+    z-index: 99;
+    overflow: hidden;
+    margin-top: 100px;
+    display: none;
+}
+
+#modalEditar #conteudoModalEditar
+{
+    width: 90%;
+    height: 90%;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+#modalEditar #conteudoModalEditar table
+{
+    width: 40%;
+    float: left;
+}
+
+#modalEditar #conteudoModalEditar table input
+{
+    width: 99%;
+    font-size: 12pt;
+}
+
+#modalEditar #conteudoModalEditar table select
+{
+    width: 100%;
+    font-size: 12pt;
+}
+
+#imgBox
+{
+    float: right;
+    width: 50%;
+    height: 400px;
+    margin-right: 5%;
+    margin-top: 25px;
+}
+
+#imgBox table
+{
+    margin: 0 auto;
+}
+
+#imgBox table td
+{
+    width: 50%;
+}
+
+#imgBox img
+{
+    width: 200px;
+    height: 200px;
+    background-color: #ccc;
+}
+
+#imgBox input[type="submit"]
+{
+    width: 100%;
+    float: right;
+    height: 40px;
+    background-color: #2b4aa0;
+    border: solid 1px #2b4aa0;
+    color: #fff;
+    font-family: RalewayRegular;
+    font-size: 16pt;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#imgBox input[type="submit"]:hover
+{
+    color: #2b4aa0;
+    background-color: #fff;
+}
+
+#imgBox input[type="button"]
+{
+    width: 100%;
+    float: right;
+    height: 40px;
+    background-color: #2b4aa0;
+    border: solid 1px #2b4aa0;
+    color: #fff;
+    font-family: RalewayRegular;
+    font-size: 16pt;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#imgBox input[type="button"]:hover
+{
+    color: #2b4aa0;
+    background-color: #fff;
+}
+
+#dadosPerfil table th img
+{
+    cursor: pointer;
+}

@@ -56,10 +56,58 @@
 
     }
 
+    public function SelectById($usuario){
+      $sql = "SELECT * FROM vw_loginusuario WHERE idLogin=".$usuario->idLogin;
+      $select = mysql_query($sql);
 
+      if($rs=mysql_fetch_array($select)){
 
+        $listar = new Usuario();
+
+        $listar->nome=$rs['nomeCliente'];
+        $listar->email=$rs['emailCliente'];
+        $listar->tipoLocal=$rs['tipoLocal'];
+        $listar->milhasPontuacao=$rs['milhasPontuacao'];
+        $listar->rg=$rs['rg'];
+        $listar->cpf=$rs['cpf'];
+        $listar->telefone=$rs['telefone'];
+        return  $listar;
+      }
   }
 
+      public function Delete($usuario)
+      {
+          $sql = "SELECT idTelefone FROM tbl_cliente WHERE idLogin=".$usuario->idLogin;
+          $select = mysql_query($sql);
+          if ($rows=mysql_fetch_array($select))
+          {
+              $idTelefone = $rows['idTelefone'];
 
+              $sql = "DELETE FROM tbl_cliente WHERE idLogin=".$usuario->idLogin;
+              if(!mysql_query($sql))
+              {
+                  return 'erro';
+              }
+
+              $sql = "DELETE FROM tbl_login WHERE idlogin=".$usuario->idLogin;
+              if(!mysql_query($sql))
+              {
+                  return 'erro';
+              }
+
+              $sql = "DELETE FROM tbl_telefone WHERE idTelefone=".$idTelefone;
+              if(!mysql_query($sql))
+              {
+                  return 'erro';
+              }
+
+
+          }
+          return 'ok';
+      }
+
+
+
+}
 
  ?>

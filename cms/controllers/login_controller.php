@@ -30,7 +30,7 @@ class ControllerLogin
                 session_start();
                 $_SESSION['nomeFuncionario'] = $login->nomeFuncionario;
                 $_SESSION['nivel'] = $login->nivel;
-                $_SESSION['login'] = 'true';
+                $_SESSION['loginCMS'] = 'true';
                 header('location:homecms.php');
             }
         }

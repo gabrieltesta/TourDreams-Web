@@ -69,16 +69,5 @@ class Usuario
             return $lstUsuario;
         }
 
-        public function Delete($faleconosco)
-        {
-            $sql = "DELETE FROM tbl_formulario WHERE idFormulario = ".$faleconosco->idFormulario.";";
-            if (mysql_query($sql)) {
-                return 'ok';
-            }
-            else
-            {
-                return 'erro';
-            }
-        }
 }
 ?>

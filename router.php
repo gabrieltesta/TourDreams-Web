@@ -1,5 +1,9 @@
 <?php
     //Página faz o controle entre views e models segundo padrão MVC
+    if(!isset($_GET['controller']))
+    {
+        header('Location:'.$_SERVER['HTTP_REFERER']);
+    }
     $controller = $_GET['controller'];
     if(isset($_GET['modo']))
     {
@@ -15,7 +19,10 @@
             }
             if(isset($_POST['btnLogin']))                                       //Verifica se o botão de login foi acionado
             {
-                header('location:perfilUsuario.php');
+                require_once('controllers/login_controller.php');
+                require_once('models/login_class.php');
+                $controller_login = new ControllerLogin;
+                $controller_login->Autenticar();
             }
             break;
          case 'conhecaseudestino':
@@ -47,6 +54,23 @@
                   $controller_usuario = new ControllerUsuario;
                   $controller_usuario -> Inserir();
               }
+              if($modo == 'excluir')
+              {
+                  $controller_usuario = new ControllerUsuario;
+                  $controller_usuario -> Excluir();
+              }
+              if($modo == 'editar')
+              {
+                  $controller_usuario = new ControllerUsuario;
+                  $controller_usuario -> Editar();
+              }
+              break;
+          case 'deslogar':
+              session_start();
+              session_unset();
+              session_destroy();
+              session_write_close();
+              header('location:homepage.php');
               break;
     }
 ?>

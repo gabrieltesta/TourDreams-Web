@@ -28,32 +28,54 @@
         
         <div class="dadosParceiro">  
          
-                <div class="fotoParceiro">
+                <div >
+                    <img class="fotoParceiro" src="imagens/parceiros/fachadas.jpg">
                 </div>
               
                 <div class="nomeParceiro">
-                 Parceiro Um
+                 COPACABANA PALACE
                 </div>
         </div>   
         <div class="dadosParceiro">  
          
-                <div class="fotoParceiro">
+                <div>
+                    <img class="fotoParceiro" src="imagens/parceiros/fachadas.jpg">
                 </div>
               
                 <div class="nomeParceiro">
-                 Parceiro Dois
+                 RENNASCENCE
                 </div>
         </div>   
         <div class="dadosParceiro">  
          
-                <div class="fotoParceiro">
+                <div >
+                    <img class="fotoParceiro" src="imagens/parceiros/fachadas.jpg">
                 </div>
               
                 <div class="nomeParceiro">
-                 Parceiro Tres
+                 HOTEL FAZENDA
                 </div>
         </div>   
-        
+        <div class="dadosParceiro">  
+         
+                <div >
+                    <img class="fotoParceiro" src="imagens/parceiros/fachadas.jpg">
+                </div>
+              
+                <div class="nomeParceiro">
+                 HOTEL FAZENDA
+                </div>
+        </div>   
+        <div class="dadosParceiro">  
+         
+                <div >
+                    <img class="fotoParceiro" src="imagens/parceiros/fachadas.jpg">
+                </div>
+              
+                <div class="nomeParceiro">
+                 HOTEL FAZENDA
+                </div>
+        </div>   
         
       
     </div>
@@ -89,7 +111,7 @@
                         </div>
 
                         <div id="detalhes">
-                         "Não há ninguém que ame a dor por si só, que a busque e queira tê-la, simplesmente por ser dor..." TEXTINHO ONDE VAI FICAR A DESCRIÇÃO DO CLIENTE
+                        TEXTINHO ONDE VAI FICAR A DESCRIÇÃO DO CLIENTE
 
 
                       

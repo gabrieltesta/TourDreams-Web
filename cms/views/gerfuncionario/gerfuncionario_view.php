@@ -1,3 +1,89 @@
+<?php
+
+    $idFuncionario = "";
+    $nome = "";
+    $email = "";
+    $cpf = "";
+    $rg = "";
+    $action = "inserir";
+
+
+
+?>
+
+<div class="bgModalFuncionario">
+    <div class="caixaFormulario">
+        <div class="headerModal">
+            <h1>Cadastro de Funcionário</h1><h2 onclick="fecharModalFuncionarios()">X</h2>
+        </div>
+        <div class="divFormulario">
+            <form name="frmCadastroFunionario" class="frmCadastroFunionario" action="router.php?controller=funcionario&modo=<?php echo($action); ?>" method="post">
+                <table>
+                    <tr>
+                        <td><label>Login</label></td>
+                    </tr>
+                    <tr>
+                        <td><input placeholder="Digite seu Login" type="text" name="txtLogin" value=""></td>
+                    </tr>
+                    <tr>
+                        <td><label>Senha</label></td>
+                    </tr>
+                    <tr>
+                        <td><input placeholder="Digite sua senha" type="password" name="txtSenha" value=""></td>
+                    </tr>
+                    <tr>
+                        <td><label>Nome</label></td>
+                    </tr>
+                    <tr>
+                        <td><input placeholder="Ex.: Seu Nome" type="text" name="txtNome" value=""></td>
+                    </tr>
+                    <tr>
+                        <td><label>Email</label></td>
+                    </tr>
+                    <tr>
+                        <td><input placeholder="Ex.: seuemail@email.com" type="email" name="txtEmail" value=""></td>
+                    </tr>
+                    <tr>
+                        <td><label>CPF</label></td>
+                    </tr>
+                    <tr>
+                        <td><input placeholder="Ex.: 000.000.000-00" type="text" name="txtCPF" value=""></td>
+                    </tr>
+                    <tr>
+                        <td><label>RG</label></td>
+                    </tr>
+                    <tr>
+                        <td><input placeholder="Ex.: 00.000.000-0" type="text" name="txtRG" value=""></td>
+                    </tr>
+                    <tr>
+                        <td><label>Nível de funcionário</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select class="sltNivel" name="sltNivel">
+                                <option value="1">Admnistrador</option>
+                                <option value="2">Marketing</option>
+                                <option value="3">Reservas</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Imagem de Perfil</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="file" name="fileFoto"></td>
+                    </tr>
+
+                    <tr>
+                        <td><input type="submit" name="btn"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+
+
 <div class="sectionfuncionario">
     <div id="titulo">
         Gerenciamento de Funcionários
@@ -78,7 +164,7 @@
         </table>
     </div>
 
-    <div id="btnCadastrar">
+    <div id="btnCadastrar" onclick="abrirModalFuncionarios()">
         <h1>Cadastrar Funcionário</h1>
     </div>
 

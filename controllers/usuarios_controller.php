@@ -18,7 +18,8 @@ class ControllerUsuario
       {
           $cpf = $_POST['txtCpf'];
       }
-      else
+
+      if(isset($_POST['txtRg']))
       {
           $rg = $_POST['txtRg'];
       }
@@ -41,9 +42,31 @@ class ControllerUsuario
         header('location:registroUsuario.php?ok');
       }else {
         header('location:registroUsuario.php?erro');
+      }
     }
-    }
-}
+  }
+
+  public function Buscar($idLogin)
+  {
+      require_once('models/usuario_class.php');
+
+      $usuario_class = new Usuario();
+      $usuario_class->idLogin=$idLogin;
+      return $usuario_class->SelectById($usuario_class);
+
+  }
+
+  public function Excluir()
+  {
+      $idLogin = $_GET['idLogin'];
+
+      $usuario_class = new Usuario;
+      $usuario_class->idLogin=$idLogin;
+      $status = $usuario_class->Delete($usuario_class);
+
+      header('location: router.php?controller=deslogar');
+
+  }
 }
 
  ?>

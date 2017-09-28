@@ -24,7 +24,7 @@ class Login
         //Método para inserir um novo registro.
         public function Auth($login)
         {
-            $sql = "SELECT login, senha, tipoLogin, LEFT(nomeFuncionario, 15) as nomeFuncionario, nivel FROM tbl_login as L INNER JOIN tbl_tipologin as T ON T.idTipoLogin=L.idTipoLogin INNER JOIN tbl_funcionario as F ON L.idLogin=F.idLogin INNER JOIN tbl_nivelfuncionario as NF ON F.idNivelFuncionario=NF.idNivelFuncionario WHERE tipoLogin='cms' AND login='".$login->login."' AND senha='".$login->senha."'";
+            $sql = "SELECT * FROM vw_logincms WHERE tipoLogin='cms' AND login='".$login->login."' AND senha='".$login->senha."'";
             if ($select = mysql_query($sql))
             {
                 if($rows=mysql_fetch_array($select))

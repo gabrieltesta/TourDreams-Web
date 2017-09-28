@@ -6,10 +6,12 @@
         <link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/gerfuncionario.css">
         <link rel="stylesheet" href="../js/jqueryui/jquery-ui.css">
+
         <script src="../js/jquery-3.2.1.min.js" charset="utf-8"></script>
         <script src="../js/jqueryui/jquery-ui.min.js" charset="utf-8"></script>
         <script src="../js/wow.min.js"></script>
         <script src="js/script.js" charset="utf-8"></script>
+        <script src="../js/jquerymask/src/jquery.mask.js" charset="utf-8"></script>
         <link rel="icon" href="../imagens/favicon.ico" />
     </head>
     <body>
@@ -22,5 +24,6 @@
                 require_once('views/gerfuncionario/gerfuncionario_view.php');
              ?>
         </section>
+        <script src="js/gerfuncionario.js" charset="utf-8"></script>
     </body>
 </html>

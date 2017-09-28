@@ -1,8 +1,8 @@
 <?php
     session_start();
-    if ($_SESSION['login'] != 'true')
+    if ($_SESSION['loginCMS'] != 'true')
     {
-        header('location:index.php?acesso');
+        header('location:router.php?controller=deslogar');
     }
  ?>
 <header class="header">

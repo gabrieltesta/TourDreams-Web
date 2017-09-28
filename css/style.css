@@ -719,3 +719,25 @@ footer
 {
     background-color: #eee;
 }
+
+#msgLogin
+{
+    font-size: 10pt;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    width: 100%;
+    text-align: center;
+    color: red;
+    margin-top: -4px;
+}
+
+#modalBg
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 98;
+    display: none;
+}

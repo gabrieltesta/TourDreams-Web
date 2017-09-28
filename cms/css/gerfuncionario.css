@@ -1,16 +1,11 @@
 section
 {
-    height: 829px;
+    height: 830px;
 }
 
 .sectionfuncionario{
     width:100%;
     height:100%;
-   -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
-    margin-bottom: 90px;
-
     overflow: auto;
 }
 #titulo{
@@ -116,4 +111,109 @@ section
     margin-left: 15px;
     color: #000;
     margin-bottom:50px;
+}
+
+.bgModalFuncionario{
+    width: 100%;
+    height: 830px;
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+}
+
+.caixaFormulario{
+    height: 650px;
+    width: 900px;
+    background-color: #ffffff;
+    margin-top: 65px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+}
+
+.headerModal{
+    width:100%;
+    height: 70px;
+    background-color: #4682b4;
+}
+
+.caixaFormulario h1{
+    width: 90%;
+    height: 100%;
+    text-align: center;
+    margin: 0;
+    line-height: 70px;
+    font-family: Cordia New;
+    font-weight: lighter;
+    font-size: 60px;
+    color: #fff;
+    float: left;
+
+}
+
+.caixaFormulario h2{
+    width: 10%;
+    height: 100%;
+    text-align: center;
+    margin: 0;
+    line-height: 70px;
+    font-family: Cordia New;
+    font-weight: lighter;
+    font-size: 60px;
+    color: #fff;
+    float: left;
+    cursor: pointer;
+}
+
+.divFormulario{
+    width: 100%;
+}
+
+.frmCadastroFunionario table{
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.frmCadastroFunionario table label{
+    font-family: Gisha;
+    font-size: 15px;
+    color: #000;
+}
+
+.frmCadastroFunionario input[type='text'], input[type='email']{
+    height: 30px;
+    width: 500px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    margin-bottom: 20px;
+    font-family: Helvetica;
+    font-size: 15px;
+}
+
+.frmCadastroFunionario input{
+    margin-bottom: 20px;
+}
+
+.frmCadastroFunionario input[type='password']{
+    height: 30px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    margin-bottom: 20px;
+    font-family: Helvetica;
+    font-size: 15px;
+}
+
+.frmCadastroFunionario input[name="txtCPF"], input[name='txtRG']{
+    width: 200px;
+}
+
+.sltNivel{
+    width: 200px;
+    border: 1px solid #ccc;
+    height: 30px;
+    font-family: Helvetica;
+    font-size: 15px;
+    margin-bottom: 20px;
 }

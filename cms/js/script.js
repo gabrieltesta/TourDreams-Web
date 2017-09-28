@@ -55,3 +55,17 @@ function abrirModalFaleConosco() {
     $("#modalVisualizar").show();
     $("#shadowBg").show();
 }
+
+
+
+function abrirModalFuncionarios(){
+    $('.bgModalFuncionario').fadeIn(200, function(){
+        //completo
+    });
+}
+
+function fecharModalFuncionarios(){
+    $('.bgModalFuncionario').fadeOut(200, function(){
+        //completo
+    });
+}

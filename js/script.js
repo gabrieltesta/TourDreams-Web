@@ -470,3 +470,31 @@ function busca() {
 
    });
 }
+
+function abrirPerfilUsuario() {
+    location.href='perfilUsuario.php';
+}
+
+function abrirPerfilParceiro() {
+    location.href='perfilParceiro.php';
+}
+
+function abrirModalExcluir() {
+    $("#modalExcluir").show();
+    $("#modalBg").show();
+}
+
+function fecharModalExcluir() {
+    $("#modalExcluir").hide();
+    $("#modalBg").hide();
+}
+
+function abrirModalEditar() {
+    $("#modalEditar").show();
+    $("#modalBg").show();
+}
+
+function fecharModalEditar() {
+    $("#modalEditar").hide();
+    $("#modalBg").hide();
+}

@@ -5,8 +5,8 @@ section
 
 #selectg{
     width: 100%;
-    height:100%;
-    overflow-y: auto;
+    height: 100%;
+    overflow: auto;
 }
 #titulog{
     text-align: center;
@@ -19,15 +19,13 @@ section
 
 .tablle{
     width: 1500px;
-    height: 50px;
     margin-left:120px;
      -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
     margin-bottom: 90px;
     margin-top: 100px;
-
-
+    overflow: auto;
 }
 
 .barraDeRolagem {

@@ -1,3 +1,15 @@
+<?php
+	session_start();
+	$msgLogin = '';
+	if(isset($_GET['erroLogin']))
+	{
+		$msgLogin = "Usuário ou senha incorretos. Tente novamente.";
+	}
+	if(isset($_GET['dbLogin']))
+	{
+		$msgLogin = "Há um erro no servidor de login. Tente novamente mais tarde";
+	}
+ ?>
 <!--Modal de busca avançada-->
 <div id="buscaAvancadaBackground">
 	<form action="busca.php">
@@ -123,6 +135,8 @@
 	</form>
 </div>
 <!---->
+<div id="modalBg">
+</div>
 <!--Cabeçalho-->
 <header>
 	<div id="headerMenu">
@@ -145,10 +159,38 @@
 		</div>
 		<!---->
 		<!--Botão de login-->
-		<div class="headerBtn" style="border-left: 2px solid #fff;" onclick="headerLogin()">
-			<img src="imagens/user.svg" alt="Login" draggable="false" onmousedown="return false" style="user-drag: none" >
-			Login
-		</div>
+		<?php
+			if(isset($_SESSION['login']))
+			{
+				if($_SESSION['login'] != 'true')
+				{
+					?>
+					<div class="headerBtn" style="border-left: 2px solid #fff;" onclick="headerLogin()">
+						<img src="imagens/user.svg" alt="Login" draggable="false" onmousedown="return false" style="user-drag: none" >
+						Login
+					</div>
+					<?php
+				}
+				else
+				{
+					?>
+					<div class="headerBtn" style="border-left: 2px solid #fff;">
+						<img src="imagens/user.svg" alt="Login" draggable="false" onmousedown="return false" style="user-drag: none" onclick="<?php if($_SESSION['tipoLogin'] == 'usuario'){echo ('abrirPerfilUsuario()');}else{echo ('abrirPerfilParceiro()');} ?>">
+						Perfil
+					</div>
+					<?php
+				}
+			}
+			else
+			{
+				?>
+				<div class="headerBtn" style="border-left: 2px solid #fff;" onclick="headerLogin()">
+					<img src="imagens/user.svg" alt="Login" draggable="false" onmousedown="return false" style="user-drag: none" >
+					Login
+				</div>
+				<?php
+			}
+		 ?>
 		<!---->
 		<!--Botão de moeda-->
 		<div class="headerBtn" style="margin-right: 0; " onclick="headerMoeda()">
@@ -180,6 +222,9 @@
 			    	<td colspan="2"><h2>Acesse sua Conta</h2></td>
 				</tr>
 				<tr>
+					<td colspan="2"><div id="msgLogin"><?php echo ($msgLogin); ?></div></td>
+				</tr>
+				<tr>
 					<td colspan="2"><label>Login</label></td>
 				</tr>
 				<tr>
@@ -192,7 +237,7 @@
 					<td colspan="2"><input type="password" name="txtSenha" placeholder="******"></td>
 				</tr>
 				<tr>
-					<td style="width: 50%; max-width: 50%;"><input type="submit" name="btnRegistro" value="Criar Conta" id="btnNovoUsuario"></td><td style="width: 50%; max-width: 50%;"><input type="submit" name="btnLogin" value="Login" id="btnLogin"></td>
+					<td style="width: 50%; max-width: 50%;"><input type="submit" name="btnLogin" value="Login" id="btnLogin"></td><td style="width: 50%; max-width: 50%;"><input type="submit" name="btnRegistro" value="Criar Conta" id="btnNovoUsuario"></td>
 				</tr>
 				<tr>
 					<td colspan="2"><a href="#"><h3>Esqueci minha senha</h3></a></td>
