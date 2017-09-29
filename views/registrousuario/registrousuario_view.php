@@ -38,6 +38,9 @@
             <form action="router.php?controller=usuario" method="post">
             <table id="tblRegistroUsuario1">
                 <tr>
+                    <td><span id="msgUsuario1" class="msgerro"></span></td>
+                </tr>
+                <tr>
                     <td><label for="txtLogin">Login*</label></td>
                 </tr>
                 <tr>
@@ -60,6 +63,7 @@
                 </tr>
             </table>
             <table id="tblRegistroUsuario2">
+                <tr><td><span id="msgUsuario2" class="msgerro"></span></td></tr>
                 <tr>
                     <td><label for="txtEmail">Email*</label></td>
                 </tr>
@@ -126,6 +130,9 @@
             <form action="router.php?controller=parceiro&modo=inserir" method="post">
                 <table id="tblRegistroParceiro1">
                     <tr>
+                        <td><span id="msgParceiro1" class="msgerro"></span></td>
+                    </tr>
+                    <tr>
                         <td><label for="txtLogin">Login*</label></td>
                     </tr>
                     <tr>
@@ -148,6 +155,9 @@
                     </tr>
                 </table>
                 <table id="tblRegistroParceiro2">
+                    <tr>
+                        <td><td><span id="msgParceiro2" class="msgerro"></span></td></td>
+                    </tr>
                     <tr>
                         <td><label for="txtEmail">Email*</label></td>
                     </tr>

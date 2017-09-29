@@ -263,3 +263,9 @@ section
     text-align: center;
     width:100%:
 }
+
+.msgerro
+{
+    color: red;
+    font-size: 10pt;
+}

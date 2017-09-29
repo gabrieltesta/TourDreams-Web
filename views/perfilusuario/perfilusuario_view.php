@@ -225,12 +225,12 @@
             <table>
                 <tr>
                     <td colspan="2">
-                        <img src="<?php echo($_SESSION['img']) ?>" alt="Usuário">
+                        <img src="<?php echo($_SESSION['img']) ?>" alt="Usuário" id="imgPreview">
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <input type="file" name="filImg">
+                        <input type="file" name="filImg" id="filImg" onchange="readURL(this)" accept="image/jpeg, image/gif, image/x-png">
                     </td>
                 </tr>
                 <tr>

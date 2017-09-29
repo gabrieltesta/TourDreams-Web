@@ -309,6 +309,7 @@ section
 #imgBox table
 {
     margin: 0 auto;
+    width: 80%;
 }
 
 #imgBox table td
@@ -365,6 +366,11 @@ section
     background-color: #fff;
 }
 
+#imgBox input[type="file"]
+{
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
 #dadosPerfil table th img
 {
     cursor: pointer;

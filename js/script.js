@@ -8,6 +8,7 @@ $("document").ready(function(){
     $("#filtros").accordion({heightStyle: "content" });
     carregarPickers();
     busca();
+    mascaras();
 });
 
 //Função cria os datepickers do JqueryUI (página reserva.php)
@@ -345,7 +346,7 @@ function abrirRegistroUsuario2() {
     }
     else
     {
-        alert('Preencha todos os campos!');// TODO: REMOVER ALERT E IMPLEMENTAR TEXTO
+        $("#msgUsuario1").text("Preencha todos os campos obrigatórios corretamente.");
     }
 }
 
@@ -365,7 +366,7 @@ function abrirRG() {
 function abrirRegistroUsuario3() {
     var status = 0;
     var statusRad = 0;
-    if($('#txtEmail').val() != '' && $('#txtCelular').val() != '')              //Verifica se os campos estão preenchidos
+    if($('#txtEmail').val() != '' && $('#txtCelular').val() != ''  && $('#txtEmail').val().match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/))              //Verifica se os campos estão preenchidos
     {
         status = 1;
     }
@@ -390,7 +391,7 @@ function abrirRegistroUsuario3() {
     }
     else
     {
-        alert('Preencha todos os campos!');// TODO: REMOVER ALERT E IMPLEMENTAR TEXTO
+        $("#msgUsuario2").text("Preencha todos os campos obrigatórios corretamente.");
     }
 }
 
@@ -415,14 +416,14 @@ function abrirRegistroParceiro2() {
     }
     else
     {
-        alert('Preencha todos os campos!');// TODO: REMOVER ALERT E IMPLEMENTAR TEXTO
+        $("#msgParceiro1").text("Preencha todos os campos obrigatórios corretamente.");
     }
 }
 
 //Função abre a terceira página de registro de parceiro (página registroUsuario.php)
 function abrirRegistroParceiro3() {
     var status = 0;
-    if($('#txtEmailParceiro').val() != '' && $('#txtCnpj').val() != '' && $('#txtTelefone').val() != '')    //Verifica se os campos estão preenchidos
+    if($('#txtEmailParceiro').val() != '' && $('#txtCnpj').val() != '' && $('#txtTelefone').val() != '' && $('#txtEmailParceiro').val().match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/))    //Verifica se os campos estão preenchidos
     {
         status = 1;
     }
@@ -434,7 +435,7 @@ function abrirRegistroParceiro3() {
     }
     else
     {
-        alert('Preencha todos os campos!');// TODO: REMOVER ALERT E IMPLEMENTAR TEXTO
+        $("#msgParceiro2").text("Preencha todos os campos obrigatórios corretamente.");
     }
 }
 
@@ -497,4 +498,25 @@ function abrirModalEditar() {
 function fecharModalEditar() {
     $("#modalEditar").hide();
     $("#modalBg").hide();
+}
+
+function readURL(input) {
+
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#imgPreview').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+function mascaras() {
+    $("[name='txtCpf']").mask("000.000.000-00");
+    $("[name='txtTelefone']").mask("00 000000000");
+    $("[name='txtRg']").mask("00.000.000-0");
+    $("[name='txtCnpj']").mask("00.000.000-0/0000-00");
+    $("[name='txtCelular']").mask("00 00000000");
 }
