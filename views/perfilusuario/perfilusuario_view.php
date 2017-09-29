@@ -11,6 +11,23 @@
     $controller_usuario = new ControllerUsuario();
     $usuario = $controller_usuario -> Buscar($_SESSION['idLogin']);
 
+    $msg = '';
+
+    if(isset($_GET['erro']))
+    {
+        $msg = "Ocorreu um erro na edição de seus dados. Tente novamente.";
+    }
+
+    if(isset($_GET['erroperm']))
+    {
+        $msg = "Ocorreu um erro no envio da imagem. Tente novamente.";
+    }
+
+    if(isset($_GET['erroformato']))
+    {
+        $msg = "Formato de arquivo não permitido. Formatos permitidos: jpg, jpeg, png e gif.";
+    }
+
 ?>
 <section>
     <!--Caixa de conteúdo-->
@@ -19,7 +36,7 @@
             <!--Dados do perfil-->
             <div id="dadosPerfil">
                 <div id="imagem" onclick="abrirModalEditar()">
-                    <img src="<?php echo($_SESSION['img']); ?>" alt="Imagem do Usuário"/>
+                    <img src="<?php echo($usuario->caminhoImg); ?>" alt="Imagem do Usuário"/>
                     <div>TROCAR IMAGEM</div>
                 </div>
                 <table>
@@ -32,6 +49,9 @@
                         <td>
                             <?php echo ($usuario->email) ?>
                         </td>
+                    </tr>
+                    <tr>
+                        <td><?php echo ($usuario->telefone) ?></td>
                     </tr>
                     <tr>
                         <td>
@@ -47,6 +67,9 @@
                         <td>
                             Você possui <span><?php echo ($usuario->milhasPontuacao); ?></span> pontos Milhas Travel Fidelidade
                         </td>
+                    </tr>
+                    <tr>
+                        <td><div id="msg"><?php echo ($msg); ?></span></td>
                     </tr>
                 </table>
             </div>
@@ -219,13 +242,19 @@
                          </select>
                      </td>
                  </tr>
+                 <tr>
+                     <td>
+                         <input type="hidden" name="txtIdCliente" value="<?php echo($usuario->idCliente) ?>">
+                         <input type="hidden" name="txtIdTelefone" value="<?php echo($usuario->idTelefone) ?>">
+                     </td>
+                 </tr>
             </table>
         </div>
         <div id="imgBox">
             <table>
                 <tr>
                     <td colspan="2">
-                        <img src="<?php echo($_SESSION['img']) ?>" alt="Usuário" id="imgPreview">
+                        <img src="<?php echo($usuario->caminhoImg) ?>" alt="Usuário" id="imgPreview">
                     </td>
                 </tr>
                 <tr>

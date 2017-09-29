@@ -24,9 +24,8 @@
 
     public function Insert($usuario){
 
-      $sql = "INSERT INTO tbl_login(login, senha, idTipoLogin) VALUES(
+        $sql = "INSERT INTO tbl_login(login, senha, idTipoLogin) VALUES(
         '".$usuario->login."','".$usuario->senha."','1')";
-
           if(mysql_query($sql)){
             $sql = "SELECT LAST_INSERT_ID() AS idLogin";
               if($select = mysql_query($sql)){
@@ -39,13 +38,25 @@
                       if($select = mysql_query($sql)){
                         if($rows = mysql_fetch_array($select)){
                           $idTelefone = $rows['idTelefone'];
-                          $sql = "INSERT INTO tbl_cliente(cpf, rg, nomeCliente, idImagem, idLogin, emailCliente, idTipoDeLocal, idTelefone)
-                          VALUES('".$usuario->cpf."', '".$usuario->rg."', '".$usuario->nome."','1','".$idLogin."','".$usuario->email."', '".$usuario->tipoLocal."', '".$idTelefone."')";
-                          echo($sql);
-                          if(mysql_query($sql)){
-                            return 'ok';
-                          }else {
-                            return 'erro';
+
+                          $sql = "INSERT INTO tbl_imagem(caminhoImagem) VALUES('imagens/usuario/padrao.png')";
+                          if(mysql_query($sql))
+                          {
+                              $sql = "SELECT LAST_INSERT_ID() AS idImagem";
+                              if($select = mysql_query($sql))
+                              {
+                                  if($rows=mysql_fetch_array($select))
+                                  {
+                                      $idImagem = $rows['idImagem'];
+                                      $sql = "INSERT INTO tbl_cliente(cpf, rg, nomeCliente, idImagem, idLogin, emailCliente, idTipoDeLocal, idTelefone)
+                                      VALUES('".$usuario->cpf."', '".$usuario->rg."', '".$usuario->nome."', '".$idImagem."', '".$idLogin."','".$usuario->email."', '".$usuario->tipoLocal."', '".$idTelefone."')";
+                                      if(mysql_query($sql)){
+                                        return 'ok';
+                                      }else {
+                                        return 'erro';
+                                      }
+                                  }
+                              }
                           }
                         }
                       }
@@ -71,6 +82,10 @@
         $listar->rg=$rs['rg'];
         $listar->cpf=$rs['cpf'];
         $listar->telefone=$rs['telefone'];
+        $listar->idCliente=$rs['idCliente'];
+        $listar->idTelefone=$rs['idTelefone'];
+        $listar->idLogin=$rs['idLogin'];
+        $listar->caminhoImg=$rs['caminhoImagem'];
         return  $listar;
       }
   }
@@ -106,7 +121,36 @@
           return 'ok';
       }
 
+      public function Update($usuario)
+      {
+          $sql = "UPDATE tbl_cliente SET nomeCliente='".$usuario->nome."', emailCliente='".$usuario->email."', cpf='".$usuario->cpf."', rg='".$usuario->rg."', idTipoDeLocal='".$usuario->tipoLocal."' WHERE idCliente='".$usuario->idCliente."'";
+          if(!mysql_query($sql))
+          {
+              return 'erro';
+          }
 
+          $sql = "UPDATE tbl_telefone SET telefone='".$usuario->telefone."' WHERE idTelefone='".$usuario->idTelefone."'";
+          if(!mysql_query($sql))
+          {
+              return 'erro';
+          }
+
+          return 'ok';
+      }
+
+      public function UpdateImage($usuario)
+      {
+          $sql = "SELECT idImagem FROM tbl_cliente WHERE idCliente='".$usuario->idCliente."'";
+          if($select = mysql_query($sql))
+          {
+              if($rows=mysql_fetch_array($select))
+              {
+                  $idImagem = $rows['idImagem'];
+                  $sql = "UPDATE tbl_imagem SET caminhoImagem='".$usuario->caminhoImg."' WHERE idImagem=".$idImagem;
+                  mysql_query($sql);
+              }
+          }
+      }
 
 }
 

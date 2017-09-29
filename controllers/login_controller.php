@@ -30,7 +30,6 @@ class ControllerLogin
                 session_start();
                 $_SESSION['nome'] = $login->nome;
                 $_SESSION['idLogin'] = $login->idLogin;
-                $_SESSION['img'] = $login->caminhoImagem;
                 $_SESSION['tipoLogin'] = $login->tipoLogin;
                 $_SESSION['login'] = 'true';
 

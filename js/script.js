@@ -9,6 +9,7 @@ $("document").ready(function(){
     carregarPickers();
     busca();
     mascaras();
+    validarLogin();
 });
 
 //Função cria os datepickers do JqueryUI (página reserva.php)
@@ -472,6 +473,25 @@ function busca() {
    });
 }
 
+function validarLogin() {
+    $(".txtLoginValidar").keyup(function () {
+        var login = $(this).val();
+        if(login != '')
+        {
+            $(".resultadovalidacao").html('<img src="imagens/loading.svg" />');
+            $.post('api/validar_login.php', {'login':login}, function(data) {
+              $(".resultadovalidacao").html(data);
+            });
+        }
+        else
+        {
+            $(".resultadovalidacao").html('<img src="imagens/naook.svg" />');
+        }
+
+    })
+}
+
+
 function abrirPerfilUsuario() {
     location.href='perfilUsuario.php';
 }
@@ -515,8 +535,8 @@ function readURL(input) {
 
 function mascaras() {
     $("[name='txtCpf']").mask("000.000.000-00");
-    $("[name='txtTelefone']").mask("00 000000000");
+    $("[name='txtTelefone']").mask("(00) 000000000");
     $("[name='txtRg']").mask("00.000.000-0");
     $("[name='txtCnpj']").mask("00.000.000-0/0000-00");
-    $("[name='txtCelular']").mask("00 00000000");
+    $("[name='txtCelular']").mask("(00) 000000000");
 }

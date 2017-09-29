@@ -375,3 +375,9 @@ section
 {
     cursor: pointer;
 }
+
+#msg
+{
+    color: red;
+    font-size: 10pt;
+}

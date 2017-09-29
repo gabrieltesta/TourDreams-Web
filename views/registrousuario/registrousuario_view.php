@@ -44,7 +44,7 @@
                     <td><label for="txtLogin">Login*</label></td>
                 </tr>
                 <tr>
-                    <td><input type="text" name="txtLogin" required id="txtLogin"></td>
+                    <td><input type="text" name="txtLogin" required id="txtLogin" class="txtLoginValidar"><span class="resultadovalidacao"></span></td>
                 </tr>
                 <tr>
                     <td><label for="txtSenha">Senha*</label></td>
@@ -136,7 +136,7 @@
                         <td><label for="txtLogin">Login*</label></td>
                     </tr>
                     <tr>
-                        <td><input type="text" name="txtLogin" required id="txtLoginParceiro"></td>
+                        <td><input type="text" name="txtLogin" required id="txtLoginParceiro" class="txtLoginValidar"><span class="resultadovalidacao"></span></td>
                     </tr>
                     <tr>
                         <td><label for="txtSenhaParceiro">Senha*</label></td>
