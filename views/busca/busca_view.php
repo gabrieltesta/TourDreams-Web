@@ -173,7 +173,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td><a href="#"><div class="btnReservar">RESERVAR</a></td>
+                                <td><a href="hotelQuarto.php"><div class="btnReservar">RESERVAR</a></td>
                             </tr>
                         </table>
                     </div>
