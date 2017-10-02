@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Sobre nós - TourDreams</title>
+        <title>Reserva - TourDreams</title>
         <link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/reserva.css">
         <link rel="stylesheet" href="js/jqueryui/jquery-ui.css">

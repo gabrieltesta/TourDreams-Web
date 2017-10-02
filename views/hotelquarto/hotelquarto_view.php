@@ -53,19 +53,19 @@
                         </tr>
                     </table>
                 </div>
-                
+
                 <div id="divInfoHotel">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempor venenatis orci eget placerat. Nunc vel feugiat libero. Integer sit amet mi ut nulla finibus semper ut et enim. Pellentesque in ultricies risus, at elementum velit. Suspendisse sollicitudin, metus eget viverra sagittis, dolor arcu suscipit nunc, non cursus massa nisl vitae augue. Proin pellentesque sodales urna, at ullamcorper nulla finibus sed. Sed tincidunt dui sit amet lacinia venenatis. Etiam nulla felis, placerat sit amet pretium vitae, eleifend volutpat enim. Maecenas eu arcu interdum, efficitur risus id, vehicula urna. Pellentesque nec pellentesque elit, quis accumsan mi. Etiam a aliquet nisl, a laoreet urna. Nulla sit amet diam sit amet tortor viverra tempor. Nulla accumsan dictum sem, volutpat convallis augue auctor tristique. Morbi nec nunc ex.
 
-                    
 
-                    
+
+
             </div>
         </div>
         <!-- Div de Comodidades -->
         <hr>
         <div id="divComodidades">
-            
+
             <?php
                 $y = 0;
                 while($y<3){
@@ -73,7 +73,7 @@
             <div class="separador">
                 <?php
                     $i = 1;
-                    
+
                     while($i <= 4){
                 ?>
                     <div class="comodidade">
@@ -81,7 +81,7 @@
                     </div>
                 <?php
                         $i++;
-                        $cont = $i; 
+                        $cont = $i;
                     }
                 ?>
             </div>
@@ -89,12 +89,12 @@
                     $y++;
                 }
             ?>
-            
-        
+
+
         </div>
         <hr>
     </div>
-    </div>    
+    </div>
 </section>
 <!---->
 <!--Conteúdo inferior-->
@@ -114,7 +114,7 @@
                     <div class="nomeQuarto">
                         Quarto Exemplo
                     </div>
-                    
+
                     <div class="estrelaQuarto">
                         <?php
                             $quantstar = rand(1,5);
@@ -125,7 +125,7 @@
                         <?php
                             $x++;
                             }
-                        
+
                         ?>
                     </div>
                 </div>
@@ -147,18 +147,18 @@
                     ?>
                 </div>
             </div>
-            
+
             <div class="divReservar"> <!-- botão para reservar -->
                 <div class="divPreco">
                     <h3>Diárias de</h3>
                     <h1>R$ 199,99</h1>
                 </div>
                 <div class="botaoReservar">
-                    <h1>RESERVAR</h1>
+                    <a href="reserva.php"><h1>RESERVAR</h1></a>
                 </div>
             </div>
-            
-            
+
+
         </div>
         <?php
                 $z++;

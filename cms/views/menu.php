@@ -8,5 +8,6 @@
         <a href="administradorcliente.php"><li><img src="imagens/usuario/padrao.png" alt=""><span>USUÁRIOS</span></li></a>
         <a href="entradadeconteudo.php"><li><img src="imagens/acomodacoes.png" alt=""><span>ACOMODAÇÕES</span></li></a>
         <a href="faleconosco.php"><li><img src="imagens/faleconosco.png" alt=""><span>FALE CONOSCO</span></li></a>
+        <a href="moeda.php"><li><img src="imagens/moeda.png" alt="Moeda"><span>MOEDA</span></li></a>
     </ul>
 </nav>

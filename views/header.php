@@ -9,6 +9,11 @@
 	{
 		$msgLogin = "Há um erro no servidor de login. Tente novamente mais tarde";
 	}
+	if(isset($_GET['cotacao']))
+	{
+		$_SESSION['cotacao'] = $_GET['cotacao'];
+		header('Location:'.$_SERVER['HTTP_REFERER']);
+	}
  ?>
 <!--Modal de busca avançada-->
 <div id="buscaAvancadaBackground">
@@ -249,8 +254,24 @@
 	<!--Menu de moeda-->
 	<div id="headerMoeda" style="display: none;">
 		<ul>
-			<li><a href="?moeda=real">Real (R$)</a></li>
-			<li><a href="?moeda=dolar">Dólar (US$)</a></li>
+			<?php
+			//Inclusão do arquivo controller para fazer o SELECT.
+			require_once('controllers/moedas_controller.php');
+
+			/*Instância do objeto da controller e chamada para metódo de listagem
+			dos registros*/
+			$controller_moeda = new ControllerMoeda();
+			$moeda = $controller_moeda -> Listar();
+
+			$cont = 0;
+			while($cont < count($moeda))
+			{
+			?>
+				<li><a href="?cotacao=<?php echo($moeda[$cont]->valor) ?>&moeda=<?php echo($moeda[$cont]->nome) ?>"><?php echo($moeda[$cont]->nome) ?></a></li>
+			<?php
+			$cont += 1;
+			}
+			 ?>
 		</ul>
 	</div>
 	<!---->
