@@ -4,6 +4,7 @@
     $nome = '';
     $valor = '';
     $msg = '';
+	$action = 'inserir';
     if(isset($_GET['modo']))
     {
         $modo = 'editar';
