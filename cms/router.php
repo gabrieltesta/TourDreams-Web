@@ -82,5 +82,27 @@
                     break;
                 }
             break;
+
+            case 'moeda':
+                require_once('controllers/moedas_controller.php');
+                require_once('models/moeda_class.php');
+
+                $controller_moeda = new ControllerMoeda();
+                switch($modo)
+                {
+                    case 'inserir':
+                        $controller_moeda->Inserir();
+                        break;
+                    case 'visualizar':
+                        $controller_moeda->Visualizar();
+                        break;
+                    case 'excluir':
+                        $controller_moeda->Excluir();
+                        break;
+                    case 'editar':
+                        $controller_moeda->Editar();
+                        break;
+                }
+                break;
     }
 ?>
