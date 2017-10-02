@@ -78,9 +78,22 @@
                 $controller_funcionario = new ControllerFuncionario();
                 switch($modo){
                     case 'inserir':
-                    $controller_funcionario->InserirFuncionario();
+                    $controller_funcionario->Adicionar();
                     break;
-                }
+                        
+                    case "excluir":
+                        
+                    $controller_funcionario->ExcluirFuncionario();
+                    break;
+                        
+                    case "visualizar":
+                        $controller_funcionario->Visualizar();
+                        break;
+                        
+                    case 'editar':
+                        $controller_funcionario->Atualizar();
+                        break;    
+                    }
             break;
     }
 ?>

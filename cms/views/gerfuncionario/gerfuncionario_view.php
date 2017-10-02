@@ -6,7 +6,7 @@
     $cpf = "";
     $rg = "";
     $action = "inserir";
-
+    $botao="Salvar";
 
 
 ?>
@@ -17,43 +17,73 @@
             <h1>Cadastro de Funcionário</h1><h2 onclick="fecharModalFuncionarios()">X</h2>
         </div>
         <div class="divFormulario">
+            
+            
+            <?php
+                  $nome = null;
+                  $cpf = null;
+                  $email = null;
+                  $senha = null;
+                  $login = null;
+                  $rg = null;
+                  
+
+
+                  if(isset($_GET['modo'])){
+                    if ($_GET['modo']=='visualizar') {
+                      $nome = $result->nome;
+                      $cpf = $result->cpf;
+                      $email = $result->email;
+                      $senha = $result->senha;
+                      $login = $result->login;
+                      $rg = $result->rg;
+                    $botao = "Editar";
+                        $idNivel = $_GET['idNivel'];
+                        
+                        $action="editar&idFuncionario=".$_GET['idFuncionario']."&idLogin=".$_GET['idLogin']."&idNivel=".$_GET['idNivel'];
+                    }
+                  }
+
+
+            ?>
+            
             <form name="frmCadastroFunionario" class="frmCadastroFunionario" action="router.php?controller=funcionario&modo=<?php echo($action); ?>" method="post">
                 <table>
                     <tr>
                         <td><label>Login</label></td>
                     </tr>
                     <tr>
-                        <td><input placeholder="Digite seu Login" type="text" name="txtLogin" value=""></td>
+                        <td><input placeholder="Digite seu Login" type="text" name="txtLogin" value="<?php echo($login); ?>"></td>
                     </tr>
                     <tr>
                         <td><label>Senha</label></td>
                     </tr>
                     <tr>
-                        <td><input placeholder="Digite sua senha" type="password" name="txtSenha" value=""></td>
+                        <td><input placeholder="Digite sua senha" type="password" name="txtSenha" value="<?php echo($senha); ?>"></td>
                     </tr>
                     <tr>
                         <td><label>Nome</label></td>
                     </tr>
                     <tr>
-                        <td><input placeholder="Ex.: Seu Nome" type="text" name="txtNome" value=""></td>
+                        <td><input placeholder="Ex.: Seu Nome" type="text" name="txtNome" value="<?php echo($nome); ?>"></td>
                     </tr>
                     <tr>
                         <td><label>Email</label></td>
                     </tr>
                     <tr>
-                        <td><input placeholder="Ex.: seuemail@email.com" type="email" name="txtEmail" value=""></td>
+                        <td><input placeholder="Ex.: seuemail@email.com" type="email" name="txtEmail" value="<?php echo($email); ?>"></td>
                     </tr>
                     <tr>
                         <td><label>CPF</label></td>
                     </tr>
                     <tr>
-                        <td><input placeholder="Ex.: 000.000.000-00" type="text" name="txtCPF" value=""></td>
+                        <td><input placeholder="Ex.: 000.000.000-00" type="text" name="txtCPF" value="<?php echo($cpf); ?>"></td>
                     </tr>
                     <tr>
                         <td><label>RG</label></td>
                     </tr>
                     <tr>
-                        <td><input placeholder="Ex.: 00.000.000-0" type="text" name="txtRG" value=""></td>
+                        <td><input placeholder="Ex.: 00.000.000-0" type="text" name="txtRG" value="<?php echo($rg); ?>"></td>
                     </tr>
                     <tr>
                         <td><label>Nível de funcionário</label></td>
@@ -61,9 +91,33 @@
                     <tr>
                         <td>
                             <select class="sltNivel" name="sltNivel">
-                                <option value="1">Admnistrador</option>
-                                <option value="2">Marketing</option>
-                                <option value="3">Reservas</option>
+                                
+                                
+                                 <?php
+                                     require_once('controllers/funcionario_controller.php');
+
+                                    $controller_funcionario= new ControllerFuncionario();
+                                    $rows = $controller_funcionario -> ListarNivel();
+
+                                    $contador = 0;
+
+                                    while ($contador < count($rows)) {
+                                        
+                                        if($idNivel == $rows[$contador]->selectIdNivel){
+                                            $marcar = "selected";
+                                        }else{
+                                            $marcar = "";
+                                        }
+
+                                ?>
+                                
+                                <option <?php echo($marcar); ?> value="<?php echo($rows[$contador]->selectIdNivel) ?>"><?php echo($rows[$contador]->selectNivel) ?></option>
+
+                                
+                                <?php
+                                    $contador++;
+                                    }
+                                ?>
                             </select>
                         </td>
                     </tr>
@@ -75,7 +129,7 @@
                     </tr>
 
                     <tr>
-                        <td><input type="submit" name="btn"></td>
+                        <td><input type="submit" name="btn" value="<?php echo($botao); ?>"></td>
                     </tr>
                 </table>
             </form>
@@ -110,7 +164,7 @@
 
             </td>
             <td class="td_titulos">
-                RG
+                Login
 
             </td>
             <td class="td_titulos">
@@ -127,38 +181,43 @@
 
         </tr>
         <?php
-        $i = 0;
+             require_once('controllers/funcionario_controller.php');
 
-    while($i < 9){
+            $controller_funcionario= new ControllerFuncionario();
+            $rs = $controller_funcionario -> Listar();
 
-    ?>
+            $cont = 0;
+
+            while ($cont < count($rs)) {
+
+        ?>
              <tr>
                  <td class="img">
-                    <img src="imagens/gfuncionarios/mulher2.jpg" >
+                    <img src="<?php echo($rs[$cont]->caminhoImagem) ?>" >
                  </td>
                  <td class="tdcontas">
-                     Maria Eduarda
+                     <?php echo($rs[$cont]->nome); ?>
                  </td>
                  <td class="tdcontas">
-                     476.598.246-24
+                     <?php echo($rs[$cont]->cpf); ?>
                  </td>
                  <td class="tdcontas">
-                     59.658.3698-8
+                     <?php echo($rs[$cont]->login); ?>
                  </td>
                  <td class="tdcontas">
-                     mariaduda@gmail.com
+                     <?php echo($rs[$cont]->email); ?>
                  </td>
                  <td class="tdcontas">
-                     Reservas
+                     <?php echo($rs[$cont]->nivel); ?>
                  </td>
                  <td class="tdcontas">
-                    <a href="#"><img src="imagens/edit.png"></a>
-                     <a href="#"><img src="imagens/delete.png"></a>
+                    <a href="router.php?controller=funcionario&modo=visualizar&idFuncionario=<?php echo($rs[$cont]->idFuncionario); ?>&idLogin=<?php echo($rs[$cont]->idLogin); ?>&idNivel=<?php echo($rs[$cont]->idNivel); ?>"><img src="imagens/edit.png"></a>
+                     <a href="router.php?controller=funcionario&modo=excluir&idFuncionario=<?php echo($rs[$cont]->idFuncionario); ?>&idLogin=<?php echo($rs[$cont]->idLogin); ?>"><img src="imagens/delete.png"></a>
                  </td>
             </tr>
 
         <?php
-        $i++;
+            $cont++;
         }
     ?>
         </table>
