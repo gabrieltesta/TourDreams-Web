@@ -22,11 +22,12 @@
     color: #000;
     font-weight: normal;
     display: flex;
+
 }
 
 
 #primeira{
-    
+
     width:300%;
     height:15px;
     float:left;
@@ -44,7 +45,7 @@
     margin-right:20px;
 }
 #terceira{
-    
+
     width:300%;
     height:15px;
         float:left;
@@ -52,7 +53,7 @@
 }
 
 #direita{
-    
+
     width:50%;
     height:1115px;
     float:left;
@@ -71,24 +72,24 @@
 }
 
 #esquerda{
-    
+
     width:49%;
     height:1115px;
     float:left;
     overflow: auto;
     border: 1px solid #ccc;
     border-radius: 2px;
-
+    background-color: ;
 }
 
 #divisor{
-    width:30%;
+    width:100%;
     height:100px;
     margin-left:px;
     margin-top:0px;
-    position:absolute;
-    background-color:white;
-    
+
+    background-color:;
+
 }
 
 #iconeesquerdo{
@@ -115,36 +116,79 @@
 
 .dadosParceiro{
     width:100%;
-    height:20%;
+    height:15%;
     border:solid 0px black;
     margin-top:0px;
+    background-color:;
+    margin-top: 10px;
+
 }
 
 .nomeParceiro{
-    
+
     width:60%;
-    height:100%;
+    height:50%;
     float:left;
     text-align:justify;
     line-height:100px;
     font-size:20px;
-    margin-left:50px;
+    font-family: raleway;
+    background-color: ;
+    margin-top: 20px;
+
 }
-
-
+.caixinhasConteudo{
+  width: 100%;
+  height: 200px;
+  background-color: ;
+}
+.foto{
+  width: 200px;
+  height: 100%;
+  background-color: ;
+  float: left;
+}
 .fotoParceiro{
-  width: 10%;
-  height: 25%;
-  background-color:red;
-  border-radius: 20%;
-  
-  background-size:100%;
-  background-repeat: no-repeat;
-  background-position: -0px 5px;
-  float:left;
-    margin-left:10px;
-}
+  width: 70%;
+  height: 70%;
+  background-color:;
+  border-radius: 50%;
+  margin-left:350px;
 
+  float:left;
+  margin-top: 30px;
+
+    margin-left:30px;
+}
+.gato{
+  width: 100%;
+  height: 30px;
+  background-color: ;
+}
+.titulo{
+  width: 80%;
+  height: 50px;
+  background-color: ;
+  font-size: 25px;
+  font-family: raleway;
+
+}
+.textoCont{
+  width: 100%;
+  height: 100px;
+  background-color: ;
+  margin-top: -30px;
+}
+.texto{
+font-size: 18px;
+font-style:italic;
+}
+  .contCaixinhas{
+    width: 700px;
+    margin-top: 10px;
+    height: 100%;
+    background-color:;
+  }
 
 #principal{
     width:90%;
@@ -152,9 +196,8 @@
     margin-left:auto;
     margin-right:auto;
     margin-top:30px;
-    
-}
 
+}
 .barra{
     height: 40px;
     border:solid 2px #031634;
@@ -174,7 +217,11 @@
 }
 
 
-
+.parteDeBaixo{
+  width: 100%;
+  height: 800px;
+  background-color: ;
+}
 
 
 
@@ -202,7 +249,7 @@
 }
 
 #detalhesParceiro{
-    
+
     width:60%;
     height:10%;
     float:left;
@@ -235,7 +282,7 @@
 }
 
 #extra{
-    
+
     width:100%;
     height:60%;
     border:solid 3px black;
@@ -268,5 +315,3 @@
     user-select: none;
     margin-left:160px;
 }
-
-

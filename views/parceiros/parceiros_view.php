@@ -1,10 +1,10 @@
 <section class="section">
 
     <div id="divisoria"> <!-- Titulo da pagina -->
-        
+
         <div id="primeira">
             <hr>
-        
+
         </div>
         <div id="segunda">
             Parceiros
@@ -12,82 +12,129 @@
          <div id="terceira">
         <hr>
         </div>
-        
+
 
     </div>
-
-    
     <div id="esquerda">
-    
+
         <div id="divisor">
-            
+
             <div id="iconeesquerdo"></div>
             <div id="parceiroDestaque">Parceiros em Destaque</div>
-        
+
         </div>
-        
-        <div class="dadosParceiro">  
-         
-                <div >
-                    <img class="fotoParceiro" src="imagens/parceiros/fachadas.jpg">
+        <div class="parteDeBaixo">
+          <div class="caixinhasConteudo">
+              <div class="foto">
+                <img class="fotoParceiro" src="imagens/parceiros/fachadas.jpg">
+              </div>
+              <div class="contCaixinhas">
+                <div class="gato">
+
                 </div>
-              
-                <div class="nomeParceiro">
-                 COPACABANA PALACE
+                <div class="titulo">
+                  Hotel Fazenda
                 </div>
-        </div>   
-        <div class="dadosParceiro">  
-         
-                <div>
-                    <img class="fotoParceiro" src="imagens/parceiros/fachadas.jpg">
+                <div class="textoCont">
+                  <p class="texto">
+                      "Lorem ipsum dolor sit amet, consectetur
+                       adipiscing elit, sed do eiusmod tempor
+                       incididunt ut labore et dolore magna aliqua.
+                       Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor"
+
+                  </p>
                 </div>
-              
-                <div class="nomeParceiro">
-                 RENNASCENCE
+              </div>
+          </div>
+          <div class="caixinhasConteudo">
+              <div class="foto">
+                <img class="fotoParceiro" src="imagens/parceiros/fachadas.jpg">
+              </div>
+              <div class="contCaixinhas">
+                <div class="gato">
+
                 </div>
-        </div>   
-        <div class="dadosParceiro">  
-         
-                <div >
-                    <img class="fotoParceiro" src="imagens/parceiros/fachadas.jpg">
+                <div class="titulo">
+                  Hotel Fazenda
                 </div>
-              
-                <div class="nomeParceiro">
-                 HOTEL FAZENDA
+                <div class="textoCont">
+                  <p class="texto">
+                      "Lorem ipsum dolor sit amet, consectetur
+                       adipiscing elit, sed do eiusmod tempor
+                       incididunt ut labore et dolore magna aliqua.
+                       Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor"
+
+                  </p>
                 </div>
-        </div>   
-        <div class="dadosParceiro">  
-         
-                <div >
-                    <img class="fotoParceiro" src="imagens/parceiros/fachadas.jpg">
+              </div>
+          </div>
+          <div class="caixinhasConteudo">
+              <div class="foto">
+                <img class="fotoParceiro" src="imagens/parceiros/fachadas.jpg">
+              </div>
+              <div class="contCaixinhas">
+                <div class="gato">
+
                 </div>
-              
-                <div class="nomeParceiro">
-                 HOTEL FAZENDA
+                <div class="titulo">
+                  Hotel Fazenda
                 </div>
-        </div>   
-        <div class="dadosParceiro">  
-         
-                <div >
-                    <img class="fotoParceiro" src="imagens/parceiros/fachadas.jpg">
+                <div class="textoCont">
+                  <p class="texto">
+                      "Lorem ipsum dolor sit amet, consectetur
+                       adipiscing elit, sed do eiusmod tempor
+                       incididunt ut labore et dolore magna aliqua.
+                       Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor"
+
+                  </p>
                 </div>
-              
-                <div class="nomeParceiro">
-                 HOTEL FAZENDA
+              </div>
+          </div>
+          <div class="caixinhasConteudo">
+              <div class="foto">
+                <img class="fotoParceiro" src="imagens/parceiros/fachadas.jpg">
+              </div>
+              <div class="contCaixinhas">
+                <div class="gato">
+
                 </div>
-        </div>   
-        
-      
+                <div class="titulo">
+                  Hotel Fazenda
+
+                </div>
+                <div class="textoCont">
+                  <p class="texto">
+                      "Lorem ipsum dolor sit amet, consectetur
+                       adipiscing elit, sed do eiusmod tempor
+                       incididunt ut labore et dolore magna aliqua.
+                       Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor"
+
+                  </p>
+                </div>
+              </div>
+          </div>
+        </div>
+
+
+
     </div>
     <div id="meio">
-    
-    
+
+
     </div>
-    
+
     <div id="direita">
-    
+
         <div id="principal">
-        
+
                 <div id="busca">
 
                     <div id="barradeBusca">
@@ -114,16 +161,16 @@
                         TEXTINHO ONDE VAI FICAR A DESCRIÇÃO DO CLIENTE
 
 
-                      
+
                         </div>
                           <div id="buttonEntrar"  onmousedown="return false">
                            Ver mais detalhes
                         </div>
 
                 </div>
-        
+
         </div>
-    
-        
+
+
     </div>
 </section>

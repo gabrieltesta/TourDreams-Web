@@ -35,17 +35,47 @@
         public function InserirFuncionario($funcionario)
         {
 
-            $sql = "INSERT INTO tbl_login(login, senha, idTipoLogin) VALUES('".$funcionario->login."','".$funcionario->senha."', 3);";
-            mysql_query($sql);
-                $sql = "SELECT LAST_INSERT_ID() as idLogin";
-                $select = mysql_query($sql);
+            if($funcionario->caminhoImagem != null){
+
+                $sql = "insert into tbl_imagem(caminhoImagem) values('".$funcionario->caminhoImagem."')";
+                if(mysql_query($sql)){
+                    $sql = "SELECT LAST_INSERT_ID() as idImagem";
+                    $select = mysql_query($sql);
                     if($rs = mysql_fetch_array($select)){
-                        $idLogin = $rs['idLogin'];
-                            $sql = "INSERT INTO tbl_funcionario(nomeFuncionario,idImagem,cpf,rg,emailFuncionario,idLogin,idNivelFuncionario) VALUES('".$funcionario->nome."',1,'".$funcionario->cpf."','".$funcionario->rg."','".$funcionario->email."',".$idLogin.",".$funcionario->idNivel.")";
-                            mysql_query($sql);
+                        $idImagem = $rs['idImagem'];
+
+                        $sql = "INSERT INTO tbl_login(login, senha, idTipoLogin) VALUES('".$funcionario->login."','".$funcionario->senha."', 3);";
+                        mysql_query($sql);
+                            $sql = "SELECT LAST_INSERT_ID() as idLogin";
+                            $select = mysql_query($sql);
+                                if($rs = mysql_fetch_array($select)){
+                                    $idLogin = $rs['idLogin'];
+                                        $sql = "INSERT INTO tbl_funcionario(nomeFuncionario,idImagem,cpf,rg,emailFuncionario,idLogin,idNivelFuncionario) VALUES('".$funcionario->nome."',".$idImagem.",'".$funcionario->cpf."','".$funcionario->rg."','".$funcionario->email."',".$idLogin.",".$funcionario->idNivel.")";
+                                        mysql_query($sql);
+                                }
+
+
                     }
-                
-            
+
+                }
+
+
+            }else {
+                $sql = "INSERT INTO tbl_login(login, senha, idTipoLogin) VALUES('".$funcionario->login."','".$funcionario->senha."', 3);";
+                mysql_query($sql);
+                    $sql = "SELECT LAST_INSERT_ID() as idLogin";
+                    $select = mysql_query($sql);
+                        if($rs = mysql_fetch_array($select)){
+                            $idLogin = $rs['idLogin'];
+                                $sql = "INSERT INTO tbl_funcionario(nomeFuncionario,idImagem,cpf,rg,emailFuncionario,idLogin,idNivelFuncionario) VALUES('".$funcionario->nome."',1,'".$funcionario->cpf."','".$funcionario->rg."','".$funcionario->email."',".$idLogin.",".$funcionario->idNivel.")";
+                                mysql_query($sql);
+                        }
+            }
+
+
+
+
+
 
 
         }
@@ -53,8 +83,8 @@
 
         public function SelectAll()
         {
-            $sql="SELECT f.idLogin, f.idNivelFuncionario, f.idFuncionario, f.nomeFuncionario, f.cpf, f.emailFuncionario, l.login, i.caminhoImagem, n.nivel from tbl_funcionario as f INNER JOIN tbl_login as l ON f.idLogin = l.idLogin INNER JOIN tbl_imagem as i ON f.idImagem = i.idImagem INNER JOIN tbl_nivelfuncionario as n ON f.idNivelFuncionario = n.idNivelFuncionario";
-            
+            $sql="SELECT f.idLogin, f.idImagem, f.idNivelFuncionario, f.idFuncionario, f.nomeFuncionario, f.cpf, f.emailFuncionario, l.login, i.caminhoImagem, n.nivel from tbl_funcionario as f INNER JOIN tbl_login as l ON f.idLogin = l.idLogin INNER JOIN tbl_imagem as i ON f.idImagem = i.idImagem INNER JOIN tbl_nivelfuncionario as n ON f.idNivelFuncionario = n.idNivelFuncionario";
+
             $select = mysql_query($sql);
 
           $cont = 0;
@@ -71,37 +101,38 @@
             $listFuncionario[$cont]->email = $rs['emailFuncionario'];
             $listFuncionario[$cont]->login = $rs['login'];
             $listFuncionario[$cont]->nivel = $rs['nivel'];
+            $listFuncionario[$cont]->idImagem = $rs['idImagem'];
             $listFuncionario[$cont]->caminhoImagem = $rs['caminhoImagem'];
             $listFuncionario[$cont]->idNivel = $rs['idNivelFuncionario'];
 
             $cont +=1;
           }
            return $listFuncionario;
-            
+
         }
-        
-        
+
+
         public function Deletar($funcionario){
-            
+
             $sql = "delete from tbl_funcionario where idFuncionario=".$funcionario->idFuncionario.";";
             mysql_query($sql);
-            
+
             $sql = "delete from tbl_login where idLogin =".$funcionario->idLogin.";";
             mysql_query($sql);
-            
+
         }
-        
-        
+
+
         public function SelectById($funcionario){
 
             $sql = "SELECT f.idNivelFuncionario, f.idLogin ,f.idFuncionario, f.nomeFuncionario, f.rg, f.cpf, f.emailFuncionario, l.senha, l.login, i.caminhoImagem, n.nivel from tbl_funcionario as f INNER JOIN tbl_login as l ON f.idLogin = l.idLogin INNER JOIN tbl_imagem as i ON f.idImagem = i.idImagem INNER JOIN tbl_nivelfuncionario as n ON f.idNivelFuncionario = n.idNivelFuncionario where idFuncionario=".$funcionario->idFuncionario.";";
-                
+
             $select = mysql_query($sql);
-            
+
             if($rs = mysql_fetch_array($select)){
-                
+
                 $lista = new Funcionario();
-                
+
                 $lista->nome=$rs['nomeFuncionario'];
                 $lista->idLogin=$rs['idLogin'];
                 $lista->idFuncionario=$rs['idFuncionario'];
@@ -111,39 +142,62 @@
                 $lista->login=$rs['login'];
                 $lista->senha=$rs['senha'];
                 $lista->nivel=$rs['nivel'];
-                
-                
+
+
                 return $lista;
-                
-           
-                
+
+
+
             }
-        
+
         }
-        
-        
-        
+
+
+
         public function Editar($funcionario){
-             $sql = "UPDATE tbl_login set login='".$funcionario->login."', senha='".$funcionario->senha."' WHERE idLogin=".$funcionario->idLogin;
-              mysql_query($sql);
-              $sql = "UPDATE tbl_funcionario set nomeFuncionario='".$funcionario->nome."', cpf='".$funcionario->cpf."', rg='".$funcionario->rg."', emailFuncionario='".$funcionario->email."', idNivelFuncionario=".$funcionario->idNivel." where idFuncionario= ".$funcionario->idFuncionario;
-              
-              mysql_query($sql);
+
+            if($funcionario->caminhoImagem != null){
+
+                $sql = "insert into tbl_imagem(caminhoImagem) values('".$funcionario->caminhoImagem."')";
+                if(mysql_query($sql)){
+                    $sql = "SELECT LAST_INSERT_ID() as idImagem";
+                    $select = mysql_query($sql);
+                    if($rs = mysql_fetch_array($select)){
+                        $idImagem = $rs['idImagem'];
+
+                        $sql = "UPDATE tbl_login set login='".$funcionario->login."', senha='".$funcionario->senha."' WHERE idLogin=".$funcionario->idLogin;
+                         mysql_query($sql);
+                         $sql = "UPDATE tbl_funcionario set nomeFuncionario='".$funcionario->nome."', idImagem=".$idImagem.", cpf='".$funcionario->cpf."', rg='".$funcionario->rg."', emailFuncionario='".$funcionario->email."', idNivelFuncionario=".$funcionario->idNivel." where idFuncionario= ".$funcionario->idFuncionario;
+
+                         mysql_query($sql);
+
+                         header('location:gerfuncionario.php');
+                    }
+
+                }
+
+            }else{
+
+                $sql = "UPDATE tbl_login set login='".$funcionario->login."', senha='".$funcionario->senha."' WHERE idLogin=".$funcionario->idLogin;
+                 mysql_query($sql);
+                 $sql = "UPDATE tbl_funcionario set nomeFuncionario='".$funcionario->nome."', cpf='".$funcionario->cpf."', rg='".$funcionario->rg."', emailFuncionario='".$funcionario->email."', idNivelFuncionario=".$funcionario->idNivel." where idFuncionario= ".$funcionario->idFuncionario;
+
+                 mysql_query($sql);
+
+                 header('location:gerfuncionario.php');
 
 
-              header('location:gerfuncionario.php');
-            
-            echo($sql);
-            
-        } 
+            }
+        }
 
-        
-        
-        
+
+
+
+
         public function SelectNivel()
         {
             $sql="SELECT * from tbl_nivelfuncionario";
-            
+
             $select = mysql_query($sql);
 
           $cont = 0;
@@ -155,15 +209,15 @@
 
             $listNivel[$cont]->selectIdNivel = $rs['idNivelFuncionario'];
             $listNivel[$cont]->selectNivel = $rs['nivel'];
-            
+
 
             $cont +=1;
           }
            return $listNivel;
-            
+
         }
-        
-        
+
+
     }
 
 

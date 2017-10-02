@@ -17,8 +17,8 @@
             <h1>Cadastro de Funcionário</h1><h2 onclick="fecharModalFuncionarios()">X</h2>
         </div>
         <div class="divFormulario">
-            
-            
+
+
             <?php
                   $nome = null;
                   $cpf = null;
@@ -26,7 +26,7 @@
                   $senha = null;
                   $login = null;
                   $rg = null;
-                  
+
 
 
                   if(isset($_GET['modo'])){
@@ -39,15 +39,15 @@
                       $rg = $result->rg;
                     $botao = "Editar";
                         $idNivel = $_GET['idNivel'];
-                        
+
                         $action="editar&idFuncionario=".$_GET['idFuncionario']."&idLogin=".$_GET['idLogin']."&idNivel=".$_GET['idNivel'];
                     }
                   }
 
 
             ?>
-            
-            <form name="frmCadastroFunionario" class="frmCadastroFunionario" action="router.php?controller=funcionario&modo=<?php echo($action); ?>" method="post">
+
+            <form name="frmCadastroFunionario" class="frmCadastroFunionario" action="router.php?controller=funcionario&modo=<?php echo($action); ?>" method="post" enctype="multipart/form-data">
                 <table>
                     <tr>
                         <td><label>Login</label></td>
@@ -91,8 +91,8 @@
                     <tr>
                         <td>
                             <select class="sltNivel" name="sltNivel">
-                                
-                                
+
+
                                  <?php
                                      require_once('controllers/funcionario_controller.php');
 
@@ -102,7 +102,7 @@
                                     $contador = 0;
 
                                     while ($contador < count($rows)) {
-                                        
+
                                         if($idNivel == $rows[$contador]->selectIdNivel){
                                             $marcar = "selected";
                                         }else{
@@ -110,10 +110,10 @@
                                         }
 
                                 ?>
-                                
+
                                 <option <?php echo($marcar); ?> value="<?php echo($rows[$contador]->selectIdNivel) ?>"><?php echo($rows[$contador]->selectNivel) ?></option>
 
-                                
+
                                 <?php
                                     $contador++;
                                     }
