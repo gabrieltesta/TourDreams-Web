@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Hotel - TourDreams</title>
+        <title>hotelQuarto - TourDreams</title>
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/animate.css">
         <link rel="stylesheet" href="css/hotelquarto.css">
