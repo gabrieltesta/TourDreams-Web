@@ -14,7 +14,7 @@
 
     public function SelectParceiro(){
 
-      $sql = 'select  p.idParceiro  , p.cnpj, p.nomeParceiro, l.login, l.idLogin
+      $sql = 'select  p.idParceiro, p.cnpj, p.nomeParceiro, p.descricao, l.login, l.idLogin
         from tbl_parceiro as p
         inner join tbl_login as l
         on p.idLogin = l.idLogin';
@@ -30,6 +30,7 @@
         $listParceiro[$cont]->idParceiro = $rs['idParceiro'];
         $listParceiro[$cont]->cnpj = $rs['cnpj'];
         $listParceiro[$cont]->nome = $rs['nomeParceiro'];
+        $listParceiro[$cont]->descricao=$rs['descricao'];
         $listParceiro[$cont]->login = $rs['login'];
         $listParceiro[$cont]->idLogin = $rs['idLogin'];
 

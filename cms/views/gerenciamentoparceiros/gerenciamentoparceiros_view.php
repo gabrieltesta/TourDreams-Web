@@ -25,8 +25,12 @@
                         Login
                 </td>
                 <td class="titulo2" >
+                      Descrição
+                </td>
+                <td class="titulo2" >
                         opções
                 </td>
+
         </tr>
 
     <?php
@@ -55,6 +59,10 @@
                 <?php echo($rows[$cont]->login); ?>
 
             </td>
+            <td class="tdnumero">
+               <?php echo($rows[$cont]->descricao); ?>
+
+           </td>
             <td class="tdnumero">
                <a href=<?php echo("router.php?controller=parceiro&modo=excluir&idParceiro=".$rows[$cont]->idParceiro);?>>
                  <img src="imagens/delete.png">

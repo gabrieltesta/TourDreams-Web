@@ -17,6 +17,24 @@
         //Chama o método conectar para estabelecer a conexão com o BD.
         $conexao_db->conectar();
     }
+      
+      
+      
+         public function Insert($milhas)
+        {
+            $sql = 'INSERT INTO tbl_milhasrecompensa (valorPontos, desconto) VALUES ("'.$milhas->valorPontos.'","'.$milhas->desconto.'")';
+            if(mysql_query($sql))
+            {
+                return 'ok';
+            }
+            else
+            {
+                return 'erro';
+            }
+            
+        }
+      
+      
 
     public function SelectMilhas(){
 
@@ -41,7 +59,7 @@
     }
 
     public function Delete($milhas){
-      $sql = "DELETE FROM tbl_milhasrecompensa where idRecomepnsa=".$milhas->idRecompensa.";";
+      $sql = "DELETE FROM tbl_milhasrecompensa where idRecompensa=".$milhas->idRecompensa.";";
       if(mysql_query($sql)){
         return 'ok';
       }
@@ -52,31 +70,34 @@
     }
 
     public function SelectById($milhas){
-      $sql = "select p.valorPontos, p.desconto, 
-              from tbl_milhasrecompensa WHERE idRecompensa=".$milhas->idRecompensa;
+      $sql = "select * from tbl_milhasrecompensa WHERE idRecompensa=".$milhas->idRecompensa;
       $select = mysql_query($sql);
 
       if($rs=mysql_fetch_array($select)){
 
-        $listar = new Milhas();
+        $milhas = new Milhas();
 
-        $listar->valorPontos=$rs['valorPontos'];
-        $listar->desconto=$rs['desconto'];
-        return  $listar;
+        $milhas->valorPontos=$rs['valorPontos'];
+        $milhas->desconto=$rs['desconto'];
+       
       }
 
-
+         return  $milhas;
     }
 
     public function Update($milhas){
 
    
       $sql = "UPDATE tbl_milhasrecompensa set valorPontos='".$milhas->valorPontos."', desconto='".$milhas->desconto."'Where idRecompensa= ".$milhas->idRecompensa;
-      //echo ($sql);
-      mysql_query($sql);
-
-
-      header('location:milhas.php');
+        
+        if(mysql_query($sql))
+        {
+            return 'ok';
+        }else
+        {
+            return 'erro';
+        }
+  
 
     }
 

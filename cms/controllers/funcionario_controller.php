@@ -134,6 +134,7 @@
 
         $idFuncionario = $_GET['idFuncionario'];
         $idLogin = $_GET['idLogin'];
+        $idImagem = $_GET['idImagem'];
 
 
         $funcionario_class = new Funcionario();
@@ -149,6 +150,7 @@
 
         $funcionario_class->idFuncionario=$idFuncionario;
         $funcionario_class->idLogin=$idLogin;
+        $funcionario_class->idImagem=$idImagem;
 
 
 
@@ -168,10 +170,10 @@
           // Aqui eu enfileiro as extensões permitidas e separo por ';'
           // Isso serve apenas para eu poder pesquisar dentro desta String
           if ( strstr ( '.jpg;.jpeg;.gif;.png', $extensao ) ) {
-
+              $novoNome = 'parceiro'.$idFuncionario.$extensao;
 
               // Concatena a pasta com o nome
-              $destino = 'imagens/gfuncionarios/' . $nome.$extensao;
+              $destino = 'imagens/gfuncionarios/' . $novoNome;
 
               // tenta mover o arquivo para o destino
               if ( @move_uploaded_file ( $arquivo_tmp, $destino ) ) {

@@ -158,23 +158,19 @@
 
             if($funcionario->caminhoImagem != null){
 
-                $sql = "insert into tbl_imagem(caminhoImagem) values('".$funcionario->caminhoImagem."')";
+                $sql = "update tbl_imagem set caminhoImagem ='".$funcionario->caminhoImagem."' where idImagem=".$funcionario->idImagem;
                 if(mysql_query($sql)){
-                    $sql = "SELECT LAST_INSERT_ID() as idImagem";
-                    $select = mysql_query($sql);
-                    if($rs = mysql_fetch_array($select)){
-                        $idImagem = $rs['idImagem'];
 
                         $sql = "UPDATE tbl_login set login='".$funcionario->login."', senha='".$funcionario->senha."' WHERE idLogin=".$funcionario->idLogin;
                          mysql_query($sql);
-                         $sql = "UPDATE tbl_funcionario set nomeFuncionario='".$funcionario->nome."', idImagem=".$idImagem.", cpf='".$funcionario->cpf."', rg='".$funcionario->rg."', emailFuncionario='".$funcionario->email."', idNivelFuncionario=".$funcionario->idNivel." where idFuncionario= ".$funcionario->idFuncionario;
+                         $sql = "UPDATE tbl_funcionario set nomeFuncionario='".$funcionario->nome."', cpf='".$funcionario->cpf."', rg='".$funcionario->rg."', emailFuncionario='".$funcionario->email."', idNivelFuncionario=".$funcionario->idNivel." where idFuncionario= ".$funcionario->idFuncionario;
 
                          mysql_query($sql);
 
                          header('location:gerfuncionario.php');
                     }
 
-                }
+
 
             }else{
 

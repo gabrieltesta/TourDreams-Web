@@ -8,6 +8,7 @@
     public $email;
     public $cnpj;
     public $telefone;
+    public $caminhoImg;
 
     //Método construtor da classe
     public function __construct()
@@ -23,32 +24,50 @@
     public function Insert($parceiro_class){
 
       $sql = "INSERT INTO tbl_login(login, senha, idTipoLogin) VALUES(
-        '".$parceiro_class->login."','".$parceiro_class->senha."','2')";
-          if(mysql_query($sql)){
+        '".$parceiro_class->login."','".$parceiro_class->senha."',2)";
+          mysql_query($sql);
             $sql = "SELECT LAST_INSERT_ID() AS idLogin";
-              if($select = mysql_query($sql)){
+              $select = mysql_query($sql);
                 if($rows = mysql_fetch_array($select)){
                   $idLogin = $rows['idLogin'];
                   $sql = "INSERT INTO tbl_telefone(telefone, idTipoTelefone) VALUES(
-                    '".$parceiro_class->telefone."','1')";
-                    if(mysql_query($sql)){
+                    '".$parceiro_class->telefone."',1)";
+                    mysql_query($sql);
                       $sql = "SELECT LAST_INSERT_ID() AS idTelefone";
-                      if($select = mysql_query($sql)){
+                      $select = mysql_query($sql);
                         if($rows = mysql_fetch_array($select)){
                           $idTelefone = $rows['idTelefone'];
-                          $sql = "INSERT INTO tbl_parceiro(cnpj, nomeParceiro, idImagem, idLogin, emailParceiro)
-                          VALUES('".$parceiro_class->cnpj."', '".$parceiro_class->nome."','1','".$idLogin."','".$parceiro_class->email."')";
+                          $sql = "INSERT INTO tbl_parceiro(cnpj, nomeParceiro, idImagem, idLogin, emailParceiro) VALUES('".$parceiro_class->cnpj."', '".$parceiro_class->nome."',1,".$idLogin.",'".$parceiro_class->email."')";
                           if(mysql_query($sql)){
                             return 'ok';
                           }else {
                             return 'erro';
                           }
                         }
-                      }
-                    }
+
+
                 }
-              }
-          }
+
+
     }
+
+
+    public function SelectById($parceiro){
+      $sql = "SELECT * FROM vw_loginparceiro WHERE idLogin=".$parceiro->idLogin;
+      $select = mysql_query($sql);
+
+      if($rs=mysql_fetch_array($select)){
+
+        $listar = new Parceiro();
+
+        $listar->nome=$rs['nomeParceiro'];
+        $listar->caminhoImg=$rs['caminhoImagem'];
+
+        return  $listar;
+      }
+  }
+
+
+
   }
  ?>

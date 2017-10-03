@@ -113,5 +113,29 @@
                         break;
                 }
                 break;
+            
+            case 'milhas':
+                require_once('controllers/milhas_controller.php');
+                require_once('models/milhas_class.php');
+
+                $controller_milhas = new ControllerMilhas();
+                switch($modo)
+                {
+                    case 'inserir':
+                        $controller_milhas->Inserir();
+                        break;
+                    case 'visualizar':
+                        $controller_milhas->Visualizar();
+                        break;
+                    case 'excluir':
+                        $controller_milhas->Excluir();
+                        break;
+                    case 'editar':
+                        $controller_milhas->Editar();
+                        break;
+                }
+                break;
+            
+            
     }
 ?>

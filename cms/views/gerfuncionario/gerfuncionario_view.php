@@ -39,8 +39,9 @@
                       $rg = $result->rg;
                     $botao = "Editar";
                         $idNivel = $_GET['idNivel'];
+                        $idImagem = $_GET['idImagem'];
 
-                        $action="editar&idFuncionario=".$_GET['idFuncionario']."&idLogin=".$_GET['idLogin']."&idNivel=".$_GET['idNivel'];
+                        $action="editar&idFuncionario=".$_GET['idFuncionario']."&idLogin=".$_GET['idLogin']."&idNivel=".$_GET['idNivel']."&idImagem=".$_GET['idImagem'];
                     }
                   }
 
@@ -211,7 +212,7 @@
                      <?php echo($rs[$cont]->nivel); ?>
                  </td>
                  <td class="tdcontas">
-                    <a href="router.php?controller=funcionario&modo=visualizar&idFuncionario=<?php echo($rs[$cont]->idFuncionario); ?>&idLogin=<?php echo($rs[$cont]->idLogin); ?>&idNivel=<?php echo($rs[$cont]->idNivel); ?>"><img src="imagens/edit.png"></a>
+                    <a href="router.php?controller=funcionario&modo=visualizar&idFuncionario=<?php echo($rs[$cont]->idFuncionario); ?>&idLogin=<?php echo($rs[$cont]->idLogin); ?>&idNivel=<?php echo($rs[$cont]->idNivel); ?>&idImagem=<?php echo($rs[$cont]->idImagem); ?>"><img src="imagens/edit.png"></a>
                      <a href="router.php?controller=funcionario&modo=excluir&idFuncionario=<?php echo($rs[$cont]->idFuncionario); ?>&idLogin=<?php echo($rs[$cont]->idLogin); ?>"><img src="imagens/delete.png"></a>
                  </td>
             </tr>

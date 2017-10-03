@@ -72,5 +72,13 @@
               session_write_close();
               header('location:homepage.php');
               break;
+
+          case 'parceiroDestaque':
+
+            require_once('controllers/parceirosDestaque_controller.php');
+            require_once('models/parceirosDestaque_class.php');
+
+
+            break;
     }
 ?>

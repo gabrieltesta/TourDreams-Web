@@ -32,6 +32,20 @@ class ControllerParceiro
       }
     }
 }
+
+
+public function Buscar($idLogin)
+{
+    require_once('models/parceiro_class.php');
+
+    $parceiro_class = new Parceiro();
+    $parceiro_class->idLogin=$idLogin;
+    return $parceiro_class->SelectById($parceiro_class);
+
+}
+
+
+
 }
 
  ?>

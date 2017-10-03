@@ -1,13 +1,29 @@
+<?php
+
+    if($_SESSION['login'] != 'true')
+    {
+        header('location: homepage.php');
+    }
+    //Inclusão do arquivo controller para fazer o SELECT.
+    require_once('controllers/parceiros_controller.php');
+
+    /*Instância do objeto da controller e chamada para metódo de listagem
+    dos registros*/
+    $controller_parceiro = new ControllerParceiro();
+    $parceiro = $controller_parceiro -> Buscar($_SESSION['idLogin']);
+
+?>
+
 <section id="sectionEsquerda">
     <div id="contEsquerda">
         <div id="divSuperior">
             <div id="divFotoParceiro">
                 <div id="trocarFoto">Trocar Foto</div>
-                <img draggable="false" alt="" src="imagens/perfilparceiro/belmond.png">
+                <img draggable="false" alt="" src="<?php echo($parceiro->caminhoImg); ?>">
 
             </div>
             <h2 id="nomeParceiro">
-                Belmond
+                <?php echo($parceiro->nome); ?><a href="router.php?controller=deslogar"><img src="imagens/perfilusuario/logout.png" alt="Fazer Logout"></a>
             </h2>
         </div>
 
@@ -29,7 +45,7 @@
                 </tr>
                 <?php
                     $i = 0;
-                    while($i < 50){
+                    while($i < 20){
                 ?>
                 <tr>
                     <td>
