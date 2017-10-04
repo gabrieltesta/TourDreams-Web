@@ -80,5 +80,31 @@
 
 
             break;
+
+
+          case 'buscarParceiro':
+                require_once('controllers/parceirosDestaque_controller.php');
+                require_once('models/parceirosDestaque_class.php');
+                switch ($modo) {
+                  case 'buscar':
+                        $controllerParceiro_destaque = new ControllerParceiroDestaque();
+                        $controllerParceiro_destaque->Buscar();
+                      
+                    break;
+                }
+
+            break;
+
+
+            case 'hotel':
+                require_once('controllers/hotel_controller.php');
+                require_once('models/hotel_class.php');
+                switch ($modo) {
+                    case 'inserir':
+                        $controller_hotel = new ControllerHotel();
+                        $controller_hotel->Inserir();
+                        break;
+                }
+            break;
     }
 ?>

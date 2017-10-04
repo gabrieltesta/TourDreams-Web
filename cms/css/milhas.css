@@ -39,6 +39,24 @@ section
 
 }
 
+.btnAlterar{
+    height: 40px;
+    width: 40px;
+    background-color: #031634;
+    border: 1px solid #ccc;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    cursor: pointer;
+    background-image: url(../imagens/verificacao1.png);
+  background-repeat: no-repeat;
+}
+
+.btnAlterar:hover{
+    background-color: #062f70;
+}
+
+
 .barraDeRolagem {
 border: none;
 padding: 5px;

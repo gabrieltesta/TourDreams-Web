@@ -103,7 +103,7 @@
              <input class="inputFormulario" name="txtdesconto" value="<?php echo($desconto);?>" placeholder="" >
           </td>
            <td  class="tdnumeros">
-          <input type="submit" name="btnAlterar" value="" class="buttonAlterar">
+          <input type="submit" name="btnAlterar" value="" class="btnAlterar">
         </td>
          </tr>
       <?php

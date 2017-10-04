@@ -136,6 +136,51 @@
                 }
                 break;
             
+        case 'comodidadesquarto':            
+             require_once('controllers/comodidadesquarto_controller.php');
+                require_once('models/comodidadesquarto_class.php');
+
+                $controller_comodidadesquarto = new ControllerComodidadesQuarto();
+                switch($modo)
+                {
+                    case 'inserir':
+                        $controller_comodidadesquarto->Inserir();
+                        break;
+                    case 'visualizar':
+                        $controller_comodidadesquarto->Visualizar();
+                        break;
+                    case 'excluir':
+                        $controller_comodidadesquarto->Excluir();
+                        break;
+                    case 'editar':
+                        $controller_comodidadesquarto->Editar();
+                        break;
+                }
+                break;
+            
+            case 'comodidadeshotel':            
+             require_once('controllers/comodidadeshotel_controller.php');
+                require_once('models/comodidadeshotelo_class.php');
+
+                $controller_comodidadeshotel = new ControllerComodidadesHotel();
+                switch($modo)
+                {
+                    case 'inserir':
+                        $controller_comodidadeshotel->Inserir();
+                        break;
+                    case 'visualizar':
+                        $controller_comodidadeshotel->Visualizar();
+                        break;
+                    case 'excluir':
+                        $controller_comodidadeshotel->Excluir();
+                        break;
+                    case 'editar':
+                        $controller_comodidadeshotel->Editar();
+                        break;
+                }
+                break;
+            
+            
             
     }
 ?>

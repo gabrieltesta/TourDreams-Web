@@ -7,6 +7,7 @@ class Login
 
         public $login;
         public $senha;
+        public $idParceiro;
 
         //Método construtor da classe
         public function __construct()
@@ -58,6 +59,7 @@ class Login
                                 $returnLogin->login=$rows['login'];
                                 $returnLogin->senha=$rows['senha'];
                                 $returnLogin->caminhoImagem=$rows['caminhoImagem'];
+                                $returnLogin->idParceiro=$rows['idParceiro'];
                                 $returnLogin->idLogin=$idLogin;
                                 $returnLogin->tipoLogin=$tipoLogin;
                             }

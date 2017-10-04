@@ -12,6 +12,7 @@
               $idNivel = $_POST['sltNivel'];
               $cpf = $_POST['txtCPF'];
               $rg = $_POST['txtRG'];
+              $idFuncionario = $_GET['idFuncionario'];
 
 
 
@@ -32,6 +33,7 @@
 
 
 
+
                   if (isset( $_FILES[ 'fileFoto' ][ 'name' ] ) && $_FILES[ 'fileFoto' ][ 'error' ] == 0 ) {
                     $arquivo_tmp = $_FILES[ 'fileFoto' ][ 'tmp_name' ];
                     $nome = $_FILES[ 'fileFoto' ][ 'name' ];
@@ -47,9 +49,9 @@
                     // Isso serve apenas para eu poder pesquisar dentro desta String
                     if ( strstr ( '.jpg;.jpeg;.gif;.png', $extensao ) ) {
 
-                        $novoNome = 'funcionario' . $idCliente . '.' . $extensao;
+
                         // Concatena a pasta com o nome
-                        $destino = 'imagens/gfuncionarios/' . $nome.$extensao;
+                        $destino = 'imagens/gfuncionarios/' . $nome;
 
                         // tenta mover o arquivo para o destino
                         if ( @move_uploaded_file ( $arquivo_tmp, $destino ) ) {
@@ -170,7 +172,7 @@
           // Aqui eu enfileiro as extensões permitidas e separo por ';'
           // Isso serve apenas para eu poder pesquisar dentro desta String
           if ( strstr ( '.jpg;.jpeg;.gif;.png', $extensao ) ) {
-              $novoNome = 'parceiro'.$idFuncionario.$extensao;
+              $novoNome = 'funcionario'.$idFuncionario.$extensao;
 
               // Concatena a pasta com o nome
               $destino = 'imagens/gfuncionarios/' . $novoNome;

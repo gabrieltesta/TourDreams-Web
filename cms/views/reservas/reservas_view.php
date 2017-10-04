@@ -1,6 +1,7 @@
 <div id="selectgpp">
      <p id ="titulogpp"> Gerenciamento de Reservas</p>
 
+    <div class="container">
     <table class="table11 sortable">
         <tr>
                 <td class="titulo22">
@@ -110,7 +111,8 @@
         ?>
     
     </table>
-    
+        </div>
+    <div class="container">
      <table class="formulariozinho">
         <tr>
                 <td class="titulo22">
@@ -265,4 +267,6 @@
             }
          ?>
     </table>
+        
+    </div>
 </div>

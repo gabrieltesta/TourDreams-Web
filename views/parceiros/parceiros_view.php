@@ -1,3 +1,9 @@
+<?php
+
+
+
+ ?>
+
 <section class="section">
 
     <div id="divisoria"> <!-- Titulo da pagina -->
@@ -70,7 +76,15 @@
 
         <div id="principal">
 
+                <?php
+
+
+
+                 ?>
+
                 <div id="busca">
+
+                  <form class="" action="router.php?controller=buscarParceiro&modo=buscar" method="post">
 
 
                       <div class="tituloBusca">
@@ -79,12 +93,57 @@
                       </div>
 
                     <div class="inputBusca">
-                          <input class="barra" size="60" placeholder="Buscar Parceiro" value="" name="">
+                          <select name="sltBusca">
 
-                          <input class="botao"type="image" value="btnbuscar" img src="Imagens/pesquisar.png">
+                            <?php
+                                require_once('controllers/parceirosDestaque_controller.php');
+
+                                $controllerParceiro_destaque = new ControllerParceiroDestaque();
+                                $rows = $controllerParceiro_destaque->Listar();
+
+                                $x = 0;
+
+                                while ($x < count($rows)) {
+
+
+                                  if($idParceiro == $rows[$x]->idParceiro){
+                                    $marcar = "selected";
+                                  }else{
+
+                                    $marcar = "";
+
+                                  }
+
+                              ?>
+
+                              <option <?php echo ($marcar); ?> value="<?php echo ($rows[$x]->idParceiro); ?>" ><?php echo ($rows[$x]->nome); ?></option>
+
+
+                              <?php
+
+                                $x++;
+                                }
+                              ?>
+                          </select>
+
+                          <input class="botao"type="image" value="btnbuscar" type="submit" img src="Imagens/pesquisar.png">
                     </div>
 
                 </div>
+
+                <?php
+
+                $nomeParceiro = null;
+
+                if(isset($_GET['modo'])){
+                  if($_GET['modo'] == 'buscar'){
+
+                  $nomeParceiro = $result->nomeParceiro;
+                  $idParceiro = $result->idParceiro;
+
+                }
+              }
+                 ?>
 
                 <div id="extra">
 
@@ -95,7 +154,11 @@
                         <div id="detalhes">
 
                           <div class="tituloBuscaParceiro">
-                                Hotel Fazenda
+                              <?php
+
+                              echo ($nomeParceiro);
+
+                               ?>
                           </div>
                           <div class="texto">
                             "Lorem ipsum dolor sit amet, consectetur
@@ -115,6 +178,6 @@
 
         </div>
 
-
+      </form>
     </div>
 </section>

@@ -68,7 +68,7 @@
             </table>
         </div>
 
-        <a href="cadastrohotel.php"><div id="btnRegistrar">
+        <a href="cadastrohotel.php?idParceiro=<?php echo($parceiro->idParceiro); ?>"><div id="btnRegistrar">
             <h1>Registrar Hotel</h1>
         </div></a>
     </div>
