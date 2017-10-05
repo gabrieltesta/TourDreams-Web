@@ -8,6 +8,7 @@
     public $email;
     public $cnpj;
     public $telefone;
+    public $idParceiro;
     public $caminhoImg;
 
     //Método construtor da classe
@@ -61,6 +62,7 @@
         $listar = new Parceiro();
 
         $listar->nome=$rs['nomeParceiro'];
+        $listar->idParceiro=$rs['idParceiro'];
         $listar->caminhoImg=$rs['caminhoImagem'];
 
         return  $listar;

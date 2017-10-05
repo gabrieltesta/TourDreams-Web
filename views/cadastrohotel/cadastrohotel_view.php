@@ -3,9 +3,12 @@
         <div id="tituloPagina">
             Cadastro de hotel
         </div>
-        <form name="frmHotel" action="" method="" enctype="multipart/form-data">
+        <form name="frmHotel" action="router.php?controller=hotel&modo=inserir" method="post" enctype="multipart/form-data">
             <div id="containerEsquerda">
                 <table id="tableEsquerda" border="0">
+                    <tr>
+                        <td><input type="hidden" name="txtQtdImg" value="1" id="txtQtdImg"></td>
+                    </tr>
                     <tr>
                         <td><label>Nome do Hotel</label></td>
                     </tr>
@@ -37,10 +40,26 @@
                     <tr>
                         <td>
                             <select name="sltEstadia" >
-                                <option value="Hotel">Hotel</option>
-                                <option value="Pousada">Pousada</option>
-                                <option value="Resort">Resort</option>
-                                <option value="Chalé">Chalé</option>
+
+                                <?php
+
+                                    require_once('controllers/hotel_controller.php');
+
+                                    $controller_hotel = new ControllerHotel();
+                                    $rs = $controller_hotel-> Estadia();
+
+                                    $cont = 0;
+                                    while($cont < count($rs)){
+
+
+                                ?>
+
+                                <option value="<?php echo($rs[$cont]->idEstadia); ?>"><?php echo($rs[$cont]->estadia); ?></option>
+
+                                <?php
+                                        $cont++;
+                                    }
+                                ?>
                             </select>
                         </td>
                     </tr>
@@ -78,19 +97,27 @@
                     <tr>
                         <td>
                             <ul>
-                                <li><input type="checkbox" name="chkAcademia" value="1"><label for="chkAcademia">Academia</label></li>
-                                <li><input type="checkbox" name="chkAnimais" value="1"><label for="chkAnimais">Animais permitidos</label></li>
-                                <li><input type="checkbox" name="chkBar" value="1"><label for="chkBar">Bar</label></li>
-                                <li><input type="checkbox" name="chkConcierge" value="1"><label for="chkConcierge">Concierge</label></li>
-                                <li><input type="checkbox" name="chkConveniencia" value="1"><label for="chkConveniencia">Loja de conveniência</label></li>
-                                <li><input type="checkbox" name="chkElevador" value="1"><label for="chkElevador">Elevador</label></li>
-                                <li><input type="checkbox" name="chkEstacionamento" value="1"><label for="chkEstacionamento">Estacionamento</label></li>
-                                <li><input type="checkbox" name="chkLavanderia" value="1"><label for="chkLavanderia">Lavanderia</label></li>
-                                <li><input type="checkbox" name="chkPiscina" value="1"><label for="chkPiscina">Piscina</label></li>
-                                <li><input type="checkbox" name="chkRestaurante" value="1"><label for="chkRestaurante">Restaurante</label></li>
-                                <li><input type="checkbox" name="chkSpa" value="1"><label for="chkSpa">Spa</label></li>
-                                <li><input type="checkbox" name="chkTransfer" value="1"><label for="chkTransfer">Transfer para aeroporto</label></li>
-                                <li><input type="checkbox" name="chkWifi" value="1"><label for="chkWifi">Wi-fi gratuito</label></li>
+
+                                <?php
+
+                                    require_once('controllers/hotel_controller.php');
+
+                                    $controller_hotel = new ControllerHotel();
+                                    $rows = $controller_hotel->Comodidades();
+
+                                    $cont = 0;
+
+                                    while ($cont < count($rows)) {
+
+                                 ?>
+
+                                <li><input type="checkbox" name="chkAcademia" value="1"><label for="chkAcademia"><?php echo($rows[$cont]->nomeComodidade); ?></label></li>
+
+
+                                <?php
+                                        $cont++;
+                                    }
+                                 ?>
                             </ul>
                         </td>
                     </tr>
@@ -111,7 +138,7 @@
                 </table>
 
                 <div id="btnSalvar">
-                    <h1>Cadastrar</h1>
+                    <input type="submit" name="btnSalvar" value="CADASTRAR">
                 </div>
             </div>
 

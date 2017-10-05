@@ -6,14 +6,19 @@
  ?>
 
 <div id="select">
-    <p id ="titulo"> Acomodações</p>
     <div id="containerTable">
-        <table>
-            
-                <tr >     
-               <td id="quartinho"></td>
-                 <td id="hotelzinho"></td>
-                </tr>
-        </table>
+        <a href="comodidadesquarto.php"><div id="quartinho">
+        
+        </div></a>
+         <a href="comodidadeshotel.php"><div id="hotelzinho">
+        
+             </div></a>
+        <div id="linkquarto">
+        
+        </div>
+        <div  id="linkhotel">
+        
+        </div>
     </div>
+        
 </div>
