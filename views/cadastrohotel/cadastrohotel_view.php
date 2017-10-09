@@ -3,7 +3,7 @@
         <div id="tituloPagina">
             Cadastro de hotel
         </div>
-        <form name="frmHotel" action="router.php?controller=hotel&modo=inserir" method="post" enctype="multipart/form-data">
+        <form name="frmHotel" action="router.php?controller=hotel&modo=inserir&idParceiro=<?php echo($_GET['idParceiro']); ?>" method="post" enctype="multipart/form-data">
             <div id="containerEsquerda">
                 <table id="tableEsquerda" border="0">
                     <tr>
@@ -111,7 +111,7 @@
 
                                  ?>
 
-                                <li><input type="checkbox" name="chkAcademia" value="1"><label for="chkAcademia"><?php echo($rows[$cont]->nomeComodidade); ?></label></li>
+                                <li><input type="checkbox" name="comodidade[]" value="<?php echo($rows[$cont]->idComodidadeHotel); ?>"><label for="chkAcademia"><?php echo($rows[$cont]->nomeComodidade); ?></label></li>
 
 
                                 <?php
@@ -132,7 +132,7 @@
 
                     <tr>
                         <td>
-                            <textarea maxlength="300" placeholder="Digite a descrição do hotel"></textarea>
+                            <textarea name="txtDescricao" maxlength="300" placeholder="Digite a descrição do hotel"></textarea>
                         </td>
                     </tr>
                 </table>

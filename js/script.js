@@ -496,8 +496,8 @@ function abrirPerfilUsuario() {
     location.href='perfilUsuario.php';
 }
 
-function abrirPerfilParceiro() {
-    location.href='perfilParceiro.php';
+function abrirPerfilParceiro(idParceiro) {
+    location.href='perfilParceiro.php?idParceiro='+idParceiro;
 }
 
 function abrirModalExcluir() {

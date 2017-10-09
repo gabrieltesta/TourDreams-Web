@@ -89,7 +89,7 @@
                   case 'buscar':
                         $controllerParceiro_destaque = new ControllerParceiroDestaque();
                         $controllerParceiro_destaque->Buscar();
-                      
+
                     break;
                 }
 
@@ -103,6 +103,10 @@
                     case 'inserir':
                         $controller_hotel = new ControllerHotel();
                         $controller_hotel->Inserir();
+                        break;
+                    case 'deletar':
+                        $controller_hotel = new ControllerHotel();
+                        $controller_hotel->Deletar();
                         break;
                 }
             break;

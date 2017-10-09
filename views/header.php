@@ -180,7 +180,7 @@
 				{
 					?>
 					<div class="headerBtn" style="border-left: 2px solid #fff;">
-						<img src="imagens/user.svg" alt="Login" draggable="false" onmousedown="return false" style="user-drag: none" onclick="<?php if($_SESSION['tipoLogin'] == 'usuario'){echo ('abrirPerfilUsuario()');}else{echo ('abrirPerfilParceiro()');} ?>">
+						<img src="imagens/user.svg" alt="Login" draggable="false" onmousedown="return false" style="user-drag: none" onclick="<?php if($_SESSION['tipoLogin'] == 'usuario'){echo ('abrirPerfilUsuario()');}else{echo ('abrirPerfilParceiro('.$_SESSION['idParceiro'].')');} ?>">
 						Perfil
 					</div>
 					<?php

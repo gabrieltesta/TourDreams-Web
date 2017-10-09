@@ -1,5 +1,7 @@
 
-
+body{
+    background-color: #f9f9f9;
+}
 #sectionEsquerda{
     width: 60%;
     height: 950px;
@@ -12,7 +14,7 @@
     width: 84%;
     height: 910px;
     margin-top: 20px;
-    border: 1px solid #ccc;
+
     margin-left: 16%;
 
 }
@@ -28,7 +30,7 @@
     width: 80%;
     height: 910px;
     margin-top: 20px;
-    border: 1px solid #ccc;
+    border-left: 1px solid #ccc;
 
 }
 
@@ -40,16 +42,17 @@
 }
 
 #divTabela{
-    width: 600px;
+    width: 670px;
     height: 570px;
-    margin-top: 10px;
     margin: 0 auto;
     margin-left: 197px;
     position: absolute;
     overflow: auto;
-    border: 1px solid #ccc;
+    margin-top: 20px;
+    /*border: 1px solid #ccc;*/
     font-family: SourceSansRegular;
     font-size: 15px;
+    background-color: #f2efef;
 }
 
 #divFotoParceiro{
@@ -94,9 +97,18 @@
     cursor: pointer;
 }
 
+#divTabela table img{
+    width: 20px;
+    height: 20px;
+}
+
+#divTabela table tr{
+    font-size: 20px;
+}
+
 #divTabela table th{
     width: 25%;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .logoHotel{
@@ -134,9 +146,12 @@
 
 }
 
+
+
 #divTabela table tr:hover{
     background-color: #e0e0e0;
 }
+
 
 #btnRegistrar{
     width: 200px;
@@ -168,4 +183,29 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 100px;
+}
+
+#titulo{
+    font-size: 25px;
+    font-family: RobotoMedium;
+    margin-left: 20px;
+}
+
+#divTabela::-webkit-scrollbar-track
+{
+
+	background-color: #f9f9f9;
+
+}
+
+#divTabela::-webkit-scrollbar
+{
+
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#divTabela::-webkit-scrollbar-thumb
+{
+	background-color: #ccc;
 }

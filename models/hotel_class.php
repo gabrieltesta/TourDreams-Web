@@ -7,7 +7,7 @@
 
         public $idImagem;
         public $caminhoImagem;
-
+        public $idHotel;
 
 
         public function __construct()
@@ -21,21 +21,35 @@
         }
 
 
+        public function InsertHotel($hotel){
+            $sql = "insert into tbl_hotel(hotel,checkin,checkout,descricao,qtdEstrelas,idParceiro,idTipoEstadia) values";
+            $sql = $sql."('".$hotel->nomeHotel."','".$hotel->checkIn."','".$hotel->checkOut."','".$hotel->descricaoHotel."',".$hotel->qtdEstrelas.",".$hotel->idParceiro.",".$hotel->tipoEstadia.")";
+            mysql_query($sql);
+            $sql = "select LAST_INSERT_ID() as idHotel";
+            $select = mysql_query($sql);
+            if($rs = mysql_fetch_array($select)){
 
+                return $idHotel = $rs['idHotel'];
 
-        public function InsertImagens($imagem){
+            }
+        }
 
-
+        public function InsertImagem($imagem){
             $sql = "insert into tbl_imagem(caminhoImagem) values('".$imagem->caminhoImagem."');";
             mysql_query($sql);
             $sql="select LAST_INSERT_ID() as idImagem";
             $select = mysql_query($sql);
             if($rs = mysql_fetch_array($select)){
                 $idImagem = $rs['idImagem'];
-                $sql = "insert into tbl_hotelimagem values(1,'".$idImagem."');";
+                $sql = "insert into tbl_hotelimagem(idHotel,idImagem) values(".$imagem->idHotel.",'".$idImagem."');";
                 mysql_query($sql);
             }
+        }
 
+        public function InsertComodidade($comodidade){
+            $sql = "insert into tbl_hotelcomodidadeshotel(idHotel,idComodidadeHotel,status) values(".$comodidade->idHotel.",".$comodidade->comodidade.",1)";
+
+            mysql_query($sql);
         }
 
 
@@ -82,7 +96,27 @@
         }
 
 
+        public function ExcluirImagem(){
+            $sql="select * from tbl_hotelimagem where idHotel=".$this->idHotel.";";
+            $select = mysql_query($sql);
+            while($rs = mysql_fetch_array($select)){
+                $idImagem = $rs['idImagem'];
+                $sql = "delete from tbl_hotelimagem where idHotel=".$this->idHotel." limit 1;";
+                mysql_query($sql);
+                $sql = "delete from tbl_imagem where idImagem=".$idImagem.";";
+                mysql_query($sql);
 
+            }
+        }
+
+        public function ExcluirHotel(){
+
+            $sql = "delete from tbl_hotelcomodidadeshotel where idHotel=".$this->idHotel.";";
+            mysql_query($sql);
+            $sql = "delete from tbl_hotel where idHotel=".$this->idHotel.";";
+            mysql_query($sql);
+
+        }
 
 
 

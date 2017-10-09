@@ -40,7 +40,7 @@ class ControllerLogin
                 }
                 else if($login->tipoLogin == 'parceiro')
                 {
-                    header('location: perfilParceiro.php');
+                    header('location: perfilParceiro.php?idParceiro='.$_SESSION['idParceiro']);
                 }
 
             }

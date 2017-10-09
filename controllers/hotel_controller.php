@@ -14,11 +14,22 @@
                 $tipoEstadia = $_POST['sltEstadia'];
                 $qtdEstrelas = $_POST['sltEstrela'];
                 $qtdImagens = $_POST['txtQtdImg'];
+                $descricaoHotel = $_POST['txtDescricao'];
                 $idParceiro = $_GET['idParceiro'];
 
 
                 require_once('models/hotel_class.php');
                 $hotel_class = new Hotel();
+
+                $hotel_class->nomeHotel = $nomeHotel;
+                $hotel_class->checkIn = $checkIn;
+                $hotel_class->checkOut = $checkOut;
+                $hotel_class->tipoEstadia = $tipoEstadia;
+                $hotel_class->qtdEstrelas = $qtdEstrelas;
+                $hotel_class->descricaoHotel = $descricaoHotel;
+                $hotel_class->idParceiro = $idParceiro;
+
+                $idHotel = $hotel_class->InsertHotel($hotel_class);
 
 
                 $cont = 0;
@@ -27,8 +38,6 @@
                     $name = $_FILES['fileFoto'.$cont]['name'];
                     $arquivo_tmp = $_FILES[ 'fileFoto'.$cont ][ 'tmp_name' ];
 
-
-
                     $extensao = pathinfo ( $name, PATHINFO_EXTENSION );
 
 
@@ -36,21 +45,31 @@
 
                           $destino = 'imagens/hotel/' . $name;
 
-
-
                           if ( @move_uploaded_file ( $arquivo_tmp, $destino ) ) {
 
-                              echo("teste");
-                              $hotel_class->caminhoImagem = $destino;
-                              $hotel_class->InsertImagens($hotel_class);
-                              header('location:cadastrohotel.php');
+                              $hotel_imagem = new Hotel();
+                              $hotel_imagem->caminhoImagem = $destino;
+                              $hotel_imagem->idHotel = $idHotel;
+                              $hotel_imagem->InsertImagem($hotel_imagem);
 
 
                           }
 
 
-
                       $cont++;
+
+                }
+
+                if(isset($_POST['comodidade'])){
+
+                    foreach ($_POST['comodidade'] as $comodidade) {
+
+                        $hotel_comodidade = new Hotel();
+                        $hotel_comodidade->comodidade = $comodidade;
+                        $hotel_comodidade->idHotel = $idHotel;
+                        $hotel_comodidade->InsertComodidade($hotel_comodidade);
+                        header('location:perfilParceiro.php?idParceiro='.$idParceiro);
+                    }
 
                 }
 
@@ -81,6 +100,29 @@
 
 
         }
+
+        public function Deletar(){
+
+            require_once('models/hotel_class.php');
+            $idHotel = $_GET['idHotel'];
+            $idParceiro = $_GET['idParceiro'];
+
+
+
+            $hotel_imagem = new Hotel();
+            $hotel_imagem->idHotel = $idHotel;
+            $hotel_imagem->ExcluirImagem();
+
+            $hotel_class = new Hotel();
+            $hotel_class->idHotel = $idHotel;
+            $hotel_class->ExcluirHotel();
+
+
+
+            header('location:perfilParceiro.php?idParceiro='.$idParceiro);
+        }
+
+
 
 
     }

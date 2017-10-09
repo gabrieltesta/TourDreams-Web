@@ -1,4 +1,7 @@
 /*Conteúdo da página homepage.php*/
+body{
+    background-color: #f9f9f9;
+}
 section
 {
     margin-left: 150px;

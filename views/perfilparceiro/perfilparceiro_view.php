@@ -23,47 +23,73 @@
 
             </div>
             <h2 id="nomeParceiro">
-                <?php echo($parceiro->nome); ?><a href="router.php?controller=deslogar"><img src="imagens/perfilusuario/logout.png" alt="Fazer Logout"></a>
+                <?php echo($parceiro->nome); ?><a href="router.php?controller=deslogar"><img title="Logout" src="imagens/perfilusuario/logout.png" alt="Fazer Logout"></a><a href="router.php?controller=editarparceiro"><img title="Editar Perfil" src="imagens/perfilparceiro/edit.png" alt="Fazer Logout"></a>
             </h2>
+
         </div>
 
+
+        <span id="titulo">Seus Hotéis</span>
         <div id="divTabela">
             <table class="sortable" cellspacing="0">
+
                 <tr>
-                    <th>
-                        Foto
-                    </th>
                     <th>
                         Nome
                     </th>
                     <th>
-                        Qtd. de Quartos
+                        Qtd. de Estrelas
+                    </th>
+                    <th>
+                        Tipo de Estadia
                     </th>
                     <th>
                         Opções
                     </th>
                 </tr>
                 <?php
-                    $i = 0;
-                    while($i < 20){
+
+                    require_once('controllers/perfilparceiro_controller.php');
+
+                    $controller_perfilparceiro = new ControllerPerfilParceiro();
+                    $rows = $controller_perfilparceiro->SelectHotel();
+
+                    $cont = 0;
+
+
+                    while($cont < count($rows)){
+
                 ?>
                 <tr>
                     <td>
-                        <img draggable="false" class="logoHotel" alt="" src="imagens/perfilparceiro/copacabanapalace.png">
+                        <?php echo($rows[$cont]->hotel); ?>
                     </td>
                     <td>
-                        Copacabana Palace
+                        <?php
+                            $estrela = 0;
+
+                            while($estrela < $rows[$cont]->qtdEstrelas){
+                        ?>
+                            <img alt="" src="imagens/promocoes/estrela.png">
+                        <?php
+
+                                $estrela++;
+                            }
+
+                        ?>
                     </td>
                     <td>
-                        300
+                        <?php echo($rows[$cont]->tipoEstadia); ?>
                     </td>
                     <td>
-                        <img title="Editar hotel" draggable="false" class="imgOpcao" alt="" src="imagens/perfilparceiro/editar.png"><img title="Adicionar quarto" draggable="false" class="imgOpcao" alt="" src="imagens/perfilparceiro/plus.png">
+                        <img title="Editar hotel" draggable="false" class="imgOpcao" alt="" src="imagens/perfilparceiro/edit.png">
+                        <a href="router.php?controller=hotel&modo=deletar&idHotel=<?php echo($rows[$cont]->idHotel) ?>&idParceiro=<?php echo($_GET['idParceiro']); ?>"><img title="Excluir hotel" draggable="false" class="imgOpcao" alt="" src="imagens/perfilparceiro/delete.png"></a>
                     </td>
                 </tr>
                 <?php
-                        $i++;
+                        $cont++;
                     }
+                
                 ?>
             </table>
         </div>
