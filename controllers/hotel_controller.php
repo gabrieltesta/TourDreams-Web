@@ -14,6 +14,10 @@
                 $tipoEstadia = $_POST['sltEstadia'];
                 $qtdEstrelas = $_POST['sltEstrela'];
                 $qtdImagens = $_POST['txtQtdImg'];
+                $logradouro = $_POST['txtLogradouro'];
+                $numero = $_POST['txtNumero'];
+                $bairro = $_POST['txtBairro'];
+                $cidade = $_POST['sltCidade'];
                 $descricaoHotel = $_POST['txtDescricao'];
                 $idParceiro = $_GET['idParceiro'];
 
@@ -25,7 +29,12 @@
                 $hotel_class->checkIn = $checkIn;
                 $hotel_class->checkOut = $checkOut;
                 $hotel_class->tipoEstadia = $tipoEstadia;
+                $hotel_class->logradouro=$logradouro;
+                $hotel_class->numero=$numero;
+                $hotel_class->bairro=$bairro;
+                $hotel_class->cidade=$cidade;
                 $hotel_class->qtdEstrelas = $qtdEstrelas;
+                $hotel_class->descricaoHotel = $descricaoHotel;
                 $hotel_class->descricaoHotel = $descricaoHotel;
                 $hotel_class->idParceiro = $idParceiro;
 
@@ -96,6 +105,17 @@
 
             $lstEstadias = new Hotel();
             return $lstEstadias->SelectEstadias();
+
+
+
+        }
+
+        public function CidadeUF(){
+
+            require_once('models/hotel_class.php');
+
+            $lstCidades = new Hotel();
+            return $lstCidades->SelectCidades();
 
 
 

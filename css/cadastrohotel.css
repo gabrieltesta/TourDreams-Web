@@ -86,6 +86,44 @@
 
 }
 
+#tableEsquerda input[name="txtLogradouro"]{
+    width: 300px;
+    height: 25px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    font-family: RalewayRegular;
+    margin-bottom: 20px;
+    font-size: 15px;
+    text-align: left;
+
+}
+
+#tableEsquerda input[name="txtNumero"]{
+    width: 80px;
+    height: 25px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    font-family: RalewayRegular;
+    margin-bottom: 20px;
+    font-size: 15px;
+    text-align: left;
+
+}
+
+#tableEsquerda input[name="txtBairro"]{
+    width: 150px;
+    height: 25px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    font-family: RalewayRegular;
+    margin-bottom: 20px;
+    font-size: 15px;
+    text-align: left;
+
+}
+
+
+
 #tableEsquerda select{
     width: 250px;
     height: 30px;

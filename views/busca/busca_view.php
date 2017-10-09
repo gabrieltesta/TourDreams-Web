@@ -102,8 +102,17 @@
             </div>
         </div>
         <?php
-            $i = 1;
-            while ($i < 12) {
+            require_once('controllers/buscaRapida_controller.php');
+            require_once('models/buscaRapida_class.php');
+
+            $controllerBuscaRapida = new ControllerBuscaRapida();
+            $rows = $controllerBuscaRapida->Buscar();
+
+            $cont = 0;
+
+            while ($cont < count ($rows)) {
+
+
                 ?>
                 <div class="resultado">
                     <div class="resultadoImg">
@@ -112,31 +121,32 @@
                         </div>
                         <img src="imagens/busca/hotel.jpg" alt="" id="hotelImg">
                     </div>
+
                     <div class="resultadoInfo">
                         <table>
                             <tr>
-                                <td><h3>Hotel Exemplo</h3></td>
+                                <td><h3><?php echo ($rows[$cont]->hotel); ?></h3></td>
                             </tr>
                             <tr>
                                 <td>
                                     <?php
                                         $qtd = rand(1, 5);
-                                        $cont = 1;
-                                        while ($cont <= $qtd)
+                                        $contestrelas = 1;
+                                        while ($contestrelas <= $rows[$cont]->qtdEstrelas)
                                         {
                                             ?>
                                                 <img src="imagens/busca/estrela.png" alt="">
                                             <?php
-                                            $cont += 1;
+                                            $contestrelas += 1;
                                         }
                                      ?>
                                  </td>
                             </tr>
                             <tr>
-                                <td>Bairro Exemplo, Cidade Exemplo-EX</td>
+                                <td><?php echo ($rows[$cont]->bairro); ?>, <?php echo ($rows[$cont]->cidade); ?>-<?php echo ($rows[$cont]->uf); ?></td>
                             </tr>
                             <tr>
-                                <td>Parceiro Exemplo</td>
+                                <td><?php echo ($rows[$cont]->nomeParceiro); ?></td>
                             </tr>
                             <tr>
                                 <td>
@@ -179,7 +189,7 @@
                     </div>
                 </div>
                 <?php
-                $i++;
+                $cont++;
             }
 
          ?>

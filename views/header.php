@@ -153,6 +153,13 @@
 		</div>
 		<!---->
 		<!--Formulário de busca-->
+		<?php
+
+
+
+
+		 ?>
+
 		<div id="headerBusca">
 			<form method="post" action="busca.php" autocomplete="off">
 				<input type="text" name="txtDestino" placeholder="Digite seu destino..." id="txtDestino" required>

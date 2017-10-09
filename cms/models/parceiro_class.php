@@ -23,7 +23,7 @@
       $cont = 0;
 
 
-      while ($rs=mysql_fetch_array($select)) {
+      while($rs=mysql_fetch_array($select)) {
 
         $listParceiro[] = new Parceiro();
 

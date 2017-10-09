@@ -127,6 +127,56 @@
             <div id="containerDireita">
                 <table id="tableEsquerda">
                     <tr>
+                        <td><label style="margin-right:270px;">Logradouro</label><label id="numero">Número</label></td>
+                    </tr>
+
+                    <tr>
+                        <td><input type="text" name="txtLogradouro" placeholder="Digite o nome da rua"><input style="margin-left:45px;" type="text" name="txtNumero" placeholder="Número"></td>
+
+                    </tr>
+
+                    <tr>
+                        <td><label>Bairro</label></td>
+                    </tr>
+
+                    <tr>
+                        <td><input type="text" name="txtBairro" placeholder="Digite o Bairro"></td>
+
+                    </tr>
+
+                    <tr>
+                        <td><label>Cidade</label></td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <select name="sltCidade" >
+
+                                <?php
+
+                                    require_once('controllers/hotel_controller.php');
+
+                                    $controller_hotel = new ControllerHotel();
+                                    $rows = $controller_hotel-> CidadeUF();
+
+                                    $cont = 0;
+                                    while($cont < count($rows)){
+
+
+                                ?>
+
+                                <option value="<?php echo($rows[$cont]->idCidade); ?>"><?php echo($rows[$cont]->cidade); ?> - <?php echo($rows[$cont]->uf); ?></option>
+
+                                <?php
+                                        $cont++;
+                                    }
+                                ?>
+                            </select>
+                        </td>
+                    </tr>
+
+
+                    <tr>
                         <td><label>Descrição do Hotel (Máx. 300 caracteres)</label></td>
                     </tr>
 

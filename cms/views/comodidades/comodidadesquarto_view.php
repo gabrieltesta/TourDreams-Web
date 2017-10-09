@@ -18,18 +18,16 @@
                 <td class ="titulo22">
                     Nome da Comodidade
                 </td>
-                 <td class ="titulo22">
-                   Status
-                </td>
+                
                 <td class="titulo22">
-                
+                    Opções
                 </td>
-                
+            
             </tr>
 
         <?php
 
-            require_once('controllers/milhas_controller.php');
+            require_once('controllers/comodidadesquarto_controller.php');
 
             $controller_comodidadesquarto = new ControllerComodidadesQuarto();
             $rows = $controller_comodidadesquarto -> Listar();
@@ -46,10 +44,7 @@
                 <td class="tdnumeros">
                     <?php echo($rows[$cont]->nomeComodidade); ?>
                 </td>
-                  <td class="tdnumeros">
-                      
-                   <?php echo($rows[$cont]->status); ?>%
-                </td>
+                  
 
                 <td class="tdnumeros">
                    <a href=<?php echo("router.php?controller=comodidadesquarto&modo=excluir&idComodidade=".$rows[$cont]->idComodidade);?>>
@@ -59,6 +54,7 @@
                      <img src="imagens/edit.png" alt="edit">
                   </a>
                </td>
+                
             </tr>
              <?php
         $cont +=1;
@@ -76,14 +72,13 @@
 
       <?php
       $nomeComodidade = null;
-      $status = null;
+     
       $action = "inserir";
 
       if(isset($_GET['modo'])){
         if ($_GET['modo']=='visualizar') {
           $nomeComodidade=$result->nomeComodidade;
-          $status=$result->status;
-
+       
           $action="editar&idComodidade=".$_GET['idComodidade'];
         }
       }
@@ -97,9 +92,7 @@
           <td class="tdnumeros">
             <input class="inputFormulario" name="txtcomodidadesquarto" value="<?php echo($nomeComodidade);?>" placeholder="" >
           </td>
-           <td class="tdnumeros">
-             <input class="inputFormulario" name="txtstatus" value="<?php echo($status);?>" placeholder="" >
-          </td>
+           
            <td  class="tdnumeros">
           <input type="submit" name="btnAlterar" value="" class="btnAlterar">
         </td>

@@ -13,6 +13,21 @@
     $parceiro = $controller_parceiro -> Buscar($_SESSION['idLogin']);
 
 ?>
+<div class="bgCadastroQuarto">
+    <div class="modalCadastroQuarto">
+        <div class="headerModal"><div id="tituloModal">Cadastro de Quarto</div><div class=""><img alt="" src="imagens/perfilparceiro/close-button.svg"></div></div>
+        <div class="contModal">
+            <div class="divForm">
+
+            </div>
+
+            <div class="divForm">
+
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <section id="sectionEsquerda">
     <div id="contEsquerda">
@@ -89,7 +104,7 @@
                 <?php
                         $cont++;
                     }
-                
+
                 ?>
             </table>
         </div>

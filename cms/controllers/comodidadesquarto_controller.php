@@ -12,13 +12,11 @@ class ControllerComodidadesQuarto
         if ($_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $nomeComodidade = $_POST['txtnomecomodidade'];
-            $status = $_POST['txtstatus'];
-
+          
             $comodidadesquarto_class = new ComodidadesQuarto();
             
             $comodidadesquarto_class->nomeComodidade=$nomeComodidade;
-            $comodidadesquarto_class->status=$status;            
-
+    
             $comodidadesquarto = $comodidadesquarto_class->Insert($comodidadesquarto_class);
             if ($comodidadesquarto == 'ok')
             {
@@ -38,14 +36,14 @@ class ControllerComodidadesQuarto
         */
         if ($_SERVER['REQUEST_METHOD'] == 'POST')
         {
-            $status = $_POST['txtstatus'];
+            
             $nomeComodidade = $_POST['txtnomecomodidade'];
             $idComodidade = $_GET['idComodidade'];
 
             $comodidadesquarto_class = new ComodidadesQuarto();
 
             $comodidadesquarto_class->nomeComodidade=$nomeComodidade;
-            $comodidadesquarto_class->status=$status;
+           
             $comodidadesquarto_class->idComodidade= $idComodidade;
 
             $comodidadesquarto= $comodidadesquarto_class->Update($comodidadesquarto_class);
@@ -100,13 +98,13 @@ class ControllerComodidadesQuarto
 
       if($_SERVER['REQUEST_METHOD']=='POST'){
         $nomeComodidade=$_POST['txtnomecomodidade'];
-        $status=$_POST['txtstatus'];
+       
 
         $idComodidade = $_GET['idComodidade'];
         $comodidadesquarto_class = new ComodidadesQuarto();
 
-        $comodidadesquarto_class->nomecomodidade=$nomeComodidade;
-        $comodidadesquarto_class->status=$status;
+        $comodidadesquarto_class->nomeComodidade=$nomeComodidade;
+
         $comodidadesquarto_class->idComodidade=$idComodidade;
       
         $comodidadesquarto_class->Update($comodidadesquarto_class);

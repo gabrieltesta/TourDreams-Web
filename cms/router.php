@@ -155,12 +155,13 @@
                     case 'editar':
                         $controller_comodidadesquarto->Editar();
                         break;
+                
                 }
                 break;
             
-            case 'comodidadeshotel':            
+            /*case 'comodidadeshotel':            
              require_once('controllers/comodidadeshotel_controller.php');
-                require_once('models/comodidadeshotelo_class.php');
+                require_once('models/comodidadeshotel_class.php');
 
                 $controller_comodidadeshotel = new ControllerComodidadesHotel();
                 switch($modo)
@@ -180,7 +181,7 @@
                 }
                 break;
             
-            
+            */
             
     }
 ?>

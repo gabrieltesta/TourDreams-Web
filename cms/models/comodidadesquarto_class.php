@@ -1,11 +1,10 @@
 <?php
-
-  class Milhas{
+    
+  class ComodidadesQuarto{
       
     public $idComodidade;  
     public $nomeComodidade;  
-    public $status;  
-      
+ 
       
       
     public function __construct()
@@ -22,7 +21,9 @@
       
          public function Insert($comodidadesquarto)
         {
-            $sql = 'INSERT INTO tbl_comodidadesquarto (nomeComodidade, status) VALUES ("'.$comodidadesquarto->nomeComodidade.'","'.$comodidadesquarto->status.'")';
+            $sql = 'INSERT INTO tbl_comodidadesquarto (nomeComodidade) VALUES ("'.$comodidadesquarto->nomeComodidade.'")';
+            
+         
             if(mysql_query($sql))
             {
                 return 'ok';
@@ -37,25 +38,28 @@
       
 
     public function SelectComodidadesQuarto(){
+        
 
       $sql = 'select * from tbl_comodidadesquarto';
-       
       $select = mysql_query($sql);
 
       $cont = 0;
-
-
+               
       while ($rs=mysql_fetch_array($select)) {
-
-        $listComodidadesQuarto[] = new ComodidadesQuarto();
-
+  
+        $listComodidadesQuarto[] = new ComodidadesQuarto(); 
+          
         $listComodidadesQuarto[$cont]->idComodidade = $rs['idComodidade'];
-        $listComodidadesQuarto[$cont]->nomeComodidade = $rs['nomeComodidade'];
-        $listComodidadesQuarto[$cont]->status = $rs['status'];
+        $listComodidadesQuarto[$cont]->nomeComodidade=$rs['nomeComodidade'];
+      
     
         $cont +=1;
+       
       }
-       return $listComodidadesQuarto;
+       
+      
+           return $listComodidadesQuarto;
+     
     }
 
     public function Delete($comodidadesquarto){
@@ -75,10 +79,10 @@
 
       if($rs=mysql_fetch_array($select)){
 
-        $comodidadesquarto = new ComodidadeQuarto();
+        $comodidadesquarto = new ComodidadesQuarto();
 
         $comodidadesquarto->nomeComodidade=$rs['nomeComodidade'];
-        $comodidadesquarto->status=$rs['status'];
+       
        
       }
 
@@ -88,7 +92,7 @@
     public function Update($comodidadesquarto){
 
    
-      $sql = "UPDATE tbl_milhasrecompensa set nomeComodidade='".$comodidadesquarto->nomeComodidade."', status='".$comodidadesquarto->status."'Where idComodidade= ".$comodidadesquarto->idComodidade;
+      $sql = "UPDATE tbl_comodidadesquarto set nomeComodidade='".$comodidadesquarto->nomeComodidade."'Where idComodidade= ".$comodidadesquarto->idComodidade;
         
         if(mysql_query($sql))
         {

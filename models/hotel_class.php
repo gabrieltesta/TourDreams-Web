@@ -22,15 +22,29 @@
 
 
         public function InsertHotel($hotel){
-            $sql = "insert into tbl_hotel(hotel,checkin,checkout,descricao,qtdEstrelas,idParceiro,idTipoEstadia) values";
-            $sql = $sql."('".$hotel->nomeHotel."','".$hotel->checkIn."','".$hotel->checkOut."','".$hotel->descricaoHotel."',".$hotel->qtdEstrelas.",".$hotel->idParceiro.",".$hotel->tipoEstadia.")";
+            $sql= "insert into tbl_bairro(bairro,idCidade) values('".$hotel->bairro."',".$hotel->cidade.")";
             mysql_query($sql);
-            $sql = "select LAST_INSERT_ID() as idHotel";
+            $sql = "select LAST_INSERT_ID() as idBairro";
             $select = mysql_query($sql);
             if($rs = mysql_fetch_array($select)){
+                $idBairro = $rs['idBairro'];
+                $sql = "insert into tbl_logradouro(logradouro,numero,idBairro) values('".$hotel->logradouro."',".$hotel->numero.",".$idBairro.")";
+                mysql_query($sql);
+                $sql = "select LAST_INSERT_ID() as idLogradouro";
+                $select = mysql_query($sql);
+                if($rs = mysql_fetch_array($select)){
+                    $idLogradouro = $rs['idLogradouro'];
+                    $sql = "insert into tbl_hotel(hotel,checkin,checkout,descricao,qtdEstrelas,idParceiro,idTipoEstadia,idLogradouro) values";
+                    $sql = $sql."('".$hotel->nomeHotel."','".$hotel->checkIn."','".$hotel->checkOut."','".$hotel->descricaoHotel."',".$hotel->qtdEstrelas.",".$hotel->idParceiro.",".$hotel->tipoEstadia.",".$idLogradouro.")";
+                    mysql_query($sql);
+                    $sql = "select LAST_INSERT_ID() as idHotel";
+                    $select = mysql_query($sql);
+                    if($rs = mysql_fetch_array($select)){
 
-                return $idHotel = $rs['idHotel'];
+                        return $idHotel = $rs['idHotel'];
 
+                    }
+                }
             }
         }
 
@@ -95,6 +109,27 @@
             return $estadia;
         }
 
+        public function SelectCidades(){
+            $sql = "select c.idCidade, c.cidade, e.uf from tbl_cidade as c inner join tbl_estado as e on c.idEstado = e.idEstado;";
+            $select = mysql_query($sql);
+
+            $cont = 0;
+
+            while($rs = mysql_fetch_array($select)){
+
+                $cidade[] = new Hotel();
+
+                $cidade[$cont]->idCidade = $rs['idCidade'];
+                $cidade[$cont]->cidade = $rs['cidade'];
+                $cidade[$cont]->uf = $rs['uf'];
+
+                $cont++;
+
+            }
+
+            return $cidade;
+        }
+
 
         public function ExcluirImagem(){
             $sql="select * from tbl_hotelimagem where idHotel=".$this->idHotel.";";
@@ -111,6 +146,7 @@
 
         public function ExcluirHotel(){
 
+            
             $sql = "delete from tbl_hotelcomodidadeshotel where idHotel=".$this->idHotel.";";
             mysql_query($sql);
             $sql = "delete from tbl_hotel where idHotel=".$this->idHotel.";";

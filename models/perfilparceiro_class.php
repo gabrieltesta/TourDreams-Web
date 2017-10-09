@@ -5,7 +5,7 @@
         public $idParceiro;
 
         public function SelecionarHoteis(){
-            $sql = "select h.idHotel, h.hotel, h.qtdEstrelas, t.estadia from tbl_hotel as h inner join tbl_tipodeestadia as t on h.idTipoEstadia = t.idTipoEstadia where h.idParceiro =".$this->idParceiro." order by hotel";
+            $sql = "select h.idHotel, h.hotel, h.qtdEstrelas, t.estadia from tbl_hotel as h inner join tbl_tipodeestadia as t on h.idTipoEstadia = t.idTipoEstadia where h.idParceiro =".$this->idParceiro." order by qtdEstrelas desc";
             $select = mysql_query($sql);
 
             $cont = 0;

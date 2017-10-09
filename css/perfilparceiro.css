@@ -209,3 +209,64 @@ body{
 {
 	background-color: #ccc;
 }
+
+
+.bgCadastroQuarto{
+    height: 100%;
+    width: 100%;
+    margin-top: 150px;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    z-index: 99;
+    display: none;
+}
+
+.modalCadastroQuarto{
+    height: 800px;
+    width: 1300px;
+    margin-top: 70px;
+    background-color: green;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.headerModal{
+    height: 60px;
+    width: 100%;
+    background-color: blue;
+
+}
+
+#tituloModal{
+    height: 100%;
+
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: RalewayRegular;
+    color: #fff;
+    font-size: 40px;
+    text-align: center;
+    line-height: 60px;
+}
+
+.contModal{
+    height: 740px;
+    width: 100%;
+    background-color: #fff;
+}
+
+.divForm{
+    height: 100%;
+    width: 50%;
+    float: left;
+
+}
+
+.divForm:nth-child(1){
+    border-right: 1px solid #ccc;
+}
+
+.divForm:nth-child(2){
+    width: 49.92%;
+}
