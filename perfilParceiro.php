@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/animate.css">
 		<link rel="stylesheet" href="css/perfilparceiro.css">
+		<link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="js/jqueryui/jquery-ui.css">
         <script src="js/jquery-3.2.1.min.js" charset="utf-8"></script>
         <script src="js/wow.min.js"></script>

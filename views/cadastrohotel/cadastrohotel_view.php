@@ -86,7 +86,7 @@
 
                     <tr>
                         <td>
-                            <input id="inputFile" type="file" name="fileFoto0">
+                            <input required id="inputFile" type="file" name="fileFoto0">
                         </td>
                     </tr>
 

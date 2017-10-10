@@ -5,7 +5,7 @@ var cont = 1;
         if(cont < 10){
             var x = cont - 1;
 
-            $("input[name='fileFoto"+x+"']").after("<p><input id='inputFile' type='file' name='fileFoto"+cont+"'></p>");
+            $("input[name='fileFoto"+x+"']").after("<p><input required id='inputFile' type='file' name='fileFoto"+cont+"'></p>");
 
             var qtdImagens = parseInt($("#txtQtdImg").val());
             $("#txtQtdImg").val(qtdImagens+1);

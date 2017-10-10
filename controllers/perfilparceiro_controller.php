@@ -14,6 +14,17 @@
 
         }
 
+        public function Comodidades(){
+
+            require_once('models/perfilparceiro_class.php');
+
+            $lstComodidade = new PerfilParceiro();
+            return $lstComodidade->SelectComodidades();
+
+
+
+        }
+
 
     }
 

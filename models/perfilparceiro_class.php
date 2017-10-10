@@ -28,6 +28,26 @@
             }
         }
 
+        public function SelectComodidades(){
+            $sql = "select * from tbl_comodidadesquarto";
+            $select = mysql_query($sql);
+
+            $cont = 0;
+
+            while($rs = mysql_fetch_array($select)){
+
+                $comodidades[] = new PerfilParceiro();
+
+                $comodidades[$cont]->idComodidade = $rs['idComodidade'];
+                $comodidades[$cont]->nomeComodidade = $rs['nomeComodidade'];
+
+                $cont++;
+
+            }
+
+            return $comodidades;
+        }
+
     }
 
 ?>

@@ -15,15 +15,90 @@
 ?>
 <div class="bgCadastroQuarto">
     <div class="modalCadastroQuarto">
-        <div class="headerModal"><div id="tituloModal">Cadastro de Quarto</div><div class=""><img alt="" src="imagens/perfilparceiro/close-button.svg"></div></div>
+        <div class="headerModal"><div id="tituloModal">Cadastro de Quarto</div><div class="btnFecharModal"><img alt="" src="imagens/perfilparceiro/close-button.svg"></div></div>
         <div class="contModal">
-            <div class="divForm">
+            <form class="" action="router.php" enctype="multipart/form-data" method="post">
+                <div class="divForm">
+                    <table class="tabelaForm">
+                        <tr>
+                            <td><label>Nome do Quarto</label></td>
+                        </tr>
+                        <tr>
+                            <td><input placeholder="Digite o nome do Hotel" type="text" name="txtNomeHotel" value=""></td>
+                        </tr>
+                        <tr>
+                            <td><label>Valor diário</label></td>
+                        </tr>
+                        <tr>
+                            <td><input placeholder="Diária" type="text" name="txtDiaria" value=""></td>
+                        </tr>
+                        <tr>
+                            <td><label>Imagem</label></td>
+                        </tr>
+                        <tr>
+                            <td><input type="file" name="fileImg" value=""></td>
+                        </tr>
+                        <tr>
+                            <td><label>Comodidades</label></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <?php
+                                        require_once('controllers/perfilparceiro_controller.php');
 
-            </div>
+                                        $listComodidade = new ControllerPerfilParceiro();
+                                        $rs = $listComodidade->Comodidades();
 
-            <div class="divForm">
+                                        $contador = 0;
 
-            </div>
+                                        while($contador < count($rs)){
+
+                                    ?>
+                                    <li>
+                                        <p>
+                                            <input type="checkbox" id="comodidadeQuarto<?php echo($contador); ?>" name="comodidadeQuarto[]" value="<?php echo($rs[$contador]->idComodidade); ?>" />
+                                            <label for="comodidadeQuarto<?php echo($contador); ?>"><span class="ui"></span><?php echo($rs[$contador]->nomeComodidade) ?></label>
+                                        </p>
+                                    </li>
+                                    <?php
+                                            $contador++;
+                                        }
+                                    ?>
+
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="divForm">
+                    <table class="tabelaForm">
+                        <tr>
+                            <td><label>Máximo de hóspedes</label></td>
+                        </tr>
+                        <tr>
+                            <td><input placeholder="Máx. de hóspedes" type="text" name="txtMaxHosp" value=""></td>
+                        </tr>
+                        <tr>
+                            <td><label>Quantidade de quartos disponíveis</label></td>
+                        </tr>
+                        <tr>
+                            <td><input placeholder="Qtd. Quartos" type="text" name="txtQtdQuartos" value=""></td>
+                        </tr>
+                        <tr>
+                            <td><label>Descrição do quarto</label></td>
+                        </tr>
+                        <tr>
+                            <td><textarea placeholder="Descrição do Quarto" maxlength="300"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><input type="submit" name="btnCadastrarQuarto" value="CADASTRAR"></td>
+                        </tr>
+
+                    </table>
+                </div>
+            </form>
         </div>
     </div>
 </div>
