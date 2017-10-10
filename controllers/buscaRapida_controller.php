@@ -8,7 +8,7 @@
 
       if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $destino = $_POST['txtDestino'];
-        
+
 
         $buscaRapida_class = new BuscaRapida();
         $buscaRapida_class->destino = $destino;

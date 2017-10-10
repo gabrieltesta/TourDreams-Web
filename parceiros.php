@@ -13,7 +13,7 @@
         <script src="js/script.js" charset="utf-8"></script>
         <link rel="icon" href="imagens/favicon.ico" />
     </head>
-    <body>
+    <body onload="selecionarParceiro();selecionarParceiroPadrao()">
         <?php
             require_once('views/header.php');                                   //Cabeçalho
             require_once('views/parceiros/parceiros_view.php');                   //Conteúdo

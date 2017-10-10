@@ -144,10 +144,7 @@
         Gerenciamento de Funcionários
     </div>
     <div id="buscaFuncionario">
-        <input placeholder="Buscar funcionário" type="text" name="bscFuncionario">
-        <div id="btnBusca">
-
-        </div>
+        <input placeholder="Buscar funcionário" type="text" name="bscFuncionario" id="bscFuncionario">
     </div>
     <div class ="boxdetalhes">
      <table>

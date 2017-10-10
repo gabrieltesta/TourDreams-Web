@@ -10,11 +10,11 @@ if (isset($_POST['login'])) {
    $sql = "SELECT login FROM tbl_login WHERE login='".$login."';";
    $select = mysql_query($sql);
    if(mysql_num_rows($select) > 0) {
-       die('<img src="imagens/naook.svg" />');
+       die('<img src="imagens/naook.svg" id="imgvalidacao"/><span id="msgnaook">Login indisponível</span>');
    }
    else
    {
-       die('<img src="imagens/ok.svg" />');
+       die('<img src="imagens/ok.svg" id="imgvalidacao"/><span id="msgok">Login disponível</span>');
    }
 }
 ?>

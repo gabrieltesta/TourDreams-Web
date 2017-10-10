@@ -83,17 +83,14 @@
                  ?>
 
                 <div id="busca">
-
-                  <form class="" action="router.php?controller=buscarParceiro&modo=buscar" method="post">
-
-
                       <div class="tituloBusca">
                         <div id="iconedireito"></div>
                         <div id="parceiroBusca">Busca de Parceiros</div>
                       </div>
 
                     <div class="inputBusca">
-                          <select name="sltBusca">
+                        <form action="#">
+                          <select name="sltBusca" id="sltBusca">
 
                             <?php
                                 require_once('controllers/parceirosDestaque_controller.php');
@@ -125,59 +122,14 @@
                                 }
                               ?>
                           </select>
-
-                          <input class="botao"type="image" value="btnbuscar" type="submit" img src="Imagens/pesquisar.png">
+                      </form>
                     </div>
 
                 </div>
-
-                <?php
-
-                $nomeParceiro = null;
-
-                if(isset($_GET['modo'])){
-                  if($_GET['modo'] == 'buscar'){
-
-                  $nomeParceiro = $result->nomeParceiro;
-                  $idParceiro = $result->idParceiro;
-
-                }
-              }
-                 ?>
-
                 <div id="extra">
 
-                      <div id="imagemParceiro">
-                       </div>
 
-
-                        <div id="detalhes">
-
-                          <div class="tituloBuscaParceiro">
-                              <?php
-
-                              echo ($nomeParceiro);
-
-                               ?>
-                          </div>
-                          <div class="texto">
-                            "Lorem ipsum dolor sit amet, consectetur
-                             adipiscing elit, sed do eiusmod tempor
-                             incididunt ut labore et dolore magna aliqua.
-                             Ut enim ad minim veniam, quis nostrud exercitation
-                              ullamco laboris nisi ut aliquip ex ea commodo
-                              consequat. Duis aute irure dolor"
-                          </div>
-                        </div>
-                        <div id="buttonEntrar"  onmousedown="return false">
-                           Ver mais detalhes
-                        </div>
                 </div>
-
-
-
         </div>
-
-      </form>
     </div>
 </section>

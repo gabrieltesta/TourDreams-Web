@@ -1,8 +1,8 @@
 <?php
     session_start();
-    if(isset($_SESSION['login']))
+    if(isset($_SESSION['loginCMS']))
     {
-        if($_SESSION['login'] == 'true')
+        if($_SESSION['loginCMS'] == 'true')
         {
             header('location:homecms.php');
         }

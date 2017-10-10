@@ -56,16 +56,24 @@ function abrirModalFaleConosco() {
     $("#shadowBg").show();
 }
 
-
-
 function abrirModalFuncionarios(){
     $('.bgModalFuncionario').fadeIn(200, function(){
-        //completo
     });
 }
 
 function fecharModalFuncionarios(){
     $('.bgModalFuncionario').fadeOut(200, function(){
-        //completo
+    });
+}
+
+function buscarFuncionario() {
+    $("#bscFuncionario").keyup(function() {
+        var nome = $('#bscFuncionario').val();
+        if (!bscFuncionario == "") {
+            $.post('../api/busca_funcionario.php', {'funcionario':nome}, function(data) {
+              $(".boxdetalhes").html(data);
+            });
+        }
+
     });
 }

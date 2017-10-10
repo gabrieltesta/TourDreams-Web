@@ -25,17 +25,16 @@
                 require_once('models/hotel_class.php');
                 $hotel_class = new Hotel();
 
-                $hotel_class->nomeHotel = $nomeHotel;
+                $hotel_class->nomeHotel = addslashes($nomeHotel);
                 $hotel_class->checkIn = $checkIn;
                 $hotel_class->checkOut = $checkOut;
                 $hotel_class->tipoEstadia = $tipoEstadia;
-                $hotel_class->logradouro=$logradouro;
+                $hotel_class->logradouro=addslashes($logradouro);
                 $hotel_class->numero=$numero;
-                $hotel_class->bairro=$bairro;
+                $hotel_class->bairro=addslashes($bairro);
                 $hotel_class->cidade=$cidade;
                 $hotel_class->qtdEstrelas = $qtdEstrelas;
-                $hotel_class->descricaoHotel = $descricaoHotel;
-                $hotel_class->descricaoHotel = $descricaoHotel;
+                $hotel_class->descricaoHotel = addslashes($descricaoHotel);
                 $hotel_class->idParceiro = $idParceiro;
 
                 $idHotel = $hotel_class->InsertHotel($hotel_class);

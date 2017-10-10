@@ -29,7 +29,36 @@
     }
 
 ?>
+<div class="comentariosInsert">
+  <div class="alinhamentoComentario">
+    <div class="tituloComentario">
+      <div class="isolamento">
+          Adicionar Comentário
+      </div>
+      <div class="button">
+        <img src="imagens\perfilparceiro\close-button.svg" alt="" onclick="fecharModalComentario()">
+      </div>
+    </div>
+    <div class="conteudoComentario">
+      <table>
+
+        <tr>
+          <td>
+            <textarea name="name" ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input  class="buttonSalvarComentario"type="submit" name="" value="Salvar">
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
 <section>
+
+
     <!--Caixa de conteúdo-->
     <div id="perfilBox">
         <div id="conteudoEsquerdo">
@@ -101,6 +130,7 @@
                         }
                      ?>
                 </table>
+
             </div>
             <!---->
         </div>
@@ -142,6 +172,12 @@
                     <td>Valor: R$ 550,00</td>
                 </tr>
             </table>
+
+
+            <div class="comentario" onclick="abrirModalComentario()">
+              Deixar um comentário
+            </div>
+
         </div>
         <!---->
     </div>

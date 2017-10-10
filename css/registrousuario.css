@@ -276,3 +276,13 @@ section
     height: 32px;
 
 }
+
+#msgok
+{
+    color: green;
+}
+
+#msgnaook
+{
+    color: red;
+}

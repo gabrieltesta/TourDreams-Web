@@ -9,15 +9,15 @@
 
       </div>
       <div class="barradepesquisa">
-        <form method="post" action="router.php?controller=conhecaseudestino" name="">
+        <form method="post" action="conhecaseudestinobusca.php" name="">
         <div class="alinharbarra">
           <table>
             <tr>
               <td>
-                <input class="barra" size="80" placeholder="Buscar Destino" value="" name="" >
+                <input class="barra" size="80" placeholder="Buscar Destino" value="" name="txtBuscarDestino" >
             </td>
             <td>
-                <input class="botao"type="image" value="btnbuscar" img src="Imagens/pesquisar.png">
+                <input class="botao"type="image" value="btnbuscar"  img src="Imagens/pesquisar.png" >
             </td>
           </tr>
         </table>

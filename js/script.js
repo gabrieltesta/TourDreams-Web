@@ -339,6 +339,10 @@ function abrirRegistroUsuario2() {
     {
         status = 1;
     }
+    if($('#imgvalidacao').attr('src') == 'imagens/naook.svg')
+    {
+        status = 0;
+    }
 
     if (status == 1)
     {
@@ -405,9 +409,15 @@ function abrirRegistroParceiro() {
 //Função abre a segunda página de registro de parceiro (página registroUsuario.php)
 function abrirRegistroParceiro2() {
     var status = 0;
+
     if($('#txtLoginParceiro').val() != '' && $('#txtSenhaParceiro').val() != '' && $('#txtNomeParceiro').val() != '')  //Verifica se os campos estão preenchidos
     {
         status = 1;
+    }
+
+    if($('#imgvalidacao').attr('src') == 'imagens/naook.svg')
+    {
+        status = 0;
     }
 
     if (status == 1)
@@ -476,16 +486,20 @@ function busca() {
 function validarLogin() {
     $(".txtLoginValidar").keyup(function () {
         var login = $(this).val();
-        if(login != '')
+        if(login != '' && login.length > 3)
         {
             $(".resultadovalidacao").html('<img src="imagens/loading.svg" />');
             $.post('api/validar_login.php', {'login':login}, function(data) {
               $(".resultadovalidacao").html(data);
             });
         }
+        if(login.length < 3)
+        {
+            $(".resultadovalidacao").html('<img src="imagens/naook.svg" id="imgvalidacao"/> <span id="msgnaook">Login indisponível</span>');
+        }
         else
         {
-            $(".resultadovalidacao").html('<img src="imagens/naook.svg" />');
+            $(".resultadovalidacao").html('<img src="imagens/naook.svg" id="imgvalidacao"/> <span id="msgnaook">Login indisponível</span>');
         }
 
     })
@@ -539,4 +553,45 @@ function mascaras() {
     $("[name='txtRg']").mask("00.000.000-0");
     $("[name='txtCnpj']").mask("00.000.000-0/0000-00");
     $("[name='txtCelular']").mask("(00) 000000000");
+}
+
+function selecionarParceiro() {
+   $("#sltBusca").change(function() {
+       var idParceiro = $('#sltBusca').val();
+       if (!idParceiro == "") {
+           $.post('api/selecao_parceiro.php', {'parceiro':idParceiro}, function(data) {
+             $("#extra").html(data);
+           });
+       }
+
+   });
+}
+
+function selecionarParceiroPadrao() {
+   var idParceiro = $('#sltBusca').val();
+   if (!idParceiro == "") {
+       $.post('api/selecao_parceiro.php', {'parceiro':idParceiro}, function(data) {
+         $("#extra").html(data);
+       });
+   }
+}
+
+function abrirModalQuarto(){
+    $('.bgCadastroQuarto').fadeIn(200, function(){
+    });
+}
+
+function fecharModalQuarto(){
+    $('.bgCadastroQuarto').fadeOut(200, function(){
+    });
+}
+
+function abrirModalComentario(){
+    $('.comentariosInsert').fadeIn(200, function(){
+    });
+}
+
+function fecharModalComentario(){
+    $('.comentariosInsert').fadeOut(200, function(){
+    });
 }

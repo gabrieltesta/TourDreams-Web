@@ -275,13 +275,19 @@ font-style:italic;
   border-radius: 50%;
   background-color: ;
   border: solid 1px #696969;
-  background-image: url(../imagens/parceiros/fachadas.jpg);
   background-size:100%;
   background-repeat: no-repeat;
   background-position: -0px 0px;
     margin-top:60px;
     margin-left:20px;
   float:left;
+  overflow: hidden;
+}
+
+#imagemParceiro img
+{
+    width: 100%;
+    height: 100%;
 }
 .tituloBusca{
   width: 100%;

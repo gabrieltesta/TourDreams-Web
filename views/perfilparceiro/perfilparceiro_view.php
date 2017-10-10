@@ -15,16 +15,16 @@
 ?>
 <div class="bgCadastroQuarto">
     <div class="modalCadastroQuarto">
-        <div class="headerModal"><div id="tituloModal">Cadastro de Quarto</div><div class="btnFecharModal"><img alt="" src="imagens/perfilparceiro/close-button.svg"></div></div>
+        <div class="headerModal"><div id="tituloModal">Cadastro de Quarto</div><div class="btnFecharModal"><img onclick="fecharModalQuarto()" alt="" src="imagens/perfilparceiro/close-button.svg"></div></div>
         <div class="contModal">
-            <form class="" action="router.php" enctype="multipart/form-data" method="post">
+            <form class="" action="router.php?controller=quarto&modo=inserir&idParceiro=<?php echo($_GET['idParceiro']); ?>" enctype="multipart/form-data" method="post">
                 <div class="divForm">
                     <table class="tabelaForm">
                         <tr>
                             <td><label>Nome do Quarto</label></td>
                         </tr>
                         <tr>
-                            <td><input placeholder="Digite o nome do Hotel" type="text" name="txtNomeHotel" value=""></td>
+                            <td><input placeholder="Digite o nome do Quarto" type="text" name="txtNomeQuarto" value=""></td>
                         </tr>
                         <tr>
                             <td><label>Valor diário</label></td>
@@ -90,7 +90,7 @@
                             <td><label>Descrição do quarto</label></td>
                         </tr>
                         <tr>
-                            <td><textarea placeholder="Descrição do Quarto" maxlength="300"></textarea></td>
+                            <td><textarea name="txtDescricaoQuarto" placeholder="Descrição do Quarto" maxlength="300"></textarea></td>
                         </tr>
                         <tr>
                             <td><input type="submit" name="btnCadastrarQuarto" value="CADASTRAR"></td>
@@ -192,7 +192,8 @@
 
 <section id="sectionDireita">
     <div id="contDireita">
-        <div id="hotelClicado">
+        <h1>Quartos</h1>
+        <div onclick="abrirModalQuarto()" id="hotelClicado">
 
         </div>
     </div>

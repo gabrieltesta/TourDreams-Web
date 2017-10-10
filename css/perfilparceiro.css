@@ -10,6 +10,10 @@ body{
 
 }
 
+#sectionTudo{
+
+}
+
 #contEsquerda{
     width: 84%;
     height: 910px;
@@ -47,6 +51,7 @@ body{
     margin: 0 auto;
     margin-left: 197px;
     position: absolute;
+    z-index: 1;
     overflow: auto;
     margin-top: 20px;
     /*border: 1px solid #ccc;*/
@@ -213,12 +218,14 @@ body{
 
 .bgCadastroQuarto{
     height: 100%;
-    width: 1920px;
+    display: flex;
+    float: left;
+    width: 100%;
     margin-top: 150px;
     background-color: rgba(0,0,0,0.5);
     position: absolute;
-    z-index: 99;
-
+    z-index: 2;
+    display: none;
 }
 
 .modalCadastroQuarto{
@@ -228,6 +235,7 @@ body{
     background-color: green;
     margin-left: auto;
     margin-right: auto;
+
 }
 
 .headerModal{
@@ -354,6 +362,12 @@ body{
     font-size: 30px;
     cursor: pointer;
     font-family: RobotoMedium;
+}
+
+.tabelaForm ul li{
+    width: 50%;
+    list-style: none;
+    float: left;
 }
 
 .tabelaForm input[type="submit"]:hover{

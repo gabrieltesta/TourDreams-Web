@@ -14,7 +14,7 @@
         <script src="../js/jquerymask/src/jquery.mask.js" charset="utf-8"></script>
         <link rel="icon" href="../imagens/favicon.ico" />
     </head>
-    <body>
+    <body onload="buscarFuncionario()">
         <?php
             require_once('views/header.php');
         ?>

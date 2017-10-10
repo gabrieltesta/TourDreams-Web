@@ -26,7 +26,9 @@
             }
             break;
          case 'conhecaseudestino':
+
                 header("Location: conhecaseudestinobusca.php");
+
             break;
          case 'faleconosco':
                 require_once('controllers/faleconosco_controller.php');
@@ -109,6 +111,20 @@
                         $controller_hotel->Deletar();
                         break;
                 }
+            break;
+
+
+            case 'quarto':
+            require_once('controllers/quarto_controller.php');
+            require_once('models/quarto_class.php');
+                switch($modo){
+                    case 'inserir':
+                        $controller_quarto = new ControllerQuarto();
+                        $controller_quarto->Inserir();
+                    break;
+
+                }
+
             break;
     }
 ?>
