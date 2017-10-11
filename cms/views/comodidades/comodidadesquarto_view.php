@@ -90,7 +90,7 @@
 
       <tr>
           <td class="tdnumeros">
-            <input class="inputFormulario" name="txtcomodidadesquarto" value="<?php echo($nomeComodidade);?>" placeholder="" >
+            <input class="inputFormulario" name="txtnomecomodidade" value="<?php echo($nomeComodidade);?>" placeholder="" >
           </td>
            
            <td  class="tdnumeros">

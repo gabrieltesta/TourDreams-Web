@@ -40,19 +40,21 @@
       </div>
     </div>
     <div class="conteudoComentario">
-      <table>
+      <form class="" action="index.html" method="post">
+        <table>
 
-        <tr>
-          <td>
-            <textarea name="name" ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <input  class="buttonSalvarComentario"type="submit" name="" value="Salvar">
-          </td>
-        </tr>
-      </table>
+          <tr>
+            <td>
+              <textarea name="name" ></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input  class="buttonSalvarComentario"type="submit" name="" value="Salvar">
+            </td>
+          </tr>
+        </table>
+      </form>
     </div>
   </div>
 </div>

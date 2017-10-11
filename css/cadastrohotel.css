@@ -152,24 +152,26 @@
     color: #000;
 }
 
-#btnSalvar{
+#btnSalvar input[type="submit"]{
     height: 70px;
     width: 200px;
     border: 1px solid #ccc;
     background-color: #031634;
     margin-left: 20px;
     margin-top: 15px;
+    font-size: 25px;
+    font-family: RobotoMedium;
+    color: #fff;
+    cursor: pointer;
 }
 
-#btnSalvar h1{
-    height: 100%;
-    width: 100%;
-    text-align: center;
-    line-height: 25px;
-    font-size: 30px;
-    font-family: Microsoft JhengHei UI;
-    color: #fff;
+#btnSalvar input[type="submit"]:hover{
+    background-color: #052a63;
+
 }
+
+
+
 
 
 #tableEsquerda input[type="file"]{
