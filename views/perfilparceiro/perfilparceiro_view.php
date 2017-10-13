@@ -21,6 +21,7 @@
                 <div class="divForm">
                     <table class="tabelaForm">
                         <tr>
+                            <input type="hidden" id="idHotel" name="idHotel" value="">
                             <td><label>Nome do Quarto</label></td>
                         </tr>
                         <tr>
@@ -149,9 +150,13 @@
 
                     while($cont < count($rows)){
 
+                        $idHotel = $rows[$cont]->idHotel;
+                        $nomeHotel = "'".addslashes($rows[$cont]->hotel)."'";
+
                 ?>
-                <tr>
-                    <td>
+                <tr onclick="mostrarQuartos(<?php echo($idHotel); ?>,<?php echo($nomeHotel) ?>)">
+
+                    <td id="nomeHotel">
                         <?php echo($rows[$cont]->hotel); ?>
                     </td>
                     <td>
@@ -193,8 +198,19 @@
 <section id="sectionDireita">
     <div id="contDireita">
         <h1>Quartos</h1>
-        <div onclick="abrirModalQuarto()" id="hotelClicado">
+        <div id="hotelClicado">
+            <div id="mensagem">Clique em um hotel para ver seus quartos</div>
+            <div class="contHotelClicado">
 
+                <div class="divNomeQuarto"></div>
+                <div class="divImgQuarto"><div class="mensagemFoto">Selecione um quarto para ver a foto</div><img alt="" src=""></div>
+                <div class="divTblQuarto">
+
+                </div>
+                <div onclick="abrirModalQuarto()" class="btnAddQuarto"><h3>Registrar Quarto</h3></div>
+
+
+            </div>
         </div>
     </div>
 </section>

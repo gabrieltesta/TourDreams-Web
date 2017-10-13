@@ -12,6 +12,7 @@
                 $qtdQuartos = $_POST['txtQtdQuartos'];
                 $descricao = $_POST['txtDescricaoQuarto'];
                 $idParceiro = $_GET['idParceiro'];
+                $idHotel = $_POST['idHotel'];
 
                 require_once('models/quarto_class.php');
 
@@ -21,6 +22,7 @@
                 $quarto_class->vlrDiario = $vlrDiario;
                 $quarto_class->maxHosp = $maxHosp;
                 $quarto_class->qtdQuartos = $qtdQuartos;
+                $quarto_class->idHotel = $idHotel;
                 $quarto_class->descricao = $descricao;
 
                 if (isset( $_FILES[ 'fileImg' ][ 'name' ] ) && $_FILES[ 'fileImg' ][ 'error' ] == 0 ) {
@@ -49,7 +51,7 @@
                                  $quarto_comodidade->comodidade = $comodidade;
                                  $quarto_comodidade->idQuarto = $idQuarto;
                                  $quarto_comodidade->InsertComodidade();
-                                 
+
                                  header('location:perfilParceiro.php?idParceiro='.$idParceiro);
                              }
 

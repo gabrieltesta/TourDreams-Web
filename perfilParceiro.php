@@ -12,6 +12,7 @@
         <script src="js/wow.min.js"></script>
         <script src="js/jqueryui/jquery-ui.min.js" charset="utf-8"></script>
         <script src="js/script.js" charset="utf-8"></script>
+        <script src="js/perfilparceiro.js" charset="utf-8"></script>
         <script src="js/sorttable.js" charset="utf-8"></script>
         <link rel="icon" href="imagens/favicon.ico" />
     </head>

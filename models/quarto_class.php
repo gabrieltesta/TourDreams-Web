@@ -22,7 +22,7 @@
             if($rs = mysql_fetch_array($select)){
                 $idImagem = $rs['idImagem'];
                 $sql = "insert into tbl_quarto(nome,valorDiario,idImagem,descricao,maxHospedes,qtdQuartos,idHotel)";
-                $sql = $sql." values('".$this->nome."',".$this->vlrDiario.",".$idImagem.",'".$this->descricao."',".$this->maxHosp.",".$this->qtdQuartos.",47)";
+                $sql = $sql." values('".$this->nome."',".$this->vlrDiario.",".$idImagem.",'".$this->descricao."',".$this->maxHosp.",".$this->qtdQuartos.",".$this->idHotel.")";
                 mysql_query($sql);
                 $sql = "select LAST_INSERT_ID() as idQuarto";
                 $select = mysql_query($sql);
