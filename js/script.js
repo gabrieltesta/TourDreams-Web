@@ -556,11 +556,11 @@ function mascaras() {
 }
 
 function selecionarParceiro() {
-   $("#sltBusca").change(function() {
-       var idParceiro = $('#sltBusca').val();
+   $("#slcBuscaParceiro").change(function() {
+       var idParceiro = $('#slcBuscaParceiro').val();
        if (!idParceiro == "") {
            $.post('api/selecao_parceiro.php', {'parceiro':idParceiro}, function(data) {
-             $("#extra").html(data);
+             $("#conteudoBuscaParceiro").html(data);
            });
        }
 
@@ -568,10 +568,10 @@ function selecionarParceiro() {
 }
 
 function selecionarParceiroPadrao() {
-   var idParceiro = $('#sltBusca').val();
+   var idParceiro = $('#slcBuscaParceiro').val();
    if (!idParceiro == "") {
        $.post('api/selecao_parceiro.php', {'parceiro':idParceiro}, function(data) {
-         $("#extra").html(data);
+         $("#conteudoBuscaParceiro").html(data);
        });
    }
 }
@@ -594,4 +594,17 @@ function abrirModalComentario(){
 function fecharModalComentario(){
     $('.comentariosInsert').fadeOut(200, function(){
     });
+}
+
+function abrirDetalhesParceiro(idParceiro) {
+    $("#modalParceiro").show();
+    $("#modalBg").show();
+    $.post('api/detalhes_parceiro.php', {'parceiro':idParceiro}, function(data) {
+      $("#modalParceiro").html(data);
+    });
+}
+
+function fecharDetalhesParceiro() {
+    $("#modalParceiro").hide();
+    $("#modalBg").hide();
 }

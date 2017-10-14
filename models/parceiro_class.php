@@ -38,15 +38,21 @@
                       $select = mysql_query($sql);
                         if($rows = mysql_fetch_array($select)){
                           $idTelefone = $rows['idTelefone'];
-                          $sql = "INSERT INTO tbl_parceiro(cnpj, nomeParceiro, idImagem, idLogin, emailParceiro) VALUES('".$parceiro_class->cnpj."', '".$parceiro_class->nome."',1,".$idLogin.",'".$parceiro_class->email."')";
-                          if(mysql_query($sql)){
-                            return 'ok';
-                          }else {
-                            return 'erro';
+                          $sql = "INSERT INTO tbl_imagem (caminhoImagem) VALUES ('imagens/usuario/padrao.png');";
+                          mysql_query($sql);
+                          $sql = "SELECT LAST_INSERT_ID() AS idImagem";
+                          $select = mysql_query($sql);
+                          if($rows = mysql_fetch_array($select))
+                          {
+                              $idImagem = $rows['idImagem'];
+                              $sql = "INSERT INTO tbl_parceiro(cnpj, nomeParceiro, idImagem, idLogin, emailParceiro) VALUES('".$parceiro_class->cnpj."', '".$parceiro_class->nome."',".$idImagem.",".$idLogin.",'".$parceiro_class->email."')";
+                              if(mysql_query($sql)){
+                                return 'ok';
+                              }else {
+                                return 'erro';
+                            }
                           }
                         }
-
-
                 }
 
 

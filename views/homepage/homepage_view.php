@@ -46,14 +46,12 @@
         <div id="containerBoxes">
             <a href="#">
                 <div class="smallBox">
-                    <div>Milhas Travel</div>
-                    <img alt="MilhasTravel" src="imagens/homepage/mtc.png" onmousedown="return false">
+                    <img alt="MilhasTravel" src="imagens/homepage/mtf.jpg" onmousedown="return false">
                 </div>
             </a>
             <a href="#">
                 <div class="smallBox">
-                    <div>Top Destino</div>
-                    <img alt="TopDestino" src="imagens/homepage/riodejaneiro.png" onmousedown="return false">
+                    <img alt="Melhores Destinos" src="imagens/homepage/melhoresdestinos.jpg" onmousedown="return false">
                 </div>
             </a>
         </div>

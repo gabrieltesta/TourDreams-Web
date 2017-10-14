@@ -29,7 +29,7 @@ class ControllerParceiro
         header('location:registroUsuario.php?ok');
       }else {
         header('location:registroUsuario.php?erro');
-      }
+    }
     }
 }
 

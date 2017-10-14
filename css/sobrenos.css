@@ -169,5 +169,8 @@ hr
     text-indent: 40px;
     text-align: justify;
     padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
+
 /**/

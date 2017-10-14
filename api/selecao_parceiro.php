@@ -11,17 +11,17 @@
      $sql = "SELECT * FROM tbl_parceiro AS p INNER JOIN tbl_imagem AS i ON i.idImagem=p.idImagem WHERE idParceiro='".$idParceiro."';";
      $select = mysql_query($sql);
      if($rows=mysql_fetch_array($select)) {
-         die('<div id="imagemParceiro">
-                <img src="'.$rows['caminhoImagem'].'" alt="'.$rows['nomeParceiro'].'">
-              </div>
-              <div id="detalhes">
-                <div class="tituloBuscaParceiro">
-                    '.$rows['nomeParceiro'].'
-                </div>
-              </div>
-              <div id="buttonEntrar"  onmousedown="return false">
-                Ver mais detalhes
-              </div>');
+         die('<div class="parceiroBox">
+             <div class="imagemParceiro">
+                 <img src="'.$rows['caminhoImagem'].'" alt="'.$rows['nomeParceiro'].'">
+             </div>
+             <div class="nomeParceiro">
+               '.$rows['nomeParceiro'].'
+             </div>
+         </div>
+         <div id="btnParceiro" onclick="abrirDetalhesParceiro('.$rows['idParceiro'].')">
+             VER DETALHES
+         </div>');
      }
   }
   ?>
