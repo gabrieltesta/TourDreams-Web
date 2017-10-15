@@ -1,4 +1,4 @@
-function mostrarQuartos(idHotel,nomeHotel){
+function mostrarQuartos(idHotel,nomeHotel,idParceiro){
 
         $('#mensagem').hide();
         $('.contHotelClicado').show();
@@ -7,7 +7,7 @@ function mostrarQuartos(idHotel,nomeHotel){
         $('.mensagemFoto').show();
         $('.divNomeQuarto').text("");
         $('#idHotel').val(idHotel);
-        $.post('api/busca_quarto.php', {'idHotel':idHotel}, function(data) {
+        $.post('api/busca_quarto.php', {'idHotel':idHotel,'idParceiro':idParceiro}, function(data) {
           $(".divTblQuarto").html(data);
         });
 

@@ -147,14 +147,14 @@
 
                     $cont = 0;
 
-
+                    $idParceiro = $_GET['idParceiro'];
                     while($cont < count($rows)){
 
                         $idHotel = $rows[$cont]->idHotel;
                         $nomeHotel = "'".addslashes($rows[$cont]->hotel)."'";
 
                 ?>
-                <tr onclick="mostrarQuartos(<?php echo($idHotel); ?>,<?php echo($nomeHotel) ?>)">
+                <tr onclick="mostrarQuartos(<?php echo($idHotel); ?>,<?php echo($nomeHotel) ?>,<?php echo($idParceiro); ?>)">
 
                     <td id="nomeHotel">
                         <?php echo($rows[$cont]->hotel); ?>

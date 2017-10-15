@@ -122,6 +122,11 @@
                         $controller_quarto = new ControllerQuarto();
                         $controller_quarto->Inserir();
                     break;
+                    case 'excluir':
+                        $controller_quarto = new ControllerQuarto();
+                        $controller_quarto->Excluir();
+                    break;
+
 
                 }
 

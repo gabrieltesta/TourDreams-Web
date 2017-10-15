@@ -10,7 +10,7 @@ body{
 
 #sectionBaixo{
     width: 100%;
-    
+
     display: flex;
 
 }
@@ -35,7 +35,7 @@ body{
 #divInformacoes{
     width: 1612,8px;
     height: 580px;
-    
+
 }
 
 #divImgGrande{
@@ -77,7 +77,7 @@ body{
     height: 60px;
     float: left;
     margin-right: 10px;
-    
+
 }
 
 .miniatura img{
@@ -119,7 +119,7 @@ body{
 #tdAvaliacao{
     font-size: 25px;
     text-align: right;
-    
+
 }
 
 
@@ -129,7 +129,7 @@ body{
     width: 100%;
 }
 
-#divQuarto{
+.divQuarto{
     width: 100%;
     height: 300px;
     margin-bottom: 30px;
@@ -142,7 +142,7 @@ body{
 
     float: left;
     border-right: 1px solid #ccc;
-    
+
 }
 
 .divReservar{
@@ -152,7 +152,7 @@ body{
 }
 
 .imgQuarto{
-    width: 260px;
+    width: 290px;
     height: 260px;
     margin-top: 20px;
     margin-left: 20px;
@@ -204,7 +204,7 @@ body{
 .divTituloQuarto{
     height: 50px;
     width: 900px;
-    
+
     float: left;
     margin-left: 20px;
     margin-top: 20px;
@@ -212,39 +212,33 @@ body{
 
 .separador{
     height: 240px;
-    width: 200px;
     margin-top: 30px;
+
     float: left;
     margin-left: 20px;
+
 }
 
-.comodidade{
-    width: 100%;
-    height: 55px;
-    margin-bottom: 5px;
-}
-
-.comodidade img{
-    width: 30px;
-    height: 30px;
-    margin-top: 10px;
+.separador ul{
     float: left;
+
 }
 
-.comodidade h2{
-    float: left;
-    line-height: ;
-    margin-left: 20px;
+.separador ul li{
+
+
+    margin-bottom: 10px;
     font-family: RalewayRegular;
-    font-size: 20px;
+    font-weight: bold;
+    font-size: 25px;
     color: #000;
 }
 
 .nomeQuarto{
     height: 100%;
-    width: 200px;
+
     color: #000;
-    font-family: CordiaUPC;
+    font-family: Cordiau;
     font-size: 40px;
     float: left;
 }
@@ -254,7 +248,7 @@ body{
     width: 200px;
     height: 100%;
     margin-left: 10px;
-    
+
 }
 
 .estrelaQuarto img{
@@ -277,7 +271,7 @@ body{
 
 
 .comodidadesQuarto{
-   
+
     height: 90px;
     width: 870px;
     margin-left: 50px;
@@ -292,13 +286,13 @@ body{
     margin-bottom: 5px;
     font-weight: lighter;
     color: #000;
- 
+
 }
 
 .comodidadeDoQuarto{
     height: 25px;
     margin-right: 20px;
-  
+
     float: left;
     margin-bottom: 5px;
 }
@@ -334,7 +328,7 @@ body{
     font-family: Euphemia;
     font-size: 40px;
     color: #1c8c34;
-    
+
 }
 
 .divPreco h3{
@@ -373,4 +367,3 @@ body{
 .botaoReservar:hover{
     background-color: #0b2e66;
 }
-

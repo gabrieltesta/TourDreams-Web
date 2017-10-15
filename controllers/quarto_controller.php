@@ -65,6 +65,19 @@
 
         }
 
+        public function Excluir(){
+            $idQuarto=$_GET['idQuarto'];
+            $idParceiro = $_GET['idParceiro'];
+
+            require_once('models/quarto_class.php');
+            $quarto_class = new Quarto();
+            $quarto_class->idQuarto=$idQuarto;
+            $quarto_class->Deletar();
+
+
+            header('location:perfilParceiro.php?idParceiro='.$idParceiro);
+        }
+
 
     }
 ?>

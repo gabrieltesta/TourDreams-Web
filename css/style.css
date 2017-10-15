@@ -9,6 +9,12 @@ pertencentes a várias páginas .php*/
 
 @font-face{
 
+    font-family: Cordiau;
+    src: url("../fonts/cordiau.ttf");
+}
+
+@font-face{
+
     font-family: SourceSansSemibold;
     src: url("../fonts/SourceSansPro-Semibold.ttf");
 }

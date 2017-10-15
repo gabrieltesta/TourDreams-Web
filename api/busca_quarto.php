@@ -5,6 +5,7 @@ $conexao_db = new Mysql_db;
 //Chama o método conectar para estabelecer a conexão com o BD.
 $conexao_db->conectar();
 if (isset($_POST['idHotel'])) {
+    $idParceiro = $_POST['idParceiro'];
    $idHotel = $_POST['idHotel'];
 
    $sql = "select q.idQuarto, q.nome, q.valorDiario, q.qtdQuartos, i.caminhoImagem from tbl_quarto as q inner join tbl_imagem as i on q.idImagem = i.idImagem where idHotel=".$idHotel.";";
@@ -22,6 +23,8 @@ if (isset($_POST['idHotel'])) {
                  <td class="titleTblQuarto">Opções</td>
              </tr>';
       while($rows=mysql_fetch_array($select)) {
+
+          $idQuarto = $rows['idQuarto'];
           $foto = "'".$rows['caminhoImagem']."'";
           $nome = "'".addslashes($rows['nome'])."'";
           $stringHTML = $stringHTML.
@@ -31,7 +34,7 @@ if (isset($_POST['idHotel'])) {
               <td>'.$rows['nome'].'</td>
               <td>'.$rows['valorDiario'].'</td>
               <td>'.$rows['qtdQuartos'].'</td>
-              <td><img alt="" src="imagens/perfilparceiro/edit.png">    <img alt="" src="imagens/perfilparceiro/delete.png"></td>
+              <td><img alt="" src="imagens/perfilparceiro/edit.png">    <a href="router.php?controller=quarto&modo=excluir&idQuarto='.$idQuarto.'&idParceiro='.$idParceiro.'"><img alt="" src="imagens/perfilparceiro/delete.png"></a></td>
           </tr>';
       }
       $stringHTML.'</table>';
