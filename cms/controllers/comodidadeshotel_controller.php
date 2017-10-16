@@ -1,7 +1,7 @@
 <?php
 
 
-class ControllerComodidadesQuarto
+class ControllerComodidadesHotel
 {
 
      public function Inserir()
@@ -11,20 +11,20 @@ class ControllerComodidadesQuarto
         */
         if ($_SERVER['REQUEST_METHOD'] == 'POST')
         {
-            $nomeComodidade = $_POST['txtnomecomodidade'];
+            $nomeComodidade = $_POST['txtnomecmodidade'];
           
-            $comodidadesquarto_class = new ComodidadesQuarto();
+            $comodidadeshotel_class = new ComodidadesHotel();
             
-            $comodidadesquarto_class->nomeComodidade=$nomeComodidade;
+            $comodidadeshotel_class->nomeComodidade=$nomeComodidade;
     
-            $comodidadesquarto = $comodidadesquarto_class->Insert($comodidadesquarto_class);
-            if ($comodidadesquarto == 'ok')
+            $comodidadeshotel = $comodidadeshotel_class->Insert($comodidadeshotel_class);
+            if ($comodidadeshotel == 'ok')
             {
-                header('location:comodidadesquarto.php');
+                header('location:comodidadeshotel.php');
             }
             else
             {
-                header('location:comodidadesquarto.php?erro');
+                header('location:comodidadeshotel.php?erro');
             }
         }
     }
@@ -37,79 +37,60 @@ class ControllerComodidadesQuarto
         if ($_SERVER['REQUEST_METHOD'] == 'POST')
         {
             
-            $nomeComodidade = $_POST['txtnomecomodidade'];
-            $idComodidade = $_GET['idComodidade'];
+            $nomeComodidade = $_POST['txtnomecmodidade'];
+            $idComodidadeHotel = $_GET['idComodidadeHotel'];
 
-            $comodidadesquarto_class = new ComodidadesQuarto();
+            $comodidadeshotel_class = new ComodidadesHotel();
 
-            $comodidadesquarto_class->nomeComodidade=$nomeComodidade;
+           $comodidadeshotel_class->nomeComodidade=$nomeComodidade;
            
-            $comodidadesquarto_class->idComodidade= $idComodidade;
+          $comodidadeshotel_class->idComodidadeHotel= $idComodidadeHotel;
 
-            $comodidadesquarto= $comodidadesquarto_class->Update($comodidadesquarto_class);
-            if ($comodidadesquarto == 'erro')
-            {
-                header('location:comodidadesquarto.php?erro');
-            }
-            else
-            {
-                header('location:comodidadesquarto.php');
-            }
+            $comodidadeshotel_class->Update($comodidadeshotel_class);
+            header('location:comodidadeshotel.php');
+            
         }
     }
 
   public function Listar(){
 
-      require_once('models/comodidadesquarto_class.php');
-      $lstComodidadesQuarto = new ComodidadesQuarto();
-      return $lstComodidadesQuarto->SelectComodidadesQuarto();
+      require_once('models/comodidadeshotel_class.php');
+      $lstComodidadesHotel = new ComodidadesHotel();
+      return $lstComodidadesHotel->SelectComodidadesHotel();
 
     }
     public function Excluir(){
 
-      $idComodidade = $_GET['idComodidade'];
+      $idComodidadeHotel = $_GET['idComodidadeHotel'];
 
-      $comodidadesquarto_class = new ComodidadesQuarto();
-      $comodidadesquarto_class->idComodidade = $idComodidade;
-      $result = $comodidadesquarto_class->Delete($comodidadesquarto_class);
+       
+      $comodidadeshotel_class = new ComodidadesHotel();
+      $comodidadeshotel_class->idComodidadeHotel = $idComodidadeHotel;
+      $result = $comodidadeshotel_class->Delete($comodidadeshotel_class);
 
-      if($result = 'erro'){
-        header('location:comodidadesquarto.php?erro');
+    if($result = 'erro'){
+        header('location:comodidadeshotel.php?erro');
       }else {
-        header('location:comodidadesquarto.php?');
+        header('location:comodidadeshotel.php?');
       }
+        
     }
 
     public function Visualizar(){
-      $idComodidade = $_GET['idComodidade'];
+      $idComodidadeHotel = $_GET['idComodidadeHotel'];
 
-      require_once('models/comodidadesquarto_class.php');
+      require_once('models/comodidadeshotel_class.php');
 
-      $comodidadesquarto_class = new ComodidadesQuarto();
-      $comodidadesquarto_class->idComodidade=$idComodidade;
-      $result = $comodidadesquarto_class->SelectById($comodidadesquarto_class);
+      $comodidadeshotel_class = new ComodidadesHotel();
+      $comodidadeshotel_class->idComodidadeHotel=$idComodidadeHotel;
+      $result = $comodidadeshotel_class->SelectById($comodidadeshotel_class);
 
-      require_once("comodidadesquarto.php");
+      require_once("comodidadeshotel.php");
 
 
     }
 
-    public function AtualizarRegistrar(){
-
-      if($_SERVER['REQUEST_METHOD']=='POST'){
-        $nomeComodidade=$_POST['txtnomecomodidade'];
-       
-
-        $idComodidade = $_GET['idComodidade'];
-        $comodidadesquarto_class = new ComodidadesQuarto();
-
-        $comodidadesquarto_class->nomeComodidade=$nomeComodidade;
-
-        $comodidadesquarto_class->idComodidade=$idComodidade;
-      
-        $comodidadesquarto_class->Update($comodidadesquarto_class);
-      }
-    }
+    
 
      
 }

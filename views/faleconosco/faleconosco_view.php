@@ -61,18 +61,7 @@
             <div id="perguntasbox">
                 <h3>Geral</h3>
                 <ul>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-
+                    <li>fdsfsdg</li>
                 </ul>
                 <h3>Conta</h3>
                 <ul>

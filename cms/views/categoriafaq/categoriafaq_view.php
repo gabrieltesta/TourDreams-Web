@@ -7,30 +7,32 @@
 
 <div class="selectgpp">
     <div id="titulogpp">
-        Gerenciamento Comodidades de Hotel
+        Gerenciamento de Categoria FAQ
     </div>
+    
     <div id="containerTable">
+        
         <table class="table11 sortable">
             <tr>
                 <td class ="titulo22">
                    Identificação
                 </td>
                 <td class ="titulo22">
-                    Nome da Comodidade
+                Categoria do FAQ
                 </td>
-                
-                <td class="titulo22">
+               
+                <td class ="titulo22">
+
                     Opções
-                </td>
-            
+                </td>   
             </tr>
 
         <?php
 
-            require_once('controllers/comodidadeshotel_controller.php');
+            require_once('controllers/categoriafaq_controller.php');
 
-            $controller_comodidadeshotel = new ControllerComodidadesHotel();
-            $rows = $controller_comodidadeshotel -> Listar();
+            $controller_categoriafaq = new ControllerCategoriaFaq();
+            $rows = $controller_categoriafaq -> Listar();
 
             $cont = 0;
 
@@ -38,23 +40,22 @@
 
         ?>
             <tr> 
-                <td class="tdnumeros">
-                    <?php echo($rows[$cont]->idComodidadeHotel); ?>
-                </td>
-                <td class="tdnumeros">
-                    <?php echo($rows[$cont]->nomeComodidade); ?>
-                </td>
                   
+                <td class="tdnumeros">
+                   <?php echo($rows[$cont]->idCategoriaFaq); ?>
+                </td>
+                <td class="tdnumeros">
+                   <?php echo($rows[$cont]->categoriaFaq); ?>
+                </td>
 
                 <td class="tdnumeros">
-                   <a href=<?php echo("router.php?controller=comodidadeshotel&modo=excluir&idComodidadeHotel=".$rows[$cont]->idComodidadeHotel);?>>
+                   <a href=<?php echo("router.php?controller=categoriafaq&modo=excluir&idCategoriaFaq=".$rows[$cont]->idCategoriaFaq);?>>
                      <img src="imagens/delete.png" alt="delete">
                    </a>
-                   <a href=<?php echo("router.php?controller=comodidadeshotel&modo=visualizar&idComodidadeHotel=".$rows[$cont]->idComodidadeHotel);?>>
+                   <a href=<?php echo("router.php?controller=categoriafaq&modo=visualizar&idCategoriaFaq=".$rows[$cont]->idCategoriaFaq);?>>
                      <img src="imagens/edit.png" alt="edit">
                   </a>
                </td>
-                
             </tr>
              <?php
         $cont +=1;
@@ -62,37 +63,36 @@
         ?>
         </table>
     </div>
+    
     <table class="formulariozinho">
       <tr>
               <td class="titulo22">
-                      Nome da Comodidade
+                  Categoria FAQ
               </td>
-              
+            
       </tr>
 
       <?php
-      $nomeComodidade = null;
-     
+      $categoriaFaq = null;
       $action = "inserir";
 
       if(isset($_GET['modo'])){
         if ($_GET['modo']=='visualizar') {
-          $nomeComodidade=$result->nomeComodidade;
-       
-          $action="editar&idComodidadeHotel=".$_GET['idComodidadeHotel'];
+          $categoriaFaq=$result->categoriaFaq;
+
+          $action="editar&idCategoriaFaq=".$_GET['idCategoriaFaq'];
         }
       }
 
 
       ?>
-      <form class="" action="router.php?controller=comodidadeshotel&modo=<?php echo($action)?>" method="post">
+      <form class="" action="router.php?controller=categoriafaq&modo=<?php echo($action)?>" method="post">
 
 
       <tr>
           <td class="tdnumeros">
-            <input class="inputFormulario" name="txtnomecmodidade" value="<?php echo($nomeComodidade);?>" placeholder="" >
+            <input class="inputFormulario" name="txtcategoriafaq" value="<?php echo($categoriaFaq);?>" placeholder="" >
           </td>
-           
            <td  class="tdnumeros">
           <input type="submit" name="btnAlterar" value="" class="btnAlterar">
         </td>
@@ -108,8 +108,8 @@
       </tr>
     
         </form>
-    </table>
-      
         
+        
+    </table>
         
 </div>

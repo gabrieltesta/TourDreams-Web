@@ -9,5 +9,8 @@
         <a href="acomodacoes.php"><li><img src="imagens/acomodacoes.png" alt=""><span>ACOMODAÇÕES</span></li></a>
         <a href="faleconosco.php"><li><img src="imagens/faleconosco.png" alt=""><span>FALE CONOSCO</span></li></a>
         <a href="moeda.php"><li><img src="imagens/moeda.png" alt="Moeda"><span>MOEDA</span></li></a>
+        <a href="nivelFuncionario.php"><li><img src="imagens/elements_hierarchy.png" alt="nivel"><span>Nível de Funcionario</span></li></a>
+         <a href="faq.php"><li><img src="imagens/faq.png" alt="faq"><span>FAQ</span></li></a>
+           <a href="categoriafaq.php"><li><img src="imagens/pronto.png" alt="faq"><span>Categoria do FAQ</span></li></a>
     </ul>
 </nav>

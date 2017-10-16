@@ -1,5 +1,6 @@
 section
 {
+    background-color: #fcfcf4;
     height: 826px;
 }
 
@@ -31,11 +32,11 @@ section
 }
 
 .table11{
-    
-    
-     
-    
-   
+
+
+
+
+
 
 }
 
@@ -92,7 +93,7 @@ box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
     font-style: normals;
     text-align: center;
     color:#4682B4
-   
+
 }
 
 .tdnumeros{
@@ -101,8 +102,8 @@ box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
     font-size: 20px;
     text-align: center;
     color:dimgray;
-   
-    
+
+
 
 }
 .formulariozinho{

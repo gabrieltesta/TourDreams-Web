@@ -27,6 +27,7 @@
         $listar[] = new BuscaRapida();
 
         $listar[$cont]->nomeParceiro = $rs['nomeParceiro'];
+        $listar[$cont]->idHotel = $rs['idHotel'];
         $listar[$cont]->hotel = $rs['hotel'];
         $listar[$cont]->cidade= $rs['cidade'];
         $listar[$cont]->uf= $rs['uf'];

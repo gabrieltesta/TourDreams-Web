@@ -1,8 +1,8 @@
 <?php
     
-  class ComodidadesQuarto{
+  class ComodidadesHotel{
       
-    public $idComodidade;  
+    public $idComodidadeHotel;  
     public $nomeComodidade;  
  
       
@@ -19,9 +19,9 @@
       
       
       
-         public function Insert($comodidadesquarto)
+         public function Insert($comodidadeshotel)
         {
-            $sql = 'INSERT INTO tbl_comodidadesquarto (nomeComodidade) VALUES ("'.$comodidadesquarto->nomeComodidade.'")';
+            $sql = 'INSERT INTO tbl_comodidadeshotel (nomeComodidade) VALUES ("'.$comodidadeshotel->nomeComodidade.'")';
             
          
             if(mysql_query($sql))
@@ -37,20 +37,20 @@
       
       
 
-    public function SelectComodidadesQuarto(){
+    public function SelectComodidadesHotel(){
         
 
-      $sql = 'select * from tbl_comodidadesquarto';
+      $sql = 'select * from tbl_comodidadeshotel';
       $select = mysql_query($sql);
 
       $cont = 0;
                
       while ($rs=mysql_fetch_array($select)) {
   
-        $listComodidadesQuarto[] = new ComodidadesQuarto(); 
+        $listComodidadesHotel[] = new ComodidadesHotel(); 
           
-        $listComodidadesQuarto[$cont]->idComodidade = $rs['idComodidade'];
-        $listComodidadesQuarto[$cont]->nomeComodidade=$rs['nomeComodidade'];
+        $listComodidadesHotel[$cont]->idComodidadeHotel = $rs['idComodidadeHotel'];
+        $listComodidadesHotel[$cont]->nomeComodidade=$rs['nomeComodidade'];
       
     
         $cont +=1;
@@ -58,12 +58,12 @@
       }
        
       
-           return $listComodidadesQuarto;
+           return $listComodidadesHotel;
      
     }
 
-    public function Delete($comodidadesquarto){
-      $sql = "DELETE FROM tbl_comodidadesquarto where idComodidade=".$comodidadesquarto->idComodidade.";";
+    public function Delete($comodidadeshotel){
+      $sql = "DELETE FROM tbl_comodidadeshotel where idComodidadeHotel=".$comodidadeshotel->idComodidadeHotel.";";
       if(mysql_query($sql)){
         return 'ok';
       }
@@ -73,34 +73,28 @@
       }
     }
 
-    public function SelectById($comodidadesquarto){
-      $sql = "select * from tbl_comodidadesquarto WHERE idComodidade=".$comodidadesquarto->idComodidade;
+    public function SelectById($comodidadeshotel){
+      $sql = "select * from tbl_comodidadeshotel WHERE idComodidadeHotel=".$comodidadeshotel->idComodidadeHotel;
       $select = mysql_query($sql);
 
       if($rs=mysql_fetch_array($select)){
 
-        $comodidadesquarto = new ComodidadesQuarto();
+        $comodidadeshotel = new ComodidadesHotel();
 
-        $comodidadesquarto->nomeComodidade=$rs['nomeComodidade'];
+        $comodidadeshotel->nomeComodidade=$rs['nomeComodidade'];
        
        
       }
 
-         return  $comodidadesquarto;
+         return  $comodidadeshotel;
     }
 
-    public function Update($comodidadesquarto){
+    public function Update($comodidadeshotel){
 
    
-      $sql = "UPDATE tbl_comodidadesquarto set nomeComodidade='".$comodidadesquarto->nomeComodidade."'Where idComodidade= ".$comodidadesquarto->idComodidade;
-        
-        if(mysql_query($sql))
-        {
-            return 'ok';
-        }else
-        {
-            return 'erro';
-        }
+      $sql = "UPDATE tbl_comodidadeshotel set nomeComodidade='".$comodidadeshotel->nomeComodidade."' Where idComodidadeHotel= ".$comodidadeshotel->idComodidadeHotel;
+    mysql_query($sql);    
+   
   
 
     }

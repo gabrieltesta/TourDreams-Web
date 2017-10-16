@@ -80,15 +80,15 @@
 					case 'inserir':
 						$controller_funcionario->Adicionar();
 						break;
-                    case "excluir":                        
+                    case "excluir":
 						$controller_funcionario->ExcluirFuncionario();
-						break;     
+						break;
                     case "visualizar":
                         $controller_funcionario->Visualizar();
-                        break;    
+                        break;
                    case 'editar':
                         $controller_funcionario->Atualizar();
-                        break;    
+                        break;
                     }
             break;
 
@@ -113,7 +113,7 @@
                         break;
                 }
                 break;
-            
+
             case 'milhas':
                 require_once('controllers/milhas_controller.php');
                 require_once('models/milhas_class.php');
@@ -135,8 +135,8 @@
                         break;
                 }
                 break;
-            
-        case 'comodidadesquarto':            
+
+        case 'comodidadesquarto':
              require_once('controllers/comodidadesquarto_controller.php');
                 require_once('models/comodidadesquarto_class.php');
 
@@ -155,11 +155,11 @@
                     case 'editar':
                         $controller_comodidadesquarto->Editar();
                         break;
-                
+
                 }
                 break;
-            
-            /*case 'comodidadeshotel':            
+
+            case 'comodidadeshotel':
              require_once('controllers/comodidadeshotel_controller.php');
                 require_once('models/comodidadeshotel_class.php');
 
@@ -180,8 +180,72 @@
                         break;
                 }
                 break;
-            
-            */
-            
+
+
+             case 'faq':
+             require_once('controllers/faq_controller.php');
+                require_once('models/faq_class.php');
+
+                $controller_faq = new ControllerFaq();
+                switch($modo)
+                {
+                    case 'inserir':
+                        $controller_faq->Inserir();
+                        break;
+                    case 'visualizar':
+                        $controller_faq->Visualizar();
+                        break;
+                    case 'excluir':
+                        $controller_faq->Excluir();
+                        break;
+                    case 'editar':
+                        $controller_faq->Editar();
+                        break;
+                }
+                break;
+
+
+
+             case 'categoriafaq':
+             require_once('controllers/categoriafaq_controller.php');
+                require_once('models/categoriafaq_class.php');
+
+                $controller_categoriafaq = new ControllerCategoriaFaq();
+                switch($modo)
+                {
+                    case 'inserir':
+                        $controller_categoriafaq->Inserir();
+                        break;
+                    case 'visualizar':
+                        $controller_categoriafaq->Visualizar();
+                        break;
+                    case 'excluir':
+                        $controller_categoriafaq->Excluir();
+                        break;
+                    case 'editar':
+                        $controller_categoriafaq->Editar();
+                        break;
+                }
+                break;
+            case 'nivel':
+                require_once('controllers/nivel_controller.php');
+                require_once('models/nivel_class.php');
+                $controller_nivel = new ControllerNivel();
+                switch($modo){
+                    case 'inserir':
+                        $controller_nivel->Inserir();
+                    break;
+                    case 'excluir':
+                        $controller_nivel->Excluir();
+                    break;
+                    case 'visualizar':
+                        $controller_nivel->Visualizar();
+                    break;
+                    case 'editar':
+                        $controller_nivel->Editar();
+                    break;
+                }
+            break;
+
     }
 ?>

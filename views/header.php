@@ -34,10 +34,14 @@
 					<tr>
 						<td>
 							<select name="slcTipoEstadia">
-								<option value="hotel">Hotel</option>
-								<option value="pousada">Pousada</option>
-								<option value="resort">Resort</option>
-								<option value="chale">Chalé</option>
+								<?php
+								 require_once ('controllers/buscaAvancada_controller.php');
+								   $ControllerSelectBuscaAvancada = new ControllerSelectBuscaAvancada();
+									 
+
+								 ?>
+								 <option value="hotel"><?php echo "OIIII"; ?></option>
+								 <option value="hotel"></option>
 							</select>
 						</td>
 					</tr>

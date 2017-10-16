@@ -14,6 +14,7 @@
             </ul>
             <h3>Tipo</h3>
             <ul>
+            
                 <li><input type="radio" name="radTipo" value="hotel">Hotel</li>
                 <li><input type="radio" name="radTipo" value="pousada">Pousada</li>
                 <li><input type="radio" name="radTipo" value="resort">Resort</li>
@@ -183,7 +184,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td><a href="hotelQuarto.php"><div class="btnReservar">RESERVAR</a></td>
+                                <td><a href="hotelQuarto.php?idHotel=<?php echo($rows[$cont]->idHotel) ?>"><div class="btnReservar">RESERVAR</a></td>
                             </tr>
                         </table>
                     </div>

@@ -1,7 +1,7 @@
 section
 {
     height: 826px;
-    
+    background-color: #fcfcf4;
 }
 
 #select{
@@ -44,7 +44,7 @@ section
     height:95%;
     background-image: url(../imagens/hotelzinho.jpg);
     background-repeat: no-repeat;
-    float:left;        
+    float:left;
     background-color:red;
     margin-left:10px;
      -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
