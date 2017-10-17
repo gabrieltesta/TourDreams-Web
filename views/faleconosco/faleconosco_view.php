@@ -59,52 +59,48 @@
         <!--Conteúdo do FAQ-->
         <div class="conteudobox" id="faq">
             <div id="perguntasbox">
-                <h3>Geral</h3>
+                
+                <?php
+
+                    require_once('controllers/categoriageral_controller.php');
+
+                    $controller_faq = new ControllerCategoriaGeral();
+                    $rows = $controller_faq -> Visualizar();
+                    
+                    $cont = 0;
+
+                    while ($cont < count($rows)) {
+                        
+                        
+
+                ?>
+                
+                <h3><?php echo($rows[$cont]->categoriaFaq); ?></h3>
                 <ul>
-                    <li>fdsfsdg</li>
+                    <?php
+                    
+                    $rows2 = $controller_faq -> VisualizarPergunta($rows[$cont]->idCategoria);
+                        
+                        $contador = 0;
+                        
+                        while($contador<count($rows2)){
+                            $idFaq = $rows2[$contador]->idFaq;
+                            $pergunta = "'".addslashes($rows2[$contador]->pergunta)."'";
+                            
+                    
+                    ?>
+                    
+                    <li onclick="abrirResposta(<?php echo($idFaq); ?>,<?php echo($pergunta); ?>)"><?php echo($rows2[$contador]->pergunta); ?></li>
+                    
+                    <?php
+                            $contador++;
+                        }
+                    ?>
                 </ul>
-                <h3>Conta</h3>
-                <ul>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                </ul>
-                <h3>Segurança</h3>
-                <ul>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                </ul>
-                <h3>Reservas</h3>
-                <ul>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                    <a href="#"><li>1</li></a>
-                </ul>
+               <?php
+                        $cont++;
+                    }
+                ?>
             </div>
             <div id="respostasbox">
                 <h3>Como faço uma reserva?</h3>

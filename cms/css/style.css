@@ -65,7 +65,7 @@ a
 }
 /* Sortable tables */
 table.sortable thead {
-    
+
     color:#666666;
     font-weight: bold;
     cursor: default;
@@ -139,6 +139,19 @@ nav
     background-color: #4682b4;
     float: left;
     overflow: hidden;
+    overflow: auto;
+}
+
+nav::-webkit-scrollbar-track {
+    background-color: #474747;
+}
+
+nav::-webkit-scrollbar {
+    width: 6px;
+    background: #F4F4F4;
+}
+nav::-webkit-scrollbar-thumb {
+    background: #777777;
 }
 
 nav ul

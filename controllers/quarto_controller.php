@@ -78,6 +78,33 @@
             header('location:perfilParceiro.php?idParceiro='.$idParceiro);
         }
 
+        public function Visualizar(){
+            require_once('models/quarto_class.php');
+
+            $idQuarto = $_GET['idQuarto'];
+
+            $lstQuarto = new Quarto();
+            $lstQuarto->idQuarto = $idQuarto;
+            $resposta = $lstQuarto->SelectById();
+
+            $lstComodidade = new Quarto();
+            $lstComodidade->idQuarto = $idQuarto;
+            $resultado = $lstComodidade->SelectComodidade();
+
+            require_once('perfilparceiro.php');
+
+            ?>
+
+                <script type="text/javascript">
+                    abrirModalQuarto();
+                </script>
+
+            <?php
+
+        }
+
+
+
 
     }
 ?>

@@ -126,12 +126,27 @@
                         $controller_quarto = new ControllerQuarto();
                         $controller_quarto->Excluir();
                     break;
+                    case 'visualizar':
+                        $controller_quarto = new ControllerQuarto();
+                        $controller_quarto->Visualizar();
+                    break;
 
 
                 }
 
             break;
 
-          
+
+        case 'categoriageral':
+
+            require_once('controllers/categoriageral_controller.php');
+            require_once('models/categoriageral_class.php');
+
+            switch($modo){
+                case 'visualizar':
+                    $controller_categoriageral = new ControllerCategoriaGeral();
+                    $controller_categoriageral -> Visualizar();
+            }
+
     }
 ?>

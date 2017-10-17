@@ -10,7 +10,19 @@
         <script src="js/jqueryui/jquery-ui.min.js" charset="utf-8"></script>
         <script src="js/wow.min.js"></script>
         <script src="js/script.js" charset="utf-8"></script>
+        <script src="js/responsiveslides.min.js" charset="utf-8"></script>
         <link rel="icon" href="imagens/favicon.ico" />
+        <script type="text/javascript">
+        $(function() {
+            $(".rslides").responsiveSlides({
+                maxwidth: "1920px",
+                timeout: "3000",
+                nav: true,
+                prevText: "&#8592;",
+                nextText: "&#8594;"
+            });
+        });
+        </script>
     </head>
     <body>
         <?php

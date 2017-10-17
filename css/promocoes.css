@@ -1,102 +1,69 @@
-
-
-#sectionp{
-    width:100%;
-    height:100%;
-    background-color: white;
-    
-    
+section
+{
+    display: flex;
+    width: 100%;
+    height: 799px;
+    position: relative;
 }
-#backpromo
+.rslides {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  max-height: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  }
+
+.rslides li {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  }
+
+.rslides li:first-child {
+  position: relative;
+  display: block;
+  float: left;
+  }
+
+.rslides img {
+  display: block;
+  height: 100%;
+  float: left;
+  width: 100%;
+  border: 0;
+  }
+
+section a
+{
+    font-family: monospace;
+}
+
+section a:nth-of-type(1)
+{
+  position: absolute;
+  z-index: 97;
+  font-size: 128pt;
+  color: #fff;
+  margin-left: 100px;
+  margin-top: 260px;
+  text-shadow: 1px 0px 2px rgba(0, 0, 0, 1);
+}
+
+section a:nth-of-type(2)
 {
     position: absolute;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-   
-}
-
-#backpromo img
-{
-    width: 100%;
-    height: 100%;
-    max-width: 1920px;
-    max-height: 1080px;
-}
-.
-#qtdmilhas1{
-    font-size: 30px;
-    font-style: italic;
-    margin-left:65px;
-    
-    
-}
-#espaco{
-    width: 150px;
-    height: 100px;
-    
-}
-#imagemmilhas{
-    width: 30px;
-    height: 35px;
-    margin-left: 25px;
-    float: left;
-    
-}
-.box{
-    width: 400px;
-    height: 450px;
-    float: left;
-    margin-left: 65px;
-     -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
-    margin-bottom: 90px;
-    margin-top: 100px;
-  
-}
-
-
-.boximagem{
-    width: 350px;
-    height: 250px;
-    margin-top: 15px;
-    margin-left: 25px;
-}
-.boximagem img{
-    height: 100%;
-    width: 100%;
-}
-.conteudobox{
-    font-size: 25px;
-    line-height:10px;
-    font-style:italic;
-   text-align: center;
-    
-}
-.conteudobox2{
-    font-size: 20px;
-    line-height:10px;
-    font-style:normal;
-    margin-left:20px;
-    
-}
-.conteudomilhas{
-   font-size: 30px;
-    font-style: italic;
-    margin-left:20px;
-    margin-top: -1px;
-    float: left;
-}
-.botvermais{
-    width: 80px;
-    height: 30px;
-    background-color:whitesmoke;
-    border-radius: 5px;
-    margin-left: 150px;
-    
-}
-.botvermais li:hover{
-    transition: 1px;
-    background-color: blue;
+    z-index: 97;
+    font-size: 128pt;
+    color: #fff;
+    right: 0;
+    margin-right: 100px;
+    margin-top: 260 px;
+    text-shadow: 1px 0px 2px rgba(0, 0, 0, 1);
 }

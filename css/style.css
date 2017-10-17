@@ -727,6 +727,49 @@ footer
     background-color: #eee;
 }
 
+
+/**/
+
+#buscaTRA
+{
+    position: absolute;
+    z-index: 5;
+    background-color: #fff;
+
+    width: 40%;
+    border: solid 2px #ccc;
+    border-top: none;
+    overflow: hidden;
+    display: none;
+}
+
+#buscaTRA ul
+{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    width: 100%;
+}
+
+#buscaTRA a
+{
+    padding-left: 10px;
+}
+
+#buscaTRA ul li
+{
+    cursor: pointer;
+    height: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#buscaTRA ul li:hover
+{
+    background-color: #eee;
+}
+
+
 #msgLogin
 {
     font-size: 10pt;

@@ -34,76 +34,62 @@
         <div class="linhadireita"></div>
       </div>
       <div class="cont">
-        <div class="maispesquisados">
-          <div class="imagem">
-            <img class="img" src="imagens/Viagens/img2.jpeg">
-          </div>
-          <div class="direito">
-            <div class="titulohotel">
-              Hotel Exemplo
-            </div>
-            <div class="contConheca">
-              <div class="estrelinhas">
-                <img src="imagens/busca/estrela.png">
-                <img src="imagens/busca/estrela.png">
-                <img src="imagens/busca/estrela.png">
-                <img src="imagens/busca/estrela.png">
-              </div>
-              <table>
-                  <tr>
-                      <td>Rua Exemplo, 123</td>
-                  </tr>
-                  <tr>
-                      <td>Jandira - SP</td>
-                  </tr>
-                  <tr>
-                      <td>Wi-fi gratuito</td>
-                  </tr>
-                  <tr>
-                      <td>Piscina</td>
-                  </tr>
-              </table>
-            </div>
-            <div class="valor">
-              <span>R$ 109,99</span>
-            </div>
-          </div>
-        </div>
-        <div class="maispesquisados">
-          <div class="imagem">
-            <img class="img" src="imagens/Viagens/img2.jpeg">
-          </div>
-          <div class="direito">
-            <div class="titulohotel">
-              Hotel Exemplo
-            </div>
-            <div class="contConheca">
-              <div class="estrelinhas">
-                <img src="imagens/busca/estrela.png">
-                <img src="imagens/busca/estrela.png">
-                <img src="imagens/busca/estrela.png">
-                <img src="imagens/busca/estrela.png">
-              </div>
-              <table>
-                  <tr>
-                      <td>Rua Exemplo, 123</td>
-                  </tr>
-                  <tr>
-                      <td>Jandira - SP</td>
-                  </tr>
-                  <tr>
-                      <td>Wi-fi gratuito</td>
-                  </tr>
-                  <tr>
-                      <td>Piscina</td>
-                  </tr>
-              </table>
-            </div>
-            <div class="valor">
-              <span>R$ 109,99</span>
-            </div>
-          </div>
-        </div>
+          <?php
+              require_once('controllers/conhecaseudestino_controller.php');
+              require_once('models/conhecaseudestino_class.php');
+
+              $ControllerConhecaseuDestino = new ControllerConhecaseuDestino();
+              $rows = $ControllerConhecaseuDestino->Listar();
+
+              $cont = 0;
+
+              while ($cont < count ($rows)) {
+
+
+                  ?>
+                    <a href="hotelQuarto.php?idHotel=<?php echo($rows[$cont]->idHotel) ?>">
+                      <div class="maispesquisados">
+                        <div class="imagem">
+                          <img class="img" src="<?php echo($rows[$cont]->caminhoImagem) ?>" alt="<?php echo($rows[$cont]->hotel) ?>">
+                        </div>
+                        <div class="direito">
+                          <div class="titulohotel">
+                            <?php echo($rows[$cont]->hotel); ?>
+                          </div>
+                          <div class="contConheca">
+                            <div class="estrelinhas">
+                              <?php
+                                $estrelas = 0;
+                                while ($estrelas<$rows[$cont]->qtdEstrelas)
+                                {
+                                    ?><img src="imagens/busca/estrela.png"><?php
+                                    $estrelas += 1;
+                                }
+                               ?>
+                            </div>
+                            <table>
+                                <tr>
+                                    <td><?php echo($rows[$cont]->logradouro.', '.$rows[$cont]->numero) ?></td>
+                                </tr>
+                                <tr>
+                                    <td><?php echo($rows[$cont]->bairro) ?></td>
+                                </tr>
+                                <tr>
+                                    <td><?php echo($rows[$cont]->cidade.' - '.$rows[$cont]->uf) ?></td>
+                                </tr>
+                            </table>
+                          </div>
+                          <div class="valor">
+                            <span><?php echo('R$ '.$rows[$cont]->valorMinimo) ?></span>
+                          </div>
+                        </div>
+                      </div>
+                  </a>
+                  <?php
+                  $cont++;
+              }
+
+           ?>
       </div>
     </div>
   </div>

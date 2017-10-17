@@ -10,6 +10,7 @@ $("document").ready(function(){
     busca();
     mascaras();
     validarLogin();
+    buscaAvancada();
 });
 
 //Função cria os datepickers do JqueryUI (página reserva.php)
@@ -607,4 +608,54 @@ function abrirDetalhesParceiro(idParceiro) {
 function fecharDetalhesParceiro() {
     $("#modalParceiro").hide();
     $("#modalBg").hide();
+}
+
+function abrirModalTOS() {
+    $("#bgTOS").show();
+    $("#modalBg").show();
+}
+
+function fecharModalTOS() {
+    $("#bgTOS").hide();
+    $("#modalBg").hide();
+}
+
+
+function buscaAvancada() {
+       var destino = $('#txtDestinoAvancado').val();
+
+       if (destino == "") {
+           $("#buscaTRA").html("");
+       }
+       else
+       {
+           $.ajax({
+               type: "POST",
+               url: "api/buscaavancada_destino.php",
+               data: {
+                   busca: destino
+               },
+
+               success: function(html) {
+                   $("#buscaTRA").html(html).show();
+
+               }
+
+           });
+
+       }
+}
+
+
+function preencherAvancado(destino) {
+   $('#txtDestinoAvancado').val(destino);
+   $('#buscaTRA').hide();
+}
+
+function abrirResposta(idFaq,pergunta) {
+     
+    $('#respostasbox h3').text(pergunta);
+    $.post('api/respostafaq.php', {'idFaq':idFaq}, function(data) {
+      $("#respostasbox div").html(data);
+    });
 }

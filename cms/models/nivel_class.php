@@ -67,8 +67,8 @@
         }
 
         public function Update(){
-            $sql = "update from tbl_nivelfuncionario set nivel ='".$this->nivel."' where idNivel=".$this->idNivel.";";
-            
+            $sql = "update tbl_nivelfuncionario set nivel ='".$this->nivel."' where idNivelFuncionario=".$this->idNivel.";";
+            echo $sql;
             mysql_query($sql);
         }
 

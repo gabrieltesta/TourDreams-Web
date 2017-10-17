@@ -12,5 +12,6 @@
         <a href="nivelFuncionario.php"><li><img src="imagens/elements_hierarchy.png" alt="nivel"><span>Nível de Funcionario</span></li></a>
          <a href="faq.php"><li><img src="imagens/faq.png" alt="faq"><span>FAQ</span></li></a>
            <a href="categoriafaq.php"><li><img src="imagens/pronto.png" alt="faq"><span>Categoria do FAQ</span></li></a>
+         <a href="informacoes.php"><li><img src="imagens/exclamacao.png" alt="faq"><span>Informações</span></li></a>
     </ul>
 </nav>

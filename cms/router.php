@@ -246,6 +246,26 @@
                     break;
                 }
             break;
+            
+               case 'informacoes':
+                require_once('controllers/informacoes_controller.php');
+                require_once('models/informacoes_class.php');
+                $controller_informacoes = new ControllerInformacoes();
+                switch($modo){
+                    case 'inserir':
+                        $controller_informacoes->Inserir();
+                    break;
+                    case 'excluir':
+                        $controller_informacoes->Excluir();
+                    break;
+                    case 'visualizar':
+                        $controller_informacoes->Visualizar();
+                    break;
+                    case 'editar':
+                        $controller_informacoes->Editar();
+                    break;
+                }
+            break;
 
     }
 ?>

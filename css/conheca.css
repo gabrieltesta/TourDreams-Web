@@ -122,7 +122,9 @@
     margin-left: 150px;
 }
 
-.maispesquisados{
+.cont a
+{
+    display: block;
     width: 45%;
     height: 332px;
     float: left;
@@ -131,7 +133,12 @@
     cursor: pointer;
 }
 
-.maispesquisados:not(:first-child)
+.maispesquisados{
+    width: 100%;
+    height: 332px;
+}
+
+.cont a:not(:first-child)
 {
     margin-left: 130px;
 }

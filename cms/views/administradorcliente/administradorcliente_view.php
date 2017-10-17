@@ -8,6 +8,9 @@
   <div class="tituloConteudo">
     Gerenciamento de Clientes
   </div>
+  <div class="container">
+
+
     <?php
         //Inclusão do arquivo controller para fazer o SELECT.
         require_once('controllers/usuarios_controller.php');
@@ -54,4 +57,5 @@
         $cont += 1;
         }
      ?>
+ </div>
 </div>

@@ -201,9 +201,10 @@ section
 
 }
 
-#tblRegistroUsuario3 span a
+#tblRegistroUsuario3 span span
 {
     font-weight: bold;
+    cursor: pointer;
 }
 /**/
 /*Conteúdo de registro de parceiro*/
@@ -251,9 +252,10 @@ section
 
 }
 
-#tblRegistroParceiro3 span a
+#tblRegistroParceiro3 span span
 {
     font-weight: bold;
+    cursor: pointer;
 }
 /**/
 #msg
@@ -285,4 +287,81 @@ section
 #msgnaook
 {
     color: red;
+}
+
+#bgTOS
+{
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    z-index: 99;
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.6);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    margin-top: 175px;
+    background-color: #fff;
+    display: none;
+}
+
+#bgTOSCabecalho
+{
+    width:100%;
+    height: 50px;
+    background-color: #4682B4;
+    line-height: 2;
+}
+
+#bgTOSCabecalhoTitulo
+{
+    width: 80%;
+    height: 100%;
+    color: #fff;
+    font-size: 18pt;
+    float: left;
+}
+
+#bgTOSCabecalhoTitulo span
+{
+    padding-left: 16px;
+}
+
+#bgTOSCabecalhoFechar
+{
+    width: 20%;
+    height: 100%;
+    color: #fff;
+    font-size: 18pt;
+    float: right;
+    text-align: right;
+}
+
+#bgTOSCabecalhoFechar span
+{
+    padding-right: 16px;
+    cursor: pointer;
+}
+
+#bgTOSOverflow
+{
+    overflow: auto;
+    width: 100%;
+    height: 550px;
+}
+
+#bgTOSConteudo
+{
+    padding: 16px;
+    font-family: Calibri;
+    text-align: justify;
+}
+
+#bgTOSConteudo p
+{
+    text-indent: 40px;
+}
+
+#bgTOSConteudo ul
+{
+    list-style: disc;
 }

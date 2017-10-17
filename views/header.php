@@ -26,7 +26,10 @@
 						<td><label>Destino</label></td>
 					</tr>
 					<tr>
-						<td><input type="text" name="txtDestinoAvancado" value="" id="txtDestinoAvancado" required></td>
+						<td><input type="text" name="txtDestinoAvancado" value="" id="txtDestinoAvancado" required onkeyup="buscaAvancada()">
+							<div id="buscaTRA">
+							</div>
+						</td>
 					</tr>
 					<tr>
 						<td><label>Tipo de estadia</label></td>
@@ -35,13 +38,24 @@
 						<td>
 							<select name="slcTipoEstadia">
 								<?php
-								 require_once ('controllers/buscaAvancada_controller.php');
-								   $ControllerSelectBuscaAvancada = new ControllerSelectBuscaAvancada();
-									 
+
+									require_once ('controllers/buscaAvancada_controller.php');
+								   $controllerSelectBuscaAvancada = new ControllerSelectBuscaAvancada();
+									 $rows = $controllerSelectBuscaAvancada->ListarTipoDeEstadia();
+									 $cont = 0;
+
+									 while ($cont < count($rows)) {
+
 
 								 ?>
-								 <option value="hotel"><?php echo "OIIII"; ?></option>
-								 <option value="hotel"></option>
+								 <option value="<?php echo ($rows[$cont]->estadia); ?>"><?php echo ($rows[$cont]->estadia); ?></option>
+
+
+								 <?php
+								 $cont += 1;
+									}
+
+								  ?>
 							</select>
 						</td>
 					</tr>
@@ -65,7 +79,26 @@
 					<tr>
 						<td>
 							<select name="slcParceiro">
-								<option value="hilton">Hilton</option>
+								<?php
+
+								require_once('controllers/buscaAvancada_controller.php');
+
+								$controllerParceiro = new ControllerSelectBuscaAvancada();
+								$rows = $controllerParceiro->ListarParceiro();
+								$cont = 0;
+
+								while ($cont < count($rows)) {
+
+
+
+								 ?>
+								<option value="<?php echo ($rows[$cont]->parceiro); ?>"><?php echo ($rows[$cont]->parceiro); ?></option>
+
+								<?php
+								$cont +=1;
+								}
+
+								 ?>
 							</select>
 						</td>
 					</tr>
@@ -75,10 +108,10 @@
 					<tr>
 						<td>
 							<select name="slcAvaliacao">
-								<option value="<25">Menor que 25</option>
-								<option value="<50">Menor que 50</option>
-								<option value="<75">Menor que 75</option>
-								<option value=">75">Acima de 75</option>
+								<option value="25">Menor que 25</option>
+								<option value="50">Menor que 50</option>
+								<option value="75">Menor que 75</option>
+								<option value="100">Acima de 75</option>
 							</select>
 						</td>
 					</tr>
@@ -88,11 +121,11 @@
 					<tr>
 						<td>
 							<select name="slcPreco">
-								<option value="<100">R$ 0,00 - R$ 99,99</option>
-								<option value="<300">R$ 100,00 - R$ 299,99</option>
-								<option value="<500">R$ 300,00 - R$ 499,99</option>
-								<option value="<1000">R$ 500,00 - R$ 999,99</option>
-								<option value=">1000">Acima de R$ 1000,00</option>
+								<option value="100">R$ 0,00 - R$ 99,99</option>
+								<option value="300">R$ 100,00 - R$ 299,99</option>
+								<option value="500">R$ 300,00 - R$ 499,99</option>
+								<option value="1000">R$ 500,00 - R$ 999,99</option>
+								<option value="1000">Acima de R$ 1000,00</option>
 							</select>
 						</td>
 					</tr>
@@ -102,35 +135,44 @@
 				<div id="comodidadesBox">
 					<h3>Comodidades do Hotel</h3>
 					<ul>
-						<li><input type="checkbox" name="chkAcademia" value="1"><label>Academia</label></li>
-						<li><input type="checkbox" name="chkAnimais" value="1"><label>Animais permitidos</label></li>
-						<li><input type="checkbox" name="chkBar" value="1"><label>Bar</label></li>
-						<li><input type="checkbox" name="chkConcierge" value="1"><label>Concierge</label></li>
-						<li><input type="checkbox" name="chkConveniencia" value="1"><label>Loja de conveniência</label></li>
-						<li><input type="checkbox" name="chkElevador" value="1"><label>Elevador</label></li>
-						<li><input type="checkbox" name="chkEstacionamento" value="1"><label>Estacionamento</label></li>
-						<li><input type="checkbox" name="chkLavanderia" value="1"><label>Lavanderia</label></li>
-						<li><input type="checkbox" name="chkPiscina" value="1"><label>Piscina</label></li>
-						<li><input type="checkbox" name="chkRestaurante" value="1"><label>Restaurante</label></li>
-						<li><input type="checkbox" name="chkSpa" value="1"><label>Spa</label></li>
-						<li><input type="checkbox" name="chkTransfer" value="1"><label>Transfer para aeroporto</label></li>
-						<li><input type="checkbox" name="chkWifi" value="1"><label>Wi-fi gratuito</label></li>
+						<?php
+
+								require_once('controllers/buscaAvancada_controller.php');
+
+							$controllerComodidadeHotel = new ControllerSelectBuscaAvancada();
+							$rows = $controllerComodidadeHotel->ListarComodidadeHotel();
+							$cont = 0;
+
+							while ($cont < count ($rows)) {
+
+
+
+						 ?>
+						<li><input type="checkbox" name="<?php echo('comodidadeHotel'.$rows[$cont]->comodidadesHotel) ?>" value="<?php echo ($rows[$cont]->comodidadesHotel) ?>"><label><?php echo ($rows[$cont]->comodidadesHotel) ?></label></li>
+						<?php
+						$cont +=1;
+						}
+						 ?>
 					</ul>
 					<h3>Comodidades do Quarto</h3>
 					<ul>
-						<li><input type="checkbox" name="chkAr" value="1"><label>Ar condicionado</label></li>
-						<li><input type="checkbox" name="chkBanheira" value="1"><label>Banheira</label></li>
-						<li><input type="checkbox" name="chkCofre" value="1"><label>Cofre no quarto</label></li>
-						<li><input type="checkbox" name="chkCozinha" value="1"><label>Cozinha</label></li>
-						<li><input type="checkbox" name="chkGeladeira" value="1"><label>Geladeira</label></li>
-						<li><input type="checkbox" name="chkInternet" value="1"><label>Internet</label></li>
-						<li><input type="checkbox" name="chkMicroondas" value="1"><label>Microondas</label></li>
-						<li><input type="checkbox" name="chkSecador" value="1"><label>Secador</label></li>
-						<li><input type="checkbox" name="chkTelefone" value="1"><label>Telefone</label></li>
-						<li><input type="checkbox" name="chkCabo" value="1"><label>TV a cabo</label></li>
-						<li><input type="checkbox" name="chkSatelite" value="1"><label>TV via satélite</label></li>
-						<li><input type="checkbox" name="chkVentilador" value="1"><label>Ventilador</label></li>
-						<li><input type="checkbox" name="chkWifi" value="1"><label>Wi-fi gratuito</label></li>
+						<?php
+
+						require_once('controllers/buscaAvancada_controller.php');
+
+						$controllerComodidadeQuarto = new ControllerSelectBuscaAvancada();
+						$rows = $controllerComodidadeQuarto->ListarComodidadeQuarto();
+						$cont =0;
+						while ($cont < count($rows)) {
+
+
+						 ?>
+						<li><input type="checkbox" name="<?php echo('comodidadeHotel'.$rows[$cont]->idComodidadeQuarto)?>" value="<?php echo ($rows[$cont]->comodidadesQuarto); ?>"><label><?php echo ($rows[$cont]->comodidadesQuarto); ?></label></li>
+
+						<?php
+						$cont+=1;
+					}
+						 ?>
 					</ul>
 				</div>
                 <script type="text/javascript">

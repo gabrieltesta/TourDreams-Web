@@ -12,6 +12,26 @@
     $controller_parceiro = new ControllerParceiro();
     $parceiro = $controller_parceiro -> Buscar($_SESSION['idLogin']);
 
+
+    $quarto = null;
+    $diaria = null;
+    $maxHosp = null;
+    $qtdQuartos = null;
+    $descricao = null;
+
+    if(isset($_GET['modo'])){
+        if($_GET['modo']=="visualizar"){
+            $quarto= $resposta->quarto;
+            $diaria= $resposta->diaria;
+            $maxHosp= $resposta->maxHosp;
+            $qtdQuartos= $resposta->qtdQuartos;
+            $descricao= $resposta->descricao;
+
+            $idComodidade = $resultado->idComodidade;
+
+        }
+    }
+
 ?>
 <div class="bgCadastroQuarto">
     <div class="modalCadastroQuarto">
@@ -25,13 +45,13 @@
                             <td><label>Nome do Quarto</label></td>
                         </tr>
                         <tr>
-                            <td><input placeholder="Digite o nome do Quarto" type="text" name="txtNomeQuarto" value=""></td>
+                            <td><input placeholder="Digite o nome do Quarto" type="text" name="txtNomeQuarto" value="<?php echo($quarto); ?>"></td>
                         </tr>
                         <tr>
                             <td><label>Valor diário</label></td>
                         </tr>
                         <tr>
-                            <td><input placeholder="Diária" type="text" name="txtDiaria" value=""></td>
+                            <td><input placeholder="Diária" type="text" name="txtDiaria" value="<?php echo($diaria); ?>"></td>
                         </tr>
                         <tr>
                             <td><label>Imagem</label></td>
@@ -52,13 +72,19 @@
                                         $rs = $listComodidade->Comodidades();
 
                                         $contador = 0;
-
+                                        $marcar = "";
                                         while($contador < count($rs)){
+
+                                            if($idComodidade == $rs[$contador]->idComodidade){
+                                                $marcar = "checked";
+                                            }else{
+                                                $marcar = "";
+                                            }
 
                                     ?>
                                     <li>
                                         <p>
-                                            <input type="checkbox" id="comodidadeQuarto<?php echo($contador); ?>" name="comodidadeQuarto[]" value="<?php echo($rs[$contador]->idComodidade); ?>" />
+                                            <input <?php echo ($marcar); ?> type="checkbox" id="comodidadeQuarto<?php echo($contador); ?>" name="comodidadeQuarto[]" value="<?php echo($rs[$contador]->idComodidade); ?>" />
                                             <label for="comodidadeQuarto<?php echo($contador); ?>"><span class="ui"></span><?php echo($rs[$contador]->nomeComodidade) ?></label>
                                         </p>
                                     </li>
@@ -79,19 +105,19 @@
                             <td><label>Máximo de hóspedes</label></td>
                         </tr>
                         <tr>
-                            <td><input placeholder="Máx. de hóspedes" type="text" name="txtMaxHosp" value=""></td>
+                            <td><input placeholder="Máx. de hóspedes" type="text" name="txtMaxHosp" value="<?php echo($maxHosp); ?>"></td>
                         </tr>
                         <tr>
                             <td><label>Quantidade de quartos disponíveis</label></td>
                         </tr>
                         <tr>
-                            <td><input placeholder="Qtd. Quartos" type="text" name="txtQtdQuartos" value=""></td>
+                            <td><input placeholder="Qtd. Quartos" type="text" name="txtQtdQuartos" value="<?php echo($qtdQuartos); ?>"></td>
                         </tr>
                         <tr>
                             <td><label>Descrição do quarto</label></td>
                         </tr>
                         <tr>
-                            <td><textarea name="txtDescricaoQuarto" placeholder="Descrição do Quarto" maxlength="300"></textarea></td>
+                            <td><textarea name="txtDescricaoQuarto" placeholder="Descrição do Quarto" maxlength="300"><?php echo($descricao); ?></textarea></td>
                         </tr>
                         <tr>
                             <td><input type="submit" name="btnCadastrarQuarto" value="CADASTRAR"></td>

@@ -55,6 +55,51 @@
             }
         }
 
+        public function SelectById(){
+            $sql="select * from tbl_quarto where idQuarto=".$this->idQuarto.";";
+            $select = mysql_query($sql);
+
+
+
+            if($rs = mysql_fetch_array($select)){
+
+                $listaquarto = new Quarto();
+
+                $listaquarto->quarto=$rs['nome'];
+                $listaquarto->diaria=$rs['valorDiario'];
+                $listaquarto->maxHosp=$rs['maxHospedes'];
+                $listaquarto->qtdQuartos=$rs['qtdQuartos'];
+                $listaquarto->descricao=$rs['descricao'];
+
+
+
+            }
+
+            return $listaquarto;
+        }
+
+        public function SelectComodidade(){
+            $sql="select c.idComodidade, c.nomeComodidade from tbl_comodidadesquarto as c
+                    inner join tbl_quartocomodidadesquarto as qc
+                    on qc.idComodidade = c.idComodidade
+                    where qc.idQuarto =".$this->idQuarto.";";
+            $select = mysql_query($sql);
+
+            $cont = 0;
+
+            while($rs = mysql_fetch_array($select)){
+
+                $listacomodidade = new Quarto();
+
+                $listacomodidade->idComodidade=$rs['idComodidade'];
+
+                $cont++;
+
+            }
+
+            return $listacomodidade;
+        }
+
     }
 
 ?>
