@@ -87,9 +87,7 @@
             $lstQuarto->idQuarto = $idQuarto;
             $resposta = $lstQuarto->SelectById();
 
-            $lstComodidade = new Quarto();
-            $lstComodidade->idQuarto = $idQuarto;
-            $resultado = $lstComodidade->SelectComodidade();
+
 
             require_once('perfilparceiro.php');
 
@@ -101,6 +99,14 @@
 
             <?php
 
+        }
+
+        public function VisualizarComodidade(){
+            $idQuarto = $_GET['idQuarto'];
+            require_once('models/quarto_class.php');
+            $lstComodidade = new Quarto();
+            $lstComodidade->idQuarto = $idQuarto;
+            return $lstComodidade->SelectComodidade();
         }
 
 

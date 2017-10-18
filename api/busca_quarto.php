@@ -34,7 +34,7 @@ if (isset($_POST['idHotel'])) {
               <td>'.$rows['nome'].'</td>
               <td>'.$rows['valorDiario'].'</td>
               <td>'.$rows['qtdQuartos'].'</td>
-              <td><a href="router.php?controller=quarto&modo=visualizar&idQuarto='.$idQuarto.'&idParceiro='.$idParceiro.'"><img alt="" src="imagens/perfilparceiro/edit.png"></a>    <a href="router.php?controller=quarto&modo=excluir&idQuarto='.$idQuarto.'&idParceiro='.$idParceiro.'"><img alt="" src="imagens/perfilparceiro/delete.png"></a></td>
+              <td><a href="router.php?controller=quarto&modo=visualizar&idQuarto='.$idQuarto.'&idParceiro='.$idParceiro.'"><img onclick="abrirModalEditar('.$idQuarto.')" alt="" src="imagens/perfilparceiro/edit.png"></a>    <a href="router.php?controller=quarto&modo=excluir&idQuarto='.$idQuarto.'&idParceiro='.$idParceiro.'"><img alt="" src="imagens/perfilparceiro/delete.png"></a></td>
           </tr>';
       }
       $stringHTML.'</table>';
@@ -50,3 +50,4 @@ if (isset($_POST['idHotel'])) {
 
   die($stringHTML);
 }
+?>

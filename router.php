@@ -26,9 +26,7 @@
             }
             break;
          case 'conhecaseudestino':
-
                 header("Location: conhecaseudestinobusca.php");
-
             break;
          case 'faleconosco':
                 require_once('controllers/faleconosco_controller.php');
@@ -106,22 +104,16 @@
                         $controller_hotel = new ControllerHotel();
                         $controller_hotel->Inserir();
                         break;
-                    case 'deletar':
-                        $controller_hotel = new ControllerHotel();
-                        $controller_hotel->Deletar();
-                        break;
                 }
             break;
-
-
             case 'quarto':
-            require_once('controllers/quarto_controller.php');
-            require_once('models/quarto_class.php');
-                switch($modo){
+                require_once('controllers/quarto_controller.php');
+                require_once('models/quarto_class.php');
+                switch ($modo) {
                     case 'inserir':
                         $controller_quarto = new ControllerQuarto();
                         $controller_quarto->Inserir();
-                    break;
+                        break;
                     case 'excluir':
                         $controller_quarto = new ControllerQuarto();
                         $controller_quarto->Excluir();
@@ -130,23 +122,17 @@
                         $controller_quarto = new ControllerQuarto();
                         $controller_quarto->Visualizar();
                     break;
-
-
                 }
-
             break;
-
-
-        case 'categoriageral':
-
-            require_once('controllers/categoriageral_controller.php');
-            require_once('models/categoriageral_class.php');
-
-            switch($modo){
-                case 'visualizar':
-                    $controller_categoriageral = new ControllerCategoriaGeral();
-                    $controller_categoriageral -> Visualizar();
-            }
-
+            
+             case 'informacao':
+                require_once('controllers/informacao_controller.php');
+                require_once('models/informacao_class.php');
+                switch ($modo) {
+                    case 'listar':
+                        $controller_informacao = new ControllerInformacao();
+                        $controller_informacao->Listar();
+                        break;
+                }
     }
 ?>

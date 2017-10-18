@@ -35,9 +35,19 @@
         }
 
         public function InsertComodidade(){
-            $sql = "insert into tbl_quartocomodidadesquarto(idQuarto,idComodidade,status) values(".$this->idQuarto.",".$this->comodidade.",1)";
+            $sql = 'select * from tbl_comodidadesquarto';
+            $select = mysql_query($sql);
 
-            mysql_query($sql);
+            while($rs = mysql_fetch_array($select)){
+                $idComodidade = $rs['idComodidade'];
+                $sql = "insert into tbl_quartocomodidadesquarto(idQuarto,idComodidade,status) values(".$this->idQuarto.",".$idComodidade.",0)";
+                mysql_query($sql);
+                $sql = "update tbl_quartocomodidadesquarto set status = 1 where idQuarto=".$this->idQuarto." and idComodidade=".$this->comodidade.";";
+                mysql_query($sql);
+            }
+
+
+
         }
 
         public function Deletar(){
@@ -59,8 +69,6 @@
             $sql="select * from tbl_quarto where idQuarto=".$this->idQuarto.";";
             $select = mysql_query($sql);
 
-
-
             if($rs = mysql_fetch_array($select)){
 
                 $listaquarto = new Quarto();
@@ -70,34 +78,35 @@
                 $listaquarto->maxHosp=$rs['maxHospedes'];
                 $listaquarto->qtdQuartos=$rs['qtdQuartos'];
                 $listaquarto->descricao=$rs['descricao'];
+                $listaquarto->idQuarto=$rs['idQuarto'];
+
 
 
 
             }
 
             return $listaquarto;
+
         }
 
         public function SelectComodidade(){
-            $sql="select c.idComodidade, c.nomeComodidade from tbl_comodidadesquarto as c
-                    inner join tbl_quartocomodidadesquarto as qc
-                    on qc.idComodidade = c.idComodidade
-                    where qc.idQuarto =".$this->idQuarto.";";
+            //$sql="select * from tbl_quartocomodidadesquarto where idQuarto=".$this->idQuarto." and status = 1;";
+            $sql="select tbl_quartocomodidadesquarto.idComodidade, status, nomeComodidade  from tbl_quartocomodidadesquarto INNER JOIN tbl_comodidadesquarto ON tbl_comodidadesquarto.idComodidade=tbl_quartocomodidadesquarto.idComodidade where tbl_quartocomodidadesquarto.idQuarto=12;";
             $select = mysql_query($sql);
 
-            $cont = 0;
-
+            $contador = 0;
             while($rs = mysql_fetch_array($select)){
 
-                $listacomodidade = new Quarto();
+                $listacomodidade[] = new Quarto();
 
-                $listacomodidade->idComodidade=$rs['idComodidade'];
+                $listacomodidade[$contador]->idComodidade=$rs['idComodidade'];
+                $listacomodidade[$contador]->nomeComodidade=$rs['nomeComodidade'];
+                $listacomodidade[$contador]->status=$rs['status'];
 
-                $cont++;
-
+                $contador++;
             }
 
-            return $listacomodidade;
+              return $listacomodidade;
         }
 
     }

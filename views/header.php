@@ -17,7 +17,7 @@
  ?>
 <!--Modal de busca avançada-->
 <div id="buscaAvancadaBackground">
-	<form action="busca.php">
+	<form action="busca.php?modo=avancada">
 		<div id="buscaAvancadaBox">
 			<div id="fecharBusca"><h4>Busca Avançada</h4><span onclick="abrirBusca()">X</span></div>
 			<div id="conteudoBuscaEsquerda">
@@ -181,7 +181,7 @@
                     $("#buscaAvancadaBackground").css('opacity', 1);
                 </script>
 			</div>
-				<input type="submit" id="btnBuscaAvancada" value="PESQUISAR">
+				<input type="submit" id="btnBuscaAvancada" value="PESQUISAR" name="btn_pesquisar">
 		</div>
 	</form>
 </div>
@@ -207,7 +207,7 @@
 		 ?>
 
 		<div id="headerBusca">
-			<form method="post" action="busca.php" autocomplete="off">
+			<form method="post" action="busca.php?btn_pesquisar=buscaRapida" autocomplete="off">
 				<input type="text" name="txtDestino" placeholder="Digite seu destino..." id="txtDestino" required>
 				<div id="buscaTR">
 				</div>

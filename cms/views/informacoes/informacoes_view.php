@@ -49,18 +49,18 @@
                 <td class="tdnumeros">
                     <?php echo($rows[$cont]->emailTourdreams); ?>
                 </td>
-                  <td class="tdnumeros">
-                   <?php echo($rows[$cont]->idLogradouro); ?>
+                 <td class="tdnumeros">
+                    <?php echo($rows[$cont]->idLogradouro); ?>
                 </td>
                  <td class="tdnumeros">
                    <?php echo($rows[$cont]->idTelefone); ?>
                 </td>
 
                 <td class="tdnumeros">
-                   <a href=<?php echo("router.php?controller=informacoes&modo=excluir&idRecompensa=".$rows[$cont]->idInformacao);?>>
+                   <a href=<?php echo("router.php?controller=informacoes&modo=excluir&idInformacao=".$rows[$cont]->idInformacao);?>>
                      <img src="imagens/delete.png" alt="delete">
                    </a>
-                   <a href=<?php echo("router.php?controller=informacoes&modo=visualizar&idRecompensa=".$rows[$cont]->idInformacao);?>>
+                   <a href=<?php echo("router.php?controller=informacoes&modo=visualizar&idInformacao=".$rows[$cont]->idInformacao);?>>
                      <img src="imagens/edit.png" alt="edit">
                   </a>
                </td>
@@ -86,16 +86,16 @@
       </tr>
 
       <?php
-      $email = null;
-      $logradouro = null;
-      $telefone = null;
+      $emailTourdreams = null;
+      $idLogradouro = null;
+      $idTelefone= null;
       $action = "inserir";
 
       if(isset($_GET['modo'])){
         if ($_GET['modo']=='visualizar') {
-          $email=$result->emailTourdreams;
-          $logradouro=$result->idLogradouro;
-          $telefone=$result->idTelefone;
+          $emailTourdreams=$result->emailTourdreams;
+          $idLogradouro=$result->idLogradouro;
+          $idTelefone=$result->idTelefone;
 
           $action="editar&idInformacao=".$_GET['idInformacao'];
         }
@@ -108,13 +108,13 @@
 
       <tr>
           <td class="tdnumeros">
-            <input class="inputFormulario" name="txtemail" value="<?php echo($email);?>" placeholder="" >
+            <input class="inputFormulario" name="txtemail" value="<?php echo($emailTourdreams);?>" placeholder="" >
           </td>
            <td class="tdnumeros">
                
-               <select  class="inputFormulario" name="txtlogradouro" value="<?php echo($logradouro);?>" placeholder="">
+               <select  class="inputFormulario" name="txtlogradouro" value="<?php echo($idLogradouro);?>" placeholder="">
                   <?php
-            	$sql="select * from tbl_informacao";
+            	$sql="select * from tbl_logradouro";
 				$select = mysql_query($sql);
 											
 				while($rs = mysql_fetch_array($select))
@@ -131,9 +131,9 @@
                </select>
           </td>
            <td class="tdnumeros">
-               <select   class="inputFormulario" name="txttelefone" value="<?php echo($telefone);?>" placeholder="" >
+               <select   class="inputFormulario" name="txttelefone" value="<?php echo($idTelefone);?>" placeholder="" >
                   <?php
-            	$sql="select * from tbl_informacao";
+            	$sql="select * from tbl_telefone";
 				$select = mysql_query($sql);
 											
 				while($rs = mysql_fetch_array($select))

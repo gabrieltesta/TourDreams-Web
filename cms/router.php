@@ -155,7 +155,6 @@
                     case 'editar':
                         $controller_comodidadesquarto->Editar();
                         break;
-
                 }
                 break;
 
@@ -180,8 +179,30 @@
                         break;
                 }
                 break;
+            
+             case 'informacoes':
+             require_once('controllers/informacoes_controller.php');
+                require_once('models/informacoes_class.php');
 
+                $controller_informacoes = new ControllerInformacoes();
+                switch($modo)
+                {
+                    case 'inserir':
+                        $controller_informacoes->Inserir();
+                        break;
+                    case 'visualizar':
+                        $controller_informacoes->Visualizar();
+                        break;
+                    case 'excluir':
+                        $controller_informacoes->Excluir();
+                        break;
+                    case 'editar':
+                        $controller_informacoes->Editar();
+                        break;
+                }
+                break;
 
+            
              case 'faq':
              require_once('controllers/faq_controller.php');
                 require_once('models/faq_class.php');
@@ -204,9 +225,8 @@
                 }
                 break;
 
-
-
-             case 'categoriafaq':
+            
+               case 'categoriafaq':
              require_once('controllers/categoriafaq_controller.php');
                 require_once('models/categoriafaq_class.php');
 
@@ -227,45 +247,9 @@
                         break;
                 }
                 break;
-            case 'nivel':
-                require_once('controllers/nivel_controller.php');
-                require_once('models/nivel_class.php');
-                $controller_nivel = new ControllerNivel();
-                switch($modo){
-                    case 'inserir':
-                        $controller_nivel->Inserir();
-                    break;
-                    case 'excluir':
-                        $controller_nivel->Excluir();
-                    break;
-                    case 'visualizar':
-                        $controller_nivel->Visualizar();
-                    break;
-                    case 'editar':
-                        $controller_nivel->Editar();
-                    break;
-                }
-            break;
-            
-               case 'informacoes':
-                require_once('controllers/informacoes_controller.php');
-                require_once('models/informacoes_class.php');
-                $controller_informacoes = new ControllerInformacoes();
-                switch($modo){
-                    case 'inserir':
-                        $controller_informacoes->Inserir();
-                    break;
-                    case 'excluir':
-                        $controller_informacoes->Excluir();
-                    break;
-                    case 'visualizar':
-                        $controller_informacoes->Visualizar();
-                    break;
-                    case 'editar':
-                        $controller_informacoes->Editar();
-                    break;
-                }
-            break;
+
+
+
 
     }
 ?>

@@ -103,11 +103,24 @@
             </div>
         </div>
         <?php
+
+
             require_once('controllers/buscaRapida_controller.php');
             require_once('models/buscaRapida_class.php');
 
-            $controllerBuscaRapida = new ControllerBuscaRapida();
-            $rows = $controllerBuscaRapida->Buscar();
+            if (isset($_GET['btn_pesquisar'])) {
+              if($_GET['btn_pesquisar']  == 'PESQUISAR'){
+
+
+              $controllerSelectBuscaAvancada = new ControllerSelectBuscaAvancada();
+              $rows = $controllerSelectBuscaAvancada->BuscaAcancada();
+            }elseif($_GET['btn_pesquisar'] == 'buscaRapida') {
+
+
+              $controllerBuscaRapida = new ControllerBuscaRapida();
+              $rows = $controllerBuscaRapida->Buscar();
+            }
+          }
 
             $cont = 0;
 
@@ -144,7 +157,7 @@
                                  </td>
                             </tr>
                             <tr>
-                                <td><?php echo ($rows[$cont]->bairro); ?>, <?php echo ($rows[$cont]->cidade); ?>-<?php echo ($rows[$cont]->uf); ?></td>
+                                <td><?php echo ($rows[$cont]->bairro); ?>, <?php echo ($rows[$cont]->cidade); ?></td>
                             </tr>
                             <tr>
                                 <td><?php echo ($rows[$cont]->nomeParceiro); ?></td>
@@ -195,105 +208,8 @@
             }
 
          ?>
-         <!--
 
 
-
-
-       -->
-       <?php
-           require_once('controllers/buscaAvancada_controller.php');
-           require_once('models/buscaAvancada_class.php');
-
-           $controllerBuscaAvancada = new ControllerSelectBuscaAvancada();
-           $rows = $controllerBuscaAvancada->BuscaAcancada();
-
-           $cont = 0;
-
-           while ($cont < count ($rows)) {
-
-
-               ?>
-               <div class="resultado">
-                   <div class="resultadoImg">
-                       <div class="parceiroDestaque">
-                          <div class="ribbon"><span>DESTAQUE</span></div>
-                       </div>
-                       <img src="imagens/busca/hotel.jpg" alt="" id="hotelImg">
-                   </div>
-
-                   <div class="resultadoInfo">
-                       <table>
-                           <tr>
-                               <td><h3><?php echo ($rows[$cont]->hotel); ?></h3></td>
-                           </tr>
-                           <tr>
-                               <td>
-                                   <?php
-                                       $qtd = rand(1, 5);
-                                       $contestrelas = 1;
-                                       while ($contestrelas <= $rows[$cont]->qtdEstrelas)
-                                       {
-                                           ?>
-                                               <img src="imagens/busca/estrela.png" alt="">
-                                           <?php
-                                           $contestrelas += 1;
-                                       }
-                                    ?>
-                                </td>
-                           </tr>
-                           <tr>
-                               <td><?php echo ($rows[$cont]->bairro); ?>, <?php echo ($rows[$cont]->cidade); ?>-<?php echo ($rows[$cont]->uf); ?></td>
-                           </tr>
-                           <tr>
-                               <td><?php echo ($rows[$cont]->nomeParceiro); ?></td>
-                           </tr>
-                           <tr>
-                               <td>
-                                   <table id="tblComodidades">
-                                       <tr>
-                                           <td>Wi-fi grátis</td>
-                                           <td>Academia</td>
-                                       </tr>
-                                       <tr>
-                                           <td>Bar</td>
-                                           <td>Estacionamento</td>
-                                       </tr>
-                                       <tr>
-                                           <td>Teste</td>
-                                           <td>dsghsdfui</td>
-                                       </tr>
-                                   </table>
-                               </td>
-                           </tr>
-                       </table>
-                   </div>
-                   <div class="resultadoReservar">
-                       <table>
-                           <tr>
-                               <td>
-                                   <h3><?=rand(0,10);?></h3>
-                                   <h5>123 avaliações</h5>
-                               </td>
-                           </tr>
-                           <tr>
-                               <td>
-                                   <h3 class="desconto">R$ 200,00</h3>
-                                   <h2>R$ 150,00</h2>
-                               </td>
-                           </tr>
-                           <tr>
-                               <td><a href="hotelQuarto.php?idHotel=<?php echo($rows[$cont]->idHotel) ?>"><div class="btnReservar">RESERVAR</a></td>
-                           </tr>
-                       </table>
-                   </div>
-               </div>
-
-               <?php
-               $cont++;
-           }
-
-        ?>
 
         <div class="infoBuscaBox" style="margin-top: 25px; padding-bottom: 10px;">
             <span class="qtdResultados">12/150 Hotéis</span>

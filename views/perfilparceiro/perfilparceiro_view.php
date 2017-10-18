@@ -18,6 +18,8 @@
     $maxHosp = null;
     $qtdQuartos = null;
     $descricao = null;
+    $idComodidade = null;
+    $idQuarto=null;
 
     if(isset($_GET['modo'])){
         if($_GET['modo']=="visualizar"){
@@ -26,8 +28,20 @@
             $maxHosp= $resposta->maxHosp;
             $qtdQuartos= $resposta->qtdQuartos;
             $descricao= $resposta->descricao;
+            $idQuarto= $resposta->idQuarto;
 
-            $idComodidade = $resultado->idComodidade;
+            require_once('controllers/quarto_controller.php');
+            $listaComodidade = new ControllerQuarto();
+            $rowComodidade = $listaComodidade->VisualizarComodidade($idQuarto);
+
+            $counter = 0;
+
+            while($counter < count($rowComodidade)){
+
+                $idComodidade = $rowComodidade[$counter]->idComodidade;
+
+                $counter++;
+            }
 
         }
     }
@@ -66,32 +80,30 @@
                             <td>
                                 <ul>
                                     <?php
-                                        require_once('controllers/perfilparceiro_controller.php');
 
-                                        $listComodidade = new ControllerPerfilParceiro();
-                                        $rs = $listComodidade->Comodidades();
+                                            if(isset($_GET['modo']))
+                                            {
+                                                require_once('controllers/quarto_controller.php');
+                                                $listComodidade = new ControllerQuarto();
+                                                $rs = $listComodidade->VisualizarComodidade();
 
-                                        $contador = 0;
-                                        $marcar = "";
-                                        while($contador < count($rs)){
+                                                $contador = 0;
 
-                                            if($idComodidade == $rs[$contador]->idComodidade){
-                                                $marcar = "checked";
-                                            }else{
-                                                $marcar = "";
+                                                while($contador < count($rs))
+                                                {
+                                                    ?>
+                                                    <li>
+                                                        <p>
+                                                            <input <?php if($rs[$contador]->status=="1"){ echo("checked"); } ?> class="checkbox" type="checkbox" id="comodidadeQuarto<?php echo($rs[$contador]->idComodidade); ?>" name="comodidadeQuarto[]" value="<?php echo($rs[$contador]->idComodidade); ?>" />
+                                                            <label class="labelCheck" for="comodidadeQuarto<?php echo($contador); ?>"><span class="ui"></span><?php echo($rs[$contador]->nomeComodidade) ?></label>
+                                                        </p>
+                                                    </li>
+                                                    <?php
+                                                    $contador += 1;
+                                                }
                                             }
 
-                                    ?>
-                                    <li>
-                                        <p>
-                                            <input <?php echo ($marcar); ?> type="checkbox" id="comodidadeQuarto<?php echo($contador); ?>" name="comodidadeQuarto[]" value="<?php echo($rs[$contador]->idComodidade); ?>" />
-                                            <label for="comodidadeQuarto<?php echo($contador); ?>"><span class="ui"></span><?php echo($rs[$contador]->nomeComodidade) ?></label>
-                                        </p>
-                                    </li>
-                                    <?php
-                                            $contador++;
-                                        }
-                                    ?>
+                                            ?>
 
                                 </ul>
                             </td>

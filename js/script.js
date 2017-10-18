@@ -653,7 +653,7 @@ function preencherAvancado(destino) {
 }
 
 function abrirResposta(idFaq,pergunta) {
-     
+
     $('#respostasbox h3').text(pergunta);
     $.post('api/respostafaq.php', {'idFaq':idFaq}, function(data) {
       $("#respostasbox div").html(data);

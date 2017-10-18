@@ -92,8 +92,39 @@
 
     public function SelectDaBuscaAvancada(){
 
-        $sql = 'select * from vw_buscaavancadahotel where nomeParceiro="'.$this->parceiro.'" and cidade="'.$this->cidade.'" and estadia="'.$this->estadia.'" and qtdEstrelas='.$this->qtdEstrelas.' and avaliacao <= '.$this->avaliacao.' and preco<='.$this->preco.'';
-        echo($sql);
+        $sql = 'select * from vw_buscaavancadahotel where nomeParceiro="'.$this->parceiro.'" and cidade="'.$this->cidade.'" and estadia="'.$this->estadia.'" and qtdEstrelas='.$this->qtdEstrelas.' and avaliacao >= 1 and preco<='.$this->preco.'';
+        $select = mysql_query($sql);
+        $cont = 0;
+
+
+        echo ($sql);
+        while ($rs=mysql_fetch_array($select)) {
+
+
+/*          $listComo[] = new SelectBuscaAvancada();
+
+          $listComo[$cont]->imagem=$rs['caminhoImagem'];
+          $listComo[$cont]->nomeQuarto=$rs['nome'];
+          $listComo[$cont]->bairro=$rs['bairro'];
+          $listComo[$cont]->logradouro=$rs['logradouro'];
+          $listComo[$cont]->preco=$rs['preco'];
+          $listComo[$cont]->cidade=$rs['cidade'];
+          $listComo[$cont]->nomeParceiro=$rs['nomeParceiro'];
+          $listComo[$cont]->hotel=$rs['hotel'];
+          $listComo[$cont]->qtdEstrelas=$rs['qtdEstrelas'];
+
+*/
+
+
+          $cont +=1;
+        }
+        if (mysql_num_rows($select)>0) {
+          return $listar;
+        }else {
+          echo "erro";
+        }
+
+
 
     }
 

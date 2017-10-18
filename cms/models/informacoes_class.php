@@ -78,7 +78,8 @@
       if($rs=mysql_fetch_array($select)){
 
         $informacoes = new Informacoes();
-
+        
+        $informacoes ->idInformacao = $rs['idInformacao'];
         $informacoes->emailTourdreams=$rs['emailTourdreams'];
         $informacoes->idLogradouro=$rs['idLogradouro'];
         $informacoes->idTelefone=$rs['idTelefone'];

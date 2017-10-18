@@ -15,7 +15,7 @@ class ControllerFaq
             $resposta = $_POST['txtresposta'];
             $idCategoriaFaq = $_POST['txtcategoria'];
 
-            $faq_class = new FAQ();
+            $faq_class = new Faq();
             
             $faq_class->pergunta=$pergunta;
             $faq_class->resposta=$resposta;

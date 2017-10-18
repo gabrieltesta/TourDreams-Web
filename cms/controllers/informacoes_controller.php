@@ -11,15 +11,15 @@ class ControllerInformacoes
         */
         if ($_SERVER['REQUEST_METHOD'] == 'POST')
         {
-            $email = $_POST['txtemail'];
-            $logradouro = $_POST['txtlogradouro'];
-            $telefone = $_POST['txttelefone'];
+            $emailTourdreams = $_POST['txtemail'];
+            $idLogradouro = $_POST['txtlogradouro'];
+            $idTelefone = $_POST['txttelefone'];
             
             $informacoes_class = new Informacoes();
             
-            $informacoes_class->emailTourdreams=$email;
-            $informacoes_class->idLogradouro=$logradouro;
-            $informacoes_class->idTelefone=$telefone;
+            $informacoes_class->emailTourdreams=$emailTourdreams;
+            $informacoes_class->idLogradouro=$idLogradouro;
+            $informacoes_class->idTelefone=$idTelefone;
             
 
             $informacoes = $informacoes_class->Insert($informacoes_class);
@@ -41,18 +41,18 @@ class ControllerInformacoes
         */
         if ($_SERVER['REQUEST_METHOD'] == 'POST')
         {
-             $email = $_POST['txtemail'];
-            $logradouro = $_POST['txtlogradouro'];
-            $telefone = $_POST['txttelefone'];
+             $emailTourdreams = $_POST['txtemail'];
+            $idLogradouro = $_POST['txtlogradouro'];
+            $idTelefone = $_POST['txttelefone'];
             $idInformacao = $_GET['idInformacao'];
 
 
             $informacoes_class = new Informacoes();
 
               
-            $informacoes_class->emailTourdreams=$email;
-            $informacoes_class->idLogradouro=$logradouro;
-            $informacoes_class->idTelefone=$telefone;
+            $informacoes_class->emailTourdreams=$emailTourdreams;
+            $informacoes_class->idLogradouro=$idLogradouro;
+            $informacoes_class->idTelefone=$idTelefone;
             $informacoes_class->idInformacao= $idInformacao;
 
             $informacoes= $informacoes_class->Update($informacoes_class);

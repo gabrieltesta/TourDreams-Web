@@ -35,24 +35,41 @@
         <!--Conteúdo das informações de contato-->
         <div class="conteudobox" id="contato">
             <table id="informacoesContato">
+                
+                <?php
+                    require_once('controllers/informacao_controller.php');
+                
+                    $controller_informacao = new ControllerInformacao();
+                    $rowss = $controller_informacao->Listar();
+                
+                    $conti = 0; 
+                        
+                    while ($conti < count($rowss)) {
+                
+                ?>
                 <tr>
                     <td>Telefone</td>
                 </tr>
                 <tr>
-                    <td style="border-bottom: solid 1px #eee;">(11) 1234-5678</td>
+                    <td style="border-bottom: solid 1px #eee;"><?php echo($rowss[$conti]->telefone);?></td>
                 </tr>
                 <tr>
                     <td>Email</td>
                 </tr>
                 <tr>
-                    <td style="border-bottom: solid 1px #eee;">contato@exemplo.com</td>
+                    <td style="border-bottom: solid 1px #eee;"><?php echo($rowss[$conti]->emailTourdreams);?></td>
                 </tr>
                 <tr>
                     <td>Endereço</td>
                 </tr>
                 <tr>
-                    <td style="border-bottom: solid 1px #eee;">Av. Luiz Carlos Berrini</td>
+                    <td style="border-bottom: solid 1px #eee;"><?php echo($rowss[$conti]->logradouro);?>, <?php echo($rowss[$conti]->numero);?>, <?php echo($rowss[$conti]->cidade); ?> - <?php echo($rowss[$conti]->uf);?></td>
                 </tr>
+                
+                <?php
+                        $conti++; 
+                    }
+                ?>
             </table>
         </div>
         <!---->
