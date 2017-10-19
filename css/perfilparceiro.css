@@ -235,6 +235,17 @@ body{
     z-index: 2;
     display: none;
 }
+.bgCadastroQuarto1{
+    height: 950px;
+    display: flex;
+    float: left;
+    width: 100%;
+    margin-top: 150px;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    z-index: 2;
+    display: none;
+}
 
 .modalCadastroQuarto{
     height: 770px;

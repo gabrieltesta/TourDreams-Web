@@ -34,6 +34,48 @@
 
         }
 
+        public function UpdateQuartoImagem(){
+            $sql = "select * from tbl_quarto where idQuarto=".$this->idQuarto.";";
+
+            $select = mysql_query($sql);
+            if($rs=mysql_fetch_array($select)){
+                $idImagem = $rs['idImagem'];
+                $sql = "update tbl_imagem set caminhoImagem='".$this->caminhoImg."' where idImagem=".$idImagem.";";
+
+
+                mysql_query($sql);
+                $sql="delete from tbl_quartocomodidadesquarto where idQuarto=".$this->idQuarto.";";
+                mysql_query($sql);
+                $sql="update tbl_quarto set nome='".$this->nome."',
+                        valorDiario=".$this->vlrDiario.",descricao='".$this->descricao."',
+                        maxHospedes=".$this->maxHosp.",qtdQuartos=".$this->qtdQuartos."
+                        where idQuarto=".$this->idQuarto.";";
+
+                mysql_query($sql);
+            }
+        }
+
+        public function UpdateComodidade(){
+
+
+            $sql = 'select * from tbl_comodidadesquarto;';
+            $select = mysql_query($sql);
+            echo($sql);
+            while($rs = mysql_fetch_array($select)){
+                $idComodidade = $rs['idComodidade'];
+                $sql = "insert into tbl_quartocomodidadesquarto(idQuarto,idComodidade,status) values(".$this->idQuarto.",".$idComodidade.",0)";
+                mysql_query($sql);
+                $sql = "update tbl_quartocomodidadesquarto set status = 1 where idQuarto=".$this->idQuarto." and idComodidade=".$this->comodidade.";";
+                mysql_query($sql);
+
+            }
+
+        }
+
+        public function UpdateQuarto(){
+            $sql = "";
+        }
+
         public function InsertComodidade(){
             $sql = 'select * from tbl_comodidadesquarto';
             $select = mysql_query($sql);
@@ -91,7 +133,7 @@
 
         public function SelectComodidade(){
             //$sql="select * from tbl_quartocomodidadesquarto where idQuarto=".$this->idQuarto." and status = 1;";
-            $sql="select tbl_quartocomodidadesquarto.idComodidade, status, nomeComodidade  from tbl_quartocomodidadesquarto INNER JOIN tbl_comodidadesquarto ON tbl_comodidadesquarto.idComodidade=tbl_quartocomodidadesquarto.idComodidade where tbl_quartocomodidadesquarto.idQuarto=12;";
+            $sql="select tbl_quartocomodidadesquarto.idComodidade, status, nomeComodidade  from tbl_quartocomodidadesquarto INNER JOIN tbl_comodidadesquarto ON tbl_comodidadesquarto.idComodidade=tbl_quartocomodidadesquarto.idComodidade where tbl_quartocomodidadesquarto.idQuarto=".$this->idQuarto.";";
             $select = mysql_query($sql);
 
             $contador = 0;

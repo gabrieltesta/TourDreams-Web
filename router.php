@@ -122,9 +122,13 @@
                         $controller_quarto = new ControllerQuarto();
                         $controller_quarto->Visualizar();
                     break;
+                    case 'editar':
+                        $controller_quarto = new ControllerQuarto();
+                        $controller_quarto->Editar();
+                    break;
                 }
             break;
-            
+
              case 'informacao':
                 require_once('controllers/informacao_controller.php');
                 require_once('models/informacao_class.php');

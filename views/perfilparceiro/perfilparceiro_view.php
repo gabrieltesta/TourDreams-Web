@@ -47,11 +47,104 @@
     }
 
 ?>
+
 <div class="bgCadastroQuarto">
     <div class="modalCadastroQuarto">
         <div class="headerModal"><div id="tituloModal">Cadastro de Quarto</div><div class="btnFecharModal"><img onclick="fecharModalQuarto()" alt="" src="imagens/perfilparceiro/close-button.svg"></div></div>
         <div class="contModal">
-            <form class="" action="router.php?controller=quarto&modo=inserir&idParceiro=<?php echo($_GET['idParceiro']); ?>" enctype="multipart/form-data" method="post">
+            <form class="" name="frmInserir" action="router.php?controller=quarto&modo=inserir&idParceiro=<?php echo($_GET['idParceiro']); ?>" enctype="multipart/form-data" method="post">
+                <div class="divForm">
+                    <table class="tabelaForm">
+                        <tr>
+                            <input type="hidden" id="idHotel" name="idHotel" value="">
+                            <td><label>Nome do Quarto</label></td>
+                        </tr>
+                        <tr>
+                            <td><input placeholder="Digite o nome do Quarto" type="text" name="txtNomeQuarto" value=""></td>
+                        </tr>
+                        <tr>
+                            <td><label>Valor diário</label></td>
+                        </tr>
+                        <tr>
+                            <td><input placeholder="Diária" type="text" name="txtDiaria" value=""></td>
+                        </tr>
+                        <tr>
+                            <td><label>Imagem</label></td>
+                        </tr>
+                        <tr>
+                            <td><input required type="file" name="fileImg" value=""></td>
+                        </tr>
+                        <tr>
+                            <td><label>Comodidades</label></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <?php
+
+                                            require_once('controllers/perfilparceiro_controller.php');
+
+                                            $listComodidade = new ControllerPerfilParceiro();
+                                            $row = $listComodidade->Comodidades();
+
+                                            $counter = 0;
+
+                                            while($counter < count($row)){
+                                            ?>
+                                            <li>
+                                                <p>
+                                                    <input class="checkbox" type="checkbox" id="comodidadeQuarto<?php echo($row[$counter]->idComodidade); ?>" name="comodidadeQuarto[]" value="<?php echo($row[$counter]->idComodidade); ?>" />
+                                                    <label class="labelCheck" for="comodidadeQuarto<?php echo($row[$counter]->idComodidade); ?>"><span class="ui"></span><?php echo($row[$counter]->nomeComodidade) ?></label>
+                                                </p>
+                                            </li>
+                                            <?php
+                                            $counter++;
+                                        }
+
+                                        ?>
+
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="divForm">
+                    <table class="tabelaForm">
+                        <tr>
+                            <td><label>Máximo de hóspedes</label></td>
+                        </tr>
+                        <tr>
+                            <td><input placeholder="Máx. de hóspedes" type="text" name="txtMaxHosp" value=""></td>
+                        </tr>
+                        <tr>
+                            <td><label>Quantidade de quartos disponíveis</label></td>
+                        </tr>
+                        <tr>
+                            <td><input placeholder="Qtd. Quartos" type="text" name="txtQtdQuartos" value=""></td>
+                        </tr>
+                        <tr>
+                            <td><label>Descrição do quarto</label></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="txtDescricaoQuarto" placeholder="Descrição do Quarto" maxlength="300"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><input type="submit" name="btnCadastrarQuarto" value="CADASTRAR"></td>
+                        </tr>
+
+                    </table>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="bgCadastroQuarto1">
+    <div class="modalCadastroQuarto">
+        <div class="headerModal"><div id="tituloModal">Cadastro de Quarto</div><div class="btnFecharModal"><img onclick="fecharModalQuarto1()" alt="" src="imagens/perfilparceiro/close-button.svg"></div></div>
+        <div class="contModal">
+            <form class="" name="frmEditar" action="router.php?controller=quarto&modo=editar&idParceiro=<?php echo($_GET['idParceiro']); ?>&idQuarto=<?php echo($idQuarto); ?>" enctype="multipart/form-data" method="post">
                 <div class="divForm">
                     <table class="tabelaForm">
                         <tr>
@@ -94,16 +187,15 @@
                                                     ?>
                                                     <li>
                                                         <p>
-                                                            <input <?php if($rs[$contador]->status=="1"){ echo("checked"); } ?> class="checkbox" type="checkbox" id="comodidadeQuarto<?php echo($rs[$contador]->idComodidade); ?>" name="comodidadeQuarto[]" value="<?php echo($rs[$contador]->idComodidade); ?>" />
-                                                            <label class="labelCheck" for="comodidadeQuarto<?php echo($contador); ?>"><span class="ui"></span><?php echo($rs[$contador]->nomeComodidade) ?></label>
+                                                            <input <?php if($rs[$contador]->status=="1"){ echo("checked"); } ?> class="checkbox" type="checkbox" id="comodidadeQuartoEditar<?php echo($rs[$contador]->idComodidade); ?>" name="comodidadeQuarto[]" value="<?php echo($rs[$contador]->idComodidade); ?>" />
+                                                            <label class="labelCheck" for="comodidadeQuartoEditar<?php echo($rs[$contador]->idComodidade); ?>"><span class="ui"></span><?php echo($rs[$contador]->nomeComodidade) ?></label>
                                                         </p>
                                                     </li>
                                                     <?php
                                                     $contador += 1;
                                                 }
                                             }
-
-                                            ?>
+                                        ?>
 
                                 </ul>
                             </td>

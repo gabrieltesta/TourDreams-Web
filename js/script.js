@@ -577,6 +577,9 @@ function selecionarParceiroPadrao() {
    }
 }
 
+
+
+
 function abrirModalQuarto(){
     $('.bgCadastroQuarto').fadeIn(200, function(){
     });
@@ -584,6 +587,15 @@ function abrirModalQuarto(){
 
 function fecharModalQuarto(){
     $('.bgCadastroQuarto').fadeOut(200, function(){
+    });
+}
+function abrirModalQuarto1(){
+    $('.bgCadastroQuarto1').fadeIn(200, function(){
+    });
+}
+
+function fecharModalQuarto1(){
+    $('.bgCadastroQuarto1').fadeOut(200, function(){
     });
 }
 
