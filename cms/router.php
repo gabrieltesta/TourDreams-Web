@@ -227,7 +227,7 @@
 
             
                case 'categoriafaq':
-             require_once('controllers/categoriafaq_controller.php');
+                require_once('controllers/categoriafaq_controller.php');
                 require_once('models/categoriafaq_class.php');
 
                 $controller_categoriafaq = new ControllerCategoriaFaq();
@@ -248,6 +248,8 @@
                 }
                 break;
 
+            
+            
 
 
 

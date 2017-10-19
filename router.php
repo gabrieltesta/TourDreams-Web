@@ -103,7 +103,11 @@
                     case 'inserir':
                         $controller_hotel = new ControllerHotel();
                         $controller_hotel->Inserir();
-                        break;
+                    break;
+                    case 'deletar':
+                        $controller_hotel = new ControllerHotel();
+                        $controller_hotel->Deletar();
+                    break;
                 }
             break;
             case 'quarto':

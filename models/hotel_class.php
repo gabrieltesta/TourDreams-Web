@@ -146,10 +146,15 @@
 
         public function ExcluirHotel(){
 
-            
+
             $sql = "delete from tbl_hotelcomodidadeshotel where idHotel=".$this->idHotel.";";
+            echo($sql);
+            mysql_query($sql);
+            $sql = "delete from tbl_avaliacao where idHotel=".$this->idHotel.";";
+            echo($sql);
             mysql_query($sql);
             $sql = "delete from tbl_hotel where idHotel=".$this->idHotel.";";
+            echo($sql);
             mysql_query($sql);
 
         }

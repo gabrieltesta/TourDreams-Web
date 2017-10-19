@@ -1,19 +1,19 @@
 <?php
 
     class Informacao{
-        
+
         public $emailTourdreams;
         public $logradouro;
         public $numero;
         public $cidade;
         public $uf;
         public $telefone;
-        
-        
+
+
 
         public function SelectInformacao(){
 
-          $sql = 'select * from vw_informacoes';
+          $sql = 'select * from vw_informacao';
 
           $select = mysql_query($sql);
 
@@ -36,9 +36,9 @@
            return $listInformacao;
         }
 
-        
-        
-        
-        
+
+
+
+
     }
 ?>

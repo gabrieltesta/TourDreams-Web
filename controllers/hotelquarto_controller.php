@@ -46,6 +46,18 @@
 
             }
 
+            public function BuscaComodidadesQuarto($idQuarto){
+
+                require_once('models/hotelquarto_class.php');
+
+
+
+                $listComodidadesQuarto= new HotelQuarto();
+                $listComodidadesQuarto->idQuarto = $idQuarto;
+                return $listComodidadesQuarto->SelectComodidadesQuarto();
+
+            }
+
             public function BuscaQuarto(){
                 require_once('models/hotelquarto_class.php');
 

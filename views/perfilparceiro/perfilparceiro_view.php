@@ -224,7 +224,7 @@
                             <td><textarea name="txtDescricaoQuarto" placeholder="Descrição do Quarto" maxlength="300"><?php echo($descricao); ?></textarea></td>
                         </tr>
                         <tr>
-                            <td><input type="submit" name="btnCadastrarQuarto" value="CADASTRAR"></td>
+                            <td><input type="submit" name="btnCadastrarQuarto" value="ALTERAR"></td>
                         </tr>
 
                     </table>

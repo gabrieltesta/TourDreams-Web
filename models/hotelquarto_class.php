@@ -120,8 +120,33 @@
             return $listComodidade;
         }
 
+
+        public function SelectComodidadesQuarto(){
+            $sql = "select c.nomeComodidade
+            from tbl_comodidadesquarto as c
+            inner join tbl_quartocomodidadesquarto as qc
+            on c.idComodidade = qc.idComodidade
+            inner join tbl_quarto as q
+            on qc.idQuarto = q.idQuarto
+            where qc.status = 1 and qc.idQuarto=".$this->idQuarto.";";
+
+            $select=mysql_query($sql);
+
+            $cont = 0;
+
+            while($rs=mysql_fetch_array($select)){
+                $listComodidade[] = new HotelQuarto();
+
+                $listComodidade[$cont]->comodidadeQuarto=$rs['nomeComodidade'];
+
+                $cont++;
+
+            }
+            return $listComodidade;
+        }
+
         public function SelectQuarto(){
-            $sql = "select q.nome,q.descricao,q.valorDiario,i.caminhoImagem
+            $sql = "select q.idQuarto,q.nome,q.descricao,q.valorDiario,i.caminhoImagem
                     from tbl_quarto as q
                     inner join tbl_imagem as i
                     on q.idImagem = i.idImagem
@@ -135,6 +160,7 @@
                 $listQuarto[] = new HotelQuarto();
 
                 $listQuarto[$cont]->nomeQuarto=$rs['nome'];
+                $listQuarto[$cont]->idQuarto=$rs['idQuarto'];
                 $listQuarto[$cont]->descricao=$rs['descricao'];
                 $listQuarto[$cont]->vlrDiario=$rs['valorDiario'];
                 $listQuarto[$cont]->caminhoImagem=$rs['caminhoImagem'];

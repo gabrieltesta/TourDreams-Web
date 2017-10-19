@@ -37,6 +37,7 @@
 					<tr>
 						<td>
 							<select name="slcTipoEstadia">
+								<option value="0">Selecione uma estadia</option>
 								<?php
 
 									require_once ('controllers/buscaAvancada_controller.php');
@@ -48,7 +49,7 @@
 
 
 								 ?>
-								 <option value="<?php echo ($rows[$cont]->estadia); ?>"><?php echo ($rows[$cont]->estadia); ?></option>
+								 <option value="<?php echo ($rows[$cont]->idEstadia); ?>"><?php echo ($rows[$cont]->estadia); ?></option>
 
 
 								 <?php
@@ -65,6 +66,8 @@
 					<tr>
 						<td>
 							<select name="slcEstrela">
+
+								<option value="5">Selecione a quantidade de estrelas</option>
 								<option value="1">1 Estrela</option>
 								<option value="2">2 Estrelas</option>
 								<option value="3">3 Estrelas</option>
@@ -79,6 +82,7 @@
 					<tr>
 						<td>
 							<select name="slcParceiro">
+								<option value="0">Selecione um Parceiro</option>
 								<?php
 
 								require_once('controllers/buscaAvancada_controller.php');
@@ -92,7 +96,8 @@
 
 
 								 ?>
-								<option value="<?php echo ($rows[$cont]->parceiro); ?>"><?php echo ($rows[$cont]->parceiro); ?></option>
+
+								<option value="<?php echo ($rows[$cont]->idParceiro); ?>"><?php echo ($rows[$cont]->parceiro); ?></option>
 
 								<?php
 								$cont +=1;
@@ -108,6 +113,7 @@
 					<tr>
 						<td>
 							<select name="slcAvaliacao">
+								<option value="0">Selecione uma Avaliação</option>
 								<option value="25">Menor que 25</option>
 								<option value="50">Menor que 50</option>
 								<option value="75">Menor que 75</option>
@@ -121,6 +127,7 @@
 					<tr>
 						<td>
 							<select name="slcPreco">
+								<option value="0">Selecione um preço</option>
 								<option value="100">R$ 0,00 - R$ 99,99</option>
 								<option value="300">R$ 100,00 - R$ 299,99</option>
 								<option value="500">R$ 300,00 - R$ 499,99</option>
@@ -148,7 +155,7 @@
 
 
 						 ?>
-						<li><input type="checkbox" name="<?php echo('comodidadeHotel'.$rows[$cont]->comodidadesHotel) ?>" value="<?php echo ($rows[$cont]->comodidadesHotel) ?>"><label><?php echo ($rows[$cont]->comodidadesHotel) ?></label></li>
+						<li><input type="checkbox" name="<?php echo('comodidadeHotel'.$rows[$cont]->comodidadesHotel) ?>" value="<?php echo ($rows[$cont]->idComodidadeHotel) ?>"><label><?php echo ($rows[$cont]->comodidadesHotel) ?></label></li>
 						<?php
 						$cont +=1;
 						}
@@ -167,7 +174,7 @@
 
 
 						 ?>
-						<li><input type="checkbox" name="<?php echo('comodidadeHotel'.$rows[$cont]->idComodidadeQuarto)?>" value="<?php echo ($rows[$cont]->comodidadesQuarto); ?>"><label><?php echo ($rows[$cont]->comodidadesQuarto); ?></label></li>
+						<li><input type="checkbox" name="<?php echo('comodidadeHotel'.$rows[$cont]->idComodidadeQuarto)?>" value="<?php echo ($rows[$cont]->idComodidadeQuarto); ?>"><label><?php echo ($rows[$cont]->comodidadesQuarto); ?></label></li>
 
 						<?php
 						$cont+=1;

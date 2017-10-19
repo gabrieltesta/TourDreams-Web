@@ -22,7 +22,8 @@
 
         $listBusca[] = new SelectBuscaAvancada();
 
-        $listBusca[$cont]->idEstadia=$rs['idEstadia'];
+
+        $listBusca[$cont]->idEstadia=$rs['idTipoEstadia'];
         $listBusca[$cont]->estadia=$rs['estadia'];
 
         $cont +=1;
@@ -92,36 +93,41 @@
 
     public function SelectDaBuscaAvancada(){
 
-        $sql = 'select * from vw_buscaavancadahotel where nomeParceiro="'.$this->parceiro.'" and cidade="'.$this->cidade.'" and estadia="'.$this->estadia.'" and qtdEstrelas='.$this->qtdEstrelas.' and avaliacao >= 1 and preco<='.$this->preco.'';
+        $sql = 'select * from vw_buscaavancadahotel where idParceiro>='.$this->parceiro.' and cidade="'.$this->cidade.'" and idTipoEstadia>='.$this->estadia.' and qtdEstrelas<='.$this->qtdEstrelas.' and avaliacao >= 1 and preco>='.$this->preco.'';
+
+
+      
         $select = mysql_query($sql);
+
+
+
         $cont = 0;
 
+        $listComo = array();
 
-        echo ($sql);
+        //echo ($sql);
         while ($rs=mysql_fetch_array($select)) {
 
+          $item =  new SelectBuscaAvancada();
 
-/*          $listComo[] = new SelectBuscaAvancada();
+          //$listComo[] = new SelectBuscaAvancada();
 
-          $listComo[$cont]->imagem=$rs['caminhoImagem'];
-          $listComo[$cont]->nomeQuarto=$rs['nome'];
-          $listComo[$cont]->bairro=$rs['bairro'];
-          $listComo[$cont]->logradouro=$rs['logradouro'];
-          $listComo[$cont]->preco=$rs['preco'];
-          $listComo[$cont]->cidade=$rs['cidade'];
-          $listComo[$cont]->nomeParceiro=$rs['nomeParceiro'];
-          $listComo[$cont]->hotel=$rs['hotel'];
-          $listComo[$cont]->qtdEstrelas=$rs['qtdEstrelas'];
+          $item->nomeQuarto=$rs['nome'];
+          $item->bairro=$rs['bairro'];
+          $item->logradouro=$rs['logradouro'];
+          $item->preco=$rs['preco'];
+          $item->cidade=$rs['cidade'];
+          $item->nomeParceiro=$rs['nomeParceiro'];
+          $item->hotel=$rs['hotel'];
+          $item->qtdEstrelas=$rs['qtdEstrelas'];
 
-*/
-
-
-          $cont +=1;
+          $listComo[] = $item;
         }
+
         if (mysql_num_rows($select)>0) {
-          return $listar;
-        }else {
-          echo "erro";
+          return $listComo;
+        }else{
+          echo "Nenhum Hotel Encontrado";
         }
 
 
