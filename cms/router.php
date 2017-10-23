@@ -179,7 +179,7 @@
                         break;
                 }
                 break;
-            
+
              case 'informacoes':
              require_once('controllers/informacoes_controller.php');
                 require_once('models/informacoes_class.php');
@@ -202,7 +202,7 @@
                 }
                 break;
 
-            
+
              case 'faq':
              require_once('controllers/faq_controller.php');
                 require_once('models/faq_class.php');
@@ -225,7 +225,7 @@
                 }
                 break;
 
-            
+
                case 'categoriafaq':
                 require_once('controllers/categoriafaq_controller.php');
                 require_once('models/categoriafaq_class.php');
@@ -248,8 +248,28 @@
                 }
                 break;
 
-            
-            
+                case 'tipoestadia':
+                require_once('controllers/tipoestadia_controller.php');
+                require_once('models/tipoestadia_class.php');
+
+                   $controller_tipoestadia = new ControllerTipoEstadia();
+                   switch($modo)
+                   {
+                       case 'inserir':
+                           $controller_tipoestadia->Inserir();
+                           break;
+                       case 'visualizar':
+                           $controller_tipoestadia->Visualizar();
+                           break;
+                       case 'excluir':
+                           $controller_tipoestadia->Excluir();
+                           break;
+                       case 'editar':
+                           $controller_tipoestadia->Editar();
+                           break;
+                   }
+                   break;
+
 
 
 
