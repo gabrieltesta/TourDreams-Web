@@ -9,7 +9,6 @@
     $row4 = $controller_hotel->BuscaComodidadesHotel();
     $row5 = $controller_hotel->BuscaQuarto();
 
-
     $cont = 0;
 
     while($cont<count($rs)){
@@ -156,23 +155,19 @@
                 <div class="textoQuarto"><?php echo($row5[$contador3]->descricao); ?></div>
                 <div class="comodidadesQuarto">
                     <h1>Inclusos neste quarto</h1>
-
+                    <?php
+                        $contador = 0;
+                        while($contador < 10){
+                    ?>
                     <div class="comodidadeDoQuarto">
                         <ul>
-                            <?php
-
-                                $row6 = $controller_hotel->BuscaComodidadesQuarto($row5[$contador3]->idQuarto);
-                                $contador = 0;
-                                while($contador < count($row6)){
-                            ?>
-                            <li><?php echo($row6[$contador]->comodidadeQuarto); ?></li>
-                            <?php
-                                    $contador++;
-                                }
-                            ?>
+                            <li>Wi-Fi</li>
                         </ul>
                     </div>
-
+                    <?php
+                            $contador++;
+                        }
+                    ?>
                 </div>
             </div>
 

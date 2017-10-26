@@ -224,7 +224,7 @@
                             <td><textarea name="txtDescricaoQuarto" placeholder="Descrição do Quarto" maxlength="300"><?php echo($descricao); ?></textarea></td>
                         </tr>
                         <tr>
-                            <td><input type="submit" name="btnCadastrarQuarto" value="ALTERAR"></td>
+                            <td><input type="submit" name="btnCadastrarQuarto" value="CADASTRAR"></td>
                         </tr>
 
                     </table>
@@ -244,7 +244,7 @@
 
             </div>
             <h2 id="nomeParceiro">
-                <?php echo($parceiro->nome); ?><a href="router.php?controller=deslogar"><img title="Logout" src="imagens/perfilusuario/logout.png" alt="Fazer Logout"></a><a href="router.php?controller=editarparceiro"><img title="Editar Perfil" src="imagens/perfilparceiro/edit.png" alt="Fazer Logout"></a>
+                <?php echo($parceiro->nome); ?><a href="router.php?controller=deslogar"><img title="Logout" src="imagens/perfilUsuario/logout.png" alt="Fazer Logout"></a><a href="router.php?controller=editarparceiro"><img title="Editar Perfil" src="imagens/perfilparceiro/edit.png" alt="Fazer Logout"></a>
             </h2>
 
         </div>

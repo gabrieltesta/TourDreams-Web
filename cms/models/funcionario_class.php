@@ -51,7 +51,8 @@
                                 if($rs = mysql_fetch_array($select)){
                                     $idLogin = $rs['idLogin'];
                                         $sql = "INSERT INTO tbl_funcionario(nomeFuncionario,idImagem,cpf,rg,emailFuncionario,idLogin,idNivelFuncionario) VALUES('".$funcionario->nome."',".$idImagem.",'".$funcionario->cpf."','".$funcionario->rg."','".$funcionario->email."',".$idLogin.",".$funcionario->idNivel.")";
-                                        mysql_query($sql);
+                                        echo($sql);
+										mysql_query($sql)or die(mysql_error());
                                 }
 
 

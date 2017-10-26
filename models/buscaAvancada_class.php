@@ -93,19 +93,42 @@
 
     public function SelectDaBuscaAvancada(){
 
-        $sql = 'select * from vw_buscaavancadahotel where idParceiro>='.$this->parceiro.' and cidade="'.$this->cidade.'" and idTipoEstadia>='.$this->estadia.' and qtdEstrelas<='.$this->qtdEstrelas.' and avaliacao >= 1 and preco>='.$this->preco.'';
+      $sqlHotel = "select * from tbl_comodidadeshotel";
+      $selectHotel = mysql_query($sqlHotel);
+
+      $listHotel = array();
+
+      while ($rs=mysql_fetch_array($selectHotel)) {
+
+        $itemHotel = new SelectBuscaAvancada();
+
+        $itemHotel->id=$rs['idComodidadeHotel'];
 
 
-      
+          if(isset($_GET['chk'.$itemHotel->id])){
+
+              $var = $itemHotel->id;
+              echo ($var);
+
+          }
+
+        $listHotel[] = $itemHotel;
+
+      }
+      return $listHotel;
+
+
+
+        echo ("jdbnjsa");
+        $sql = 'select * from vw_buscaavancada where idParceiro>='.$this->parceiro.' and cidade="'.$this->cidade.'" and idTipoEstadia>='.$this->estadia.' and qtdEstrelas<='.$this->qtdEstrelas.' and avaliacao >= 1 and preco>='.$this->preco.'';
+
+
         $select = mysql_query($sql);
-
-
-
         $cont = 0;
 
         $listComo = array();
 
-        //echo ($sql);
+        echo ($sql);
         while ($rs=mysql_fetch_array($select)) {
 
           $item =  new SelectBuscaAvancada();
@@ -120,6 +143,8 @@
           $item->nomeParceiro=$rs['nomeParceiro'];
           $item->hotel=$rs['hotel'];
           $item->qtdEstrelas=$rs['qtdEstrelas'];
+
+
 
           $listComo[] = $item;
         }

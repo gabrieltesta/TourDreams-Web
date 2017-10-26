@@ -20,7 +20,7 @@
         <section>
             <?php
                 require_once('views/menu.php');
-                require_once('views/faq/faq_view.php');
+                require_once('views/FAQ/faq_view.php');
              ?>
         </section>
     </body>

@@ -17,7 +17,7 @@
                 <input class="barra" size="80" placeholder="Buscar Destino" value="" name="txtBuscarDestino" >
             </td>
             <td>
-                <input class="botao"type="image" value="btnbuscar"  img src="Imagens/pesquisar.png" >
+                <input class="botao"type="image" value="btnbuscar"  img src="imagens/pesquisar.png" >
             </td>
           </tr>
         </table>

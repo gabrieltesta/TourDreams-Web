@@ -19,8 +19,7 @@
       $sql = "select p.idParceiro, p.nomeParceiro,  i.caminhoImagem
               from tbl_parceiro as p
               inner join tbl_imagem as i
-              on p.idImagem = i.idImagem LIMIT 5;
-              ";
+              on p.idImagem = i.idImagem LIMIT 5;";
 
       $select = mysql_query($sql);
       $cont = 0;

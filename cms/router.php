@@ -270,6 +270,66 @@
                    }
                    break;
 
+				   case 'nivel':
+					require_once('controllers/nivel_controller.php');
+					require_once('models/nivel_class.php');
+
+                   $controller_nivel = new ControllerNivel();
+                   switch($modo)
+                   {
+                       case 'inserir':
+                           $controller_nivel->Inserir();
+                           break;
+                       case 'visualizar':
+                           $controller_nivel->Visualizar();
+                           break;
+                       case 'excluir':
+                           $controller_nivel->Excluir();
+                           break;
+                       case 'editar':
+                           $controller_nivel->Editar();
+                           break;
+                   }
+                   break;
+
+                   case 'tipolocal':
+					require_once('controllers/tipolocal_controller.php');
+					require_once('models/tipolocal_class.php');
+
+                   $controller_tipolocal = new ControllerTipoLocal();
+                   switch($modo)
+                   {
+                       case 'inserir':
+                           $controller_tipolocal->Inserir();
+                           break;
+                       case 'visualizar':
+                           $controller_tipolocal->Visualizar();
+                           break;
+                       case 'excluir':
+                           $controller_tipolocal->Excluir();
+                           break;
+                       case 'editar':
+                           $controller_tipolocal->Editar();
+                           break;
+                   }
+                   break;
+
+                   case 'tipolocalcidade':
+					require_once('controllers/tipolocal_controller.php');
+					require_once('models/tipolocal_class.php');
+
+                   $controller_tipolocalcidade = new ControllerTipoLocal();
+                   switch($modo)
+                   {
+                       case 'visualizarlocalcidade':
+                           $controller_tipolocalcidade->VisualizarLocalCidade();
+                           break;
+                       case 'editarlocalcidade':
+                           $controller_tipolocalcidade->EditarLocalCidade();
+                           break;
+                   }
+                   break;
+
 
 
 

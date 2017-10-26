@@ -89,19 +89,20 @@ body{
 #tblTitulo{
     height: 100%;
     width: 100%;
-    font-family: Gadugi;
+    font-family: Cordiau;
+
     line-height: 80px;
     color: #000;
 }
 
 #tdnomeHotel{
     text-align: left;
-    font-size: 25px;
+    font-size: 40px;
 
 }
 
 #tdlocalHotel{
-
+font-size: 25px;
 
 }
 
@@ -117,7 +118,7 @@ body{
 }
 
 #tdAvaliacao{
-    font-size: 25px;
+    font-size: 30px;
     text-align: right;
 
 }
@@ -174,8 +175,8 @@ body{
     width: 388px;
     height: 430px;
     margin-left: 10px;
-    overflow: auto;
-    text-align: center;
+    word-wrap: break-word;
+    text-align: justify;
     font-size: 15px;
     font-family: SourceSansRegular;
 }
@@ -301,11 +302,11 @@ body{
 
 .comodidadeDoQuarto ul {
     -moz-column-count: 1;
-    -moz-column-gap: 20px;
+    -moz-column-gap: 10px;
     -webkit-column-count:1;
-    -webkit-column-gap: 20px;
+    -webkit-column-gap: 10px;
     column-count: 1;
-    column-gap: 20px;
+    column-gap: 10px;
 }
 
 .divPreco{

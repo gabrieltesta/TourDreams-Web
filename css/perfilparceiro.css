@@ -234,7 +234,6 @@ body{
     position: absolute;
     z-index: 2;
     display: none;
-    max-width: 1920px;
 }
 .bgCadastroQuarto1{
     height: 950px;
@@ -246,7 +245,6 @@ body{
     position: absolute;
     z-index: 2;
     display: none;
-    max-width: 1920px;
 }
 
 .modalCadastroQuarto{

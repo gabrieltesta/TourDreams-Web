@@ -1,11 +1,11 @@
 section
 {
     background-color: #fcfcf4;
-    height: 830px;
+    height: 826px;
 }
 
 .sectionfuncionario{
-    width:100%;
+    width:85%;
     height:100%;
     overflow: auto;
 }
@@ -51,7 +51,7 @@ section
 #btnBusca{
     width: 9.6%;
     height: 113%;
-    background-color: blue;
+
     float: left;
 }
 
@@ -115,8 +115,9 @@ section
 }
 
 .bgModalFuncionario{
-    width: 100%;
+    width:85%;
     height: 830px;
+
     position: absolute;
     background-color: rgba(0,0,0,0.5);
     display: none;

@@ -37,7 +37,6 @@
 					<tr>
 						<td>
 							<select name="slcTipoEstadia">
-								<option value="0">Selecione uma estadia</option>
 								<?php
 
 									require_once ('controllers/buscaAvancada_controller.php');
@@ -49,7 +48,7 @@
 
 
 								 ?>
-								 <option value="<?php echo ($rows[$cont]->idEstadia); ?>"><?php echo ($rows[$cont]->estadia); ?></option>
+								 <option value="<?php echo ($rows[$cont]->estadia); ?>"><?php echo ($rows[$cont]->estadia); ?></option>
 
 
 								 <?php
@@ -67,7 +66,7 @@
 						<td>
 							<select name="slcEstrela">
 
-								<option value="5">Selecione a quantidade de estrelas</option>
+								<option value="0">Selecione a quantidade de estrelas</option>
 								<option value="1">1 Estrela</option>
 								<option value="2">2 Estrelas</option>
 								<option value="3">3 Estrelas</option>
@@ -82,7 +81,6 @@
 					<tr>
 						<td>
 							<select name="slcParceiro">
-								<option value="0">Selecione um Parceiro</option>
 								<?php
 
 								require_once('controllers/buscaAvancada_controller.php');
@@ -96,8 +94,8 @@
 
 
 								 ?>
-
-								<option value="<?php echo ($rows[$cont]->idParceiro); ?>"><?php echo ($rows[$cont]->parceiro); ?></option>
+								 <option value="0">Selecione um Parceiro</option>
+								<option value="<?php echo ($rows[$cont]->parceiro); ?>"><?php echo ($rows[$cont]->parceiro); ?></option>
 
 								<?php
 								$cont +=1;
@@ -155,7 +153,7 @@
 
 
 						 ?>
-						<li><input type="checkbox" name="<?php echo('comodidadeHotel'.$rows[$cont]->comodidadesHotel) ?>" value="<?php echo ($rows[$cont]->idComodidadeHotel) ?>"><label><?php echo ($rows[$cont]->comodidadesHotel) ?></label></li>
+						<li><input type="checkbox" name="<?php echo('chk'.$rows[$cont]->idComodidadeHotel) ?>" value="<?php echo ($rows[$cont]->comodidadesHotel) ?>"><label><?php echo ($rows[$cont]->comodidadesHotel) ?></label></li>
 						<?php
 						$cont +=1;
 						}
@@ -174,7 +172,7 @@
 
 
 						 ?>
-						<li><input type="checkbox" name="<?php echo('comodidadeHotel'.$rows[$cont]->idComodidadeQuarto)?>" value="<?php echo ($rows[$cont]->idComodidadeQuarto); ?>"><label><?php echo ($rows[$cont]->comodidadesQuarto); ?></label></li>
+						<li><input type="checkbox" name="<?php echo('comodidadeHotel'.$rows[$cont]->idComodidadeQuarto)?>" value="<?php echo ($rows[$cont]->comodidadesQuarto); ?>"><label><?php echo ($rows[$cont]->comodidadesQuarto); ?></label></li>
 
 						<?php
 						$cont+=1;

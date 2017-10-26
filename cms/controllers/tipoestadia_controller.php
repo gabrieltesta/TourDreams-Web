@@ -23,7 +23,7 @@
                 $estadia_class->estadia = addslashes($estadia);
                 $estadia_class->InsertEstadia();
 
-                header('location:TipoEstadia.php');
+                header('location:tipoEstadia.php');
 
             }
         }
@@ -38,7 +38,7 @@
             $estadia_class->idEstadia = $idEstadia;
             $estadia_class->DeleteEstadia();
 
-            header('location:TipoEstadia.php');
+            header('location:tipoEstadia.php');
 
         }
 
@@ -51,7 +51,7 @@
             $estadia_class->idEstadia = $idEstadia;
             $result =  $estadia_class->SelectById();
 
-            require_once('TipoEstadia.php');
+            require_once('tipoEstadia.php');
 
         }
 
@@ -67,7 +67,7 @@
                 $estadia_class->estadia = addslashes($estadia);
                 $estadia_class->UpdateEstadia();
 
-                header('location:TipoEstadia.php');
+                header('location:tipoEstadia.php');
 
             }
         }

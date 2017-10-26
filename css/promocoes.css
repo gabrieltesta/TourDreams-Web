@@ -50,6 +50,7 @@ section a:nth-of-type(1)
   position: absolute;
   z-index: 97;
   font-size: 128pt;
+  left: 0;
   color: #fff;
   margin-left: 100px;
   margin-top: 260px;
