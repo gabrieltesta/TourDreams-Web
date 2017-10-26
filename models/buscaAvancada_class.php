@@ -98,6 +98,8 @@
 
       $listHotel = array();
 
+      $IdComodidades ="0";
+
       while ($rs=mysql_fetch_array($selectHotel)) {
 
         $itemHotel = new SelectBuscaAvancada();
@@ -107,20 +109,51 @@
 
           if(isset($_GET['chk'.$itemHotel->id])){
 
-              $var = $itemHotel->id;
-              echo ($var);
+              $IdComodidades = $IdComodidades.','.$itemHotel->id;
 
           }
 
-        $listHotel[] = $itemHotel;
+        //$listHotel[] = $itemHotel;
 
       }
-      return $listHotel;
 
 
 
-        echo ("jdbnjsa");
-        $sql = 'select * from vw_buscaavancada where idParceiro>='.$this->parceiro.' and cidade="'.$this->cidade.'" and idTipoEstadia>='.$this->estadia.' and qtdEstrelas<='.$this->qtdEstrelas.' and avaliacao >= 1 and preco>='.$this->preco.'';
+
+
+        $sql = "select distinct * from vw_busca";
+
+        $where = " where cidade='".$this->cidade."'";
+
+        if($this->parceiro > 0){
+              $where = $where ." and idParceiro=".$this->parceiro;
+        }
+
+        if($this->estadia > 0){
+              $where = $where ." and idTipoEstadia=".$this->estadia;
+        }
+
+        if($this->qtdEstrelas > 0 ){
+                $where = $where ." and qtdEstrelas =".$this->qtdEstrelas;
+        }
+
+        if($this->avaliacao > 0 ){
+                $where = $where ." and avaliacao >=".$this->avaliacao;
+        }
+
+
+        if($IdComodidades !="0"){
+          $where = $where ." and idComodidadeHotel in(".$IdComodidades.")";
+        }
+
+        $sql = $sql.$where.";";
+
+
+        //echo $where;
+        //echo $sql;
+
+
+    //     where idParceiro>='.$this->parceiro.' and cidade="'.$this->cidade.'" and idTipoEstadia>='.$this->estadia.' and qtdEstrelas<='.$this->qtdEstrelas.' and avaliacao >= 1 and preco>='.$this->preco.'';
 
 
         $select = mysql_query($sql);
@@ -128,7 +161,7 @@
 
         $listComo = array();
 
-        echo ($sql);
+
         while ($rs=mysql_fetch_array($select)) {
 
           $item =  new SelectBuscaAvancada();
@@ -138,7 +171,7 @@
           $item->nomeQuarto=$rs['nome'];
           $item->bairro=$rs['bairro'];
           $item->logradouro=$rs['logradouro'];
-          $item->preco=$rs['preco'];
+          $item->preco=$rs['valorDiario'];
           $item->cidade=$rs['cidade'];
           $item->nomeParceiro=$rs['nomeParceiro'];
           $item->hotel=$rs['hotel'];
@@ -150,6 +183,7 @@
         }
 
         if (mysql_num_rows($select)>0) {
+
           return $listComo;
         }else{
           echo "Nenhum Hotel Encontrado";

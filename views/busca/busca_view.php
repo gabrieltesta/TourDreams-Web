@@ -193,7 +193,7 @@
                             <tr>
                                 <td>
                                     <h3 class="desconto">R$ 200,00</h3>
-                                    <h2>R$ 150,00</h2>
+                                    <h2>R$ <?php echo($rows[$cont]->preco) ?>,00</h2>
                                 </td>
                             </tr>
                             <tr>

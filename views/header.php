@@ -48,7 +48,7 @@
 
 
 								 ?>
-								 <option value="<?php echo ($rows[$cont]->estadia); ?>"><?php echo ($rows[$cont]->estadia); ?></option>
+								 <option value="<?php echo ($rows[$cont]->idEstadia); ?>"><?php echo ($rows[$cont]->estadia); ?></option>
 
 
 								 <?php
@@ -81,6 +81,7 @@
 					<tr>
 						<td>
 							<select name="slcParceiro">
+								 <option value="0">Selecione um Parceiro</option>
 								<?php
 
 								require_once('controllers/buscaAvancada_controller.php');
@@ -94,8 +95,8 @@
 
 
 								 ?>
-								 <option value="0">Selecione um Parceiro</option>
-								<option value="<?php echo ($rows[$cont]->parceiro); ?>"><?php echo ($rows[$cont]->parceiro); ?></option>
+
+								<option value="<?php echo ($rows[$cont]->idParceiro); ?>"><?php echo ($rows[$cont]->parceiro); ?></option>
 
 								<?php
 								$cont +=1;
@@ -115,7 +116,7 @@
 								<option value="25">Menor que 25</option>
 								<option value="50">Menor que 50</option>
 								<option value="75">Menor que 75</option>
-								<option value="100">Acima de 75</option>
+								<option value="75">Acima de 75</option>
 							</select>
 						</td>
 					</tr>
