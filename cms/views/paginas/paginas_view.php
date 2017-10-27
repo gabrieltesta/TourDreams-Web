@@ -4,7 +4,7 @@
     </div>
     <div class="conteudo">
         <div class="paginas">
-            <div class="nomePagina" onclick="window.location='#'">
+            <div class="nomePagina" onclick="window.location='paginahome.php'">
                 <h1>Home</h1>
                 <div class="descPg">
                     Administre a Home!

@@ -1,32 +1,107 @@
-#titulo{
-    
-    font-size:50px;
-    font-family: Ebrima;
-    font-style: normal;
-    color:#0e2568;
-    margin-left: 515px;
+section{
+    height: 828px;
+
+}
+.conteudo{
+    height: 100%;
+    width: 85%;
+}
+
+.tituloPg{
+    height: 10%;
+    width: 100%;
+    text-align: center;
+    line-height: 75px;
+    font-family: SourceSansRegular;
+    font-size: 33px;
+
+}
+
+.content{
+    height: 90%;
+    width: 100%;
+
+}
+
+.divForm{
+    margin-left: auto;
+    margin-right: auto;
+    height: 90%;
+    width: 90%;
+    /*background-color: blue;*/
+}
+
+form{
+    height: 100%;
+    width: 100%;
+}
+
+.form{
+    height: 80%;
+    width: 50%;
+
+    float: left;
+
+}
+
+.form:first-of-type{
+    border-right: 1px solid #ccc;
+}
+
+.form:not(:first-of-type){
+    width: 49.9%;
+}
+
+.botao{
     margin-top: 30px;
-  
+    height: 8%;
+    width: 150px;
+    margin-left: 660px;
+
+    float: left;
 }
 
-.table{
-    height: 900px;
-    width: 900px;
-    margin-left: 20px;
-    
-}
-
-.td{
-    color: #ffffff;
-    width:350px;
-    height: 25px;
-    font-size: 25px;
-    background-color: burlywood;
-}
-.btnSalvar{
-    background-color: blanchedalmond;
-    height: 45px;
-    width: 95px;
-    margin-left: 55px;
+.botao input{
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    border: 2px solid #4682b4;
+    border-radius: 8px;
+    color:#4682b4;
+    font-family: RalewayRegular;
+    font-weight: bold;
     font-size: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+}
+
+.botao input:hover{
+    background-color: #4682b4;
+    border: 2px solid #ccc;
+    color:#fff;
+    transition: 0.2s;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+}
+
+.form table{
+    margin-top: 40px;
+    height: 80%;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.input{
+    border-bottom: 1px solid #ccc;
+}
+
+.form table label{
+
+    font-family: SourceSansRegular;
+    font-size: 18px;
+
 }

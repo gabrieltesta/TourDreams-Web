@@ -1,74 +1,74 @@
-<?php
-    $botao="Salvar";
-    
+<div class="conteudo">
 
-?>
+    <div class="tituloPg">
+        Administração da Homepage
+    </div>
+    <div class="content">
 
+        <div class="divForm">
+            <form class="" action="router.php?controller=home" enctype="multipart/form-data" method="post">
+                <div class="form">
+                    <table>
+                        <tr>
+                            <td><label>Imagem de fundo</label></td>
+                        </tr>
+                        <tr>
+                            <td class="input"><input type="file" name="fileBg" value=""></td>
+                        </tr>
+                        <tr>
+                            <td><label>Milhas Travel</label></td>
+                        </tr>
+                        <tr>
+                            <td class="input"><input type="file" name="fileMilhas" value=""></td>
+                        </tr>
+                        <tr>
+                            <td><label>Melhores Destinos</label></td>
+                        </tr>
+                        <tr>
+                            <td class="input"><input type="file" name="fileMelhoresDestinos" value=""></td>
+                        </tr>
+                        <tr>
+                            <td><label>Norte</label></td>
+                        </tr>
+                        <tr>
+                            <td><input type="file" name="fileNorte" value=""></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="form">
+                    <table>
+                        <tr>
+                            <td><label>Nordeste</label></td>
+                        </tr>
+                        <tr>
+                            <td class="input"><input type="file" name="fileNordeste" value=""></td>
+                        </tr>
+                        <tr>
+                            <td><label>Centro-Oeste</label></td>
+                        </tr>
+                        <tr>
+                            <td class="input"><input type="file" name="fileCentroOeste" value=""></td>
+                        </tr>
+                        <tr>
+                            <td><label>Sudeste</label></td>
+                        </tr>
+                        <tr>
+                            <td class="input"><input type="file" name="fileSudeste" value=""></td>
+                        </tr>
+                        <tr>
+                            <td><label>Sul</label></td>
+                        </tr>
+                        <tr>
+                            <td><input type="file" name="fileSul" value=""></td>
+                        </tr>
+                    </table>
 
-<div>
-    
-<p id="titulo">Editar Homepage</p>
-
-
-    
-<form name="frmpaginahome"   method="post" enctype="multipart/form-data">
-        <div class ="table">
-            <table>
-                <tr >
-                    <td class="td" >
-                        <p> Imagem de fundo:</p>
-                    </td>
-
-                    <td class="td"><input type="file" name="fileFoto"></td>
-                </tr>
-                 <tr >
-                    <td class="td" >
-                        <p> Imagem Milhas :</p>
-
-                    </td>
-                     <td class="td"><input type="file" name="fileFoto"></td>
-                </tr>
-                 <tr >
-                    <td class="td" >
-                        <p> Imagem Melhores Destinos :</p>
-                    </td>
-                     <td class="td"><input type="file" name="fileFoto"></td>
-                </tr>
-                 <tr >
-                    <td class="td" >
-                        <p> Imagem Norte :</p>
-                    </td>
-                     <td class="td"><input type="file" name="fileFoto"></td>
-                </tr>
-                <tr >
-                    <td class="td" >
-                        <p> Imagem Nordeste :</p>
-                    </td>
-                    <td class="td"><input type="file" name="fileFoto"></td>
-                </tr>
-                <tr >
-                    <td class="td" >
-                        <p> Imagem Centro-Oeste :</p>
-                    </td>
-                    <td class="td"><input type="file" name="fileFoto"></td>
-                </tr>
-                <tr >
-                    <td class="td" >
-                        <p> Imagem Sudeste :</p>
-                    </td>
-                    <td class="td"><input type="file" name="fileFoto"></td>
-                </tr>
-                <tr >
-                    <td class="td" >
-                        <p> Imagem Sul :</p>
-                    </td>
-                    <td class="td"><input type="file" name="fileFoto"></td>
-                </tr>
-                 <td  ><input  class="btnSalvar" type="submit" name="btnSalvar" value="Salvar"></td>
-                
-            </table>
-
+                </div>
+                <div class="botao">
+                    <input type="submit" name="" value="EDITAR">
+                </div>
+            </form>
         </div>
-    </form>
-</div>
 
+    </div>
+</div>
