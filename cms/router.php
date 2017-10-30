@@ -330,6 +330,15 @@
                    }
                    break;
 
+                   case 'home':
+                        require_once('controllers/paginahome_controller.php');
+                        require_once('models/paginahome_class.php');
+
+                        $controller_tipolocalcidade = new ControllerPaginaHome();
+                        $controller_tipolocalcidade->EditarHome();
+
+                   break;
+
 
 
 

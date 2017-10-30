@@ -1,5 +1,16 @@
+<?php
+
+    require_once('controllers/home_controller.php');
+    $home_controller = new ControllerHome();
+    $rows = $home_controller->ListarHome();
+
+    $cont = 0;
+
+        $imagem = explode("*", $rows);
+?>
+
 <!--Conteúdo superior-->
-<section id="bgConteudo" class="wow fadeIn">
+<section style="background-image: url('<?php echo($imagem[0]); ?>');" id="bgConteudo" class="wow fadeIn">
     <div id="conteudoSuperior" class="wow fadeIn" data-wow-delay="0.2s">
         <!--Nome do estado selecionado-->
         <div id="descricaoEstado">
@@ -46,12 +57,12 @@
         <div id="containerBoxes">
             <a href="#">
                 <div class="smallBox">
-                    <img alt="MilhasTravel" src="imagens/homepage/mtf.jpg" onmousedown="return false">
+                    <img alt="MilhasTravel" src="<?php echo($imagem[1]); ?>" onmousedown="return false">
                 </div>
             </a>
             <a href="#">
                 <div class="smallBox">
-                    <img alt="Melhores Destinos" src="imagens/homepage/melhoresdestinos.jpg" onmousedown="return false">
+                    <img alt="Melhores Destinos" src="<?php echo($imagem[2]); ?>" onmousedown="return false">
                 </div>
             </a>
         </div>
@@ -66,23 +77,23 @@
     <div id="conteudoInferior" class="wow fadeInUp" data-wow-delay="0.2s">
         <div class="longBox" style="">
             <div>Norte</div>
-            <img src="imagens/homepage/norte.png" alt="Norte" onmousedown="return false">
+            <img src="<?php echo($imagem[3]); ?>" alt="Norte" onmousedown="return false">
         </div>
         <div class="longBox" style="">
             <div>Nordeste</div>
-            <img src="imagens/homepage/nordeste.png" alt="Norte" onmousedown="return false">
+            <img src="<?php echo($imagem[4]); ?>" alt="Norte" onmousedown="return false">
         </div>
         <div class="longBox" style="">
             <div>Centro-Oeste</div>
-            <img src="imagens/homepage/centrooeste.png" alt="Norte" onmousedown="return false">
+            <img src="<?php echo($imagem[5]); ?>" alt="Norte" onmousedown="return false">
         </div>
         <div class="longBox" style="">
             <div>Sudeste</div>
-            <img src="imagens/homepage/sudeste.png" alt="Norte" onmousedown="return false">
+            <img src="<?php echo($imagem[6]); ?>" alt="Norte" onmousedown="return false">
         </div>
         <div class="longBox" style="">
             <div>Sul</div>
-            <img src="imagens/homepage/sul.png" alt="Norte" onmousedown="return false">
+            <img src="<?php echo($imagem[7]); ?>" alt="Norte" onmousedown="return false">
         </div>
     </div>
     <!---->

@@ -123,7 +123,12 @@
 
         $sql = "select distinct * from vw_busca";
 
+
         $where = " where cidade='".$this->cidade."'";
+
+        if($this->cidade != null){
+              $where = $where ." and cidade=".$this->cidade;
+        }
 
         if($this->parceiro > 0){
               $where = $where ." and idParceiro=".$this->parceiro;
@@ -141,20 +146,22 @@
                 $where = $where ." and avaliacao >=".$this->avaliacao;
         }
 
+        if($this->preco != null ){
+
+                $where = $where ." and valorDiario ".$this->preco;
+        }
+
 
         if($IdComodidades !="0"){
           $where = $where ." and idComodidadeHotel in(".$IdComodidades.")";
         }
 
+
         $sql = $sql.$where.";";
 
 
         //echo $where;
-        //echo $sql;
-
-
-    //     where idParceiro>='.$this->parceiro.' and cidade="'.$this->cidade.'" and idTipoEstadia>='.$this->estadia.' and qtdEstrelas<='.$this->qtdEstrelas.' and avaliacao >= 1 and preco>='.$this->preco.'';
-
+        echo $sql;
 
         $select = mysql_query($sql);
         $cont = 0;
@@ -175,8 +182,8 @@
           $item->cidade=$rs['cidade'];
           $item->nomeParceiro=$rs['nomeParceiro'];
           $item->hotel=$rs['hotel'];
+          $item->imagemHotel=$rs['caminhoImagem'];
           $item->qtdEstrelas=$rs['qtdEstrelas'];
-
 
 
           $listComo[] = $item;

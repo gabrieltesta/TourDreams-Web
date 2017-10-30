@@ -55,6 +55,7 @@
       $preco = $_GET['slcPreco'];
 
 
+
       require_once ('models/buscaAvancada_class.php');
       $lstBuscaAvancada = new SelectBuscaAvancada();
       $lstBuscaAvancada->cidade=$cidade;

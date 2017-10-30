@@ -1,5 +1,5 @@
 section{
-    height: 828px;
+    height: 910px;
 
 }
 .conteudo{
@@ -26,7 +26,7 @@ section{
 .divForm{
     margin-left: auto;
     margin-right: auto;
-    height: 90%;
+    height: 100%;
     width: 90%;
     /*background-color: blue;*/
 }
@@ -75,6 +75,7 @@ form{
     transition: 0.2s;
     -webkit-transition: 0.2s;
     -moz-transition: 0.2s;
+
 }
 
 .botao input:hover{
@@ -99,9 +100,69 @@ form{
     border-bottom: 1px solid #ccc;
 }
 
+
+.input input[type="file"]{
+    float: left;
+    margin-top: 30px;
+}
+
 .form table label{
 
     font-family: SourceSansRegular;
     font-size: 18px;
 
+}
+
+.imgPreview1{
+    height:90px;
+    width: 200px;
+    margin-left: 30px;
+    float: left;
+}
+.imgPreview2{
+    height:100px;
+    width: 100px;
+    margin-left: 30px;
+    float: left;
+}
+.imgPreview3{
+    height:100px;
+    width: 100px;
+    margin-left: 30px;
+    float: left;
+}
+.imgPreview4{
+    height:130px;
+    width: 100px;
+    margin-left: 30px;
+    float: left;
+}
+.imgPreview5{
+    height:130px;
+    width: 100px;
+    margin-left: 30px;
+    float: left;
+}
+.imgPreview6{
+    height:130px;
+    width: 100px;
+    margin-left: 30px;
+    float: left;
+}
+.imgPreview7{
+    height:130px;
+    width: 100px;
+    margin-left: 30px;
+    float: left;
+}
+.imgPreview8{
+    height:130px;
+    width: 100px;
+    margin-left: 30px;
+    float: left;
+}
+
+img{
+    height: 100%;
+    width: 100%;
 }

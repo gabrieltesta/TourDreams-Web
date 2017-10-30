@@ -16,7 +16,7 @@
 
     public function SelectByDestino($buscaRapida){
 
-      $sql="Select * from vw_buscarapida where cidade like '%".$buscaRapida->destino."%'";
+      $sql="Select * from vw_busca where cidade like '%".$buscaRapida->destino."%'";
 
       $cont = 0;
 
@@ -30,10 +30,11 @@
         $listar[$cont]->idHotel = $rs['idHotel'];
         $listar[$cont]->hotel = $rs['hotel'];
         $listar[$cont]->cidade= $rs['cidade'];
-        $listar[$cont]->uf= $rs['uf'];
+        $listar[$cont]->preco= $rs['valorDiario'];
         $listar[$cont]->qtdEstrelas= $rs['qtdEstrelas'];
         $listar[$cont]->rua = $rs['logradouro'];
         $listar[$cont]->bairro = $rs['bairro'];
+        $listar[$cont]->imagemHotel = $rs['caminhoImagem'];
 
         $cont++;
       }

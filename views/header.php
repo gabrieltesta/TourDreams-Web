@@ -17,7 +17,7 @@
  ?>
 <!--Modal de busca avançada-->
 <div id="buscaAvancadaBackground">
-	<form action="busca.php?modo=avancada">
+	<form action="busca.php?modo=avancada" method="POST">
 		<div id="buscaAvancadaBox">
 			<div id="fecharBusca"><h4>Busca Avançada</h4><span onclick="abrirBusca()">X</span></div>
 			<div id="conteudoBuscaEsquerda">
@@ -37,6 +37,7 @@
 					<tr>
 						<td>
 							<select name="slcTipoEstadia">
+								<option value="0">Selecione uma estadia</option>
 								<?php
 
 									require_once ('controllers/buscaAvancada_controller.php');
@@ -126,12 +127,12 @@
 					<tr>
 						<td>
 							<select name="slcPreco">
-								<option value="0">Selecione um preço</option>
-								<option value="100">R$ 0,00 - R$ 99,99</option>
-								<option value="300">R$ 100,00 - R$ 299,99</option>
-								<option value="500">R$ 300,00 - R$ 499,99</option>
-								<option value="1000">R$ 500,00 - R$ 999,99</option>
-								<option value="1000">Acima de R$ 1000,00</option>
+								<option value=">0">Selecione um preço</option>
+								<option value="<100">R$ 0,00 - R$ 99,99</option>
+								<option value="<300">R$ 100,00 - R$ 299,99</option>
+								<option value="<500">R$ 300,00 - R$ 499,99</option>
+								<option value="<1000">R$ 500,00 - R$ 999,99</option>
+								<option value=">1000">Acima de R$ 1000,00</option>
 							</select>
 						</td>
 					</tr>
