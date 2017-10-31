@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="paginas">
-            <div class="nomePagina" onclick="window.location='#'">
+            <div class="nomePagina" onclick="window.location='paginaSobrenos.php'">
                 <h1>Sobre Nós</h1>
                 <div class="descPg">
                     Administre a Sobre Nós!
@@ -27,9 +27,9 @@
         </div>
         <div class="paginas">
             <div class="nomePagina" onclick="window.location='#'">
-                <h1>Nossos Parceiros</h1>
+                <h1>Landing Page</h1>
                 <div class="descPg">
-                    Administre a Nossos Parceiros!
+                    Administre a Landing Page!
                 </div>
                 <div class="botaoRef">
                     IR AGORA!

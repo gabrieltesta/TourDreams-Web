@@ -58,19 +58,19 @@
                             <td><label>Centro-Oeste</label></td>
                         </tr>
                         <tr>
-                            <td class="input"><input type="file" name="fileCentroOeste" value=""><div class="imgPreview6"><img class="img" alt="" src="../<?php echo($imagem[5]); ?>"></td>
+                            <td class="input"><input onchange="readURL(this,6)" type="file" name="fileCentroOeste" value=""><div class="imgPreview6"><img class="img" alt="" src="../<?php echo($imagem[5]); ?>"></td>
                         </tr>
                         <tr>
                             <td><label>Sudeste</label></td>
                         </tr>
                         <tr>
-                            <td class="input"><input type="file" name="fileSudeste" value=""><div class="imgPreview7"><img class="img" alt="" src="../<?php echo($imagem[6]); ?>"></td>
+                            <td class="input"><input onchange="readURL(this,7)" type="file" name="fileSudeste" value=""><div class="imgPreview7"><img class="img" alt="" src="../<?php echo($imagem[6]); ?>"></td>
                         </tr>
                         <tr>
                             <td><label>Sul</label></td>
                         </tr>
                         <tr>
-                            <td style="border-bottom:0px;" class="input"><input type="file" name="fileSul" value=""><div class="imgPreview8"><img class="img" alt="" src="../<?php echo($imagem[7]); ?>"></td>
+                            <td style="border-bottom:0px;" class="input"><input onchange="readURL(this,8)" type="file" name="fileSul" value=""><div class="imgPreview8"><img class="img" alt="" src="../<?php echo($imagem[7]); ?>"></td>
                         </tr>
                     </table>
 

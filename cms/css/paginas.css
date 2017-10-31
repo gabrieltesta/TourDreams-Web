@@ -44,8 +44,8 @@ section{
 
 }
 .paginas:nth-of-type(3){
-    background-image: url('../imagens/aperto.jpg');
-    background-position: -140px 0px;
+    background-image: url('../imagens/landing.jpg');
+
 }
 .paginas:nth-of-type(4){
     background-image: url('../imagens/viajante.jpg');
