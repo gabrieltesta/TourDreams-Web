@@ -176,9 +176,26 @@
                     <h3>Diárias de</h3>
                     <h1>R$ <?php echo($preco); ?></h1>
                 </div>
-                <div class="botaoReservar">
-                    <a href="reserva.php"><h1>RESERVAR</h1></a>
-                </div>
+                <?php
+                    if(isset($_SESSION['login'])){
+                        if($_SESSION['login'] == 'true'){
+                ?>
+                            <div class="botaoReservar">
+                                <a href="reserva.php"><h1>RESERVAR</h1></a>
+                            </div>
+
+                <?php
+                        }
+                    }else{
+
+                        $_SESSION['action'] = 'reservar';
+                ?>
+                    <div class="botaoReservar">
+                        <a href="Login.php"><h1>RESERVAR</h1></a>
+                    </div>
+                <?php
+                    }
+                ?>
             </div>
 
 

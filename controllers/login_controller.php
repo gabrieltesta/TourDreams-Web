@@ -8,6 +8,7 @@ class ControllerLogin
         */
         if ($_SERVER['REQUEST_METHOD'] == 'POST')
         {
+            
             $login = $_POST['txtLogin'];
             $senha = $_POST['txtSenha'];
 
