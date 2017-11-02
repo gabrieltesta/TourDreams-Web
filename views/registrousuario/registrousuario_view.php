@@ -266,7 +266,7 @@
                     <td><input type="email" name="txtEmail" required id="txtEmail"></td>
                 </tr>
                 <tr>
-                    <td>Selecione um: </td>
+                    <td style="color:#fff;">Selecione um: </td>
                 </tr>
                 <tr>
                     <td><input type="radio" name="radDoc" value="cpf" id="radCpf" checked onclick="abrirCPF()"><label for="radDoc">CPF</label></td>
@@ -298,7 +298,7 @@
             </table>
             <table id="tblRegistroUsuario3">
                 <tr>
-                    <td>Qual o seu local preferido de viagem?*</td>
+                    <td style="color:#fff;">Qual o seu local preferido de viagem?*</td>
                 </tr>
                 <tr>
                     <td><input type="radio" name="radLocal" value="3" checked><label for="radLocal">Campo</label></td>

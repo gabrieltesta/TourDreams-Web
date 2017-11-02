@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="css/animate.css">
 		<link rel="stylesheet" href="css/login.css">
         <link rel="stylesheet" href="js/jqueryui/jquery-ui.css">
+        <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
         <script src="js/jquery-3.2.1.min.js" charset="utf-8"></script>
         <script src="js/wow.min.js"></script>
         <script src="js/jqueryui/jquery-ui.min.js" charset="utf-8"></script>

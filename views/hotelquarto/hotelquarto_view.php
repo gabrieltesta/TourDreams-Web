@@ -190,9 +190,9 @@
 
                         $_SESSION['action'] = 'reservar';
                 ?>
-                    <div class="botaoReservar">
-                        <a href="Login.php"><h1>RESERVAR</h1></a>
-                    </div>
+                    <a href="Login.php"><div class="botaoReservar">
+                        <h1>RESERVAR</h1>
+                    </div></a>
                 <?php
                     }
                 ?>
