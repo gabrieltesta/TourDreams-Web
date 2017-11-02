@@ -19,9 +19,14 @@
             }
             if(isset($_POST['btnLogin']))                                       //Verifica se o botão de login foi acionado
             {
+
+                $action = $_GET['action'];
+
+
                 require_once('controllers/login_controller.php');
                 require_once('models/login_class.php');
                 $controller_login = new ControllerLogin;
+                $controller_login->action = $action;
                 $controller_login->Autenticar();
             }
             break;

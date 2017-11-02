@@ -8,7 +8,7 @@ class ControllerLogin
         */
         if ($_SERVER['REQUEST_METHOD'] == 'POST')
         {
-            
+
             $login = $_POST['txtLogin'];
             $senha = $_POST['txtSenha'];
 
@@ -28,8 +28,10 @@ class ControllerLogin
             }
             else
             {
+                $firstname = explode(" ",$login->nome);
+
                 session_start();
-                $_SESSION['nome'] = $login->nome;
+                $_SESSION['nome'] = $firstname[0];
                 $_SESSION['idLogin'] = $login->idLogin;
                 $_SESSION['idParceiro'] = $login->idParceiro;
                 $_SESSION['tipoLogin'] = $login->tipoLogin;
@@ -37,7 +39,13 @@ class ControllerLogin
 
                 if($login->tipoLogin == 'usuario')
                 {
-                    header('location: perfilUsuario.php');
+                    if($this->action == 'reservar'){
+                        header('location: reserva.php');
+                    }else if($this->action == 'melhoresdestinos'){
+                        header('location: melhoresDestinos.php');
+                    }else{
+                        header('location:perfilusuario.php');
+                    }
                 }
                 else if($login->tipoLogin == 'parceiro')
                 {

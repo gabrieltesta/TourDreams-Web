@@ -241,7 +241,7 @@
 					?>
 					<div class="headerBtn" style="border-left: 2px solid #fff;">
 						<img src="imagens/user.svg" alt="Login" draggable="false" onmousedown="return false" style="user-drag: none" onclick="<?php if($_SESSION['tipoLogin'] == 'usuario'){echo ('abrirPerfilUsuario()');}else{echo ('abrirPerfilParceiro('.$_SESSION['idParceiro'].')');} ?>">
-						Perfil
+						<?php echo($_SESSION['nome']); ?>
 					</div>
 					<?php
 				}
@@ -271,7 +271,18 @@
 				<li><a href="homepage.php">HOME</a></li>
 				<li><a href="sobrenos.php">SOBRE NÓS</a></li>
 				<li><a href="parceiros.php">NOSSOS PARCEIROS</a></li>
-				<li><a href="melhoresDestinos.php">MELHORES DESTINOS</a></li>
+				<li><?php if(isset($_SESSION['login'])){
+								if($_SESSION['login'] == 'true'){
+					?>
+						<a href="melhoresDestinos.php">MELHORES DESTINOS</a>
+					<?php
+								}
+							}else{
+								$_SESSION['action'] = 'melhoresdestinos';
+					?>
+									<a href="login.php">MELHORES DESTINOS</a>
+				<?php } ?>
+				</li>
 				<li><a href="conhecaseudestino.php">CONHEÇA SEU DESTINO</a></li>
 				<li><a href="promocoes.php">PROMOÇÕES</a></li>
 				<li><a href="faleconosco.php">FALE CONOSCO</a></li>

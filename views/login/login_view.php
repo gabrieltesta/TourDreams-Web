@@ -10,7 +10,7 @@
         <div class="subtitulo">
             Já possuo um cadastro!
         </div>
-        <form class="" action="router.php?controller=login" method="post">
+        <form class="" action="router.php?controller=login&action=<?php echo($_SESSION['action']); ?>" method="post">
             <table class="tblEntrar">
                 <tr>
                     <td><label>Login</label></td>

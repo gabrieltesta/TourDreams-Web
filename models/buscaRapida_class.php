@@ -42,7 +42,7 @@
       if (mysql_num_rows($select)>0) {
         return $listar;
       }else {
-        echo "erro";
+        echo "<h1>Não foi encontrado nenhum hotel neste local!</h1>";
       }
 
     }
