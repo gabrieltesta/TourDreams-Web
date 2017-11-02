@@ -278,9 +278,9 @@
 					<?php
 								}
 							}else{
-								$_SESSION['action'] = 'melhoresdestinos';
+
 					?>
-									<a href="login.php">MELHORES DESTINOS</a>
+									<a href="login.php?action=melhoresdestinos">MELHORES DESTINOS</a>
 				<?php } ?>
 				</li>
 				<li><a href="conhecaseudestino.php">CONHEÇA SEU DESTINO</a></li>

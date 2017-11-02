@@ -1,22 +1,36 @@
 <?php
 
+
+    $nextpage = $_SERVER['HTTP_REFERER'];
+    if(isset($_GET['action'])){
+        if($action = 'melhoresdestinos'){
+            $nextpage = 'melhoresDestinos.php';
+        }
+    }
+
+
+
+
 ?>
 
 <section>
+
     <div class="contLeft">
         <div class="titulo">
             Você precisa Entrar para continuar
         </div>
         <div class="subtitulo">
             Já possuo um cadastro!
+
         </div>
-        <form class="" action="router.php?controller=login&action=<?php echo($_SESSION['action']); ?>" method="post">
+
+        <form class="" action="router.php?controller=login&action=<?php echo($nextpage); ?>" method="post">
             <table class="tblEntrar">
                 <tr>
                     <td><label>Login</label></td>
                 </tr>
                 <tr>
-                    <td><input placeholder="Digite seu Login" type="text" name="txtLogin" value=""></td>
+                    <td><input placeholder="Digite seu Login" value="" type="text" name="txtLogin" value=""></td>
                 </tr>
                 <tr>
                     <td><label>Senha</label></td>

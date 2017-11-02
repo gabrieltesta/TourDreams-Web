@@ -188,7 +188,7 @@
                         }
                     }else{
 
-                        $_SESSION['action'] = 'reservar';
+
                 ?>
                     <a href="Login.php"><div class="botaoReservar">
                         <h1>RESERVAR</h1>

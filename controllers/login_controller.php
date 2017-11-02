@@ -39,10 +39,8 @@ class ControllerLogin
 
                 if($login->tipoLogin == 'usuario')
                 {
-                    if($this->action == 'reservar'){
-                        header('location: reserva.php');
-                    }else if($this->action == 'melhoresdestinos'){
-                        header('location: melhoresDestinos.php');
+                    if($this->action != null){
+                        header('location:'.$this->action);
                     }else{
                         header('location:perfilusuario.php');
                     }
