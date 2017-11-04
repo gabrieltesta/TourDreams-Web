@@ -42,6 +42,7 @@ class Login
                                 $returnLogin->nome=$rows['nomeCliente'];
                                 $returnLogin->login=$rows['login'];
                                 $returnLogin->senha=$rows['senha'];
+                                $returnLogin->idCliente=$rows['idCliente'];
                                 $returnLogin->caminhoImagem=$rows['caminhoImagem'];
                                 $returnLogin->tipoLogin=$tipoLogin;
                                 $returnLogin->idLogin=$idLogin;

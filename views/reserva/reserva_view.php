@@ -12,7 +12,7 @@
         <span>Conclua sua reserva, Nome Sobrenome <a href="#">(trocar usuário)</a></span>
         <table id="formularioReserva">
             <tr>
-                <td><label for="dataEntrada">Data de entrada*</label></td>
+                <td><input type="hidden" name="txtIdQuarto" value="<?php echo($_SESSION['idQuarto']); ?>"><input type="hidden" name="txtIdCliente" value="<?php echo($_SESSION['idCliente']); ?>"><label for="dataEntrada">Data de entrada*</label></td>
             </tr>
             <tr>
                 <td><input type="text" name="dataEntrada" value="<?php echo($dataInicio); ?>" class="datepicker" required></td>

@@ -35,6 +35,7 @@ class ControllerLogin
                 $_SESSION['idLogin'] = $login->idLogin;
                 $_SESSION['idParceiro'] = $login->idParceiro;
                 $_SESSION['tipoLogin'] = $login->tipoLogin;
+                $_SESSION['idCliente'] = $login->idCliente;
                 $_SESSION['login'] = 'true';
 
                 if($login->tipoLogin == 'usuario')

@@ -280,7 +280,7 @@
 							}else{
 
 					?>
-									<a href="login.php?action=melhoresdestinos">MELHORES DESTINOS</a>
+									<a href="login.php?melhoresdestinos">MELHORES DESTINOS</a>
 				<?php } ?>
 				</li>
 				<li><a href="conhecaseudestino.php">CONHEÇA SEU DESTINO</a></li>

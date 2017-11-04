@@ -2,10 +2,10 @@
 
 
     $nextpage = $_SERVER['HTTP_REFERER'];
-    if(isset($_GET['action'])){
-        if($action = 'melhoresdestinos'){
+    if(isset($_GET['melhoresdestinos'])){
+        
             $nextpage = 'melhoresDestinos.php';
-        }
+
     }
 
 

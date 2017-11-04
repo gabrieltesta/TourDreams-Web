@@ -179,6 +179,8 @@
                 <?php
                     if(isset($_SESSION['login'])){
                         if($_SESSION['login'] == 'true'){
+
+                            $_SESSION['idQuarto'] = $row5[$contador3]->idQuarto;
                 ?>
                             <div class="botaoReservar">
                                 <a href="reserva.php"><h1>RESERVAR</h1></a>
