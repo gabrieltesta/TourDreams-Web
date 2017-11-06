@@ -7,11 +7,19 @@
  ?>
 <form action="#" method="post">
 <section>
+    <?php
+        require_once('controllers/reserva_controller.php');
+        $reserva_controller = new ControllerReserva();
+        $row = $reserva_controller->ListarQuarto($_SESSION['idQuarto']);
+
+
+    ?>
     <!--Formulário de reserva-->
     <div id="formBox">
         <span>Conclua sua reserva, Nome Sobrenome <a href="#">(trocar usuário)</a></span>
         <table id="formularioReserva">
             <tr>
+
                 <td><input type="hidden" name="txtIdQuarto" value="<?php echo($_SESSION['idQuarto']); ?>"><input type="hidden" name="txtIdCliente" value="<?php echo($_SESSION['idCliente']); ?>"><label for="dataEntrada">Data de entrada*</label></td>
             </tr>
             <tr>
@@ -29,8 +37,18 @@
             <tr>
                 <td>
                     <select name="slcQtdQuartos" required>
-                        <option value="1" selected>1</option>
-                        <option value="2">2</option>
+                        <?php
+
+                            $cont = 1;
+                            while($cont <= $row->qtdQuartos){
+
+                        ?>
+                        <option <?php if($cont == 1){echo('selected');} ?> value="<?php echo($cont) ?>"><?php echo($cont) ?></option>
+
+                        <?php
+                            $cont++;
+                            }
+                        ?>
                     </select>
                 </td>
             </tr>
@@ -38,10 +56,10 @@
         <hr>
         <table id="formularioCartao">
             <tr>
-                <td><label for="txtTitular">Nome do titular*</label></td>
+                <td><label for="txtTitular">Nome do titular (Igual ao cartão)*</label></td>
             </tr>
             <tr>
-                <td><input type="text" name="txtTitular" required class="txtLongo"></td>
+                <td><input onkeyup="validar(this,'text');" type="text" maxlength="30" name="txtTitular" required class="txtLongo"></td>
             </tr>
             <tr>
                 <td><label for="txtNumero">Número do cartão*</label></td>
@@ -66,28 +84,29 @@
     <!---->
     <!--Caixa lateral de informações-->
     <div id="dadosBox">
+
         <div id="imgQuarto">
-            <img src="imagens/busca/hotel.jpg" alt="Quarto">
+            <img src="<?php echo($row->caminhoImagem); ?>" alt="Quarto">
         </div>
         <table>
             <tr>
-                <td colspan="2"><span class="raleway">Hotel Exemplo</span></td>
+                <td colspan="2"><span class="raleway"><?php echo($row->nomeQuarto); ?></span></td>
             </tr>
             <tr>
-                <td colspan="2">Quarto Exemplo</td>
+                <td colspan="2"><?php echo($row->nomeHotel); ?></td>
             </tr>
             <tr>
-                <td colspan="2">Rua Exemplo, Bairro Exemplo</td>
+                <td colspan="2"><?php echo($row->logradouro); ?> n°<?php echo($row->numero); ?>, <?php echo($row->bairro); ?></td>
             </tr>
             <tr>
-                <td colspan="2">Cidade Exemplo-EX</td>
+                <td colspan="2"><?php echo($row->cidade); ?>-<?php echo($row->uf); ?></td>
             </tr>
             <tr>
-                <td>Check-in: 00:00</td>
-                <td>Check-out: 00:00</td>
+                <td>Check-in: <?php echo($row->checkin); ?></td>
+                <td>Check-out: <?php echo($row->checkout); ?></td>
             </tr>
             <tr>
-                <td colspan="2">Qtd. máxima de hóspedes: 4</td>
+                <td colspan="2">Qtd. máxima de hóspedes: <?php echo($row->maxHospedes); ?></td>
             </tr>
             <tr>
                 <td colspan="2"><hr></td>

@@ -339,6 +339,14 @@
 
                    break;
 
+                   case 'landing':
+                      require_once('controllers/paginaLanding_controller.php');
+                      require_once('models/paginaLanding_class.php');
+
+                      $controller_landing = new ControllerLanding();
+                      $controller_landing->EditarLanding();
+                     break;
+
 
 
 

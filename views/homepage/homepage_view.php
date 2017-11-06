@@ -60,11 +60,26 @@
                     <img alt="MilhasTravel" src="<?php echo($imagem[1]); ?>" onmousedown="return false">
                 </div>
             </a>
-            <a href="#">
-                <div class="smallBox">
-                    <img alt="Melhores Destinos" src="<?php echo($imagem[2]); ?>" onmousedown="return false">
-                </div>
-            </a>
+            <?php if(isset($_SESSION['login'])){
+                            if($_SESSION['login'] == 'true'){
+                ?>
+                    <a href="melhoresDestinos.php">
+                        <div class="smallBox">
+                            <img alt="Melhores Destinos" src="<?php echo($imagem[2]); ?>" onmousedown="return false">
+                        </div>
+                    </a>
+                <?php
+                            }
+                        }else{
+
+                ?>
+                    <a href="Login.php?melhoresdestinos">
+                        <div class="smallBox">
+                            <img alt="Melhores Destinos" src="<?php echo($imagem[2]); ?>" onmousedown="return false">
+                        </div>
+                    </a>
+            <?php } ?>
+
         </div>
         <!---->
     </div>

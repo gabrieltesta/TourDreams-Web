@@ -111,7 +111,7 @@ section{
 }
 .descricaoSobrenos{
   width: 97%;
-  height: 300px;
+  height: 250px;
   background-color: ;
   margin-left: auto;
   margin-right: auto;
@@ -184,7 +184,17 @@ section{
   padding-left: 10px;
   padding-right: 10px;
 }
-
+.conteudoArea{
+  width:90%;
+  background-color: ;
+  margin-top: ;
+  height: 300px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: RalewayRegular;
+  font-size: 15px;
+  text-align: justify;
+}
 
 
 

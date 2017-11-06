@@ -15,8 +15,10 @@ $("document").ready(function(){
 
 //Função cria os datepickers do JqueryUI (página reserva.php)
 function carregarPickers() {
+    var hoje = new Date();
     $( ".datepicker" ).datepicker({                                             //datepicker com formato brasileiro
     dateFormat: 'dd/mm/yy',
+    minDate: hoje,
     dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
     dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
     dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
@@ -28,6 +30,7 @@ function carregarPickers() {
 
     $(".monthPicker").datepicker({                                              //monthpicker com formato brasileiro
         dateFormat: 'MM yy',
+        minDate: hoje,
         changeMonth: true,
         changeYear: true,
         showButtonPanel: true,
@@ -554,7 +557,11 @@ function mascaras() {
     $("[name='txtRg']").mask("00.000.000-0");
     $("[name='txtCnpj']").mask("00.000.000-0/0000-00");
     $("[name='txtCelular']").mask("(00) 000000000");
+    $("#formularioCartao input[name='txtNumero']").mask("0000 0000 0000 0000");
+    $("#formularioCartao input[name='txtCodigo']").mask("000");
 }
+
+
 
 function selecionarParceiro() {
    $("#slcBuscaParceiro").change(function() {
