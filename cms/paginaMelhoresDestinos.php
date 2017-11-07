@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <title>CMS - TourDreams</title>
         <link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="css/paginahome.css">
-    <link rel="stylesheet" href="css/paginaSobrenos.css">
+
+    <link rel="stylesheet" href="css/paginaMelhoresDestinos.css">
         <link rel="stylesheet" href="../js/jqueryui/jquery-ui.css">
 
         <script src="../js/jquery-3.2.1.min.js" charset="utf-8"></script>

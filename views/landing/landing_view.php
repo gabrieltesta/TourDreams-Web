@@ -1,3 +1,13 @@
+<?php
+
+	require_once('controllers/landing_controller.php');
+	$listarLanding = new ControllerLanding();
+
+	$row = $listarLanding->ListarLanding();
+
+
+ ?>
+
 <script type="text/javascript">
 	//Oculta os menus e modal de busca não utilizados
 	$('#headerCategorias').hide();
@@ -6,7 +16,7 @@
 </script>
 <!--Imagem de fundo-->
 <div id="background">
-	<img src="imagens/landing.jpeg" alt="background"  draggable="false" onmousedown="return false" style="user-drag: none">
+	<img src="<?php echo($row->caminhoImagem);?>" alt="background"  draggable="false" onmousedown="return false" style="user-drag: none">
 </div>
 <!---->
 <!--Formulário de busca-->
@@ -24,7 +34,7 @@
 	</div>
 </section>
 <!---->
-        
 
 
-/ .      
+
+/ .

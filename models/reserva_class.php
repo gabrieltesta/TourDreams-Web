@@ -57,6 +57,45 @@
         }
 
 
+        public function InserirReserva(){
+
+            $sql = "select * from tbl_transacao WHERE idQuarto =".$this->idQuarto." and dataInicio>='".$this->dataEntrada."' and dataFim<='".$this->dataSaida."';";
+            $select = mysql_query($sql);
+            if(mysql_num_rows($select) < $this->numQuartos){
+
+
+                date_default_timezone_set("America/Sao_Paulo");
+                $datetime = date('Y-m-d H:i:s');
+                $sql = "insert into tbl_cartao(numeroCartao,numeroSeguranca, validade,nomeTitular) values('".$this->numCartao."','".$this->codSeguranca."','".$this->validade."','".$this->nomeTitular."');";
+                mysql_query($sql) or die(mysql_error());
+                $sql = "select LAST_INSERT_ID() as idCartao";
+                $select = mysql_query($sql);
+                if($rs=mysql_fetch_array($select)){
+
+                    $valorTotal = $this->valorDiario * $this->qtdQuartos;
+                    $dataEntrada = strtotime($this->dataEntrada);
+                    $dataSaida = strtotime($this->dataSaida);
+
+                    $dias = $dataSaida-$dataEntrada;
+                    $qtdDias = floor($dias / (60 * 60 * 24));
+                    echo $qtdDias;
+
+                    $valorTotal = $valorTotal * $qtdDias;
+
+                    $valorTotal = $valorTotal - $this->desconto;
+
+                    $idCartao = $rs['idCartao'];
+                    $sql = "insert into tbl_transacao(qtdQuartos,dataInicio,dataFim,desconto,vlrTotal,dtTransacao,status,idCartao,idQuarto,idCliente,idPlataforma)
+                            values(".$this->qtdQuartos.",'".$this->dataEntrada."','".$this->dataSaida."',".$this->desconto.",".$valorTotal.",'".$datetime."','Pendente',".$idCartao.",".$this->idQuarto." ,".$this->idCliente.",1);";
+                    mysql_query($sql) or die(mysql_error());
+                }
+
+            }else{
+                echo("não pode");
+            }
+        }
+
+
     }
 
 

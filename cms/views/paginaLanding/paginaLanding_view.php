@@ -18,7 +18,7 @@
           <table>
             <tr>
               <td class="td">Selecione uma Imagem: </td>
-              <td><input type="file" name="fileFotos" value=""></td>
+              <td><input type="file" name="fileFotoss" value=""></td>
             </tr>
           </table>
 
@@ -26,6 +26,7 @@
 
     </div>
     <div class="imagem">
+    
       <img class="imagemGrande" src="../<?php echo($rows->caminhoImagem);?>" alt="background"  draggable="false" onmousedown="return false" style="user-drag: none">
     </div>
     <div class="botao">

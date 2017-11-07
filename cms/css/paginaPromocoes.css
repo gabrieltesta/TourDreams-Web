@@ -1,0 +1,11 @@
+.principalPromocoes{
+  width: 100%;
+  height: 829px;
+  background-color: red;
+}
+.tituloPromocoes{
+  width: 100%;
+  height: 50px;
+  background-color: yellow;
+  margin-top: 25px;
+}

@@ -13,7 +13,7 @@
 
     public function SelectLading(){
 
-      $sql = "select * from tbl_imagem where idImagem = 143";
+      $sql = "select * from tbl_imagem where idImagem = 177";
       $select = mysql_query($sql);
       if ($rs=mysql_fetch_array($select)) {
 
@@ -30,7 +30,7 @@
     public function UpDateLanding(){
 
 
-        $sql = "update tbl_imagem set caminhoImagem = '".$this->caminhoImg."' where idImagem=143;";
+        $sql = "update tbl_imagem set caminhoImagem = '".$this->caminhoImg."' where idImagem=177;";
         mysql_query($sql) or die(mysql_error());
 
 

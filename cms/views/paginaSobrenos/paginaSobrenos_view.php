@@ -89,9 +89,9 @@
           </textarea>
           <textarea class="conteudoAno">
             Lançamos nosso Portal de Negócios de Viagens online,
-             em nosso site e no aplicativo Android, visando o
-             atendimento em qualquer lugar do mundo, em qualquer
-             hora, para qualquer cliente.
+            em nosso site e no aplicativo Android, visando o
+            atendimento em qualquer lugar do mundo, em qualquer
+            hora, para qualquer cliente.
           </textarea>
         </div>
         <div class="tiraAno">
@@ -100,12 +100,12 @@
           </textarea>
           <textarea class="conteudoAno">
             Em 2014 a TourDreams já havia crescido imensamente
-             desde seu primeiro ano de criação, e conquistou uma
-             grande quantidade de clientes na região, e já
-              pensava na expansão de seus serviços online, e
-              criação de novos serviços para seus clientes. Além
-              disso, criou vários setores administrativos para
-              administração de seus processos internos.
+            desde seu primeiro ano de criação, e conquistou uma
+            grande quantidade de clientes na região, e já
+            pensava na expansão de seus serviços online, e
+            criação de novos serviços para seus clientes. Além
+            disso, criou vários setores administrativos para
+            administração de seus processos internos.
           </textarea>
         </div>
         <div class="tiraAno">
@@ -114,9 +114,9 @@
           </textarea>
           <textarea class="conteudoAno">
             A TourDreams foi criada, iniciando seus serviços na Av.
-             Luiz Carlos Berrini, e conquistando o reconhecimento e
-             fidelidade de clientes locais, ganhando seu espaço na
-              região e crescendo em um passo acelerado.
+            Luiz Carlos Berrini, e conquistando o reconhecimento e
+            fidelidade de clientes locais, ganhando seu espaço na
+            região e crescendo em um passo acelerado.
           </textarea>
         </div>
       </div>
@@ -129,7 +129,7 @@
   </div>
   <div class="botaoSobreNos">
     <div class="botaozinho">
-      EDITAR
+      SALVAR
     </div>
   </div>
 

@@ -7,6 +7,7 @@
     $cont = 0;
 
         $imagem = explode("*", $rows);
+
 ?>
 
 <!--Conteúdo superior-->

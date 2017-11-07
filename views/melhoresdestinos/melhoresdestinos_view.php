@@ -1,9 +1,20 @@
+<?php
+
+  require_once('controllers/melhoresDestinos_controller.php');
+  $listMelhores = new ControllerMelhoresDestinos();
+
+  $row = $listMelhores->ListarMelhoresDestinos();
+
+
+
+ ?>
 <section id="sectionUltimasReservas">
     <div id="contSuperior">
         <!--Imagem banner superior-->
         <div id="divBanner">
+
             <h2 class="wow fadeInUp" duration="0.5s" data-wow-delay="0.3s">Só aqui você encontra os melhores destinos</h2>
-            <img class="wow fadeIn" duration="0.5s" alt="" src="imagens/melhoresDestinos/bg07.jpg"  onmousedown="return false">
+            <img class="wow fadeIn" duration="0.5s" alt="" src="<?php echo($row->caminhoImagem);?>"  onmousedown="return false">
         </div>
         <!---->
         <!--Recomendações baseadas nas últimas reservas-->

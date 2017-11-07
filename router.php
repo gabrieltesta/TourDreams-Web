@@ -148,5 +148,13 @@
                         $controller_informacao->Listar();
                         break;
                 }
+            break;
+
+            case 'reserva':
+                require_once('controllers/reserva_controller.php');
+                require_once('models/reserva_class.php');
+                $controller_reserva = new ControllerReserva();
+                $controller_reserva->InsertReserva();
+            break;
     }
 ?>

@@ -678,3 +678,20 @@ function abrirResposta(idFaq,pergunta) {
       $("#respostasbox div").html(data);
     });
 }
+
+function abrirMenuResponsivo() {
+    $("#modalBg").show();
+    $("#menuResponsivoBox").show();
+    $("#menuResponsivoBox").animate({
+        marginLeft: "0%"
+    }, 100);
+}
+
+function fecharMenuResponsivo() {
+    $("#menuResponsivoBox").animate({
+        marginLeft: "-35%"
+    }, 100, function () {
+        $("#menuResponsivoBox").hide();
+        $("#modalBg").hide();
+    });
+}

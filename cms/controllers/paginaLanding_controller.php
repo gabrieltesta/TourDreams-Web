@@ -10,9 +10,9 @@
 
       $landing_class = new Landing();
       if($_SERVER['REQUEST_METHOD'] == 'POST'){
-          if (isset( $_FILES[ 'fileFotos' ][ 'name' ] ) && $_FILES[ 'fileFotos' ][ 'error' ] == 0 ) {
-            $arquivo_tmp = $_FILES[ 'fileFotos' ][ 'tmp_name' ];
-            $nome = $_FILES[ 'fileFotos' ][ 'name' ];
+          if (isset( $_FILES[ 'fileFotoss' ][ 'name' ] ) && $_FILES[ 'fileFotoss' ][ 'error' ] == 0 ) {
+            $arquivo_tmp = $_FILES[ 'fileFotoss' ][ 'tmp_name' ];
+            $nome = $_FILES[ 'fileFotoss' ][ 'name' ];
 
             // Pega a extensão
             $extensao = pathinfo ( $nome, PATHINFO_EXTENSION );
@@ -54,9 +54,9 @@
 
         require_once('models/paginaLanding_class.php');
 
-        $ListLanding = new Landing();
+        $listLanding = new Landing();
 
-        return $ListLanding->SelectLading();
+        return $listLanding->SelectLading();
 
 
       }

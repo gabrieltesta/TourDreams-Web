@@ -193,11 +193,37 @@
 	</form>
 </div>
 <!---->
-<div id="modalBg">
+<div id="modalBg" onclick="fecharMenuResponsivo()">
+</div>
+<div id="menuResponsivoBox">
+	<div id="menuResponsivoBusca">
+		<form method="post" action="busca.php?btn_pesquisar=buscaRapida" autocomplete="off">
+			<input type="text" name="txtDestino2" placeholder="Digite seu destino..." id="txtDestino2" required>
+			<input type="image" src="imagens/pesquisar.png"  draggable="false" onmousedown="return false" style="user-drag: none" alt="Pesquisar">
+		</form>
+		<input type="image" onclick="abrirBusca()" src="imagens/pesquisaravancado.png"  draggable="false" onmousedown="return false" style="user-drag: none" alt="Busca avançada">
+	</div>
+	<ul>
+		<li><a href="homepage.php">Home</a></li>
+		<li><a href="sobrenos.php">Sobre nós</a></li>
+		<li><a href="parceiros.php">Nossos Parceiros</a></li>
+		<li><a href="melhoresDestinos.php">Melhores Destinos</a></li>
+		<li><a href="conhecaseudestino.php">Conheça seu Destino</a></li>
+		<li><a href="promocoes.php">Promoções</a></li>
+		<li><a href="faleconosco.php">Fale Conosco</a></li>
+	</ul>
+	<hr>
+	<ul>
+		<li><a href="login.php">Login</a></li>
+		<li><a href="registroUsuario.php">Criar conta</a></li>
+	</ul>
 </div>
 <!--Cabeçalho-->
 <header>
 	<div id="headerMenu">
+		<div id="menuResponsivo" onclick="abrirMenuResponsivo()">
+			&#9776;
+		</div>
 		<!--Logo da empresa-->
 		<div id="headerLogo">
 			<a href="homepage.php">
@@ -206,12 +232,6 @@
 		</div>
 		<!---->
 		<!--Formulário de busca-->
-		<?php
-
-
-
-
-		 ?>
 
 		<div id="headerBusca">
 			<form method="post" action="busca.php?btn_pesquisar=buscaRapida" autocomplete="off">

@@ -5,12 +5,14 @@
     $dataFim = date('d/m/Y', strtotime("+1 day"));                              //Recebe o dia seguinte
     $mesAtual = date('m/Y', time());                                            //Recebe o mês atual
  ?>
-<form action="#" method="post">
+<form action="router.php?controller=reserva" method="post">
 <section>
     <?php
         require_once('controllers/reserva_controller.php');
         $reserva_controller = new ControllerReserva();
         $row = $reserva_controller->ListarQuarto($_SESSION['idQuarto']);
+
+        $valorDiarioFormatado = number_format($row->valorDiario,2,","," ");
 
 
     ?>
@@ -20,7 +22,7 @@
         <table id="formularioReserva">
             <tr>
 
-                <td><input type="hidden" name="txtIdQuarto" value="<?php echo($_SESSION['idQuarto']); ?>"><input type="hidden" name="txtIdCliente" value="<?php echo($_SESSION['idCliente']); ?>"><label for="dataEntrada">Data de entrada*</label></td>
+                <td><input type="hidden" name="txtnumQuartos" value="<?php echo($row->qtdQuartos); ?>"><input type="hidden" name="txtValorDiario" value="<?php echo($row->valorDiario); ?>"><input type="hidden" name="txtIdQuarto" value="<?php echo($_SESSION['idQuarto']); ?>"><input type="hidden" name="txtIdCliente" value="<?php echo($_SESSION['idCliente']); ?>"><label for="dataEntrada">Data de entrada*</label></td>
             </tr>
             <tr>
                 <td><input type="text" name="dataEntrada" value="<?php echo($dataInicio); ?>" class="datepicker" required></td>
@@ -62,7 +64,7 @@
                 <td><input onkeyup="validar(this,'text');" type="text" maxlength="30" name="txtTitular" required class="txtLongo"></td>
             </tr>
             <tr>
-                <td><label for="txtNumero">Número do cartão*</label></td>
+                <td><label style="float:left;margin-right:5px;" for="txtNumero">Número do cartão*</label><img src="imagens/reserva/visa.png" alt=""><img src="imagens/reserva/mastercard.png" alt=""><img src="imagens/reserva/elo.png" alt=""></td>
             </tr>
             <tr>
                 <td><input type="text" name="txtNumero"  required  class="txtLongo"></td>
@@ -145,7 +147,7 @@
                 <td colspan="2">Descontos: R$ 0,00</td>
             </tr>
             <tr>
-                <td colspan="2"><span>Total: R$ 500,00</span></td>
+                <td colspan="2"><span>Total: R$ <?php echo($valorDiarioFormatado); ?></span></td>
             </tr>
             <tr>
                 <td colspan="2"><input type="submit" name="btnReservar" value="RESERVAR"></td>

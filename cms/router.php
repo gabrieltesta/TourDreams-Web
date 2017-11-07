@@ -346,6 +346,29 @@
                       $controller_landing = new ControllerLanding();
                       $controller_landing->EditarLanding();
                      break;
+            
+            
+            
+             case 'conheca':
+
+                    require_once('controllers/paginaMConhecaSeuDestino_controller.php');
+                    require_once('models/paginaConhecaSeuDestino_class.php');
+
+                    $controller_conheca = new ControllerConheca();
+                    $controller_conheca->EditarConheca();
+                    break;
+            
+            
+            
+
+                  case 'melhores':
+
+                    require_once('controllers/paginaMelhoresDestinos_controller.php');
+                    require_once('models/paginaMelhoresDestinos_class.php');
+
+                    $controller_melhores = new ControllerMelhores();
+                    $controller_melhores->EditarMelhores();
+                    break;
 
 
 
