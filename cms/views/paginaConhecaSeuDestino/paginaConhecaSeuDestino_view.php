@@ -9,19 +9,19 @@
     <div class="titulo">
         Administração Conheça seu Destino
     </div>
-    
+
     <div class="conteudo">
-              <form class="" action="router.php?controller=ControllerConheca" enctype="multipart/form-data" method="post">
+              <form class="" action="router.php?controller=conheca" enctype="multipart/form-data" method="post">
               <table>
                 <tr>
                   <td class="</form>">Selecione uma Imagem: </td>
                   <td><input type="file" name="fileFotos" value=""></td>
                 </tr>
               </table>
-       
+
                 <div class="Imagem1">
-                    
-                    
+
+
                   <img class="Imagem2" src="../<?php echo($rows->caminhoImagem);?>"   draggable="false" onmousedown="return false" style="user-drag: none">
                 </div>
                 <div class="btnSalvar">
@@ -29,5 +29,5 @@
                 </div>
             </form>
     </div>
-    
+
 </div>

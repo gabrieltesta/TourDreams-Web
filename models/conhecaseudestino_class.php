@@ -51,6 +51,26 @@
         }
          return  $conhecaseuDestino;
     }
+
+
+    public function SelectImagem(){
+
+      $sql = " select * from vw_paginaconheca;";
+      $select = mysql_query($sql);
+
+      if($rs=mysql_fetch_array($select)){
+
+        $listarImagem = new ConhecaseuDestino();
+        $listarImagem->caminhoImagem=$rs['caminhoImagem'];
+
+        return $listarImagem;
+
+
+      }
+
+
+    }
+
   }
 
 

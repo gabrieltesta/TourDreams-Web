@@ -1,28 +1,42 @@
+<?php
+    require_once('controllers/conhecaseudestino_controller.php');
+    require_once('models/conhecaseudestino_class.php');
+
+    $ControllerConhecaseuDestinoImagem = new ControllerConhecaseuDestino();
+    $rows = $ControllerConhecaseuDestinoImagem->ListarImagem();
+
+
+
+
+        ?>
 <section id="section">
   <div class="principal">
     <div  class="isolamentoPartedeCima">
-      <div class="titulo">
+      <img src="<?php echo($rows->caminhoImagem) ?>" alt="">
+      <div class="absolute">
+        <div class="titulo">
 
-        <div class="tituloum wow fadeInUp" >
-          Conheça seu Destino
+          <div class="tituloum wow fadeInUp" >
+            Conheça seu Destino
+          </div>
+
         </div>
-
-      </div>
-      <div class="barradepesquisa">
-        <form method="post" action="conhecaseudestinobusca.php" name="">
-        <div class="alinharbarra">
-          <table>
-            <tr>
+        <div class="barradepesquisa">
+          <form method="post" action="conhecaseudestinobusca.php" name="">
+          <div class="alinharbarra">
+            <table>
+              <tr>
+                <td>
+                  <input class="barra" size="80" placeholder="Buscar Destino" value="" name="txtBuscarDestino" >
+              </td>
               <td>
-                <input class="barra" size="80" placeholder="Buscar Destino" value="" name="txtBuscarDestino" >
-            </td>
-            <td>
-                <input class="botao"type="image" value="btnbuscar"  img src="imagens/pesquisar.png" >
-            </td>
-          </tr>
-        </table>
+                  <input class="botao"type="image" value="btnbuscar"  img src="imagens/pesquisar.png" >
+              </td>
+            </tr>
+          </table>
+          </div>
+        </form>
         </div>
-      </form>
       </div>
     </div>
     <div class="pardebaixo">

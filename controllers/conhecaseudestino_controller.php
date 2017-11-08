@@ -9,6 +9,14 @@ class ControllerConhecaseuDestino
       $conhecaseudestino = new ConhecaseuDestino();
       return $conhecaseudestino->Select();
     }
+
+    public function ListarImagem(){
+
+      require_once('models/conhecaseudestino_class.php');
+        $conhecaseudestinoImagem = new ConhecaseuDestino();
+        return $conhecaseudestinoImagem->SelectImagem();
+
+    }
 }
 
  ?>

@@ -10,7 +10,7 @@
         <div class="tituloSobreNosInferior">
           Sobre nós
         </div>
-        <textarea class="descricaoSobrenos">
+        <textarea name="txtdescricaosuperior" value="" class="descricaoSobrenos">
           A empresa TourDreams é especialista no ramo de viagens,
           turismo e lazer, e desde sua criação busca trazer
           acomodações com ótimos preços em incontáveis destinos para
@@ -36,13 +36,15 @@
         <div class="tiraVisaoMissaoValores">
           <div class="foto">
             <div class="fotinho">
+              <input type="file" name="" value="">
               <img src="../imagens/sobrenos/visao.jpg" alt="">
+
             </div>
           </div>
           <div class="conteudo">
-            <h3>Missão</h3>
+            <h3>Visão</h3>
             <p>
-            <textarea name="name" class="conteudoArea">
+            <textarea name="txtvisao" value="" class="conteudoArea">
             Nossa empresa quando seu criador percebeu a falta de empresas fornecedoras de serviços de viagens que possuiam um tratamento próximo, pessoal e personalizado com seus clientes, e focavam apenas na reserva em si.
             Em 2010 foi fundada a TourDreams com esses conceitos em mente, procurando ligar os parceiros fornecedores com os clientes, garantindo um excelente atendimento de intermédio para conquistar o mercado que sente tanta falta deste serviço.
             </textarea>
@@ -52,13 +54,14 @@
         <div class="tiraVisaoMissaoValores">
           <div class="foto">
             <div class="fotinho">
+              <input type="file" name="" value="">
               <img src="../imagens/sobrenos/valores.jpg" alt="">
             </div>
           </div>
           <div class="conteudo">
-            <h3>Visão</h3>
+            <h3>Valores</h3>
             <p>
-              <textarea name="name" class="conteudoArea">
+              <textarea name="txtvalores" value="" class="conteudoArea">
             A TourDreams deseja ser a 1ª empresa brasileira em reservas de viagens até o ano de 2020, ano que completa 10 anos de existência, melhorando ainda mais seus serviços para garantir um serviço cada vez melhor para seus clientes.Deseja também aumentar seu raio de serviços para criar um portal completo de viagens, com tudo que você possa precisar ao planejar uma viagem.
               </textarea>
             </p>
@@ -67,13 +70,14 @@
         <div class="tiraVisaoMissaoValores">
           <div class="foto">
             <div class="fotinho">
+              <input type="file" name="" value="">
               <img src="../imagens/sobrenos/missao.jpg" alt="">
             </div>
           </div>
           <div class="conteudo">
-            <h3>Valores</h3>
+            <h3>Missão</h3>
             <p>
-              <textarea name="name" class="conteudoArea">
+              <textarea name="txtmissao" value="" class="conteudoArea">
             A TourDreams possui diversos valores que todos seus funcionários seguem.Devem demonstrar e garantir honestidade, integridade aos nossos clientes, de forma clara, precisa e consistente, criando uma relação saudável e de respeito entre nossos clientes, funcionários e a empresa em si
               </textarea>
             </p>
@@ -84,10 +88,10 @@
     <div class="conteudoSobreNos2">
       <div class="superiorDireita">
         <div class="tiraAno">
-          <textarea class="tituloAno">
+          <textarea name="txtanoum" value="" class="tituloAno">
             2017
           </textarea>
-          <textarea class="conteudoAno">
+          <textarea name="txtdescricaoum" value="" class="conteudoAno">
             Lançamos nosso Portal de Negócios de Viagens online,
             em nosso site e no aplicativo Android, visando o
             atendimento em qualquer lugar do mundo, em qualquer
@@ -95,10 +99,10 @@
           </textarea>
         </div>
         <div class="tiraAno">
-          <textarea class="tituloAno">
+          <textarea name="txtanodois" value="" class="tituloAno">
             2014
           </textarea>
-          <textarea class="conteudoAno">
+          <textarea name="txtdescricaodois" value="" class="conteudoAno">
             Em 2014 a TourDreams já havia crescido imensamente
             desde seu primeiro ano de criação, e conquistou uma
             grande quantidade de clientes na região, e já
@@ -109,10 +113,10 @@
           </textarea>
         </div>
         <div class="tiraAno">
-          <textarea class="tituloAno">
+          <textarea name="txtanotres" value="" class="tituloAno">
             2010
           </textarea>
-          <textarea class="conteudoAno">
+          <textarea name="txtdescricaotres" value="" class="conteudoAno">
             A TourDreams foi criada, iniciando seus serviços na Av.
             Luiz Carlos Berrini, e conquistando o reconhecimento e
             fidelidade de clientes locais, ganhando seu espaço na
@@ -122,6 +126,7 @@
       </div>
       <div class="inferiorDireita">
         <div class="fotoDireita">
+          <input type="file" name="" value="">
           <img src="../imagens/sobrenos/empresa.jpg" alt="TourDreams" />
         </div>
       </div>
