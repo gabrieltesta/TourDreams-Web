@@ -15,7 +15,7 @@
 
         public function SelectQuarto(){
 
-            $sql = "select q.nome, q.valorDiario,q.maxHospedes,q.qtdQuartos,i.caminhoImagem,h.hotel,h.checkin,h.checkout,l.logradouro,l.numero,b.bairro,c.cidade,e.uf
+            $sql = "select q.nome, q.valorDiario,q.maxHospedes,i.caminhoImagem,h.hotel,h.checkin,h.checkout,l.logradouro,l.numero,b.bairro,c.cidade,e.uf
                     from tbl_quarto as q
                     inner join tbl_hotel as h
                     on q.idHotel = h.idHotel
@@ -39,7 +39,7 @@
                 $lstquarto->nomeQuarto = $rs['nome'];
                 $lstquarto->valorDiario = $rs['valorDiario'];
                 $lstquarto->maxHospedes = $rs['maxHospedes'];
-                $lstquarto->qtdQuartos = $rs['qtdQuartos'];
+
                 $lstquarto->caminhoImagem = $rs['caminhoImagem'];
                 $lstquarto->nomeHotel = $rs['hotel'];
                 $lstquarto->checkin = $rs['checkin'];
@@ -59,10 +59,16 @@
 
         public function InserirReserva(){
 
-            $sql = "select * from tbl_transacao WHERE idQuarto =".$this->idQuarto." and dataInicio>='".$this->dataEntrada."' and dataFim<='".$this->dataSaida."';";
+            $sql = "select * from tbl_transacao WHERE idQuarto =".$this->idQuarto." and (('".$this->dataEntrada."' between dataInicio and dataFim) or ('".$this->dataSaida."' between dataInicio and dataFim));";
+            echo($sql);
             $select = mysql_query($sql);
-            if(mysql_num_rows($select) < $this->numQuartos){
 
+            if(mysql_num_rows($select) > 0){
+
+                header('location:'.$_SERVER['HTTP_REFERER'].'?datainvalida');
+
+
+            }else{
 
                 date_default_timezone_set("America/Sao_Paulo");
                 $datetime = date('Y-m-d H:i:s');
@@ -72,7 +78,7 @@
                 $select = mysql_query($sql);
                 if($rs=mysql_fetch_array($select)){
 
-                    $valorTotal = $this->valorDiario * $this->qtdQuartos;
+                    $valorTotal = $this->valorDiario;
                     $dataEntrada = strtotime($this->dataEntrada);
                     $dataSaida = strtotime($this->dataSaida);
 
@@ -85,14 +91,13 @@
                     $valorTotal = $valorTotal - $this->desconto;
 
                     $idCartao = $rs['idCartao'];
-                    $sql = "insert into tbl_transacao(qtdQuartos,dataInicio,dataFim,desconto,vlrTotal,dtTransacao,status,idCartao,idQuarto,idCliente,idPlataforma)
-                            values(".$this->qtdQuartos.",'".$this->dataEntrada."','".$this->dataSaida."',".$this->desconto.",".$valorTotal.",'".$datetime."','Pendente',".$idCartao.",".$this->idQuarto." ,".$this->idCliente.",1);";
+                    $sql = "insert into tbl_transacao(dataInicio,dataFim,desconto,vlrTotal,dtTransacao,status,idCartao,idQuarto,idCliente,idPlataforma)
+                            values('".$this->dataEntrada."','".$this->dataSaida."',".$this->desconto.",".$valorTotal.",'".$datetime."','Pendente',".$idCartao.",".$this->idQuarto." ,".$this->idCliente.",1);";
                     mysql_query($sql) or die(mysql_error());
                 }
 
-            }else{
-                echo("não pode");
             }
+
         }
 
 

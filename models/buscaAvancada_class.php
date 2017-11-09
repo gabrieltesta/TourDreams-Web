@@ -93,6 +93,7 @@
 
     public function SelectDaBuscaAvancada(){
 
+
       $sqlHotel = "select * from tbl_comodidadeshotel";
       $selectHotel = mysql_query($sqlHotel);
 
@@ -181,6 +182,7 @@
           $item->preco=$rs['valorDiario'];
           $item->cidade=$rs['cidade'];
           $item->nomeParceiro=$rs['nomeParceiro'];
+
           $item->hotel=$rs['hotel'];
           $item->imagemHotel=$rs['caminhoImagem'];
           $item->qtdEstrelas=$rs['qtdEstrelas'];

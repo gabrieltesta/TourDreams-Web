@@ -8,7 +8,7 @@ if (isset($_POST['idHotel'])) {
     $idParceiro = $_POST['idParceiro'];
    $idHotel = $_POST['idHotel'];
 
-   $sql = "select q.idQuarto, q.nome, q.valorDiario, q.qtdQuartos, i.caminhoImagem from tbl_quarto as q inner join tbl_imagem as i on q.idImagem = i.idImagem where idHotel=".$idHotel.";";
+   $sql = "select q.idQuarto, q.nome, q.maxHospedes, q.valorDiario, i.caminhoImagem from tbl_quarto as q inner join tbl_imagem as i on q.idImagem = i.idImagem where idHotel=".$idHotel.";";
    $select = mysql_query($sql);
 
 
@@ -19,7 +19,7 @@ if (isset($_POST['idHotel'])) {
              <tr>
                  <td class="titleTblQuarto">Quarto</td>
                  <td class="titleTblQuarto">Diária</td>
-                 <td class="titleTblQuarto">qtd. quartos</td>
+                 <td class="titleTblQuarto">Máx. Hóspedes</td>
                  <td class="titleTblQuarto">Opções</td>
              </tr>';
       while($rows=mysql_fetch_array($select)) {
@@ -33,7 +33,8 @@ if (isset($_POST['idHotel'])) {
           '<tr onclick="abrirFotoQuarto('.$foto.','.$nome.')">
               <td>'.$rows['nome'].'</td>
               <td>'.$rows['valorDiario'].'</td>
-              <td>'.$rows['qtdQuartos'].'</td>
+              <td>'.$rows['maxHospedes'].'</td>
+
               <td><a href="router.php?controller=quarto&modo=visualizar&idQuarto='.$idQuarto.'&idParceiro='.$idParceiro.'"><img onclick="abrirModalEditar('.$idQuarto.')" alt="" src="imagens/perfilparceiro/edit.png"></a>    <a href="router.php?controller=quarto&modo=excluir&idQuarto='.$idQuarto.'&idParceiro='.$idParceiro.'"><img alt="" src="imagens/perfilparceiro/delete.png"></a></td>
           </tr>';
       }

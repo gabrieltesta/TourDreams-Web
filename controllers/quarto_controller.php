@@ -9,7 +9,7 @@
                 $nome = $_POST['txtNomeQuarto'];
                 $vlrDiario = $_POST['txtDiaria'];
                 $maxHosp = $_POST['txtMaxHosp'];
-                $qtdQuartos = $_POST['txtQtdQuartos'];
+
                 $descricao = $_POST['txtDescricaoQuarto'];
                 $idParceiro = $_GET['idParceiro'];
                 $idHotel = $_POST['idHotel'];
@@ -21,7 +21,7 @@
                 $quarto_class->nome = $nome;
                 $quarto_class->vlrDiario = $vlrDiario;
                 $quarto_class->maxHosp = $maxHosp;
-                $quarto_class->qtdQuartos = $qtdQuartos;
+
                 $quarto_class->idHotel = $idHotel;
                 $quarto_class->descricao = $descricao;
 
@@ -115,7 +115,7 @@
                 $nome = $_POST['txtNomeQuarto'];
                 $vlrDiario = $_POST['txtDiaria'];
                 $maxHosp = $_POST['txtMaxHosp'];
-                $qtdQuartos = $_POST['txtQtdQuartos'];
+
                 $descricao = $_POST['txtDescricaoQuarto'];
                 $idParceiro = $_GET['idParceiro'];
                 $idHotel = $_POST['idHotel'];
@@ -129,7 +129,7 @@
                 $quarto_class->nome = $nome;
                 $quarto_class->vlrDiario = $vlrDiario;
                 $quarto_class->maxHosp = $maxHosp;
-                $quarto_class->qtdQuartos = $qtdQuartos;
+            
                 $quarto_class->idHotel = $idHotel;
                 $quarto_class->descricao = $descricao;
                 $quarto_class->idQuarto = $idQuarto;

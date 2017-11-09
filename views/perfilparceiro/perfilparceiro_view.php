@@ -26,7 +26,7 @@
             $quarto= $resposta->quarto;
             $diaria= $resposta->diaria;
             $maxHosp= $resposta->maxHosp;
-            $qtdQuartos= $resposta->qtdQuartos;
+        
             $descricao= $resposta->descricao;
             $idQuarto= $resposta->idQuarto;
 
@@ -117,12 +117,7 @@
                         <tr>
                             <td><input placeholder="Máx. de hóspedes" type="text" name="txtMaxHosp" value=""></td>
                         </tr>
-                        <tr>
-                            <td><label>Quantidade de quartos disponíveis</label></td>
-                        </tr>
-                        <tr>
-                            <td><input placeholder="Qtd. Quartos" type="text" name="txtQtdQuartos" value=""></td>
-                        </tr>
+
                         <tr>
                             <td><label>Descrição do quarto</label></td>
                         </tr>
@@ -211,12 +206,7 @@
                         <tr>
                             <td><input placeholder="Máx. de hóspedes" type="text" name="txtMaxHosp" value="<?php echo($maxHosp); ?>"></td>
                         </tr>
-                        <tr>
-                            <td><label>Quantidade de quartos disponíveis</label></td>
-                        </tr>
-                        <tr>
-                            <td><input placeholder="Qtd. Quartos" type="text" name="txtQtdQuartos" value="<?php echo($qtdQuartos); ?>"></td>
-                        </tr>
+
                         <tr>
                             <td><label>Descrição do quarto</label></td>
                         </tr>

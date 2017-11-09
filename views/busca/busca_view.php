@@ -151,6 +151,7 @@
 
               $controllerSelectBuscaAvancada = new ControllerSelectBuscaAvancada();
               $rows = $controllerSelectBuscaAvancada->BuscaAcancada();
+            
             }elseif($_GET['btn_pesquisar'] == 'buscaRapida') {
 
 
@@ -185,8 +186,7 @@
                                     <?php
                                         $qtd = rand(1, 5);
                                         $contestrelas = 1;
-                                        while ($contestrelas <= $rows[$cont]->qtdEstrelas)
-                                        {
+                                        while ($contestrelas <= $rows[$cont]->qtdEstrelas){
                                             ?>
                                                 <img src="imagens/busca/estrela.png" alt="">
                                             <?php

@@ -8,21 +8,29 @@
 <form action="router.php?controller=reserva" method="post">
 <section>
     <?php
+        $msg = '';
         require_once('controllers/reserva_controller.php');
         $reserva_controller = new ControllerReserva();
         $row = $reserva_controller->ListarQuarto($_SESSION['idQuarto']);
 
         $valorDiarioFormatado = number_format($row->valorDiario,2,","," ");
 
+        $msg = '';
+
+        if(isset($_GET['datainvalida'])){
+            $msg = "Data inválida!";
+        }
+
 
     ?>
     <!--Formulário de reserva-->
     <div id="formBox">
         <span>Conclua sua reserva, Nome Sobrenome <a href="#">(trocar usuário)</a></span>
+        <p><?php echo($msg); ?></p>
         <table id="formularioReserva">
             <tr>
 
-                <td><input type="hidden" name="txtnumQuartos" value="<?php echo($row->qtdQuartos); ?>"><input type="hidden" name="txtValorDiario" value="<?php echo($row->valorDiario); ?>"><input type="hidden" name="txtIdQuarto" value="<?php echo($_SESSION['idQuarto']); ?>"><input type="hidden" name="txtIdCliente" value="<?php echo($_SESSION['idCliente']); ?>"><label for="dataEntrada">Data de entrada*</label></td>
+                <td><input type="hidden" name="txtValorDiario" value="<?php echo($row->valorDiario); ?>"><input type="hidden" name="txtIdQuarto" value="<?php echo($_SESSION['idQuarto']); ?>"><input type="hidden" name="txtIdCliente" value="<?php echo($_SESSION['idCliente']); ?>"><label for="dataEntrada">Data de entrada*</label></td>
             </tr>
             <tr>
                 <td><input type="text" name="dataEntrada" value="<?php echo($dataInicio); ?>" class="datepicker" required></td>
@@ -33,27 +41,7 @@
             <tr>
                 <td><input type="text" name="dataSaida" value="<?php echo($dataFim); ?>" class="datepicker"  required></td>
             </tr>
-            <tr>
-                <td><label for="slcQtdQuartos">Quantidade de quartos*</label></td>
-            </tr>
-            <tr>
-                <td>
-                    <select name="slcQtdQuartos" required>
-                        <?php
 
-                            $cont = 1;
-                            while($cont <= $row->qtdQuartos){
-
-                        ?>
-                        <option <?php if($cont == 1){echo('selected');} ?> value="<?php echo($cont) ?>"><?php echo($cont) ?></option>
-
-                        <?php
-                            $cont++;
-                            }
-                        ?>
-                    </select>
-                </td>
-            </tr>
         </table>
         <hr>
         <table id="formularioCartao">
@@ -64,7 +52,7 @@
                 <td><input onkeyup="validar(this,'text');" type="text" maxlength="30" name="txtTitular" required class="txtLongo"></td>
             </tr>
             <tr>
-                <td><label style="float:left;margin-right:5px;" for="txtNumero">Número do cartão*</label><img src="imagens/reserva/visa.png" alt=""><img src="imagens/reserva/mastercard.png" alt=""><img src="imagens/reserva/elo.png" alt=""></td>
+                <td><label style="float:left;margin-right:5px;" for="txtNumero">Número do cartão*</label></td>
             </tr>
             <tr>
                 <td><input type="text" name="txtNumero"  required  class="txtLongo"></td>
@@ -120,7 +108,7 @@
                 <td colspan="2">Você tem: <span>100</span> pontos</td>
             </tr>
             <tr>
-                <td colspan="2"><input type="radio" name="radDesconto" value="0" checked disabled><label for="radDesconto">0 pontos (0% de desconto)</label></td>
+                <td colspan="2"><input type="radio" name="radDesconto" value="0" checked><label for="radDesconto">0 pontos (0% de desconto)</label></td>
             </tr>
             <tr>
                 <td colspan="2"><input type="radio" name="radDesconto" value="500"><label for="radDesconto">500 pontos (5% de desconto)</label></td>

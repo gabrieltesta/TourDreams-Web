@@ -370,6 +370,16 @@
                     $controller_melhores->EditarMelhores();
                     break;
 
+                    case 'sobrenos':
+                      
+                    require_once('controllers/paginasobrenos_controller.php');
+                    require_once('models/paginasobrenos_class.php');
+
+                    $controller_sobrenos = new ControllerSobrenos();
+                    $controller_sobrenos->Atualizar();
+
+
+                      break;
 
 
 

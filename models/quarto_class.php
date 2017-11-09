@@ -21,8 +21,8 @@
             $select = mysql_query($sql);
             if($rs = mysql_fetch_array($select)){
                 $idImagem = $rs['idImagem'];
-                $sql = "insert into tbl_quarto(nome,valorDiario,idImagem,descricao,maxHospedes,qtdQuartos,idHotel)";
-                $sql = $sql." values('".$this->nome."',".$this->vlrDiario.",".$idImagem.",'".$this->descricao."',".$this->maxHosp.",".$this->qtdQuartos.",".$this->idHotel.")";
+                $sql = "insert into tbl_quarto(nome,valorDiario,idImagem,descricao,maxHospedes,idHotel)";
+                $sql = $sql." values('".$this->nome."',".$this->vlrDiario.",".$idImagem.",'".$this->descricao."',".$this->maxHosp.",".$this->idHotel.")";
                 mysql_query($sql);
                 $sql = "select LAST_INSERT_ID() as idQuarto";
                 $select = mysql_query($sql);
@@ -118,7 +118,7 @@
                 $listaquarto->quarto=$rs['nome'];
                 $listaquarto->diaria=$rs['valorDiario'];
                 $listaquarto->maxHosp=$rs['maxHospedes'];
-                $listaquarto->qtdQuartos=$rs['qtdQuartos'];
+                
                 $listaquarto->descricao=$rs['descricao'];
                 $listaquarto->idQuarto=$rs['idQuarto'];
 

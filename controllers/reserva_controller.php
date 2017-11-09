@@ -24,13 +24,13 @@
 
                 $dataEntrada = $_POST['dataEntrada'];
                 $dataSaida = $_POST['dataSaida'];
-                $qtdQuartos = $_POST['slcQtdQuartos'];
+
                 $nomeTitular = $_POST['txtTitular'];
                 $numCartao = $_POST['txtNumero'];
                 $codSeguranca = $_POST['txtCodigo'];
                 $valorDiario = $_POST['txtValorDiario'];
                 $desconto = $_POST['radDesconto'];
-                $numQuartos = $_POST['txtnumQuartos'];
+
                 $validade = $_POST['txtValidade'];
                 $idQuarto = $_POST['txtIdQuarto'];
                 $idCliente = $_POST['txtIdCliente'];
@@ -43,11 +43,11 @@
 
                 $reserva_class->dataEntrada = $dataEntradaFormatada;
                 $reserva_class->dataSaida = $dataSaidaFormatada;
-                $reserva_class->qtdQuartos = $qtdQuartos;
+
                 $reserva_class->nomeTitular = $nomeTitular;
                 $reserva_class->numCartao = $numCartao;
                 $reserva_class->valorDiario = $valorDiario;
-                $reserva_class->numQuartos = $numQuartos;
+
                 $reserva_class->desconto = $desconto;
                 $reserva_class->codSeguranca = $codSeguranca;
                 $reserva_class->validade = $validade;
@@ -56,7 +56,7 @@
 
                 $reserva_class->InserirReserva();
 
-
+                
 
             }
 

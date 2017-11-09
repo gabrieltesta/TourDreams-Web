@@ -10,6 +10,9 @@
         <div class="tituloSobreNosInferior">
           Sobre nós
         </div>
+        <form enctype="multipart/form-data" action="router.php?controller=sobrenos"  method="post">
+
+
         <textarea name="txtdescricaosuperior" value="" class="descricaoSobrenos">
           A empresa TourDreams é especialista no ramo de viagens,
           turismo e lazer, e desde sua criação busca trazer
@@ -36,7 +39,7 @@
         <div class="tiraVisaoMissaoValores">
           <div class="foto">
             <div class="fotinho">
-              <input type="file" name="" value="">
+              <input type="file" name="fileFotoVisao" value="">
               <img src="../imagens/sobrenos/visao.jpg" alt="">
 
             </div>
@@ -54,7 +57,7 @@
         <div class="tiraVisaoMissaoValores">
           <div class="foto">
             <div class="fotinho">
-              <input type="file" name="" value="">
+              <input type="file" name="fileFotoValores" value="">
               <img src="../imagens/sobrenos/valores.jpg" alt="">
             </div>
           </div>
@@ -70,7 +73,7 @@
         <div class="tiraVisaoMissaoValores">
           <div class="foto">
             <div class="fotinho">
-              <input type="file" name="" value="">
+              <input type="file" name="fileFotoMissao" value="">
               <img src="../imagens/sobrenos/missao.jpg" alt="">
             </div>
           </div>
@@ -126,18 +129,18 @@
       </div>
       <div class="inferiorDireita">
         <div class="fotoDireita">
-          <input type="file" name="" value="">
+          <input type="file" name="fileFotoInferior" value="">
           <img src="../imagens/sobrenos/empresa.jpg" alt="TourDreams" />
         </div>
       </div>
     </div>
   </div>
   <div class="botaoSobreNos">
-    <div class="botaozinho">
-      SALVAR
+    <div class="btnSalvar">
+      <input type="submit" name="" value="SALVAR" >
     </div>
   </div>
-
+  </form>
 
 
 </div>
