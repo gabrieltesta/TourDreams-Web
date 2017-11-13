@@ -695,3 +695,37 @@ function fecharMenuResponsivo() {
         $("#modalBg").hide();
     });
 }
+
+
+
+function mudarTotal(valorDiario){
+    var entrada = $("#dataEntrada").val();
+    var saida = $("#dataSaida").val();
+
+    var entradaFormatada = entrada.split("/");
+    var saidaFormatada = saida.split("/");
+
+
+    var umDia = 24*60*60*1000; // horas*minutos*segundos*milisegundos
+    var dataEntrada = new Date(entradaFormatada[2],entradaFormatada[1],entradaFormatada[0]);
+    var dataSaida = new Date(saidaFormatada[2],saidaFormatada[1],saidaFormatada[0]);
+
+    var dias = Math.round(Math.abs((dataEntrada.getTime() - dataSaida.getTime())/(umDia)));
+
+    var subTotal = valorDiario * dias;
+
+    var taxa = (subTotal * 10)/100;
+    var total = subTotal + taxa;
+    //total = total.toFixed(2);
+
+    //total = total.toLocaleString();
+
+    total = total.toFixed(2);
+    total = total.replace(".",",");
+
+
+
+    $("#subTotal").text("Sub-total: R$ "+subTotal+",00");
+    $("#taxa").text("Taxas: R$ "+taxa+",00 (10% do Sub-Total)");
+    $("#total").text("Total: R$ "+total);
+}

@@ -13,7 +13,11 @@
         $reserva_controller = new ControllerReserva();
         $row = $reserva_controller->ListarQuarto($_SESSION['idQuarto']);
 
-        $valorDiarioFormatado = number_format($row->valorDiario,2,","," ");
+        $valorDiarioFormatado = number_format($row->valorDiario,2,",",".");
+
+
+
+        $taxaFormatada = number_format(($row->valorDiario * 10)/100,2,",",".");
 
         $msg = '';
 
@@ -25,7 +29,7 @@
     ?>
     <!--Formulário de reserva-->
     <div id="formBox">
-        <span>Conclua sua reserva, Nome Sobrenome <a href="#">(trocar usuário)</a></span>
+        <span>Conclua sua reserva, <?php echo($_SESSION['nome']." ".$_SESSION['sobreNome']); ?> <a href="perfilUsuario.php">(trocar usuário)</a></span>
         <p><?php echo($msg); ?></p>
         <table id="formularioReserva">
             <tr>
@@ -33,13 +37,13 @@
                 <td><input type="hidden" name="txtValorDiario" value="<?php echo($row->valorDiario); ?>"><input type="hidden" name="txtIdQuarto" value="<?php echo($_SESSION['idQuarto']); ?>"><input type="hidden" name="txtIdCliente" value="<?php echo($_SESSION['idCliente']); ?>"><label for="dataEntrada">Data de entrada*</label></td>
             </tr>
             <tr>
-                <td><input type="text" name="dataEntrada" value="<?php echo($dataInicio); ?>" class="datepicker" required></td>
+                <td><input id="dataEntrada" onchange="mudarTotal(<?php echo($valorDiarioFormatado); ?>)" type="text" name="dataEntrada" value="<?php echo($dataInicio); ?>" class="datepicker" required></td>
             </tr>
             <tr>
                 <td><label for="dataSaida">Data de saída*</label></td>
             </tr>
             <tr>
-                <td><input type="text" name="dataSaida" value="<?php echo($dataFim); ?>" class="datepicker"  required></td>
+                <td><input type="text" id="dataSaida" onchange="mudarTotal(<?php echo($valorDiarioFormatado); ?>)" name="dataSaida" value="<?php echo($dataFim); ?>" class="datepicker"  required></td>
             </tr>
 
         </table>
@@ -126,16 +130,16 @@
                 <td colspan="2"><hr></td>
             </tr>
             <tr>
-                <td colspan="2">Sub-total: R$ 500,00</td>
+                <td id="subTotal" colspan="2">Sub-total: R$ <?php echo($valorDiarioFormatado); ?></td>
             </tr>
             <tr>
-                <td colspan="2">Taxas: R$ 50,00</td>
+                <td id="taxa" colspan="2">Taxas: R$ <?php echo($taxaFormatada); ?> (10% do Sub-Total)</td>
             </tr>
             <tr>
                 <td colspan="2">Descontos: R$ 0,00</td>
             </tr>
             <tr>
-                <td colspan="2"><span>Total: R$ <?php echo($valorDiarioFormatado); ?></span></td>
+                <td colspan="2"><span id="total">Total: R$ <?php echo($valorDiarioFormatado); ?></span></td>
             </tr>
             <tr>
                 <td colspan="2"><input type="submit" name="btnReservar" value="RESERVAR"></td>

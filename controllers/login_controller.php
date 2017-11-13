@@ -32,6 +32,7 @@ class ControllerLogin
 
                 session_start();
                 $_SESSION['nome'] = $firstname[0];
+                $_SESSION['sobreNome'] = $firstname[1];
                 $_SESSION['idLogin'] = $login->idLogin;
                 $_SESSION['idParceiro'] = $login->idParceiro;
                 $_SESSION['tipoLogin'] = $login->tipoLogin;

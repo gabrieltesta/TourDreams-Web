@@ -8,7 +8,7 @@
         <table>
           <tr>
             <td class="td">Selecione uma Imagem: </td>
-            <td> <input type="file" name="" value=""></td>
+            <td> <input type="file" name="fileFotosBannerUm" value=""></td>
           </tr>
 
         </table>
@@ -19,7 +19,7 @@
     <div class="tabela">
         <tr>
           <td class="td">Selecione uma Imagem: </td>
-          <td> <input type="file" name="" value=""> </td>
+          <td> <input type="file" name="fileFotosBannerDois" value=""> </td>
         </tr>
       </table>
     </div>
@@ -29,7 +29,7 @@
   </div>
   <div class="botao">
     <input type="submit" name="" value="SALVAR" >
-    
+
     </div>
   </form>
 </div>

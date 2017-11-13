@@ -145,14 +145,14 @@
             require_once('controllers/buscaRapida_controller.php');
             require_once('models/buscaRapida_class.php');
 
-            if (isset($_GET['btn_pesquisar'])) {
-              if($_GET['btn_pesquisar']  == 'PESQUISAR'){
+            if (isset($_POST['btn_pesquisar'])) {
+              if($_POST['btn_pesquisar']  == 'PESQUISAR'){
 
 
               $controllerSelectBuscaAvancada = new ControllerSelectBuscaAvancada();
               $rows = $controllerSelectBuscaAvancada->BuscaAcancada();
-            
-            }elseif($_GET['btn_pesquisar'] == 'buscaRapida') {
+
+          }elseif($_POST['btn_pesquisar'] == 'buscaRapida') {
 
 
               $controllerBuscaRapida = new ControllerBuscaRapida();
