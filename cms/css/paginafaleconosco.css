@@ -1,50 +1,61 @@
-.principalPromocoes{
+.principalFaleconosco{
   width: 100%;
   height: 829px;
   background-color: ;
-}
-.tituloPromocoes{
-  width: 100%;
-  height: 50px;
-  background-color: ;
-  margin-top: 25px;
-  font-family: SourceSansRegular;
   font-size: 33px;
   text-align: center;
 }
-.conteudoPromocoes{
-  width: 90%;
-  height: 650px;
+.tituloFaleconosco{
+  width: 100%;
+  height: 50px;
+  background-color: ;
+  margin-top: 20px;
+  font-family: SourceSansRegular;
+}
+.conteudoFaleconosco{
+  width: 100%;
+  height: 670px;
+  background-color: ;
+}
+.superior{
+  width: 80%;
+  height: 50%;
   background-color: ;
   margin-left: auto;
   margin-right: auto;
 }
-.buttonSalvar{
-  width: 100%;
-  height: 100px;
+.inferior{
+  width: 80%;
+  height: 50%;
   background-color: ;
+  margin-left: auto;
+  margin-right: auto;
+}
+.imagem{
+  width: 48%;
+  height: 100%;
+  background-color: ;
+  float: left;
+  margin-left: 10px;
 }
 .tabela{
   width: 100%;
   height: 50px;
   background-color: ;
+  border-bottom: solid 1px #ccc;
 }
-.select{
-  width: 45%;
-  height: 280px;
+.imagemGrande{
+  width: 50%;
+  height: 80%;
   background-color: ;
   margin-left: auto;
   margin-right: auto;
 }
-.img{
-  height: 280px;
-  margin-top: -20px
-
+.imagemGrande img{
+  width: 80%;
 }
 .td{
-  width: 200px;
-  background-color: ;
-  font-family: RalewayRegular;
+  font-size: 33px;
 
 }
 .botao input{
@@ -61,8 +72,8 @@
     transition: 0.2s;
     -webkit-transition: 0.2s;
     -moz-transition: 0.2s;
-    margin-left: 800px;
-    margin-top: 50px;
+
+    margin-top: 0px;
 
 }
 

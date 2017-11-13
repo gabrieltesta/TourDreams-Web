@@ -23,36 +23,13 @@
 
 
       //Update tbl_imagem
-      $sql = "update vw_paginasobrenos set ";
+      $sql = "update tbl_paginasobre set descricaoSuperior='".$this->descricaoSuperior."', missao= '".$this->descricaoMissao."', visao ='".$this->descricaoVisao."', valores='".$this->descricaoValores."', anoUm='".$this->anoUm."', anoDois='".$this->anoDois."',anoTres='".$this->anoTres."',
+       descricaoUm='".$this->descricaoAnoUm."', descricaoDois='".$this->descricaoAnoDois."', descricaoTres='".$this->descricaoAnoTres."' where idPaginaSobre = 1;";
 
 
-      $script = "descricaoSuperior='".$this->descricaoSuperior."', missao= '".$this->descricaoMissao."', visao ='".$this->descricaoVisao."', valores='".$this->descricaoValores."', anoUm='".$this->anoUm."', anoDois='".$this->anoDois."',anoTres='".$this->anoTres."',
-       descricaoUm='".$this->descricaoAnoUm."', descricaoDois='".$this->descricaoAnoDois."', descricaoTres='".$this->descricaoAnoTres."'  ";
-
-       if($this->caminhoImagemVisao != null){
-
-         $script = $script.", campoVisao= '".$this->caminhoImagemVisao."'";
-
-       }
-
-       if($this->caminhoImagemValores != null){
-
-         $script = $script.", campoValores= '".$this->caminhoImagemValores."'";
-
-       }
-
-       if($this->caminhoImagemMissao != null){
-
-         $script = $script.", campoMissao= '".$this->caminhoImagemMissao."'";
-
-       }
-
-
-
-       $sql = $sql.$script.";";
-       echo ($sql);
-    //    mysql_query($sql);
-
+     mysql_query($sql);
+    //  echo ($sql);
+      header('location:paginaSobrenos.php');
 
 
     }
