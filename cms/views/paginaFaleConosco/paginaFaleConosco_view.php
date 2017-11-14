@@ -3,62 +3,40 @@
     Administração Fale Conosco
   </div>
   <div class="conteudoFaleconosco">
-    <div class="superior">
-      <div class="imagem">
-        <div class="tabela">
-          <form class="" action="index.html" method="post">
-            <table>
-              <tr>
-                <td class="td">Selecione uma Imagem: </td>
-                <td> <input type="file" name="" value=""> </td>
-              </tr>
-            </table>
+    <div class="part1">
+      <div class="botoes">
+        <div class="botoesSeparados">
+          <div class="tituloBotao">
+            Contato
+          </div>
+          <div class="img">
 
+          </div>
         </div>
-        <div class="imagemGrande">
-            <td><img src="../imagens/faleconosco/contato.png" alt="Contato" ></td>
+        <div class="botoesSeparados">
+          <div class="tituloBotao">
+            Faq
+          </div>
+          <div class="img">
+
+          </div>
+        </div>
+        <div class="botoesSeparados">
+          <div class="tituloBotao">
+            Ainda com Duvida
+          </div>
+          <div class="img">
+
+          </div>
         </div>
       </div>
-      <div class="imagem">
-        <div class="tabela">
-          <table>
-            <tr>
-              <td class="td">Selecione uma Imagem: </td>
-              <td> <input type="file" name="" value=""> </td>
-            </tr>
-          </table>
-        </div>
-        <div class="imagemGrande">
-          <img src="../imagens/faleconosco/faq.png" alt="FAQ">
-        </div>
+      <div class="icones">
+
       </div>
     </div>
-    <div class="inferior">
-      <div class="imagem">
-        <div class="tabela">
-          <table>
-            <tr>
-              <td class="td">Selecione uma Imagem: </td>
-              <td> <input type="file" name="" value=""> </td>
-            </tr>
-          </table>
-        </div>
-        <div class="imagemGrande">
-          <img src="../imagens/faleconosco/form.png" alt="Formulário" >
-        </div>
-      </div>
-      <div class="imagem">
-        <div class="tabela">
-          <table>
-            <tr>
-              <td class="td">Selecione uma Imagem: </td>
-              <td> <input type="file" name="" value=""> </td>
-            </tr>
-          </table>
-        </div>
-        <div class="imagemGrande">
+    <div class="part2">
+      <div class="">
 
-        </div>
       </div>
     </div>
   </div>

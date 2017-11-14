@@ -21,7 +21,7 @@ class Moeda
 
         public function Insert($moeda)
         {
-            $sql = 'INSERT INTO tbl_moeda (moeda, valor) VALUES ("'.$moeda->nome.'","'.$moeda->valor.'")';
+            $sql = 'INSERT INTO tbl_moeda (moeda, valor, simbolo) VALUES ("'.$moeda->nome.'","'.$moeda->valor.'", "'.$moeda->simbolo.'")';
             if(mysql_query($sql))
             {
                 return 'ok';
@@ -34,7 +34,7 @@ class Moeda
 
         public function Update($moeda)
         {
-            $sql = 'UPDATE tbl_moeda SET moeda="'.$moeda->nome.'", valor='.$moeda->valor.' WHERE idMoeda='.$moeda->idMoeda;
+            $sql = 'UPDATE tbl_moeda SET moeda="'.$moeda->nome.'", valor='.$moeda->valor.', simbolo="'.$moeda->simbolo.'" WHERE idMoeda='.$moeda->idMoeda;
             if(mysql_query($sql))
             {
                 return 'ok';
@@ -55,7 +55,7 @@ class Moeda
                 $moeda->idFormulario = $rows['idMoeda'];
                 $moeda->nome = $rows['moeda'];
                 $moeda->valor = $rows['valor'];
-
+                $moeda->simbolo = $rows['simbolo'];
             }
             return $moeda;
         }
@@ -80,6 +80,7 @@ class Moeda
                 $lstMoeda[$cont]->idMoeda = $rs['idMoeda'];
                 $lstMoeda[$cont]->nome = $rs['moeda'];
                 $lstMoeda[$cont]->valor = $rs['valor'];
+                $lstMoeda[$cont]->simbolo = $rs['simbolo'];
                 $cont += 1;
             }
 

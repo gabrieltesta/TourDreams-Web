@@ -32,6 +32,8 @@
                 if ( @move_uploaded_file ( $arquivo_tmp, $destino ) ) {
 
                    $destinoBanco = 'imagens/landingPage/' . $novoNome;
+                   
+                   echo ($landing_class->caminhoImg);
                    $landing_class->caminhoImg = $destinoBanco;
                    $landing_class->UpDateLanding();
 

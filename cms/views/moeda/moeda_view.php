@@ -3,6 +3,7 @@
     $idMoeda = '';
     $nome = '';
     $valor = '';
+    $simbolo = '';
     $msg = '';
 	$action = 'inserir';
     if(isset($_GET['modo']))
@@ -13,6 +14,7 @@
         $idMoeda = $resultado->idMoeda;
         $nome = $resultado->nome;
         $valor = $resultado->valor;
+        $simbolo = $resultado->simbolo;
     }
     if(isset($_GET['erro']))
     {
@@ -35,6 +37,7 @@
             <td class="tdtitulo">
               Valor
             </td>
+            <td class="tdtitulo">Símbolo</td>
             <td class="tdtitulo">
                 Opções
             </td>
@@ -60,6 +63,9 @@
                   <?php echo ($moeda[$cont]->valor) ?>
              </td>
              <td class="td_conteudo">
+                 <?php echo ($moeda[$cont]->simbolo) ?>
+             </td>
+             <td class="td_conteudo">
                 <a href=<?php echo("router.php?controller=moeda&modo=visualizar&idMoeda=".$moeda[$cont]->idMoeda); ?>><img src="imagens/edit.png"></a>
                 <a href=<?php echo("router.php?controller=moeda&modo=excluir&idMoeda=".$moeda[$cont]->idMoeda); ?>><img src="imagens/delete.png"></a>
              </td>
@@ -82,7 +88,13 @@
             </td>
           </tr>
           <tr>
-            <td class="tdCrud">Valor</td>
+            <td class="tdCrud">Símbolo</td>
+          </tr>
+          <tr>
+              <td><input type="text" name="txtSimbolo" class="input" value="<?php echo($simbolo) ?>"></td>
+          </tr>
+          <tr>
+              <td class="tdCrud">Valor</td>
           </tr>
           <tr>
             <td>

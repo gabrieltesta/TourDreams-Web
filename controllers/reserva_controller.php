@@ -15,6 +15,14 @@
 
         }
 
+        public function listarMilhasDesconto(){
+            require_once('models/reserva_class.php');
+            $listDesconto = new Reserva();
+            $listDesconto->idCliente = $this->idCliente;
+            return $listDesconto->SelectDescontoMilhas();
+
+        }
+
         public function InsertReserva(){
 
 
@@ -56,7 +64,7 @@
 
                 $reserva_class->InserirReserva();
 
-                
+                header('location:perfilUsuario.php');
 
             }
 

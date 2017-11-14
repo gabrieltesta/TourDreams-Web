@@ -22,12 +22,14 @@
 
         </div>
         <div class="barradepesquisa">
-          <form method="post" action="conhecaseudestinobusca.php" name="">
+          <form method="post" action="conhecaseudestinobusca.php" name="" autocomplete="off">
           <div class="alinharbarra">
             <table>
               <tr>
                 <td>
-                  <input class="barra" size="80" placeholder="Buscar Destino" value="" name="txtBuscarDestino" >
+                  <input class="barra" size="80" placeholder="Buscar Destino" value="" name="txtBuscarDestino" id="txtBuscarDestino">
+                  <div id="buscaConheca">
+                  </div>
               </td>
               <td>
                   <input class="botao"type="image" value="btnbuscar"  img src="imagens/pesquisar.png" >

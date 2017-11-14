@@ -1,10 +1,20 @@
 <?php
 
     class HotelQuarto
-
     {
+
+        public function __construct()
+        {
+            //Inclui o arquivo de conexão com o banco de dados.
+            require_once('models/db_class.php');
+            //Instancia a classe Mysql_db.
+            $conexao_db = new Mysql_db;
+            //Chama o método conectar para estabelecer a conexão com o BD.
+            $conexao_db->conectar();
+        }
+
         public function SelectHotel(){
-            $sql = "select h.hotel,h.checkin,h.checkout,h.qtdEstrelas,h.descricao,l.logradouro,l.numero,b.bairro,c.cidade,e.estado,e.uf
+            $sql = "select h.hotel,h.checkin,h.checkout,h.qtdEstrelas,h.descricao,l.logradouro,l.numero,b.bairro,c.cidade,e.estado,e.uf, h.avaliacao
                     from tbl_hotel as h
                     inner join tbl_logradouro as l
                     on h.idLogradouro = l.idLogradouro
@@ -33,6 +43,7 @@
                 $lstHotel[$cont]->bairro = $rs['bairro'];
                 $lstHotel[$cont]->cidade = $rs['cidade'];
                 $lstHotel[$cont]->uf = $rs['uf'];
+                $lstHotel[$cont]->avaliacao = $rs['avaliacao'];
 
 
                 $cont++;
@@ -170,6 +181,26 @@
 
             }
             return $listQuarto;
+        }
+
+        public function SelectAvaliacao($hotel)
+        {
+            $sql = "SELECT AVG(limpeza) AS limpeza, AVG(conforto) AS conforto, AVG(lazer) AS lazer, AVG(atendimento) AS atendimento, AVG(localizacao) AS localizacao, AVG(preco) AS preco FROM tbl_avaliacao WHERE idHotel=".$hotel->idHotel." GROUP BY idHotel;";
+            if($select = mysql_query($sql))
+            {
+                if($rows=mysql_fetch_array($select))
+                {
+                    $avaliacoes = new HotelQuarto();
+                    $avaliacoes->limpeza = $rows['limpeza'];
+                    $avaliacoes->conforto = $rows['conforto'];
+                    $avaliacoes->lazer = $rows['lazer'];
+                    $avaliacoes->atendimento = $rows['atendimento'];
+                    $avaliacoes->localizacao = $rows['localizacao'];
+                    $avaliacoes->preco = $rows['preco'];
+
+                    return $avaliacoes;
+                }
+            }
         }
 
     }

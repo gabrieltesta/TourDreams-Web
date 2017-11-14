@@ -371,7 +371,7 @@
                     break;
 
                     case 'sobrenos':
-                      
+
                     require_once('controllers/paginasobrenos_controller.php');
                     require_once('models/paginasobrenos_class.php');
 
@@ -382,6 +382,14 @@
                       break;
 
 
+                      case 'paginapromocoes':
 
+                        require_once('controllers/paginapromocoes_controller.php');
+                        require_once('models/paginapromocoes_class.php');
+
+                          
+                        $controller_promocao = new ControllerPromocao();
+                        $controller_promocao->Atualizar();
+                        break;
     }
 ?>

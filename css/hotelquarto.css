@@ -364,3 +364,209 @@ font-size: 25px;
 .botaoReservar:hover{
     background-color: #0b2e66;
 }
+
+#sectionAvaliacao
+{
+    width: 100%;
+    display: flex;
+    padding-bottom: 25px;
+}
+
+
+#avaliacaoBox
+{
+    margin: 0 auto;
+    width: 84%;
+    height: 500px;
+    margin-left: 8.5%;
+    float: left;
+    box-shadow: 0px 0px 3px 0px #000;
+}
+
+#avaliacaoBox #avaliacaoConteudoEsquerdo
+{
+    width: 60%;
+    border: solid 1px #ccc;
+    float: left;
+    height: 100%;
+}
+
+#avaliacaoBox #avaliacaoConteudoEsquerdo h1
+{
+    color: green;
+    font-size: 22pt;
+    font-family: RalewayRegular;
+    padding-left: 40px;
+}
+
+#avaliacaoBox #avaliacaoConteudoEsquerdo table
+{
+    padding-left: 40px;
+    width: 90%;
+}
+
+#avaliacaoBox #avaliacaoConteudoEsquerdo table td span
+{
+    font-size: 20px;
+    padding-left: 4px;
+}
+
+.barraAvaliacao
+{
+    border: solid 1px #ccc;
+    width: 90%;
+    height: 30px;
+    float: left;
+}
+
+.progresso
+{
+    height: 100%;
+}
+
+.avaliacao0
+{
+    width: 0%;
+}
+
+.avaliacao10
+{
+    width: 10%;
+}
+
+.avaliacao20
+{
+    width: 20%;
+}
+
+.avaliacao30
+{
+    width: 30%;
+}
+
+.avaliacao40
+{
+    width: 40%;
+}
+
+
+.avaliacao50
+{
+    width: 50%;
+}
+
+.avaliacao60
+{
+    width: 60%;
+}
+
+
+.avaliacao70
+{
+    width: 70%;
+}
+
+.avaliacao80
+{
+    width: 80%;
+}
+
+
+.avaliacao90
+{
+    width: 90%;
+}
+
+.avaliacao100
+{
+    width: 100%;
+}
+
+.avaliacaoAtendimento
+{
+    background-color: rgb(114, 147, 203);
+}
+
+.avaliacaoConforto
+{
+    background-color: rgb(225, 151, 76);
+}
+
+.avaliacaoLazer
+{
+    background-color: rgb(132, 186, 91);
+}
+
+.avaliacaoLimpeza
+{
+    background-color: rgb(211, 94, 96);
+}
+
+.avaliacaoLocalizacao
+{
+    background-color: rgb(144, 103, 167);
+}
+
+.avaliacaoPreco
+{
+    background-color: rgb(171,104,87);
+}
+
+#avaliacaoConteudoDireito
+{
+    width: 39.75%;
+    height: 100%;
+    float: left;
+}
+
+#avaliacaoConteudoDireito table
+{
+    width: 300px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    margin-top: 75px;
+}
+
+#avaliacaoConteudoDireito h2
+{
+    font-family: RalewayRegular;
+    font-size: 22pt;
+    color: #666666;
+}
+
+#avaliacaoConteudoDireito table th
+{
+    font-weight: normal;
+    text-align: left;
+    width: 25%;
+    max-width: 25%;
+    font-family: RalewayRegular;
+    font-size: 20px;
+}
+
+#avaliacaoConteudoDireito input[type="number"]
+{
+    float: right;
+    font-size: 18px;
+    font-family: Calibri;
+}
+
+#avaliacaoConteudoDireito input[type="submit"]
+{
+    background-color: #4682B4;
+    width: 100%;
+    border: solid 1px #4682B4;
+    font-family: RalewayRegular;
+    font-size: 22pt;
+    color: #fff;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+#avaliacaoConteudoDireito input[type="submit"]:hover
+{
+    background-color: #fff;
+    color: #4682b4;
+}

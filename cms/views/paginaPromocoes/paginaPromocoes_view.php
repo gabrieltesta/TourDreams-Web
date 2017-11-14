@@ -4,10 +4,11 @@
   </div>
   <div class="conteudoPromocoes">
     <div class="tabela">
-      <form class="" action="index.html" method="post">
+      <form  enctype="multipart/form-data" action="router.php?controller=paginapromocoes" method="post">
         <table>
           <tr>
             <td class="td">Selecione uma Imagem: </td>
+
             <td> <input type="file" name="fileFotosBannerUm" value=""></td>
           </tr>
 

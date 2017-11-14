@@ -11,11 +11,13 @@ class ControllerMoeda
             $nome = $_POST['txtNome'];
             $valor = $_POST['txtValor'];
             $valor = str_replace(',', '.', $valor);
+            $simbolo = $_POST['txtSimbolo'];
 
             $moeda_class = new Moeda();
 
             $moeda_class->nome=$nome;
             $moeda_class->valor=$valor;
+            $moeda_class->simbolo=$simbolo;
 
             $moeda = $moeda_class->Insert($moeda_class);
             if ($moeda == 'erro')
@@ -39,6 +41,7 @@ class ControllerMoeda
             $nome = $_POST['txtNome'];
             $valor = $_POST['txtValor'];
             $idMoeda = $_GET['idMoeda'];
+            $simbolo = $_POST['txtSimbolo'];
 
             $valor = str_replace(',', '.', $valor);
 
@@ -46,6 +49,7 @@ class ControllerMoeda
 
             $moeda_class->nome=$nome;
             $moeda_class->valor=$valor;
+            $moeda_class->simbolo=$simbolo;
             $moeda_class->idMoeda=$idMoeda;
 
             $moeda = $moeda_class->Update($moeda_class);

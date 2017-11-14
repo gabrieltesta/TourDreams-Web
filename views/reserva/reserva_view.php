@@ -13,7 +13,15 @@
         $reserva_controller = new ControllerReserva();
         $row = $reserva_controller->ListarQuarto($_SESSION['idQuarto']);
 
+
+        $listaDesconto = new ControllerReserva();
+        $listaDesconto->idCliente = $_SESSION['idCliente'];
+        $row2 = $listaDesconto->listarMilhasDesconto();
+
+
+
         $valorDiarioFormatado = number_format($row->valorDiario,2,",",".");
+        $valorTotalFormatado = number_format($row->valorDiario + (($row->valorDiario * 10)/100),2,",",".");
 
 
 
@@ -30,20 +38,27 @@
     <!--Formulário de reserva-->
     <div id="formBox">
         <span>Conclua sua reserva, <?php echo($_SESSION['nome']." ".$_SESSION['sobreNome']); ?> <a href="perfilUsuario.php">(trocar usuário)</a></span>
-        <p><?php echo($msg); ?></p>
+
         <table id="formularioReserva">
             <tr>
-
-                <td><input type="hidden" name="txtValorDiario" value="<?php echo($row->valorDiario); ?>"><input type="hidden" name="txtIdQuarto" value="<?php echo($_SESSION['idQuarto']); ?>"><input type="hidden" name="txtIdCliente" value="<?php echo($_SESSION['idCliente']); ?>"><label for="dataEntrada">Data de entrada*</label></td>
+                <td><label id="msg"><?php echo($msg); ?></label></td>
             </tr>
             <tr>
-                <td><input id="dataEntrada" onchange="mudarTotal(<?php echo($valorDiarioFormatado); ?>)" type="text" name="dataEntrada" value="<?php echo($dataInicio); ?>" class="datepicker" required></td>
+                <td>
+                    <input type="hidden" name="txtValorDiario" value="<?php echo($row->valorDiario); ?>">
+                    <input type="hidden" name="txtIdQuarto" value="<?php echo($_SESSION['idQuarto']); ?>">
+                    <input type="hidden" name="txtIdCliente" value="<?php echo($_SESSION['idCliente']); ?>">
+                    <label for="dataEntrada">Data de entrada*</label>
+                </td>
+            </tr>
+            <tr>
+                <td><input id="dataEntrada" onchange="mudarTotal(<?php echo($valorDiarioFormatado); ?>)" type="text" name="dataEntrada" value="<?php echo($dataInicio); ?>" class="datepicker" ></td>
             </tr>
             <tr>
                 <td><label for="dataSaida">Data de saída*</label></td>
             </tr>
             <tr>
-                <td><input type="text" id="dataSaida" onchange="mudarTotal(<?php echo($valorDiarioFormatado); ?>)" name="dataSaida" value="<?php echo($dataFim); ?>" class="datepicker"  required></td>
+                <td><input type="text" id="dataSaida" onchange="mudarTotal(<?php echo($valorDiarioFormatado); ?>)" name="dataSaida" value="<?php echo($dataFim); ?>" class="datepicker"  ></td>
             </tr>
 
         </table>
@@ -53,25 +68,25 @@
                 <td><label for="txtTitular">Nome do titular (Igual ao cartão)*</label></td>
             </tr>
             <tr>
-                <td><input onkeyup="validar(this,'text');" type="text" maxlength="30" name="txtTitular" required class="txtLongo"></td>
+                <td><input id="txtTitular" onkeyup="validar(this,'text');" type="text" maxlength="30" name="txtTitular"  class="txtLongo"></td>
             </tr>
             <tr>
                 <td><label style="float:left;margin-right:5px;" for="txtNumero">Número do cartão*</label></td>
             </tr>
             <tr>
-                <td><input type="text" name="txtNumero"  required  class="txtLongo"></td>
+                <td><input id="txtNumeroCartao" type="text" name="txtNumero"    class="txtLongo"></td>
             </tr>
             <tr>
                 <td><label for="txtCodigo">Código de segurança*</label></td>
             </tr>
             <tr>
-                <td><input type="text" name="txtCodigo"  required id="txtCodigo"></td>
+                <td><input id="txtCodigoSeguranca" type="text" name="txtCodigo"   id="txtCodigo"></td>
             </tr>
             <tr>
                 <td><label for="txtValidade">Validade do cartão*</label></td>
             </tr>
             <tr>
-                <td><input type="text" name="txtValidade" class="monthPicker" value="<?php echo($mesAtual); ?>" required></td>
+                <td><input id="txtValidade" type="text" name="txtValidade" class="monthPicker" value="<?php echo($mesAtual); ?>" ></td>
             </tr>
         </table>
     </div>
@@ -109,23 +124,27 @@
                 <td colspan="2"><span class="raleway">Milhas Travel Fidelidade</span></td>
             </tr>
             <tr>
-                <td colspan="2">Você tem: <span>100</span> pontos</td>
+                <td colspan="2">Você tem: <span><?php echo($row2[$cont]->milhasPontuacao) ?></span> pontos</td>
             </tr>
             <tr>
                 <td colspan="2"><input type="radio" name="radDesconto" value="0" checked><label for="radDesconto">0 pontos (0% de desconto)</label></td>
             </tr>
-            <tr>
-                <td colspan="2"><input type="radio" name="radDesconto" value="500"><label for="radDesconto">500 pontos (5% de desconto)</label></td>
-            </tr>
-            <tr>
-                <td colspan="2"><input type="radio" name="radDesconto" value="750"><label for="radDesconto">750 pontos (7.5% de desconto)</label></td>
-            </tr>
-            <tr>
-                <td colspan="2"><input type="radio" name="radDesconto" value="1000"><label for="radDesconto">1000 pontos (10% de desconto)</label></td>
-            </tr>
-            <tr>
-                <td colspan="2"><input type="radio" name="radDesconto" value="2000"><label for="radDesconto">2000 pontos (25% de desconto)</label></td>
-            </tr>
+            <?php
+
+
+
+                $cont = 0;
+                while ($cont < count($row2)) {
+            ?>
+                <tr>
+                    <td colspan="2"><input <?php if($row2[$cont]->milhasPontuacao < $row2[$cont]->valorPontos){echo ('disabled');} ?>
+                         type="radio" name="radDesconto" value="<?php echo($row2[$cont]->desconto) ?>" ><label for="radDesconto"><?php echo ($row2[$cont]->valorPontos); ?>
+                              pontos (<?php echo($row2[$cont]->desconto) ?>% de desconto)</label></td>
+                </tr>
+            <?php
+                    $cont++;
+                }
+            ?>
             <tr>
                 <td colspan="2"><hr></td>
             </tr>
@@ -139,7 +158,7 @@
                 <td colspan="2">Descontos: R$ 0,00</td>
             </tr>
             <tr>
-                <td colspan="2"><span id="total">Total: R$ <?php echo($valorDiarioFormatado); ?></span></td>
+                <td colspan="2"><span id="total">Total: R$ <?php echo($valorTotalFormatado); ?></span></td>
             </tr>
             <tr>
                 <td colspan="2"><input type="submit" name="btnReservar" value="RESERVAR"></td>

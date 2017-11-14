@@ -8,6 +8,7 @@
     $row3 = $controller_hotel->BuscaPrimeiraImagem();
     $row4 = $controller_hotel->BuscaComodidadesHotel();
     $row5 = $controller_hotel->BuscaQuarto();
+    $avaliacoes = $controller_hotel->BuscaAvaliacao();
 
     $cont = 0;
 
@@ -206,6 +207,90 @@
                 $contador3++;
             }
         ?>
+    </div>
+</section>
+<section id="sectionAvaliacao">
+    <div id="avaliacaoBox">
+        <div id="avaliacaoConteudoEsquerdo">
+            <?php
+                $atendimento = round($avaliacoes->atendimento);
+                $conforto = round($avaliacoes->conforto);
+                $lazer = round($avaliacoes->lazer);
+                $limpeza = round($avaliacoes->limpeza);
+                $localizacao = round($avaliacoes->localizacao);
+                $preco = round($avaliacoes->preco);
+
+             ?>
+            <h1>Excelente</h1>
+            <table>
+                <tr>
+                    <td>Atendimento</td>
+                </tr>
+                <tr>
+                    <td><div class="barraAvaliacao"><div class="progresso avaliacaoAtendimento" style="width:<?php echo($atendimento); ?>%;"></div></div><span><?php echo(number_format($avaliacoes->atendimento)) ?></span></td>
+                </tr>
+                <tr>
+                    <td>Conforto</td>
+                </tr>
+                <tr>
+                    <td><div class="barraAvaliacao"><div class="progresso avaliacaoConforto" style="width:<?php echo($conforto); ?>%;"></div></div><span><?php echo(number_format($avaliacoes->conforto)) ?></span></td>
+                </tr>
+                <tr>
+                    <td>Lazer</td>
+                </tr>
+                <tr>
+                    <td><div class="barraAvaliacao"><div class="progresso avaliacaoLazer" style="width:<?php echo($lazer); ?>%;"></div></div><span><?php echo(number_format($avaliacoes->lazer)) ?></span></td>
+                </tr>
+                <tr>
+                    <td>Limpeza</td>
+                </tr>
+                <tr>
+                    <td><div class="barraAvaliacao"><div class="progresso avaliacaoLimpeza"  style="width:<?php echo($limpeza); ?>%;"></div></div><span><?php echo(number_format($avaliacoes->limpeza)) ?></span></td>
+                </tr>
+                <tr>
+                    <td>Localização</td>
+                </tr>
+                <tr>
+                    <td><div class="barraAvaliacao"><div class="progresso avaliacaoLocalizacao" style="width:<?php echo($localizacao); ?>%;"></div></div><span><?php echo(number_format($avaliacoes->localizacao)) ?></span></td>
+                </tr>
+                <tr>
+                    <td>Preço</td>
+                </tr>
+                <tr>
+                    <td><div class="barraAvaliacao"><div class="progresso avaliacaoPreco" style="width:<?php echo($preco); ?>%;"></div></div><span><?php echo(number_format($avaliacoes->preco)) ?></span></td>
+                </tr>
+            </table>
+        </div>
+        <div id="avaliacaoConteudoDireito">
+            <form action="#" method="post">
+                <table>
+                    <tr>
+                        <td colspan="2"><h2>Envie sua avaliação!</h2></td>
+                    </tr>
+                    <tr>
+                        <th>Atendimento</th><td><input type="number" name="txtAtendimento" value="50" min="0" max="100" required></td>
+                    </tr>
+                    <tr>
+                        <th>limpeza</th><td><input type="number" name="txtlimpeza" value="50" min="0" max="100" required></td>
+                    </tr>
+                    <tr>
+                        <th>Lazer</th><td><input type="number" name="txtLazer" value="50" min="0" max="100" required></td>
+                    </tr>
+                    <tr>
+                        <th>Limpeza</th><td><input type="number" name="txtLimpeza" value="50" min="0" max="100" required></td>
+                    </tr>
+                    <tr>
+                        <th>Localização</th><td><input type="number" name="txtLocalizacao" value="50" min="0" max="100" required></td>
+                    </tr>
+                    <tr>
+                        <th>Preço</th><td><input type="number" name="txtPreco" value="50" min="0" max="100" required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit" name="btnEnviar" value="ENVIAR"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
     </div>
 </section>
 <!---->

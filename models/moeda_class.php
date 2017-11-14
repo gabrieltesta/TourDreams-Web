@@ -39,6 +39,7 @@ class Moeda
                 $lstMoeda[$cont]->idMoeda = $rs['idMoeda'];
                 $lstMoeda[$cont]->nome = $rs['moeda'];
                 $lstMoeda[$cont]->valor = $rs['valor'];
+                $lstMoeda[$cont]->simbolo = $rs['simbolo'];
                 $cont += 1;
             }
 

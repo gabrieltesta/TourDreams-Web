@@ -8,6 +8,7 @@ $("document").ready(function(){
     $("#filtros").accordion({heightStyle: "content" });
     carregarPickers();
     busca();
+    buscaConheca();
     mascaras();
     validarLogin();
     buscaAvancada();
@@ -723,9 +724,49 @@ function mudarTotal(valorDiario){
     total = total.toFixed(2);
     total = total.replace(".",",");
 
-
-
     $("#subTotal").text("Sub-total: R$ "+subTotal+",00");
     $("#taxa").text("Taxas: R$ "+taxa+",00 (10% do Sub-Total)");
     $("#total").text("Total: R$ "+total);
 }
+
+function buscaConheca() {
+   $("#txtBuscarDestino").keyup(function() {
+       var destino = $('#txtBuscarDestino').val();
+
+       if (destino == "") {
+           $("#buscaConheca").html("");
+       }
+       else
+       {
+           $.ajax({
+               type: "POST",
+               url: "api/busca_conheca.php",
+               data: {
+                   busca: destino
+               },
+
+               success: function(html) {
+                   $("#buscaConheca").html(html).show();
+
+               }
+
+           });
+
+       }
+
+   });
+}
+
+function preencherConheca(destino) {
+   $('#txtBuscarDestino').val(destino);
+   $('#buscaConheca').hide();
+}
+
+$(document).ready(function() {
+    $('#dataEntrada').attr("required",true);
+    $('#dataSaida').attr("required",true);
+    $('#txtTitular').attr("required",true);
+    $('#txtNumeroCartao').attr("required",true);
+    $('#txtCodigoSeguranca').attr("required",true);
+    $('#txtValidade').attr("required",true);
+});

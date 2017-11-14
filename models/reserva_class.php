@@ -56,6 +56,27 @@
 
         }
 
+        public function SelectDescontoMilhas(){
+            $sql = "select m.* , c.milhasPontuacao from tbl_milhasrecompensa as m inner join tbl_cliente as c where c.idCliente =".$this->idCliente.";";
+            $select = mysql_query($sql);
+
+            $cont = 0;
+            while($rs = mysql_fetch_array($select)){
+
+                $lstdesconto[] = new Reserva();
+
+                $lstdesconto[$cont]->valorPontos = $rs['valorPontos'];
+                $lstdesconto[$cont]->milhasPontuacao = $rs['milhasPontuacao'];
+                $lstdesconto[$cont]->desconto = $rs['desconto'];
+
+                $cont++;
+
+
+            }
+            return $lstdesconto;
+
+        }
+
 
         public function InserirReserva(){
 
@@ -95,7 +116,12 @@
                         $taxa = ($valorTotal * 10)/100;
 
                         $valorTotal = $valorTotal + $taxa;
-                        $valorTotal = $valorTotal - $this->desconto;
+
+                        $desconto = ($valorTotal * $this->desconto)/100;
+
+
+
+                        $valorTotal = $valorTotal - $desconto;
 
                         $idCartao = $rs['idCartao'];
                         $sql = "insert into tbl_transacao(dataInicio,dataFim,desconto,vlrTotal,dtTransacao,status,idCartao,idQuarto,idCliente,idPlataforma)

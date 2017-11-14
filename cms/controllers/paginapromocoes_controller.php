@@ -1,10 +1,14 @@
 <?php
 
-  class Promocoes{
+  class ControllerPromocao{
 
     public function Atualizar(){
 
-      if($_SERVER['REQUEST_METHOD'] == 'post'){
+      require_once ('models/paginapromocoes_class.php');
+
+      $promocoes_class = new PaginaPromocoes();
+
+      if($_SERVER['REQUEST_METHOD'] == 'POST'){
           if (isset( $_FILES[ 'fileFotosBannerUm' ][ 'name' ] ) && $_FILES[ 'fileFotosBannerUm' ][ 'error' ] == 0 ) {
             $arquivo_tmp = $_FILES[ 'fileFotosBannerUm' ][ 'tmp_name' ];
             $nome = $_FILES[ 'fileFotosBannerUm' ][ 'name' ];
@@ -25,30 +29,24 @@
 
                 // Concatena a pasta com o nome
                 $destino = '../imagens/promocoes/' . $novoNome;
+
                 ///echo "";
                 // tenta mover o arquivo para o destino
                 if ( @move_uploaded_file ( $arquivo_tmp, $destino ) ) {
 
-                  $destinoBanco = '/imagens/promocoes/' .$novoNome;
+                  $destinoBanco = 'imagens/promocoes/' .$novoNome;
 
 
                    $promocoes_class->caminhoImagemBannerUm=$destinoBanco;
                    $promocoes_class->EditarBannerUm();
 
-                   header('location:paginapromocoes.php');
+                   //header('location:paginapromocoes.php');
                }else{
 
-                header('location:paginapromocoes.php?erroCaminho');
+              //  header('location:paginapromocoes.php?erroCaminho');
                }
 
-        }else {
-            header('location:paginapromocoes.php?erroformato');
-        }
-
-      }else{
-        $promocoes_class->EditarBannerUm($sobreNos_class);
-
-        header('location:paginapromocoes.php');
+          }
       }
 
 
@@ -84,20 +82,14 @@
                $promocoes_class->caminhoImagemBannerdois=$destinoBanco;
                $promocoes_class->EditarBannerDois();
 
-               header('location:paginapromocoes.php');
+              // header('location:paginapromocoes.php');
            }else{
 
-            header('location:paginapromocoes.php?erroCaminho');
+            //header('location:paginapromocoes.php?erroCaminho');
            }
 
-          }else {
-              header('location:paginapromocoes.php?erroformato');
           }
 
-        }else{
-          $promocoes_class->EditarBannerDois($sobreNos_class);
-
-          header('location:paginapromocoes.php');
         }
 
 
@@ -108,6 +100,6 @@
 
 
   }
-
+}
 
  ?>

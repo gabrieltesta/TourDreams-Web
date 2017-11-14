@@ -145,14 +145,14 @@
             require_once('controllers/buscaRapida_controller.php');
             require_once('models/buscaRapida_class.php');
 
-            if (isset($_POST['btn_pesquisar'])) {
-              if($_POST['btn_pesquisar']  == 'PESQUISAR'){
+            if (isset($_GET['btn_pesquisar'])) {
+              if($_GET['btn_pesquisar']  == 'PESQUISAR'){
 
 
               $controllerSelectBuscaAvancada = new ControllerSelectBuscaAvancada();
               $rows = $controllerSelectBuscaAvancada->BuscaAcancada();
 
-          }elseif($_POST['btn_pesquisar'] == 'buscaRapida') {
+          }elseif($_GET['btn_pesquisar'] == 'buscaRapida') {
 
 
               $controllerBuscaRapida = new ControllerBuscaRapida();
@@ -184,7 +184,7 @@
                             <tr>
                                 <td>
                                     <?php
-                                        $qtd = rand(1, 5);
+                                       $qtd = rand(1, 5);
                                         $contestrelas = 1;
                                         while ($contestrelas <= $rows[$cont]->qtdEstrelas){
                                             ?>
@@ -223,8 +223,18 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <h3 class="desconto">R$ 200,00</h3>
-                                    <h2>R$ <?php echo($rows[$cont]->preco) ?>,00</h2>
+                                    <h2><?php
+                                    if(isset($_SESSION['cotacao']))
+                                    {
+                                        echo($_SESSION['simbolo'].' '.number_format(floatval($rows[$cont]->preco)/$_SESSION['cotacao'], 2, ",", "."));
+
+                                    }
+                                    else
+                                    {
+                                        echo('R$ '.number_format(floatval($rows[$cont]->preco), 2, ",", "."));
+                                    }
+                                    ?>
+                                </h2>
                                 </td>
                             </tr>
                             <tr>

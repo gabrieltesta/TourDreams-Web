@@ -68,6 +68,17 @@
                 return $listQuarto->SelectQuarto();
             }
 
+            public function BuscaAvaliacao()
+            {
+                require_once('models/hotelquarto_class.php');
+
+                $idHotel = $_GET['idHotel'];
+
+                $hotel= new HotelQuarto();
+                $hotel->idHotel = $idHotel;
+                return $hotel->SelectAvaliacao($hotel);
+            }
+
     }
 
 

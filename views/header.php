@@ -12,12 +12,14 @@
 	if(isset($_GET['cotacao']))
 	{
 		$_SESSION['cotacao'] = $_GET['cotacao'];
-		header('Location:'.$_SERVER['HTTP_REFERER']);
+		$_SESSION['moeda'] = $_GET['moeda'];
+		$_SESSION['simbolo'] = $_GET['simbolo'];
+		header('Location:homepage.php');
 	}
  ?>
 <!--Modal de busca avançada-->
 <div id="buscaAvancadaBackground">
-	<form action="busca.php?modo=avancada" method="POST">
+	<form action="busca.php?modo=avancada" method="POST" autocomplete="off">
 		<div id="buscaAvancadaBox">
 			<div id="fecharBusca"><h4>Busca Avançada</h4><span onclick="abrirBusca()">X</span></div>
 			<div id="conteudoBuscaEsquerda">
@@ -358,7 +360,7 @@
 			while($cont < count($moeda))
 			{
 			?>
-				<li><a href="?cotacao=<?php echo($moeda[$cont]->valor) ?>&moeda=<?php echo($moeda[$cont]->nome) ?>"><?php echo($moeda[$cont]->nome) ?></a></li>
+				<li><a href="?cotacao=<?php echo($moeda[$cont]->valor) ?>&moeda=<?php echo($moeda[$cont]->nome) ?>&simbolo=<?php echo($moeda[$cont]->simbolo) ?>"><?php echo($moeda[$cont]->nome.' ('.$moeda[$cont]->simbolo.')') ?></a></li>
 			<?php
 			$cont += 1;
 			}
