@@ -10,6 +10,8 @@
     $row5 = $controller_hotel->BuscaQuarto();
     $avaliacoes = $controller_hotel->BuscaAvaliacao();
 
+    $rat = $rs[0]->avaliacao;
+
     $cont = 0;
 
     while($cont<count($rs)){
@@ -37,7 +39,7 @@
                             }
                         ?>
                     </td>
-                    <td id="tdAvaliacao">9,6</td>
+                    <td id="tdAvaliacao"><?php echo(round($rat)); ?></td>
                 </tr>
             </table>
         </div>
@@ -219,9 +221,22 @@
                 $limpeza = round($avaliacoes->limpeza);
                 $localizacao = round($avaliacoes->localizacao);
                 $preco = round($avaliacoes->preco);
+                $rating = '';
+
+                $rat = round($rat);
+                if($rat <= 20)
+                    $rating = '<span style="color:#ccc;">Ruim</span>';
+                if($rat > 20 && $rat <= 40)
+                    $rating = '<span style="color:#ff0000;">Razoável</span>';
+                if($rat > 40 && $rat <= 60)
+                    $rating = '<span style="color:yellow;">Bom</span>';
+                if($rat > 60 && $rat <= 80)
+                    $rating = '<span style="color:#aff252;">Muito Bom</span>';
+                if($rat > 80)
+                    $rating = '<span style="color:green;">Excelente</span>';
 
              ?>
-            <h1>Excelente</h1>
+            <h1><?php echo($rating); ?></h1>
             <table>
                 <tr>
                     <td>Atendimento</td>
@@ -262,34 +277,60 @@
             </table>
         </div>
         <div id="avaliacaoConteudoDireito">
-            <form action="#" method="post">
-                <table>
-                    <tr>
-                        <td colspan="2"><h2>Envie sua avaliação!</h2></td>
-                    </tr>
-                    <tr>
-                        <th>Atendimento</th><td><input type="number" name="txtAtendimento" value="50" min="0" max="100" required></td>
-                    </tr>
-                    <tr>
-                        <th>limpeza</th><td><input type="number" name="txtlimpeza" value="50" min="0" max="100" required></td>
-                    </tr>
-                    <tr>
-                        <th>Lazer</th><td><input type="number" name="txtLazer" value="50" min="0" max="100" required></td>
-                    </tr>
-                    <tr>
-                        <th>Limpeza</th><td><input type="number" name="txtLimpeza" value="50" min="0" max="100" required></td>
-                    </tr>
-                    <tr>
-                        <th>Localização</th><td><input type="number" name="txtLocalizacao" value="50" min="0" max="100" required></td>
-                    </tr>
-                    <tr>
-                        <th>Preço</th><td><input type="number" name="txtPreco" value="50" min="0" max="100" required></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="submit" name="btnEnviar" value="ENVIAR"></td>
-                    </tr>
-                </table>
-            </form>
+                <?php
+                    if(!isset($_SESSION['idCliente']))
+                    {
+                        ?>
+                        <table>
+                            <tr>
+                                <td><h1>Efetue o login para enviar uma avaliação</h1></td>
+                            </tr>
+                            <tr>
+                                <td><a href="login.php"><input type="submit" id="btnEnviar" value="LOGIN"></a></td>
+                            </tr>
+                        </table>
+                        <?php
+                    }
+                    else
+                    {
+                        ?>
+                        <table id="formAvaliacao">
+                            <tr>
+                                <td colspan="2"><h2>Envie sua avaliação!</h2></td>
+                            </tr>
+                            <tr>
+                                <th>Atendimento</th><td><input type="number" id="txtAtendimento" value="50" min="0" max="100" required><input type="hidden" id="txtIdHotel" value="<?php echo($_GET['idHotel']) ?>"><input type="hidden" id="txtIdCliente" value="<?php echo($_SESSION['idCliente']) ?>"></td>
+                            </tr>
+                            <tr>
+                                <th>Conforto</th><td><input type="number" id="txtConforto" value="50" min="0" max="100" required></td>
+                            </tr>
+                            <tr>
+                                <th>Lazer</th><td><input type="number" id="txtLazer" value="50" min="0" max="100" required></td>
+                            </tr>
+                            <tr>
+                                <th>Limpeza</th><td><input type="number" id="txtLimpeza" value="50" min="0" max="100" required></td>
+                            </tr>
+                            <tr>
+                                <th>Localização</th><td><input type="number" id="txtLocalizacao" value="50" min="0" max="100" required></td>
+                            </tr>
+                            <tr>
+                                <th>Preço</th><td><input type="number" id="txtPreco" value="50" min="0" max="100" required></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><input type="submit" id="btnEnviar" value="ENVIAR" onclick="enviarAvaliacao()"></td>
+                            </tr>
+                        </table>
+                        <?php
+                    }
+                 ?>
+                 <table style="display: none;" id="msgAvaliacao">
+                     <tr>
+                         <td><h1>Obrigado pelo feedback!</h1></td>
+                     </tr>
+                     <tr>
+                         <td><span id="smiley">:)</span></td>
+                     </tr>
+                 </table>
         </div>
     </div>
 </section>

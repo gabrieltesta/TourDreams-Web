@@ -762,6 +762,24 @@ function preencherConheca(destino) {
    $('#buscaConheca').hide();
 }
 
+function enviarAvaliacao()
+{
+    var avaliacao = $("#txtAtendimento").val()+','+$("#txtConforto").val()+','+$("#txtLazer").val()+','+$("#txtLimpeza").val()+','+$("#txtLocalizacao").val()+','+$("#txtPreco").val()+','+$("#txtIdHotel").val()+','+$("#txtIdCliente").val();
+    $.ajax({
+        type: "POST",
+        url: "api/enviar_avaliacao.php",
+        data: {
+            busca: avaliacao
+        },
+
+        success: function(html) {
+            $("#formAvaliacao").hide();
+            $("#msgAvaliacao").show();
+        }
+
+    });
+}
+
 $(document).ready(function() {
     $('#dataEntrada').attr("required",true);
     $('#dataSaida').attr("required",true);

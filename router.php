@@ -156,5 +156,13 @@
                 $controller_reserva = new ControllerReserva();
                 $controller_reserva->InsertReserva();
             break;
+
+
+            case 'novaavaliacao':
+                require_once('controllers/avaliacao_controller.php');
+                require_once('models/avaliacao_class.php');
+                $controller_avaliacao = new ControllerAvaliacao();
+                $controller_avaliacao->Inserir();
+            break;
     }
 ?>

@@ -484,32 +484,32 @@ font-size: 25px;
 
 .avaliacaoAtendimento
 {
-    background-color: rgb(114, 147, 203);
+    background-color: rgb(57, 106, 177);
 }
 
 .avaliacaoConforto
 {
-    background-color: rgb(225, 151, 76);
+    background-color: rgb(218, 124, 48);
 }
 
 .avaliacaoLazer
 {
-    background-color: rgb(132, 186, 91);
+    background-color: rgb(62, 150, 81);
 }
 
 .avaliacaoLimpeza
 {
-    background-color: rgb(211, 94, 96);
+    background-color: rgb(204, 37, 41);
 }
 
 .avaliacaoLocalizacao
 {
-    background-color: rgb(144, 103, 167);
+    background-color: rgb(107, 76, 154);
 }
 
 .avaliacaoPreco
 {
-    background-color: rgb(171,104,87);
+    background-color: rgb(242,218,87);
 }
 
 #avaliacaoConteudoDireito
@@ -569,4 +569,28 @@ font-size: 25px;
 {
     background-color: #fff;
     color: #4682b4;
+}
+
+#avaliacaoConteudoDireito h1
+{
+    color: #666666;
+    font-family: RalewayRegular;
+}
+
+#msgAvaliacao
+{
+    text-align: center;
+}
+
+#msgAvaliacao h1
+{
+    font-size: 18pt;
+}
+
+#smiley
+{
+    color: #666666;
+    font-size: 150pt;
+
+    margin: 0 auto;
 }
