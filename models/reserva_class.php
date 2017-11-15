@@ -127,6 +127,11 @@
                         $sql = "insert into tbl_transacao(dataInicio,dataFim,desconto,vlrTotal,dtTransacao,status,idCartao,idQuarto,idCliente,idPlataforma)
                                 values('".$this->dataEntrada."','".$this->dataSaida."',".$this->desconto.",".$valorTotal.",'".$datetime."','Pendente',".$idCartao.",".$this->idQuarto." ,".$this->idCliente.",1);";
                         mysql_query($sql) or die(mysql_error());
+                        $sql = "update tbl_cliente set milhasPontuacao = milhasPontuacao - ".$this->valorPoints." where idCliente =".$this->idCliente.";";
+                        mysql_query($sql) or die(mysql_error());
+
+                        header('location:perfilUsuario.php');
+
                     }
                 }
 

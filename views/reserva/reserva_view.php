@@ -138,7 +138,7 @@
             ?>
                 <tr>
                     <td colspan="2"><input <?php if($row2[$cont]->milhasPontuacao < $row2[$cont]->valorPontos){echo ('disabled');} ?>
-                         type="radio" name="radDesconto" value="<?php echo($row2[$cont]->desconto) ?>" ><label for="radDesconto"><?php echo ($row2[$cont]->valorPontos); ?>
+                         type="radio" name="radDesconto" value="<?php echo($row2[$cont]->desconto.",".$row2[$cont]->valorPontos); ?>" ><label for="radDesconto"><?php echo ($row2[$cont]->valorPontos); ?>
                               pontos (<?php echo($row2[$cont]->desconto) ?>% de desconto)</label></td>
                 </tr>
             <?php

@@ -37,7 +37,9 @@
                 $numCartao = $_POST['txtNumero'];
                 $codSeguranca = $_POST['txtCodigo'];
                 $valorDiario = $_POST['txtValorDiario'];
-                $desconto = $_POST['radDesconto'];
+                $descontoBruto = $_POST['radDesconto'];
+
+                $separadorDesconto = explode(",",$descontoBruto);
 
                 $validade = $_POST['txtValidade'];
                 $idQuarto = $_POST['txtIdQuarto'];
@@ -56,7 +58,8 @@
                 $reserva_class->numCartao = $numCartao;
                 $reserva_class->valorDiario = $valorDiario;
 
-                $reserva_class->desconto = $desconto;
+                $reserva_class->desconto = $separadorDesconto[0];
+                $reserva_class->valorPoints = $separadorDesconto[1];
                 $reserva_class->codSeguranca = $codSeguranca;
                 $reserva_class->validade = $validade;
                 $reserva_class->idQuarto = $idQuarto;
@@ -64,7 +67,7 @@
 
                 $reserva_class->InserirReserva();
 
-                header('location:perfilUsuario.php');
+                
 
             }
 
