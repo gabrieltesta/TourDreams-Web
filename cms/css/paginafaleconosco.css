@@ -11,52 +11,55 @@
   background-color: ;
   margin-top: 20px;
   font-family: SourceSansRegular;
+  border-bottom: solid 1px #ccc;
 }
 .conteudoFaleconosco{
   width: 95%;
   height: 670px;
-  background-color: red;
+  background-color: ;
   margin-left: auto;
   margin-right: auto;
 }
 .part1{
     width: 70%;
     height: 100%;
-    background-color: purple;
+    background-color: ;
     float: left;
 }
 .part2{
-  width: 30%;
+  width: 29%;
   height: 100%;
-  background-color: green;
+  background-color: ;
   float: left;
+  border-left:  solid 1px #ccc;
 
 }
 .botoes{
   width: 85%;
   height: 50%;
-  background-color: blue;
+  background-color: ;
   margin-left: auto;
   margin-right: auto;
 }
 .icones{
   width: 100%;
   height: 50%;
-  background-color: yellow;
+  background-color: ;
+  border-top:    solid 1px #ccc;
 }
 .botoesSeparados{
   width: 300px;
   height: 95%;
   float: left;
-  background-color: pink;
+  background-color: ;
   margin-left: 10px;
   margin-top: 5px;
 
 }
 .tituloBotao{
   width: 100%;
-  height: 60px;
-  background-color: red;
+  height: 40px;
+  background-color: ;
   font-size: 25px;
   line-height: 50px;
     font-family: RalewayRegular;
@@ -64,11 +67,107 @@
 .img{
   width: 73%;
   height: 70%;
-  background-color: black;
+  background-color: ;
   margin-left: auto;
   margin-right: auto;
-  margin-top:20px;
+    margin-top:10px;
   border-radius: 50%;
+}
+.img img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+
+
+}
+.input{
+  width: 100%;
+  height: 50px;
+  background-color: ;
+}
+
+/**/
+.iconesQuadrado{
+  width: 260px;
+  height: 95%;
+  background-color: ;
+  float: left;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.tituloIcones{
+  width: 100%;
+  height: 40px;
+  background-color: ;
+  font-family: RalewayRegular;
+  font-size: 25px;
+}
+.imgIcones{
+  width: 100%;
+  height: 230px;
+  background-color: ;
+  display: flex;
+  display:flex;
+}
+.inputIcones{
+  width: 100%;
+  height: 50px;
+  background-color: ;
+
+}
+
+.inputIcones input{
+  width: 250px;
+  margin-top: 20px;
+}
+.imgRedondo{
+  width: 90%;
+  height: 75%;
+  background-color:#4682b4;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  border-radius: 10px;
+
+}
+.imgRedondo img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+/**/
+.tituloBack{
+  width: 100%;
+  height: 60px;
+  background-color: ;
+  font-family: RalewayRegular;
+  font-size: 25px;
+  line-height: 60px;
+}
+.conteudoBack{
+  width: 100%;
+  height: 560px;
+  background-color: ;
+  display: flex;
+}
+.isoladorBack{
+  width: 90%;
+  height: 90%;
+  background-color: ;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+.isoladorBack img{
+  width: 100%;
+  height: 100%;
+}
+.inputBack{
+  width: 100%;
+  height: 50px;
+  background-color: ;
 }
 .botao input{
     height: 60px;
