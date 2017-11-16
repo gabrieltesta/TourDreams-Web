@@ -16,7 +16,7 @@
 
     public function SelectByDestino($buscaRapida){
 
-      $sql="Select * from vw_busca where cidade like '%".$buscaRapida->destino."%'";
+      $sql="Select * from vw_buscarapida where cidade like '%".$buscaRapida->destino."%'";
 
       $cont = 0;
 
