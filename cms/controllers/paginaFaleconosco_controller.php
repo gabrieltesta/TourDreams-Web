@@ -12,6 +12,7 @@
         /*Contato*/
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
+
             if (isset( $_FILES[ 'fileFotosContato' ][ 'name' ] ) && $_FILES[ 'fileFotosContato' ][ 'error' ] == 0 ) {
               $arquivo_tmp = $_FILES[ 'fileFotosContato' ][ 'tmp_name' ];
               $nome = $_FILES[ 'fileFotosContato' ][ 'name' ];

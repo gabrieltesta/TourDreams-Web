@@ -129,10 +129,12 @@
                 $quarto_class->nome = $nome;
                 $quarto_class->vlrDiario = $vlrDiario;
                 $quarto_class->maxHosp = $maxHosp;
-            
+
                 $quarto_class->idHotel = $idHotel;
                 $quarto_class->descricao = $descricao;
                 $quarto_class->idQuarto = $idQuarto;
+
+
 
                 if (isset( $_FILES[ 'fileImg' ][ 'name' ] ) && $_FILES[ 'fileImg' ][ 'error' ] == 0 ) {
                   $arquivo_tmp = $_FILES[ 'fileImg' ][ 'tmp_name' ];
@@ -170,7 +172,21 @@
                       }
                   }
               }else{
+                  if(isset($_POST['comodidadeQuarto'])){
 
+                      foreach ($_POST['comodidadeQuarto'] as $comodidade) {
+
+                          $quarto_comodidade = new Quarto();
+                          $quarto_comodidade->comodidade = $comodidade;
+                          $quarto_comodidade->idQuarto = $idQuarto;
+                          $quarto_comodidade->UpdateComodidade();
+
+                          $quarto_class->UpdateQuarto();
+
+
+                          header('location:perfilParceiro.php?idParceiro='.$idParceiro);
+                      }
+                  }
               }
 
           }

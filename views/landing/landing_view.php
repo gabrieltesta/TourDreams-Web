@@ -22,7 +22,7 @@
 <!--Formulário de busca-->
 <section>
 	<div id="formBox">
-		<form method="get" action="#">
+		<form method="post" action="busca.php?btn_pesquisar=buscaRapida">
 			<input type="text" name="txtDestino" placeholder="Digite seu destino...">
 			<input type="image" value="submit" src="imagens/pesquisar.png"  draggable="false" onmousedown="return false" style="user-drag: none">
 		</form>

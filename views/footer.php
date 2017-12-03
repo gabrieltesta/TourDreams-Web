@@ -8,8 +8,18 @@
                 <ul>
                     <li><a href="homepage.php">Home</a></li>
                     <li><a href="sobrenos.php">Sobre Nós</a></li>
-                    <li><a href="#">Nossos Parceiros</a></li>
-                    <li><a href="#">Melhores destinos</a></li>
+                    <li><a href="parceiros.php">Nossos Parceiros</a></li>
+                    <li><?php if(isset($_SESSION['login'])){
+            						if($_SESSION['login'] == 'true'){
+            			?>
+            				<a href="melhoresDestinos.php">Melhores Destinos</a>
+            			<?php
+            						}
+            					}else{
+
+            			?>
+            							<a href="login.php?melhoresdestinos">Melhores Destinos</a>
+            		<?php } ?></li>
                     <li><a href="conhecaseudestino.php">Conheça seu destino</a></li>
                     <li><a href="promocoes.php">Promoções da semana</a></li>
                     <li><a href="faleconosco.php">Fale Conosco</a></li>
@@ -17,11 +27,11 @@
             </div>
             <div class="footerLink">
                 <ul>
-                    <li><a href="#">Norte</a></li>
-                    <li><a href="#">Nordeste</a></li>
-                    <li><a href="#">Centro-Oeste</a></li>
-                    <li><a href="#">Sudeste</a></li>
-                    <li><a href="#">Sul</a></li>
+                    <li onclick="buscarRegiao('Norte')">Norte</li>
+                    <li onclick="buscarRegiao('Nordeste')">Nordeste</li>
+                    <li onclick="buscarRegiao('Centro-Oeste')">Centro-Oeste</li>
+                    <li onclick="buscarRegiao('Sudeste')">Sudeste</li>
+                    <li onclick="buscarRegiao('Sul')">Sul</li>
                 </ul>
             </div>
         </div>

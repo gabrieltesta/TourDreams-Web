@@ -18,7 +18,7 @@
     <!--Descrição da empresa-->
     <div id="conteudoSuperior">
         <div id="descricao">
-            <?php echo ($row->descricaoSuperior); ?>
+            <p><?php echo ($row->descricaoSuperior); ?></p>
         </div>
     </div>
     <!---->
@@ -28,17 +28,17 @@
             <div class="missaoBox">
                 <div class="img"><img src="<?php echo ($row->imgvisao); ?>" alt=""></div>
                 <h3>Visão</h3>
-                <?php echo ($row->visao); ?>
+                <P><?php echo ($row->visao); ?></P>
             </div>
             <div class="missaoBox">
                 <div class="img"><img src="<?php echo ($row->imgvalores); ?>" alt=""></div>
                 <h3>Valores</h3>
-                <?php echo ($row->valores); ?>
+                <p><?php echo ($row->valores); ?></P>
             </div>
             <div class="missaoBox">
                 <div class="img"><img src="<?php echo ($row->imgmissao); ?>" alt=""></div>
                 <h3>Missão</h3>
-                <?php echo ($row->missao); ?>
+                <p><?php echo ($row->missao); ?></p>
             </div>
         </div>
     </div>
@@ -48,15 +48,15 @@
         <div id="historicoBox">
             <div class="historico">
                 <h3><?php echo ($row->anoUm); ?></h3>
-                <?php echo ($row->descricaoUm); ?>
+                <p><?php echo ($row->descricaoUm); ?></p>
             </div>
             <div class="historico">
                 <h3><?php echo ($row->anoDois); ?></h3>
-                <?php echo ($row->descricaoDois); ?>
+                <p><?php echo ($row->descricaoDois); ?></p>
             </div>
             <div class="historico">
                 <h3><?php echo ($row->anoTres); ?></h3>
-                <?php echo ($row->descricaoTres); ?>
+                <p><?php echo ($row->descricaoTres); ?></p>
             </div>
         </div>
         <!---->

@@ -65,5 +65,26 @@
       $lstBuscaAvancada->preco=$preco;
       return $lstBuscaAvancada ->SelectDaBuscaAvancada();
     }
+
+
+    public function BuscaAcancadaFiltro(){
+
+    @  $estadia = $_GET['slcTipoEstadia'];
+    @  $qtdEstrelas = $_GET['slcEstrela'];
+    @  $parceiro = $_GET['slcParceiro'];
+    @  $avaliacao = $_GET['slcAvaliacao'];
+    @  $preco = $_GET['slcPreco'];
+
+      require_once('models/buscaAvancada_class.php');
+      $lstBuscaAvancadaFiltro = new SelectBuscaAvancada();
+
+      $lstBuscaAvancadaFiltro->estadia=$estadia;
+      $lstBuscaAvancadaFiltro->qtdEstrelas=$qtdEstrelas;
+      $lstBuscaAvancadaFiltro->parceiro=$parceiro;
+      $lstBuscaAvancadaFiltro->avaliacao=$avaliacao;
+      $lstBuscaAvancadaFiltro->preco=$preco;
+      return $lstBuscaAvancadaFiltro ->SelectDaBuscaAvancadaFiltro();
+
+    }
   }
  ?>

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 class ControllerLogin
 {
     public function Autenticar()
@@ -44,7 +44,7 @@ class ControllerLogin
                     if($this->action != null){
                         header('location:'.$this->action);
                     }else{
-                        header('location:perfilusuario.php');
+                        header('location:perfilUsuario.php');
                     }
                 }
                 else if($login->tipoLogin == 'parceiro')

@@ -22,6 +22,7 @@
             Contato
           </div>
           <div class="img">
+            
             <img src="../<?php echo($rows->contato); ?>" alt="Contato" onclick="irContato()" onmousedown="return false">
           </div>
           <div class="input">

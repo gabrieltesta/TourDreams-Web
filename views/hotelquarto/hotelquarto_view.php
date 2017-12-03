@@ -131,6 +131,94 @@
         </div>
         <hr>
     </div>
+
+    <div class="container">
+        
+        <section id="sliderhome">
+            <div id="meuSlider" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#meuSlider" data-slide-to="0" class="active"></li>
+                    <?php
+                        $contadorIndex = 1;
+
+                        while($contadorIndex < count($row2)){
+                    ?>
+                    <li data-target="#meuSlider" data-slide-to="<?php echo($contadorIndex); ?>"></li>
+                    <?php
+
+                        $contadorIndex++;
+                        }
+                    ?>
+
+
+                </ol>
+                <div class="carousel-inner">
+                    <div class="item active"><img style="height:100%;width:100%;" src="<?php echo($row2[0]->caminhoImagem); ?>" alt="Slider 1" /></div>
+                    <?php
+
+                        $contadorImg = 1;
+
+                        while($contadorImg < count($row2)){
+
+                    ?>
+                    <div class="item"><img style="height:100%;width:100%;" src="<?php echo($row2[$contadorImg]->caminhoImagem); ?>" alt ="Slide" /></div>
+                    <?php
+                            $contadorImg++;
+                        }
+                    ?>
+
+
+                </div>
+                <a class="left carousel-control" href="#meuSlider" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                <a class="right carousel-control" href="#meuSlider" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </section>
+
+
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+
+    <div id="divComodidades2">
+
+        <div class="separador">
+
+                <?php
+                    $contador2 = 0;
+
+                    while($contador2 < count($row4)){
+
+                        $cur = 0;
+                        foreach($row4 as $value){
+                            if($cur == 0)
+                            {
+                                echo '<ul>';
+                            }
+                            echo '    <li>' . $row4[$contador2]->comodidadeHotel . '</li>';
+                            $contador2++;
+                            if($cur == 5)
+                            {
+                                echo '</ul>';
+                                $cur = 0;
+                            }
+                            else
+                            {
+                                $cur++;
+                            }
+                        }
+
+
+                    }
+                ?>
+
+        </div>
+
+    </div>
+
+
+
     </div>
 </section>
 <!---->

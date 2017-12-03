@@ -110,25 +110,32 @@
                 <table class="sortable">
                     <tr>
                         <th>Hotel</th>
-                        <th>Data Início</th>
-                        <th>Data Término</th>
-                        <th>Preço</th>
+                        <th>Data Entrada</th>
+                        <th>Data Saída</th>
+                        <th>Valor Total</th>
+                        <th>Status</th>
                         <th>Plataforma</th>
                     </tr>
                     <?php
-                        $i = 0;
-                        while ($i < 25)
-                        {
+                        $lstReservas = new ControllerUsuario();
+                        $lstReservas->idCliente = $_SESSION['idCliente'];
+                        $row2 = $lstReservas->ListarReservas();
+
+                        $contador = 0;
+
+                        while($contador < count($row2)){
+
                      ?>
                     <tr>
-                        <td>Exemplo</td>
-                        <td>13/09/2017</td>
-                        <td>14/09/2017</td>
-                        <td>R$ 550,00</td>
-                        <td>Site</td>
+                        <td><?php echo($row2[$contador]->hotel); ?></td>
+                        <td><?php echo(implode("/",array_reverse(explode("-",$row2[$contador]->dataEntrada)))); ?></td>
+                        <td><?php echo(implode("/",array_reverse(explode("-",$row2[$contador]->dataSaida)))); ?></td>
+                        <td>R$ <?php echo(number_format($row2[$contador]->vlrTotal,2,",",".")); ?></td>
+                        <td><?php echo($row2[$contador]->status); ?></td>
+                        <td><?php echo($row2[$contador]->plataforma); ?></td>
                     </tr>
                     <?php
-                        $i += 1;
+                            $contador++;
                         }
                      ?>
                 </table>
@@ -138,14 +145,20 @@
         </div>
         <!--Última viagem-->
         <div id="conteudoDireito">
+            <?php
+            $lstUltimaReserva = new ControllerUsuario();
+            $lstUltimaReserva->idCliente = $_SESSION['idCliente'];
+            $row3 = $lstUltimaReserva->ListarUltimaReserva();
+
+            ?>
             <div id="ultimaViagem"><span>Sua última viagem</span></div>
-            <div id="imagemUltimaViagem"><img src="imagens/perfilusuario/hotel.jpeg" alt="Última viagem"></div>
-            <div id="nomeHotel"><span>Hotel Exemplo</span></div>
+            <div id="imagemUltimaViagem"><img src="<?php echo($row3->caminhoImagem); ?>" alt="Última viagem"></div>
+            <div id="nomeHotel"><span><?php echo($row3->hotel); ?></span></div>
             <div id="estrelas">
             <?php
-                $qtd = rand(1, 5);
+
                 $cont = 1;
-                while ($cont <= $qtd)
+                while ($cont <= $row3->qtdEstrelas)
                 {
                     ?>
                         <img src="imagens/busca/estrela.png" alt="">
@@ -156,28 +169,28 @@
             </div>
             <table>
                 <tr>
-                    <td>Bairro exemplo, Cidade Exemplo-EX</td>
+                    <td><?php echo($row3->logradouro." N° ".$row3->numero.", ".$row3->bairro.", ".$row3->cidade." - ".$row3->uf); ?></td>
                 </tr>
                 <tr>
-                    <td>Parceiro Exemplo</td>
+                    <td><?php echo($row3->nomeParceiro) ?></td>
                 </tr>
                 <tr>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>Data de Início: 13/09/2017</td>
+                    <td>Data de Início: <?php echo(implode("/",array_reverse(explode("-",$row3->dataEntrada)))); ?></td>
                 </tr>
                 <tr>
-                    <td>Data de Saída: 14/09/2017</td>
+                    <td>Data de Saída: <?php echo(implode("/",array_reverse(explode("-",$row3->dataSaida)))); ?></td>
                 </tr>
                 <tr>
-                    <td>Valor: R$ 550,00</td>
+                    <td>Valor: <?php echo(number_format($row3->vlrTotal,2,",",".")); ?></td>
                 </tr>
             </table>
 
 
             <div class="comentario" onclick="abrirModalComentario()">
-              Deixar um comentário
+              Deixar um comentário sobre <?php echo($row3->cidade); ?>
             </div>
 
         </div>

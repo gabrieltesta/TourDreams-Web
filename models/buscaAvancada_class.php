@@ -112,6 +112,7 @@
 
               $IdComodidades = $IdComodidades.','.$itemHotel->id;
 
+
           }
 
         //$listHotel[] = $itemHotel;
@@ -128,8 +129,130 @@
         $where = " where cidade='".$this->cidade."'";
 
         if($this->cidade != null){
-              $where = $where ." and cidade=".$this->cidade;
+              $where = $where ." and cidade='".$this->cidade."'";
         }
+
+        if($this->parceiro > 0){
+              $where = $where ." and idParceiro=".$this->parceiro;
+        }
+
+        if($this->estadia > 0){
+              $where = $where ." and idTipoEstadia=".$this->estadia;
+        }
+
+        if($this->qtdEstrelas > 0 ){
+                $where = $where ." and qtdEstrelas =".$this->qtdEstrelas;
+        }
+
+        if($this->avaliacao > 0 ){
+                $where = $where ." and avaliacao >=".$this->avaliacao;
+        }
+
+        if($this->preco != null ){
+
+                $where = $where ." and valorDiario ".$this->preco;
+        }
+
+
+        if($IdComodidades !="0"){
+          $where = $where ." and idComodidadeHotel  in(".$IdComodidades.")";
+      }else{
+          $where = $where ." group by idHotel";
+      }
+
+
+        $sql = $sql.$where.";";
+
+
+        // echo ($sql);
+
+        $select = mysql_query($sql);
+        $cont = 0;
+
+        $listComo = array();
+
+
+        while ($rs=mysql_fetch_array($select)) {
+
+          $item =  new SelectBuscaAvancada();
+
+          //$listComo[] = new SelectBuscaAvancada();
+
+
+          $sql = "select * from tbl_imagem
+                    inner join tbl_hotel as h
+                    inner join tbl_hotelimagem as hi
+                    on hi.idHotel = h.idHotel and hi.idImagem = tbl_imagem.idImagem
+                    where h.idHotel =".$rs['idHotel']." limit 1;";
+
+        $selectImagemHotel = mysql_query($sql);
+
+            if($row = mysql_fetch_array($selectImagemHotel)){
+
+              $item->bairro=$rs['bairro'];
+              $item->logradouro=$rs['logradouro'];
+              $item->preco=$rs['valorDiario'];
+              $item->cidade=$rs['cidade'];
+              $item->nomeParceiro=$rs['nomeParceiro'];
+
+              $item->hotel=$rs['hotel'];
+              $item->idHotel=$rs['idHotel'];
+              $item->imagemHotel=$row['caminhoImagem'];
+              $item->qtdEstrelas=$rs['qtdEstrelas'];
+
+
+              $listComo[] = $item;
+            }
+        }
+
+        if (mysql_num_rows($select)>0) {
+
+          return $listComo;
+        }else{
+          echo "Nenhum Hotel Encontrado";
+        }
+
+
+
+    }
+
+    public function SelectDaBuscaAvancadaFiltro(){
+
+
+      $sqlHotel = "select * from tbl_comodidadeshotel";
+      $selectHotel = mysql_query($sqlHotel);
+
+      $listHotel = array();
+
+      $IdComodidades ="0";
+
+      while ($rs=mysql_fetch_array($selectHotel)) {
+
+        $itemHotel = new SelectBuscaAvancada();
+
+        $itemHotel->id=$rs['idComodidadeHotel'];
+
+
+          if(isset($_GET['chk'.$itemHotel->id])){
+
+              $IdComodidades = $IdComodidades.','.$itemHotel->id;
+
+          }
+
+        //$listHotel[] = $itemHotel;
+
+      }
+
+
+
+
+
+        $sql = "select distinct * from vw_busca";
+
+
+        $where = " where idHotel>0";
+
+
 
         if($this->parceiro > 0){
               $where = $where ." and idParceiro=".$this->parceiro;
@@ -162,7 +285,8 @@
 
 
         //echo $where;
-        echo $sql;
+
+      //  echo ($sql);
 
         $select = mysql_query($sql);
         $cont = 0;
@@ -176,19 +300,30 @@
 
           //$listComo[] = new SelectBuscaAvancada();
 
-          $item->nomeQuarto=$rs['nome'];
-          $item->bairro=$rs['bairro'];
-          $item->logradouro=$rs['logradouro'];
-          $item->preco=$rs['valorDiario'];
-          $item->cidade=$rs['cidade'];
-          $item->nomeParceiro=$rs['nomeParceiro'];
 
-          $item->hotel=$rs['hotel'];
-          $item->imagemHotel=$rs['caminhoImagem'];
-          $item->qtdEstrelas=$rs['qtdEstrelas'];
+          $sql = "select * from tbl_imagem
+                    inner join tbl_hotel as h
+                    inner join tbl_hotelimagem as hi
+                    on hi.idHotel = h.idHotel and hi.idImagem = tbl_imagem.idImagem
+                    where h.idHotel =".$rs['idHotel']." limit 1;";
+
+        $selectImagemHotel = mysql_query($sql);
+
+            if($row = mysql_fetch_array($selectImagemHotel)){
+
+                  $item->bairro=$rs['bairro'];
+                  $item->logradouro=$rs['logradouro'];
+                  $item->preco=$rs['valorDiario'];
+                  $item->cidade=$rs['cidade'];
+                  $item->nomeParceiro=$rs['nomeParceiro'];
+
+                  $item->hotel=$rs['hotel'];
+                  $item->imagemHotel=$row['caminhoImagem'];
+                  $item->qtdEstrelas=$rs['qtdEstrelas'];
 
 
-          $listComo[] = $item;
+                  $listComo[] = $item;
+              }
         }
 
         if (mysql_num_rows($select)>0) {
@@ -197,6 +332,7 @@
         }else{
           echo "Nenhum Hotel Encontrado";
         }
+
 
 
 

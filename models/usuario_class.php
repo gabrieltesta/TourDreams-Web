@@ -22,6 +22,99 @@
         $conexao_db->conectar();
     }
 
+    public function SelectReservas(){
+
+        $sql = "select t.idTransacao, t.dataInicio, t.dataFim, t.vlrTotal, t.status, p.nome, h.hotel
+                from tbl_transacao as t
+                inner join tbl_quarto as q
+                on t.idQuarto = q.idQuarto
+                inner join tbl_hotel as h
+                on q.idHotel = h.idHotel
+                inner join tbl_plataforma as p
+                on t.idPlataforma = p.idPlataforma where t.idCliente =".$this->idCliente." order by t.dtTransacao desc;";
+
+        $select = mysql_query($sql);
+
+        $cont = 0;
+        if(mysql_num_rows($select) > 0){
+
+            while($rs = mysql_fetch_array($select)){
+
+                $lstreserva[] = new Usuario();
+
+                $lstreserva[$cont]->hotel = $rs['hotel'];
+                $lstreserva[$cont]->dataEntrada = $rs['dataInicio'];
+                $lstreserva[$cont]->dataSaida = $rs['dataFim'];
+                $lstreserva[$cont]->vlrTotal = $rs['vlrTotal'];
+                $lstreserva[$cont]->status = $rs['status'];
+                $lstreserva[$cont]->plataforma = $rs['nome'];
+                $lstreserva[$cont]->idTransacao = $rs['idTransacao'];
+
+                $cont++;
+
+            }
+
+            return $lstreserva;
+
+        }else{
+            echo "Não há reservas!";
+        }
+
+
+    }
+
+    public function SelectUltimaReserva(){
+
+        $sql = "select t.idTransacao,t.dataInicio, t.dataFim, t.vlrTotal, h.hotel, h.qtdEstrelas, l.logradouro, l.numero,b.bairro,c.idCidade, c.cidade,e.uf,p.nomeParceiro, i.caminhoImagem
+                from tbl_transacao as t
+                inner join tbl_quarto as q
+                on t.idQuarto = q.idQuarto
+                inner join tbl_hotel as h
+                on q.idHotel = h.idHotel
+                inner join tbl_logradouro as l
+                on h.idLogradouro = l.idLogradouro
+                inner join tbl_bairro as b
+                on l.idBairro = b.idBairro
+                inner join tbl_cidade as c
+                on b.idCidade = c.idCidade
+                inner join tbl_estado as e
+                on c.idEstado = e.idEstado
+                inner join tbl_parceiro as p
+                on h.idParceiro = p.idParceiro
+                inner join tbl_imagem as i
+                inner join tbl_hotelimagem as hi
+                on hi.idHotel = h.idHotel and hi.idImagem = i.idImagem
+                where t.idCliente =".$this->idCliente."
+                group by t.idTransacao
+                order by t.idTransacao desc limit 1;";
+
+        $select = mysql_query($sql);
+
+        if($rs = mysql_fetch_array($select)){
+
+            $listReserva = new Usuario();
+
+            $listReserva->dataEntrada = $rs['dataInicio'];
+            $listReserva->dataSaida = $rs['dataFim'];
+            $listReserva->vlrTotal = $rs['vlrTotal'];
+            $listReserva->hotel = $rs['hotel'];
+            $listReserva->qtdEstrelas = $rs['qtdEstrelas'];
+            $listReserva->logradouro = $rs['logradouro'];
+            $listReserva->numero = $rs['numero'];
+            $listReserva->bairro = $rs['bairro'];
+            $listReserva->cidade = $rs['cidade'];
+            $listReserva->caminhoImagem = $rs['caminhoImagem'];
+            $listReserva->uf = $rs['uf'];
+            $listReserva->nomeParceiro = $rs['nomeParceiro'];
+
+            return $listReserva;
+
+        }
+
+
+    }
+
+
     public function Insert($usuario){
 
         $sql = "INSERT INTO tbl_login(login, senha, idTipoLogin) VALUES(

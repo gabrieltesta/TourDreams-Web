@@ -5,6 +5,8 @@
         <title>Hotel - TourDreams</title>
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
         <link rel="stylesheet" href="css/hotelquarto.css">
         <link rel="stylesheet" href="js/jqueryui/jquery-ui.css">
         <script src="js/jquery-3.2.1.min.js" charset="utf-8"></script>
@@ -12,6 +14,7 @@
         <script src="js/jqueryui/jquery-ui.min.js" charset="utf-8"></script>
         <script src="js/script.js" charset="utf-8"></script>
         <link rel="icon" href="imagens/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=0">
     </head>
     <body>
         <?php

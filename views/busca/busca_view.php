@@ -2,8 +2,9 @@
     <!--Caixa de filtros-->
     <div id="filtrosBox">
         <h3 id="filtrosBoxTitulo"><span>Filtros de busca</span></h3>
-        <form action="busca.php?modo=avancada">
+        <form action="busca.php?modo=avancada" action="GET">
         <div id="filtros">
+
             <h3>Preço</h3>
             <ul>
                 <li><input type="radio" name="slcPreco" value="<100">R$ 0,00 - R$ 99,99</li>
@@ -109,7 +110,8 @@
                  ?>
             </ul>
         </div>
-        <input type="submit" name="btn_pesquisar" value="PESQUISAR">
+
+        <input type="submit" name="btn_pesquisar" value="FILTRO">
         </form>
     </div>
     <!---->
@@ -145,7 +147,22 @@
             require_once('controllers/buscaRapida_controller.php');
             require_once('models/buscaRapida_class.php');
 
-            if (isset($_GET['btn_pesquisar'])) {
+        if(isset($_GET['estado'])){
+            require_once('controllers/buscaestado_controller.php');
+            require_once('models/buscaEstado_class.php');
+            $estado = $_GET['estado'];
+            $controllerBuscaEstado = new controllerBuscaEstado();
+            $controllerBuscaEstado->estado = $estado;
+            $rows = $controllerBuscaEstado->buscaEstado();
+
+        }elseif(isset($_GET['regiao'])){
+            require_once('controllers/buscaRegiao_controller.php');
+            require_once('models/buscaRegiao_class.php');
+            $regiao = $_GET['regiao'];
+            $controllerBuscaRegiao = new controllerBuscaRegiao();
+            $controllerBuscaRegiao->regiao = $regiao;
+            $rows = $controllerBuscaRegiao->buscaRegiao();
+        }elseif (isset($_GET['btn_pesquisar'])) {
               if($_GET['btn_pesquisar']  == 'PESQUISAR'){
 
 
@@ -157,7 +174,13 @@
 
               $controllerBuscaRapida = new ControllerBuscaRapida();
               $rows = $controllerBuscaRapida->Buscar();
-            }
+        }
+            elseif($_GET['btn_pesquisar']  == 'FILTRO') {
+
+
+              $controllerSelectBuscaAvancadaFiltro = new ControllerSelectBuscaAvancada();
+              $rows = $controllerSelectBuscaAvancadaFiltro->BuscaAcancadaFiltro();
+              }
           }
 
             $cont = 0;

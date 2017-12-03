@@ -80,7 +80,7 @@
 
         public function InserirReserva(){
 
-            $sql = "select * from tbl_transacao WHERE idQuarto =".$this->idQuarto." and (('".$this->dataEntrada."' between dataInicio and dataFim) or ('".$this->dataSaida."' between dataInicio and dataFim));";
+            $sql = "select * from tbl_transacao WHERE idQuarto =".$this->idQuarto." and (('".$this->dataEntrada."' between dataInicio and dataFim) or ('".$this->dataSaida."' between dataInicio and dataFim)) and status='Aprovado' or 'Pendente';";
             echo($sql);
             $select = mysql_query($sql);
 

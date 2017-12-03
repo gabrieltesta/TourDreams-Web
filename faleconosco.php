@@ -18,7 +18,7 @@
             };
         </script>
     </head>
-    <body>
+    <body >
         <?php
             require_once('views/header.php');                                   //Cabeçalho
             require_once('views/faleconosco/faleconosco_view.php');             //Conteúdo

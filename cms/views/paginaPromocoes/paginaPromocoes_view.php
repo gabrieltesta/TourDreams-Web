@@ -1,3 +1,13 @@
+<?php
+    require_once('controllers/paginapromocoes_controller.php');
+    $listarPromocoes = new ControllerPromocao();
+
+    $row = $listarPromocoes->Select();
+
+
+
+ ?>
+
 <div class="principalPromocoes">
   <div class="tituloPromocoes">
     Administração Promoções
@@ -15,7 +25,7 @@
         </table>
     </div>
     <div class="select">
-        <li><img  class="img" src="../imagens/promocoes/promocao1.jpg" alt=""></li>
+        <li><img  class="img" src="../<?php echo($row->banner1)?>" alt=""></li>
     </div>
     <div class="tabela">
         <tr>
@@ -25,7 +35,7 @@
       </table>
     </div>
     <div class="select">
-      <li><img class="img" src="../imagens/promocoes/promocao2.jpg" alt=""></li>
+      <li><img class="img" src="../<?php echo($row->banner2)?>" alt=""></li>
     </div>
   </div>
   <div class="botao">

@@ -4,6 +4,23 @@
 class ControllerUsuario
 {
 
+
+    public function ListarReservas(){
+        require_once('models/usuario_class.php');
+        $listareserva = new Usuario();
+        $listareserva->idCliente = $this->idCliente;
+        return $listareserva->SelectReservas();
+    }
+
+    public function ListarUltimaReserva(){
+        require_once('models/usuario_class.php');
+        $listaultreserva = new Usuario();
+        $listaultreserva->idCliente = $this->idCliente;
+        return $listaultreserva->SelectUltimaReserva();
+    }
+
+
+
   public function Inserir(){
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -145,6 +162,9 @@ class ControllerUsuario
 
       }
   }
+
+
+
 }
 
  ?>

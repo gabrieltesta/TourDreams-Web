@@ -48,7 +48,7 @@
                 mysql_query($sql);
                 $sql="update tbl_quarto set nome='".$this->nome."',
                         valorDiario=".$this->vlrDiario.",descricao='".$this->descricao."',
-                        maxHospedes=".$this->maxHosp.",qtdQuartos=".$this->qtdQuartos."
+                        maxHospedes=".$this->maxHosp."
                         where idQuarto=".$this->idQuarto.";";
 
                 mysql_query($sql);
@@ -73,7 +73,12 @@
         }
 
         public function UpdateQuarto(){
-            $sql = "";
+            $sql="update tbl_quarto set nome='".$this->nome."',
+                    valorDiario=".$this->vlrDiario.",descricao='".$this->descricao."',
+                    maxHospedes=".$this->maxHosp."
+                    where idQuarto=".$this->idQuarto.";";
+
+            mysql_query($sql);
         }
 
         public function InsertComodidade(){
@@ -94,6 +99,8 @@
 
         public function Deletar(){
                 $sql="delete from tbl_quartocomodidadesquarto where idQuarto=".$this->idQuarto.";";
+                mysql_query($sql);
+                $sql="delete from tbl_transacao where idQuarto=".$this->idQuarto.";";
                 mysql_query($sql);
                 $sql = "select * from tbl_quarto where idQuarto=".$this->idQuarto.";";
                 $select = mysql_query($sql);
@@ -118,7 +125,7 @@
                 $listaquarto->quarto=$rs['nome'];
                 $listaquarto->diaria=$rs['valorDiario'];
                 $listaquarto->maxHosp=$rs['maxHospedes'];
-                
+
                 $listaquarto->descricao=$rs['descricao'];
                 $listaquarto->idQuarto=$rs['idQuarto'];
 

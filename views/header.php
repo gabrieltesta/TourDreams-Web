@@ -19,7 +19,7 @@
  ?>
 <!--Modal de busca avançada-->
 <div id="buscaAvancadaBackground">
-	<form action="busca.php?modo=avancada" method="POST" autocomplete="off">
+	<form action="busca.php?modo=avancada&btn_pesquisar=PESQUISAR" method="get" autocomplete="off">
 		<div id="buscaAvancadaBox">
 			<div id="fecharBusca"><h4>Busca Avançada</h4><span onclick="abrirBusca()">X</span></div>
 			<div id="conteudoBuscaEsquerda">
@@ -209,7 +209,17 @@
 		<li><a href="homepage.php">Home</a></li>
 		<li><a href="sobrenos.php">Sobre nós</a></li>
 		<li><a href="parceiros.php">Nossos Parceiros</a></li>
-		<li><a href="melhoresDestinos.php">Melhores Destinos</a></li>
+		<li><?php if(isset($_SESSION['login'])){
+						if($_SESSION['login'] == 'true'){
+			?>
+				<a href="melhoresDestinos.php">Melhores Destinos</a>
+			<?php
+						}
+					}else{
+
+			?>
+							<a href="login.php?melhoresdestinos">Melhores Destinos</a>
+		<?php } ?></li>
 		<li><a href="conhecaseudestino.php">Conheça seu Destino</a></li>
 		<li><a href="promocoes.php">Promoções</a></li>
 		<li><a href="faleconosco.php">Fale Conosco</a></li>

@@ -40,10 +40,10 @@
                    $promocoes_class->caminhoImagemBannerUm=$destinoBanco;
                    $promocoes_class->EditarBannerUm();
 
-                   //header('location:paginapromocoes.php');
+                   header('location:paginapromocoes.php');
                }else{
 
-              //  header('location:paginapromocoes.php?erroCaminho');
+                header('location:paginapromocoes.php?erroCaminho');
                }
 
           }
@@ -82,10 +82,10 @@
                $promocoes_class->caminhoImagemBannerdois=$destinoBanco;
                $promocoes_class->EditarBannerDois();
 
-              // header('location:paginapromocoes.php');
+               header('location:paginapromocoes.php');
            }else{
 
-            //header('location:paginapromocoes.php?erroCaminho');
+            header('location:paginapromocoes.php?erroCaminho');
            }
 
           }
@@ -100,6 +100,19 @@
 
 
   }
+
+
+
+  public function Select(){
+
+    require_once('models/paginapromocoes_class.php');
+    $controllerpromocao =  new PaginaPromocoes();
+
+    return $controllerpromocao->SelectPromocao();
+
+
+  }
+
 }
 
  ?>

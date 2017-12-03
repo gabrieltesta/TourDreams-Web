@@ -29,7 +29,7 @@
     }
     public function EditarGeral(){
       $sql="update tbl_imagem set caminhoImagem='".$this->caminhoImagemGeral."' where idImagem=2";
-      //echo ($sql);
+    //  echo ($sql);
       mysql_query($sql) or dir(mysql_error());
     }
     public function EditarConta(){
@@ -49,7 +49,7 @@
     }
     public function EditarBackground(){
       $sql="update tbl_imagem set caminhoImagem='".$this->caminhoImagemBackground."' where idImagem=208";
-    //  echo ($sql);
+      //echo ($sql);
       mysql_query($sql) or dir(mysql_error());
     }
 
@@ -69,6 +69,7 @@
         $paginaFale_class->conta=$rs['Conta'];
         $paginaFale_class->reserva=$rs['Reserva'];
         $paginaFale_class->feedback=$rs['FeedBack'];
+
         $paginaFale_class->bg=$rs['Background'];
 
         return $paginaFale_class;

@@ -27,7 +27,7 @@ class FaleConosco
             $sql = "INSERT INTO tbl_telefone (telefone, idTipoTelefone) VALUES (
             '".$form->telefone."', '2')";
             if (mysql_query($sql)) {
-              
+
                 $sql = "SELECT LAST_INSERT_ID() AS idTelefone";
                 if ($select = mysql_query($sql)) {
                     if($rows = mysql_fetch_array($select))
@@ -45,6 +45,28 @@ class FaleConosco
                     }
                 }
             }
+        }
+
+        public function SelectFale(){
+
+          $sql = " select * from vw_paginafaleconosco";
+
+          $select = mysql_query($sql);
+          if($rs=mysql_fetch_array($select)){
+            $listar = new FaleConosco();
+            $listar->contato=$rs['Contato'];
+            $listar->faq=$rs['FAQ'];
+            $listar->duvida=$rs['Duvida'];
+            $listar->geral=$rs['Geral'];
+            $listar->conta=$rs['Conta'];
+            $listar->reserva=$rs['Reserva'];
+            $listar->feedback=$rs['FeedBack'];
+            $listar->background=$rs['Background'];
+
+            return $listar;
+
+          }
+
         }
 }
 ?>

@@ -164,5 +164,28 @@
                 $controller_avaliacao = new ControllerAvaliacao();
                 $controller_avaliacao->Inserir();
             break;
+
+            case 'perfilparceiro':
+                require_once('controllers/perfilparceiro_controller.php');
+                require_once('models/perfilparceiro_class.php');
+                switch($modo){
+                    case 'aprovar':
+
+                    $controller_perfilparceiro = new ControllerPerfilParceiro();
+                    $controller_perfilparceiro->Aprovar();
+                    break;
+                    case 'reprovar':
+
+                    $controller_perfilparceiro = new ControllerPerfilParceiro();
+                    $controller_perfilparceiro->Reprovar();
+                    break;
+                    case 'deletar':
+
+                    $controller_perfilparceiro = new ControllerPerfilParceiro();
+                    $controller_perfilparceiro->Deletar();
+                    break;
+
+                }
+            break;
     }
 ?>

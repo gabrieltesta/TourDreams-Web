@@ -51,5 +51,15 @@ class ControllerFaleConosco
             }
         }
     }
+
+    public function Select(){
+
+      require_once('models/faleconosco_class.php');
+      $listarFaleconosco = new FaleConosco();
+      return $listarFaleconosco->SelectFale();
+
+    }
+
+
 }
  ?>

@@ -387,9 +387,19 @@
                         require_once('controllers/paginapromocoes_controller.php');
                         require_once('models/paginapromocoes_class.php');
 
-                          
+
                         $controller_promocao = new ControllerPromocao();
                         $controller_promocao->Atualizar();
+                        break;
+
+                      case 'paginafaleconosco':
+
+                      require_once('controllers/paginaFaleconosco_controller.php');
+                      require_once('models/paginaFaleconosco_class.php');
+                      echo "OI";
+                      $controller_paginaFaleconosco = new ControllerPaginaFaleconosco();
+                      $controller_paginaFaleconosco->Atualizar();
+
                         break;
     }
 ?>

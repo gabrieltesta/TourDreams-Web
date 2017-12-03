@@ -65,7 +65,7 @@ pertencentes a várias páginas .php*/
         margin: 0;
         border: 0;
         font-family: Calibri;
-        max-width: 480px;
+        width: 100%;
         background-color: #f9f9f9;
     }
 
@@ -130,11 +130,12 @@ pertencentes a várias páginas .php*/
         line-height: 1.1;
         padding-left: 10px;
         cursor: pointer;
+
     }
 
     #headerLogo
     {
-        width: 75%;
+        width: 65%;
         height: 95%;
         overflow: hidden;
         user-select: none;
@@ -151,6 +152,7 @@ pertencentes a várias páginas .php*/
     #headerLogo img
     {
         width: 320px;
+        max-width: 100%;
         height: 115px;
         display: block;
         margin: 0 auto;
@@ -225,6 +227,7 @@ pertencentes a várias páginas .php*/
         color: #fff;
         padding: 0;
         display: none;
+
     }
 
     #categorias li
@@ -243,13 +246,14 @@ pertencentes a várias páginas .php*/
     #categorias li:hover
     {
         border-bottom: solid 6px #fff;
-        background-color: rgba(255,255,255,0.1)
+        background-color: rgba(255,255,255,0.1);
     }
 
     #categorias li a
     {
         display: block;
         height: 100%;
+
         width: 100%;
     }
     /**/
@@ -452,7 +456,12 @@ pertencentes a várias páginas .php*/
 
     #footerLinkBox
     {
+
         display: none;
+    }
+
+    #footerLinkBox ul{
+        color: #fff;
     }
 
     #footer h3
@@ -538,11 +547,11 @@ pertencentes a várias páginas .php*/
 
     #buscaAvancadaBox
     {
-        width: 1200px;
-        height: 600px;
+        width: 100%;
+        height: auto;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 100px;
+        margin-top: 25px;
         position: relative;
         background-color: #fff;
         border-radius: 5px;
@@ -580,8 +589,7 @@ pertencentes a várias páginas .php*/
     #conteudoBuscaEsquerda
     {
         clear: both;
-        width: 45%;
-        height: 95%;
+        width: 100%;
         margin-left: 20px;
         margin-top: 20px;
         float: left;
@@ -614,16 +622,17 @@ pertencentes a várias páginas .php*/
 
     #conteudoBuscaDireita
     {
-        width: 45%;
-        height: 70%;
+        width: 100%;
+        height: auto;
         margin-right: 20px;
         margin-top: 20px;
-        float: right;
+        float: left;
     }
 
     #comodidadesBox
     {
         width: 90%;
+        margin: 0 auto;
     }
 
     #comodidadesBox h3
@@ -634,17 +643,16 @@ pertencentes a várias páginas .php*/
 
     #comodidadesBox ul
     {
-        max-height: 300px;
-        overflow: hidden;
+        max-height: 100px;
+        overflow: auto;
         list-style: none;
     }
 
     #btnBuscaAvancada
     {
-        float: right;
-        width: 17%;
+        width: 100%;
         height: 75px;
-        margin-right: 70px;
+        margin: 0 auto;
         background-color: #4682b4;
         color: #fff;
         text-align: center;
@@ -652,8 +660,7 @@ pertencentes a várias páginas .php*/
         font-size: 18pt;
         letter-spacing: 2pt;
         line-height: 3;
-        border-radius: 10px;
-        border: solid 1px #031634;
+        margin-top: 25px;
     }
     /**/
 
@@ -755,7 +762,7 @@ pertencentes a várias páginas .php*/
     {
         width: 100%;
         height: 100%;
-        position: absolute;
+        position: fixed;
         background-color: rgba(0, 0, 0, 0.6);
         z-index: 97;
         display: none;
@@ -764,11 +771,11 @@ pertencentes a várias páginas .php*/
     #menuResponsivoBox
     {
         position: absolute;
-        width: 35%;
+        width: 66%;
         background-color: #031634;
         height: 100%;
-        margin-left: -35%;
-        z-index: 98;
+        margin-left: -66%;
+        z-index: 97;
     }
 
     #menuResponsivoBusca
@@ -780,7 +787,7 @@ pertencentes a várias páginas .php*/
 
     #menuResponsivoBox  input[type="text"]
     {
-        width: 75%;
+        width: 70%;
         float: left;
         font-size: 18pt;
         padding: 3.5px;
@@ -790,8 +797,8 @@ pertencentes a várias páginas .php*/
     #menuResponsivoBox input[type="image"]
     {
         float: left;
-        width: 33px;
-        height: 33px;
+        width: 32px;
+        height: 35px;
         border: none;
         background-color: #4682b4;
         border: solid 1px #4682b4;
@@ -823,6 +830,7 @@ pertencentes a várias páginas .php*/
         display: block;
         width: 100%;
         height: 100%;
+        font-size: 45px;
     }
     #menuResponsivoBox hr
     {
@@ -1243,6 +1251,7 @@ pertencentes a várias páginas .php*/
     .footerLink ul li:hover
     {
         color: #fff;
+        cursor: pointer;
     }
 
     #footerParceirosBox

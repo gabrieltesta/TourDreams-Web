@@ -127,7 +127,7 @@
                 <td colspan="2">Você tem: <span><?php echo($row2[$cont]->milhasPontuacao) ?></span> pontos</td>
             </tr>
             <tr>
-                <td colspan="2"><input type="radio" name="radDesconto" value="0" checked><label for="radDesconto">0 pontos (0% de desconto)</label></td>
+                <td colspan="2"><input type="radio" name="radDesconto" value="0,0" checked><label for="radDesconto">0 pontos (0% de desconto)</label></td>
             </tr>
             <?php
 

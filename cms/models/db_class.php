@@ -9,12 +9,14 @@ class Mysql_db
     //Construtor ou método mágico é criado utilizando dois caracteres '_'.
     public function __construct()
     {
-        /*$this->server = '192.168.0.2';
-        $this->user = 'portaltourdreams';
-        $this->password = 'bcd127@sixcode';*/
+        //$this->server = '192.168.0.2';
+        //$this->user = 'portaltourdreams';
+        //$this->password = 'bcd127@sixcode';
+
         $this->server = 'localhost';
         $this->user = 'root';
         $this->password = 'bcd127';
+
 
     }
 
@@ -27,7 +29,6 @@ class Mysql_db
         if ($conexao = mysql_connect($this->server, $this->user, $this->password))
         {
 			mysql_set_charset('utf8');
-            //mysql_select_db('dbportaltourdreams');
             mysql_select_db('dbtourdreams');
             return $conexao;
 

@@ -37,7 +37,7 @@
       if(mysql_num_rows($select)>0){
         return $listar;
       }else {
-        echo "erro";
+        echo "Nenhum Comentário Encontrado";
       }
 
 
