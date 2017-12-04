@@ -22,17 +22,17 @@
 
         </div>
         <div class="barradepesquisa">
-          <form method="post" action="conhecaseudestinobusca.php" name="" autocomplete="off">
+          <form method="post" action="conhecaseudestinobusca.php" autocomplete="off">
           <div class="alinharbarra">
             <table>
               <tr>
                 <td>
-                  <input class="barra" size="80" placeholder="Buscar Destino" value="" name="txtBuscarDestino" id="txtBuscarDestino">
+                  <input class="barra" size="80" placeholder="Buscar Destino" name="txtBuscarDestino" id="txtBuscarDestino">
                   <div id="buscaConheca">
                   </div>
               </td>
               <td>
-                  <input class="botao"type="image" value="btnbuscar"  img src="imagens/pesquisar.png" >
+                  <input class="botao" type="image" alt="img" src="imagens/pesquisar.png" >
               </td>
             </tr>
           </table>
@@ -78,7 +78,7 @@
                                 $estrelas = 0;
                                 while ($estrelas<$rows[$cont]->qtdEstrelas)
                                 {
-                                    ?><img src="imagens/busca/estrela.png"><?php
+                                    ?><img alt="" src="imagens/busca/estrela.png"><?php
                                     $estrelas += 1;
                                 }
                                ?>

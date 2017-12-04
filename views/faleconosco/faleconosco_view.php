@@ -17,7 +17,7 @@
             <table>
                 <tr>
                     <td><img src="imagens/faleconosco/contato.png" alt="Contato" onclick="irContato()" onmousedown="return false"></td>
-                    <td><img src="imagens/faleconosco/faq.png" alt="FAQ" onclick="irFAQ()" onmousedown="return false"onmousedown="return false"></td>
+                    <td><img src="imagens/faleconosco/faq.png" alt="FAQ" onclick="irFAQ()" onmousedown="return false"></td>
                     <td><img src="imagens/faleconosco/form.png" alt="Formulário" onclick="irForm()" onmousedown="return false"></td>
                 </tr>
                 <tr>
@@ -35,17 +35,17 @@
         <!--Conteúdo das informações de contato-->
         <div class="conteudobox" id="contato">
             <table id="informacoesContato">
-                
+
                 <?php
                     require_once('controllers/informacao_controller.php');
-                
+
                     $controller_informacao = new ControllerInformacao();
                     $rowss = $controller_informacao->Listar();
-                
-                    $conti = 0; 
-                        
+
+                    $conti = 0;
+
                     while ($conti < count($rowss)) {
-                
+
                 ?>
                 <tr>
                     <td>Telefone</td>
@@ -65,9 +65,9 @@
                 <tr>
                     <td style="border-bottom: solid 1px #eee;"><?php echo($rowss[$conti]->logradouro);?>, <?php echo($rowss[$conti]->numero);?>, <?php echo($rowss[$conti]->cidade); ?> - <?php echo($rowss[$conti]->uf);?></td>
                 </tr>
-                
+
                 <?php
-                        $conti++; 
+                        $conti++;
                     }
                 ?>
             </table>
@@ -76,39 +76,39 @@
         <!--Conteúdo do FAQ-->
         <div class="conteudobox" id="faq">
             <div id="perguntasbox">
-                
+
                 <?php
 
                     require_once('controllers/categoriageral_controller.php');
 
                     $controller_faq = new ControllerCategoriaGeral();
                     $rows = $controller_faq -> Visualizar();
-                    
+
                     $cont = 0;
 
                     while ($cont < count($rows)) {
-                        
-                        
+
+
 
                 ?>
-                
+
                 <h3><?php echo($rows[$cont]->categoriaFaq); ?></h3>
                 <ul>
                     <?php
-                    
+
                     $rows2 = $controller_faq -> VisualizarPergunta($rows[$cont]->idCategoria);
-                        
+
                         $contador = 0;
-                        
+
                         while($contador<count($rows2)){
                             $idFaq = $rows2[$contador]->idFaq;
                             $pergunta = "'".addslashes($rows2[$contador]->pergunta)."'";
-                            
-                    
+
+
                     ?>
-                    
+
                     <li onclick="abrirResposta(<?php echo($idFaq); ?>,<?php echo($pergunta); ?>)"><?php echo($rows2[$contador]->pergunta); ?></li>
-                    
+
                     <?php
                             $contador++;
                         }
@@ -165,29 +165,29 @@
                         </tr>
                         <tr>
                             <td>
-                                <input name="slcCategoria" type="text" id="slcCategoria" readonly="true">
+                                <input name="slcCategoria" type="text" id="slcCategoria" readonly>
                             </td>
                         </tr>
                         <tr>
-                            <td><label for="txtNome">Nome*</label></td>
+                            <td><label>Nome*</label></td>
                         </tr>
                         <tr>
                             <td><input type="text" name="txtNome" placeholder="João da Silva" required></td>
                         </tr>
                         <tr>
-                            <td><label for="txtEmail">Email*</label></td>
+                            <td><label>Email*</label></td>
                         </tr>
                         <tr>
                             <td><input type="email" name="txtEmail" placeholder="joaodasilva@exemplo.com" required></td>
                         </tr>
                         <tr>
-                            <td><label for="txtTelefone">Telefone*</label></td>
+                            <td><label>Telefone*</label></td>
                         </tr>
                         <tr>
                             <td><input type="tel" name="txtTelefone" placeholder="(11) 1234-5678" required></td>
                         </tr>
                         <tr>
-                            <td><label for="txtFeedback">Mensagem*</label></td>
+                            <td><label>Mensagem*</label></td>
                         </tr>
                         <tr>
                             <td><textarea name="txtFeedback"></textarea></td>

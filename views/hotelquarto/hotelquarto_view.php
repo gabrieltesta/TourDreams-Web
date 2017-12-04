@@ -125,7 +125,7 @@
 
                         }
                     ?>
-
+                </ul>
             </div>
 
         </div>
@@ -133,7 +133,7 @@
     </div>
 
     <div class="container">
-        
+
         <section id="sliderhome">
             <div id="meuSlider" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -212,7 +212,7 @@
 
                     }
                 ?>
-
+            </ul>
         </div>
 
     </div>
@@ -365,6 +365,11 @@
             </table>
         </div>
         <div id="avaliacaoConteudoDireito">
+            <script>
+                function redirect(){
+                    window.location.href = "login.php";
+                }
+            </script>
                 <?php
                     if(!isset($_SESSION['idCliente']))
                     {
@@ -374,7 +379,7 @@
                                 <td><h1>Efetue o login para enviar uma avaliação</h1></td>
                             </tr>
                             <tr>
-                                <td><a href="login.php"><input type="submit" id="btnEnviar" value="LOGIN"></a></td>
+                                <td><input onclick="redirect()" type="submit" id="btnEnviar" value="LOGIN"></td>
                             </tr>
                         </table>
                         <?php

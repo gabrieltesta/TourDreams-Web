@@ -2,7 +2,7 @@
     <!--Caixa de filtros-->
     <div id="filtrosBox">
         <h3 id="filtrosBoxTitulo"><span>Filtros de busca</span></h3>
-        <form action="busca.php?modo=avancada" action="GET">
+        <form action="busca.php?modo=avancada" method="GET">
         <div id="filtros">
 
             <h3>Preço</h3>
@@ -84,7 +84,7 @@
 
 
                ?>
-                <li><input type="checkbox" name="<?php echo('chk'.$rows[$cont]->idComodidadeHotel) ?>" value="<?php echo ($rows[$cont]->comodidadesHotel) ?>"><label for="chkAcademia"><?php echo ($rows[$cont]->comodidadesHotel) ?></label></li>
+                <li><input type="checkbox" name="<?php echo('chk'.$rows[$cont]->idComodidadeHotel) ?>" value="<?php echo ($rows[$cont]->comodidadesHotel) ?>"><label ><?php echo ($rows[$cont]->comodidadesHotel) ?></label></li>
                 <?php
                 $cont +=1;
               }
@@ -103,7 +103,7 @@
 
 
                ?>
-                <li><input type="checkbox" name="<?php echo('comodidadeHotel'.$rows[$cont]->idComodidadeQuarto)?>" value="<?php echo ($rows[$cont]->comodidadesQuarto); ?>"><label for="chkAr"><?php echo ($rows[$cont]->comodidadesQuarto); ?></label></li>
+                <li><input type="checkbox" name="<?php echo('comodidadeHotel'.$rows[$cont]->idComodidadeQuarto)?>" value="<?php echo ($rows[$cont]->comodidadesQuarto); ?>"><label><?php echo ($rows[$cont]->comodidadesQuarto); ?></label></li>
                 <?php
                 $cont +=1;
               }
@@ -196,7 +196,7 @@
                         <div class="parceiroDestaque">
                            <div class="ribbon"><span>DESTAQUE</span></div>
                         </div>
-                        <img src="<?php echo ($rows[$cont]->imagemHotel); ?>" alt="" id="hotelImg">
+                        <img src="<?php echo ($rows[$cont]->imagemHotel); ?>" alt="" class="hotelImg">
                     </div>
 
                     <div class="resultadoInfo">
@@ -224,16 +224,7 @@
                             <tr>
                                 <td><?php echo ($rows[$cont]->nomeParceiro); ?></td>
                             </tr>
-                            <tr>
-                                <td>
-                                    <table id="tblComodidades">
-                                        <tr>
 
-
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
                         </table>
                     </div>
                     <div class="resultadoReservar">
@@ -261,7 +252,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td><a href="hotelQuarto.php?idHotel=<?php echo($rows[$cont]->idHotel) ?>"><div class="btnReservar">RESERVAR</a></td>
+                                <td><a href="hotelQuarto.php?idHotel=<?php echo($rows[$cont]->idHotel) ?>"><div class="btnReservar">RESERVAR</div></a></td>
                             </tr>
                         </table>
                     </div>

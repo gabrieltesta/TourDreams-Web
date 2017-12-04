@@ -37,13 +37,9 @@
 
                      $x = 0;
                      while ($x < count($rows)) {
-                       if($idParceiro == $rows[$x]->idParceiro){
-                         $marcar = "selected";
-                       }else{
-                         $marcar = "";
-                       }
+
                    ?>
-                   <option <?php echo ($marcar); ?> value="<?php echo ($rows[$x]->idParceiro); ?>" ><?php echo ($rows[$x]->nome); ?></option>
+                   <option value="<?php echo ($rows[$x]->idParceiro); ?>" ><?php echo ($rows[$x]->nome); ?></option>
                    <?php
                      $x++;
                      }
@@ -62,4 +58,5 @@
         <div id="conteudoModalParceiro">
         </div>
     </div>
+</div>
 </section>

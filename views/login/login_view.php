@@ -3,7 +3,7 @@
 
     $nextpage = $_SERVER['HTTP_REFERER'];
     if(isset($_GET['melhoresdestinos'])){
-        
+
             $nextpage = 'melhoresDestinos.php';
 
     }
@@ -14,6 +14,12 @@
 ?>
 
 <section>
+
+    <script type="text/javascript">
+        function redirect(){
+            window.location.href = "registroUsuario.php";
+        }
+    </script>
 
     <div class="contLeft">
         <div class="titulo">
@@ -30,7 +36,7 @@
                     <td><label>Login</label></td>
                 </tr>
                 <tr>
-                    <td><input placeholder="Digite seu Login" value="" type="text" name="txtLogin" value=""></td>
+                    <td><input placeholder="Digite seu Login" value="" type="text" name="txtLogin"></td>
                 </tr>
                 <tr>
                     <td><label>Senha</label></td>
@@ -40,7 +46,7 @@
                 </tr>
             </table>
             <div class="divBotao">
-                <button type="submit" class="botao" name="btnLogin"><h1 id="nameBotao">ENTRAR</h1><h1 class="setinha"></h1></button>
+                <button type="submit" class="botao" name="btnLogin"><span id="nameBotao">ENTRAR</span><span class="setinha"></span></button>
             </div>
         </form>
     </div>
@@ -76,7 +82,7 @@
                 </table>
             </div>
             <div class="divBotao2">
-                <a href="registroUsuario.php"><button class="botao2" name=""><h1 id="nameBotao2">CRIAR CONTA</h1><h1 class="setinha"></h1></button></a>
+                <button onclick="redirect()" class="botao2"><span id="nameBotao2">CRIAR CONTA</span><span class="setinha"></span></button>
             </div>
         </div>
     </div>

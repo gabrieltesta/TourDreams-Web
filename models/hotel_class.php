@@ -151,6 +151,15 @@
 
         public function ExcluirHotel(){
 
+            $sql = "select idQuarto from tbl_quarto where idHotel=".$this->idHotel.";";
+
+            $select = mysql_query($sql);
+
+            while($rs = mysql_fetch_array($select)){
+
+                $this->DeleteQuarto($rs['idQuarto']);
+
+            }
 
             $sql = "delete from tbl_hotelcomodidadeshotel where idHotel=".$this->idHotel.";";
             echo($sql);
@@ -164,7 +173,22 @@
 
         }
 
+        public function DeleteQuarto($idQuarto){
+            $sql="delete from tbl_quartocomodidadesquarto where idQuarto=".$idQuarto.";";
+            mysql_query($sql);
+            $sql="delete from tbl_transacao where idQuarto=".$idQuarto.";";
+            mysql_query($sql);
+            $sql = "select * from tbl_quarto where idQuarto=".$idQuarto.";";
+            $select = mysql_query($sql);
+            if($rs=mysql_fetch_array($select)){
+                $idImagem = $rs['idImagem'];
+                $sql = "delete from tbl_quarto where idQuarto=".$idQuarto.";";
+                mysql_query($sql);
+                $sql = "delete from tbl_imagem where idImagem=".$idImagem.";";
+                mysql_query($sql);
 
+        }
+        }
 
 
 

@@ -48,7 +48,7 @@
                     <input type="hidden" name="txtValorDiario" value="<?php echo($row->valorDiario); ?>">
                     <input type="hidden" name="txtIdQuarto" value="<?php echo($_SESSION['idQuarto']); ?>">
                     <input type="hidden" name="txtIdCliente" value="<?php echo($_SESSION['idCliente']); ?>">
-                    <label for="dataEntrada">Data de entrada*</label>
+                    <label >Data de entrada*</label>
                 </td>
             </tr>
             <tr>
@@ -71,19 +71,19 @@
                 <td><input id="txtTitular" onkeyup="validar(this,'text');" type="text" maxlength="30" name="txtTitular"  class="txtLongo"></td>
             </tr>
             <tr>
-                <td><label style="float:left;margin-right:5px;" for="txtNumero">Número do cartão*</label></td>
+                <td><label style="float:left;margin-right:5px;">Número do cartão*</label></td>
             </tr>
             <tr>
                 <td><input id="txtNumeroCartao" type="text" name="txtNumero"    class="txtLongo"></td>
             </tr>
             <tr>
-                <td><label for="txtCodigo">Código de segurança*</label></td>
+                <td><label>Código de segurança*</label></td>
             </tr>
             <tr>
-                <td><input id="txtCodigoSeguranca" type="text" name="txtCodigo"   id="txtCodigo"></td>
+                <td><input id="txtCodigoSeguranca" type="text" name="txtCodigo"  ></td>
             </tr>
             <tr>
-                <td><label for="txtValidade">Validade do cartão*</label></td>
+                <td><label>Validade do cartão*</label></td>
             </tr>
             <tr>
                 <td><input id="txtValidade" type="text" name="txtValidade" class="monthPicker" value="<?php echo($mesAtual); ?>" ></td>
@@ -127,7 +127,7 @@
                 <td colspan="2">Você tem: <span><?php echo($row2[$cont]->milhasPontuacao) ?></span> pontos</td>
             </tr>
             <tr>
-                <td colspan="2"><input type="radio" name="radDesconto" value="0,0" checked><label for="radDesconto">0 pontos (0% de desconto)</label></td>
+                <td colspan="2"><input type="radio" name="radDesconto" value="0,0" checked><label>0 pontos (0% de desconto)</label></td>
             </tr>
             <?php
 
@@ -138,7 +138,7 @@
             ?>
                 <tr>
                     <td colspan="2"><input <?php if($row2[$cont]->milhasPontuacao < $row2[$cont]->valorPontos){echo ('disabled');} ?>
-                         type="radio" name="radDesconto" value="<?php echo($row2[$cont]->desconto.",".$row2[$cont]->valorPontos); ?>" ><label for="radDesconto"><?php echo ($row2[$cont]->valorPontos); ?>
+                         type="radio" name="radDesconto" value="<?php echo($row2[$cont]->desconto.",".$row2[$cont]->valorPontos); ?>" ><label ><?php echo ($row2[$cont]->valorPontos); ?>
                               pontos (<?php echo($row2[$cont]->desconto) ?>% de desconto)</label></td>
                 </tr>
             <?php

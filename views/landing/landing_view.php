@@ -24,7 +24,7 @@
 	<div id="formBox">
 		<form method="post" action="busca.php?btn_pesquisar=buscaRapida">
 			<input type="text" name="txtDestino" placeholder="Digite seu destino...">
-			<input type="image" value="submit" src="imagens/pesquisar.png"  draggable="false" onmousedown="return false" style="user-drag: none">
+			<input type="image" alt="img" src="imagens/pesquisar.png"  draggable="false" onmousedown="return false" style="user-drag: none">
 		</form>
 		<a href="homepage.php">
 			<div id="buttonEntrar"  onmousedown="return false">
