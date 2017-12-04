@@ -9,14 +9,9 @@ class Mysql_db
     //Construtor ou método mágico é criado utilizando dois caracteres '_'.
     public function __construct()
     {
-        //$this->server = '192.168.0.2';
-        //$this->user = 'portaltourdreams';
-        //$this->password = 'bcd127@sixcode';
-
-        $this->server = 'localhost';
-        $this->user = 'root';
-        $this->password = 'bcd127';
-
+        $this->server = 'dbtourdreams.mysql.uhserver.com';
+        $this->user = 'sixcode';
+        $this->password = 'tourdreams@127';
 
     }
 

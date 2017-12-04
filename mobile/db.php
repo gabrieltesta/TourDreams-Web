@@ -1,6 +1,7 @@
 <?php
-	mysql_connect('192.168.0.2', 'portaltourdreams', 'bcd127@sixcode');
+	mysql_connect('dbtourdreams.mysql.uhserver.com', 'sixcode', 'tourdreams@127');
 	mysql_set_charset('utf-8');
-	mysql_select_db('dbportaltourdreams');
+	mysql_select_db('dbtourdreams');
+	
 	
 ?>
