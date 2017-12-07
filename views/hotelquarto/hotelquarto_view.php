@@ -283,7 +283,7 @@
 
 
                 ?>
-                    <a href="Login.php"><div class="botaoReservar">
+                    <a href="login.php"><div class="botaoReservar">
                         <h1>RESERVAR</h1>
                     </div></a>
                 <?php

@@ -89,7 +89,7 @@
 
 
 
-            require_once('perfilparceiro.php');
+            require_once('perfilParceiro.php');
 
             ?>
 

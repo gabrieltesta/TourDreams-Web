@@ -73,7 +73,7 @@
                 <table>
                     <tr>
                         <th>
-                            <?php echo ($usuario->nome); ?> <img src="imagens/perfilusuario/edit.ico" alt="Editar Perfil" onclick="abrirModalEditar()"><img src="imagens/perfilusuario/delete.png" alt="Excluir Conta" onclick="abrirModalExcluir()"><a href="router.php?controller=deslogar"><img src="imagens/perfilusuario/logout.png" alt="Fazer Logout"></a>
+                            <?php echo ($usuario->nome); ?> <img src="imagens/perfilUsuario/edit.ico" alt="Editar Perfil" onclick="abrirModalEditar()"><img src="imagens/perfilUsuario/delete.png" alt="Excluir Conta" onclick="abrirModalExcluir()"><a href="router.php?controller=deslogar"><img src="imagens/perfilUsuario/logout.png" alt="Fazer Logout"></a>
                         </th>
                     </tr>
                     <tr>
