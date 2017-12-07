@@ -119,6 +119,16 @@
 
 
         }
+        public function Estado(){
+
+            require_once('models/hotel_class.php');
+
+            $lstEstados = new Hotel();
+            return $lstEstados->SelectEstados();
+
+
+
+        }
 
         public function Deletar(){
 

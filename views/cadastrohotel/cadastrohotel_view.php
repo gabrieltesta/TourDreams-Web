@@ -145,32 +145,47 @@
                     </tr>
 
                     <tr>
-                        <td><label>Cidade</label></td>
+                        <td><label>Estado</label></td>
                     </tr>
 
                     <tr>
                         <td>
-                            <select name="sltCidade" >
-
+                            <select id="sltEstado" name="sltEstado" onchange="preencherCidade()">
+                                <option value="0">Selecione um estado</option>
                                 <?php
 
                                     require_once('controllers/hotel_controller.php');
 
-                                    $controller_hotel = new ControllerHotel();
-                                    $rows = $controller_hotel-> CidadeUF();
+                                    $controller_hotelestado = new ControllerHotel();
+                                    $rows2 = $controller_hotelestado-> Estado();
 
-                                    $cont = 0;
-                                    while($cont < count($rows)){
+                                    $contador = 0;
+                                    while($contador < count($rows2)){
 
 
                                 ?>
 
-                                <option value="<?php echo($rows[$cont]->idCidade); ?>"><?php echo($rows[$cont]->cidade); ?> - <?php echo($rows[$cont]->uf); ?></option>
+                                <option value="<?php echo($rows2[$contador]->idEstado); ?>"><?php echo($rows2[$contador]->estado); ?></option>
 
                                 <?php
-                                        $cont++;
+                                        $contador++;
                                     }
                                 ?>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Cidade</label></td>
+                    </tr>
+
+                    <tr id="Cidades">
+                        <td>
+                            <select name="sltCidade" >
+
+
+                                <option selected value="0">Selecione uma cidade</option>
+
+
                             </select>
                         </td>
                     </tr>

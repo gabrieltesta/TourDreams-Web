@@ -34,8 +34,8 @@
                 $select = mysql_query($sql);
                 if($rs = mysql_fetch_array($select)){
                     $idLogradouro = $rs['idLogradouro'];
-                    $sql = "insert into tbl_hotel(hotel,checkin,checkout,descricao,qtdEstrelas,idParceiro,idTipoEstadia,idLogradouro) values";
-                    $sql = $sql."('".$hotel->nomeHotel."','".$hotel->checkIn."','".$hotel->checkOut."','".$hotel->descricaoHotel."',".$hotel->qtdEstrelas.",".$hotel->idParceiro.",".$hotel->tipoEstadia.",".$idLogradouro.")";
+                    $sql = "insert into tbl_hotel(avaliacao,hotel,checkin,checkout,descricao,qtdEstrelas,idParceiro,idTipoEstadia,idLogradouro) values";
+                    $sql = $sql."('50','".$hotel->nomeHotel."','".$hotel->checkIn."','".$hotel->checkOut."','".$hotel->descricaoHotel."',".$hotel->qtdEstrelas.",".$hotel->idParceiro.",".$hotel->tipoEstadia.",".$idLogradouro.")";
                     mysql_query($sql);
                     $sql = "select LAST_INSERT_ID() as idHotel";
                     $select = mysql_query($sql);
@@ -133,6 +133,27 @@
             }
 
             return $cidade;
+        }
+
+        public function SelectEstados(){
+            $sql = "select * from tbl_estado;";
+            $select = mysql_query($sql);
+
+            $cont = 0;
+
+            while($rs = mysql_fetch_array($select)){
+
+                $estado[] = new Hotel();
+
+                $estado[$cont]->idEstado = $rs['idEstado'];
+                $estado[$cont]->estado = $rs['estado'];
+                $estado[$cont]->uf = $rs['uf'];
+
+                $cont++;
+
+            }
+
+            return $estado;
         }
 
 

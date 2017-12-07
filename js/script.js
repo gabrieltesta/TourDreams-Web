@@ -680,6 +680,14 @@ function abrirResposta(idFaq,pergunta) {
     });
 }
 
+function preencherCidade(){
+    var idEstado = $('#sltEstado').val();
+    // alert(idEstado);
+    $.post('api/preenchercidade.php', {'idEstado':idEstado}, function(data) {
+      $("#Cidades").html(data);
+    });
+}
+
 function abrirMenuResponsivo() {
     $("#modalBg").show();
     $("#menuResponsivoBox").show();
