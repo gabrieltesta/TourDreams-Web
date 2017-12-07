@@ -68,7 +68,7 @@
                     on t.idQuarto = q.idQuarto
                     inner join tbl_hotel as h
                     on q.idHotel = h.idHotel
-                    where h.idParceiro =".$this->idParceiro." and status = 'Pendente';";
+                    where h.idParceiro =".$this->idParceiro." and status = 'Pendente' order by t.idTransacao desc;";
 
             $select = mysql_query($sql);
 
@@ -112,7 +112,7 @@
                     on t.idQuarto = q.idQuarto
                     inner join tbl_hotel as h
                     on q.idHotel = h.idHotel
-                    where h.idParceiro =".$this->idParceiro." and status <> 'Pendente';";
+                    where h.idParceiro =".$this->idParceiro." and status <> 'Pendente' order by t.idTransacao desc;";
 
             $select = mysql_query($sql);
 
